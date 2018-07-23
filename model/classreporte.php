@@ -160,52 +160,108 @@ class classreporte  extends Conexion
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
-
-	public function listarACTDES()
+	//--
+	public function listarACTDESES()
 	{
-		$sql = "CALL R_ACTDES('$this->PU04IDTRA');";
+		$sql = "CALL R_ACTDES_ES('$this->PU04IDTRA');";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
 
-	public function listarLey()
+	public function listarACTDESCOM()
 	{
-		$sql = "CALL R_LEYES('$this->PU04IDTRA');";
+		$sql = "CALL R_ACTDES_COM('$this->PU04IDTRA');";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
 
-	public function listarLey1()
+	public function listarACTDESCOMIN()
 	{
-		$sql = "CALL R_LEYES1('$this->PU04IDTRA');";
+		$sql = "CALL R_ACTDES_COM_IN('$this->PU04IDTRA');";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
 
-	public function listarLey2()
+	public function listarACTDESDESA()
 	{
-		$sql = "CALL R_LEYES2('$this->PU04IDTRA');";
+		$sql = "CALL R_ACTDES_DESA('$this->PU04IDTRA');";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
 
-	public function listarLey3()
+	public function listarACTDESRES()
 	{
-		$sql = "CALL R_LEYES3('$this->PU04IDTRA');";
+		$sql = "CALL R_ACTDES_RES('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+	//--
+	public function listarLeyAccesos()
+	{
+		$sql = "CALL R_LEYES_ACCESOS('$this->PU04IDTRA');";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
 
-	public function listarLey4()
+	public function listarLeyActividades()
 	{
-		$sql = "CALL R_LEYES4('$this->PU04IDTRA');";
+		$sql = "CALL R_LEYES_ACTIVIDADES('$this->PU04IDTRA');";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
 
-	public function listarLey5()
+	public function listarLeyAreasPro()
 	{
-		$sql = "CALL R_LEYES5('$this->PU04IDTRA');";
+		$sql = "CALL R_LEYES_AREASPRO('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarLeyAspectoBio()
+	{
+		$sql = "CALL R_LEYES_ASPECTOBIO('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarLeyDesarroSect()
+	{
+		$sql = "CALL R_LEYES_DESARROSECT('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarLeyEspacioGeo()
+	{
+		$sql = "CALL R_LEYES_ESPACIOGEO('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarLeyPatente()
+	{
+		$sql = "CALL R_LEYES_PATENTE('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarLeyPlan()
+	{
+		$sql = "CALL R_LEYES_PLAN('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarLeyRedVial()
+	{
+		$sql = "CALL R_LEYES_REDVIAL('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+	
+	public function listarR_APRO_DENE()
+	{
+		$sql = "CALL R_APRO_DENE('$this->PU04IDTRA');";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
