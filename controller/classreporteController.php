@@ -20,14 +20,22 @@ class classreporteController
 	private $turisticocomercial;
 	private $datosturistico;
 	private $resolusion;
-	private $actdes;
+	private $actdes_res;
+	private $actdes_com;
+	private $actdes_com_in;
+	private $actdes_es;
+	private $actdes_desa;
 	private $desceg;
-	private $leyes;
-	private $leyes1;
-	private $leyes2;
-	private $leyes3;
-	private $leyes4;
-	private $leyes5;
+	private $leyesAccesos;
+	private $leyesDesarroSect;
+	private $leyesEspacioGeo;
+	private $leyesActividades;
+	private $leyesAspectoBio;
+	private $leyesPatente;
+	private $leyesPlan;
+	private $leyesRedVial;
+	private $leyesAreasPro;
+	private $apro_dene;
 
 	function __construct()
 	{
@@ -85,237 +93,72 @@ class classreporteController
 	
 	public function reporte(){
 		$this->classreporte->setAtributo('PU04IDTRA', $_REQUEST['id']);
-		/*if ($this->classreporte->listarPRIN() == true) {
-			$result = $this->classreporte->listarPRIN();
-			if ($result == 4) {
-				$this->RESI = new classreporte();
-				$this->ACTDES = new classreporte();
-				$this->DESCEG = new classreporte();
-				$this->LEY = new classreporte();
-				$this->RESI1 = new classreporte();
+		$this->resolusion 	 		= new  classreporte();
+		$this->actdes_res 	 		= new classreporte();
+		$this->actdes_com 	 		= new classreporte();
+		$this->actdes_com_in 		= new classreporte();
+		$this->actdes_desa 	 		= new classreporte();
+		$this->actdes_es 	 		= new classreporte();
+		$this->desceg 		 		= new classreporte();
+		$this->leyesAccesos 		= new classreporte();
+		$this->leyesDesarroSect 	= new classreporte();
+		$this->leyesEspacioGeo 		= new classreporte();
+		$this->leyesActividades 	= new classreporte();
+		$this->leyesAspectoBio 		= new classreporte();
+		$this->leyesPatente 		= new classreporte();
+		$this->leyesPlan 		 	= new classreporte();
+		$this->leyesRedVial 		= new classreporte();
+		$this->leyesAreasPro 		= new classreporte();
+		$this->apro_dene 			= new classreporte();
 
-				$this->RESI->setAtributo('PU04IDTRA', $_REQUEST['id']);
-				$result1 = $this->RESI->listarRESI();
-				$this->RESI1->setAtributo('PU04IDTRA', $_REQUEST['id']);
-				$resi = $this->RESI->listarRESI1();
+		$this->resolusion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rLista 			= $this->resolusion->listarResi();
+		$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rDesceg 			= $this->desceg->listarDESCEG();
 
-				$this->DESCEG->setAtributo('PU04IDTRA', $_REQUEST['id']);
-				$result2 = $this->DESCEG->listarDESCEG();
-				$this->ACTDES->setAtributo('PU04IDTRA', $_REQUEST['id']);
-				$result3 = $this->ACTDES->listarACTDES();
-				$this->LEY->setAtributo('PU04IDTRA', $_REQUEST['id']);
-				$result4 = $this->LEY->listarLey();
+		$this->actdes_res->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rActdesRes 		= $this->actdes_res->listarACTDESRES();
+		$this->actdes_com->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rActdesCom 		= $this->actdes_com->listarACTDESCOM();
+		$this->actdes_com_in->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rActdesComIn 		= $this->actdes_com_in->listarACTDESCOMIN();
+		$this->actdes_desa->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rActdesDesa 		= $this->actdes_desa->listarACTDESDESA();
+		$this->actdes_es->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rActdesEs 			= $this->actdes_es->listarACTDESES();
 
-				$pdf = new PDF();
-				$pdf->AliasNbPages();
-				$pdf->AddPage();
-				$pdf->SetFillColor(255,255,255);
-				$pdf->SetFont('Arial','B',11);
-				try
-				{
 
-					while ($row = mysqli_fetch_array($result1)) {
-						$pdf->MultiCell(50,5,$row[0],0,1);
-					 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
-					 	$pdf->MultiCell(100,5,utf8_decode("Señor(a):"));
-					 	$pdf->Ln(1);
-					 	$pdf->MultiCell(100,5,utf8_decode($row[2]." ".$row[3]." ".$row[4]),0,1,'J');
-					 	$pdf->Ln(1);
-					 	$pdf->MultiCell(40,5,utf8_decode("Cédula: ".$row[5]),0,1,'J');
-					 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
-					 	$pdf->SetFont('Arial','B',10);
-					 	$pdf->MultiCell(180,5,utf8_decode("Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula Jurídica ".$row[11].", Ubicada ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:"),0,1,'J');
-					 	$pdf->MultiCell(190,5,$row[1],0,1,'J');
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(190,5,'El terreno evaluado es afectado por el Plan Regulador vigente del cantón de Nicoya. La Resolución Municipal de Ubicación corresponde a Zona Residencial.',0,1,'J');
-					 	while ($fila = mysqli_fetch_array($resi)) {
-					 		$pdf->Ln(1);
-					 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila[0]."."),0,1,'J');
-					 		$pdf->Ln(1);
-					 	}
-					 	$pdf->MultiCell(190,5,'-Usos Permitidos: Todos los urbanos que tengan relación con la vivienda, sin que la perjudiquen. El tipo de comercio que se permite es el siguiente: tiendas de abarrotes, boticas, fuentes de soda, barberías, carnicerías oficinas profesionales, usos comunales y áreas verdes. La pequeña industria (artesanal Inofensiva) supermercados.',0,1,'J');
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(190,5,'-No se permiten: bodegas, aserraderos, talleres, industrias y usos similares a estos en cuanto a molestias (ruido, transito intenso, olor, etc.) que afectan la zona. También se exceptúan el comercio que produzca las molestias antes dichas como salas de baile, cantinas, etc.',0,1,'J');
-					 	$pdf->MultiCell(190,5,'1.	SUPERFICIE DE LOTE: 155m2',0,1,'J');
-					 	$pdf->MultiCell(190,5,'2.	FRENTE MÍNIMO DE LOTE: 8m2',0,1,'J');
-					 	$pdf->MultiCell(190,5,'3.	RETIROS MÍNIMOS:',0,1,'J');
-					 	$pdf->MultiCell(190,5,'-FRONTAL: 2,5m',0,1,'C');
-					 	$pdf->MultiCell(190,5,'-LATERAL: NO HAY',0,1,'C');
-					 	$pdf->MultiCell(190,5,'-POSTERIOR: 3m',0,1,'C');
-					 	$pdf->MultiCell(190,5,'4.   COBERTURA DE EDIFICACIÓN MÁXIMA 60% DEL ÁREA DEL LOTE',0,1,'J');
-					 	$pdf->MultiCell(190,5,'5.   ÁREA DE PISO MÁXIMA, TRES VECES LA COBERTURA MÁXIMA',0,1,'J');
-					 	$pdf->MultiCell(190,5,'6.   ALTURA DE EDIFICACIÓN MÁXIMA 10m',0,1,'J');
+		$this->leyesAccesos->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rLeyesAccesos 		= $this->leyesAccesos->listarLeyAccesos();
+		$this->leyesDesarroSect->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rLeyesDesarroSect 	= $this->leyesDesarroSect->listarLeyDesarroSect();
+		$this->leyesEspacioGeo->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rLeyesEspacioGeo 	= $this->leyesEspacioGeo->listarLeyEspacioGeo();
+		$this->leyesActividades->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rLeyesActividades	= $this->leyesActividades->listarLeyActividades();
+		$this->leyesAspectoBio->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rLeyesAspectoBio 	= $this->leyesAspectoBio->listarLeyAspectoBio();
+		$this->leyesPatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rLeyesPatente 		= $this->leyesPatente->listarLeyPatente();
+		$this->leyesPlan->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rLeyesPlan 		= $this->leyesPlan->listarLeyPlan();
+		$this->leyesRedVial->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
+		$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
 
-					 	$pdf->Ln(2);
+		$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$rApro_Dene 	= $this->apro_dene->listarR_APRO_DENE();
 
-					 	$pdf->MultiCell(55,5,'> Uso Actual del Suelo',0,1,'J');
-
-					 	while ($fila1 = mysqli_fetch_array($result2)) {
-					 		$pdf->Ln(1);
-					 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila1[0]."."),0,1,'J');
-					 		$pdf->Ln(1);
-					 	}
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(55,5,"> Actividad a Desarrollar",0,1,'J');
-					 	$pdf->Ln(2);
-					 	while ($fila2 = mysqli_fetch_array($result3)) {
-					 		$pdf->Ln(1);
-					 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila2[0]."."),0,1,'J');
-					 		$pdf->Ln(1);
-					 	}
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
-					 	/*while ($fila3 = mysqli_fetch_array($result4)) {
-					 		$pdf->Ln(1);
-					 		$pdf->MultiCell(190,5,utf8_decode($fila3[0]),0,'J');
-					 		$pdf->Ln(2);
-					 	}
-					 	$pdf->MultiCell(100,5,"Por tanto",0,0);
-					 	$pdf->Ln(1);
-					 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[1]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
-					 	$pdf->Ln(1);
-					 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
-					 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
-					 	$pdf->Ln(3)	;
-					 	$pdf->MultiCell(60,5,"__________________________",0,1);
-					 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
-					 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
-					 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
-
-					 }
-					 $pdf->Output();
-				} catch(Exception $e) {
-					$pdf->Cell(30, 10, "Sin datos".$e, 0, 0, 'C');
-					$pdf->Output();
-				}
-			} else {
-				$this->RESO = new  classreporte();
-				$this->ACTDES = new classreporte();
-				$this->DESCEG = new classreporte();
-				$this->LEY = new classreporte();
-
-				$this->RESO->setAtributo('PU04IDTRA', $_REQUEST['id']);
-				$result1 = $this->RESO->listarRESO();
-				$this->DESCEG->setAtributo('PU04IDTRA', $_REQUEST['id']);
-				$result2 = $this->DESCEG->listarDESCEG();
-				$this->ACTDES->setAtributo('PU04IDTRA', $_REQUEST['id']);
-				$result3 = $this->ACTDES->listarACTDES();
-				$this->LEY->setAtributo('PU04IDTRA', $_REQUEST['id']);
-				$result4 = $this->LEY->listarLey();
-
-				$pdf = new PDF();
-				$pdf->AliasNbPages();
-				$pdf->AddPage();
-				$pdf->SetFillColor(255,255,255);
-				$pdf->SetFont('Arial','B',11);
-				try
-				{
-
-					while ($row = mysqli_fetch_array($result1)) {
-						$pdf->MultiCell(50,5,$row[0],0,1);
-					 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
-					 	$pdf->MultiCell(100,5,utf8_decode("Señor(a):"));
-					 	$pdf->Ln(1);
-					 	$pdf->MultiCell(100,5,utf8_decode($row[2]." ".$row[3]." ".$row[4]),0,1,'J');
-					 	$pdf->Ln(1);
-					 	$pdf->MultiCell(40,5,utf8_decode("Cédula: ".$row[5]),0,1,'J');
-					 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
-					 	$pdf->SetFont('Arial','B',10);
-					 	$pdf->MultiCell(180,5,utf8_decode("Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula Jurídica ".$row[11].", Ubicada ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:"),0,1,'J');
-					 	$pdf->MultiCell(190,5,$row[1],0,1,'J');
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(55,5,'> Uso Actual del Suelo',0,1,'J');
-
-					 	while ($fila1 = mysqli_fetch_array($result2)) {
-					 		$pdf->Ln(1);
-					 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila1[0]."."),0,1,'J');
-					 		$pdf->Ln(1);
-					 	}
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(55,5,"> Actividad a Desarrollar",0,1,'J');
-					 	$pdf->Ln(2);
-					 	while ($fila2 = mysqli_fetch_array($result3)) {
-					 		$pdf->Ln(1);
-					 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila2[0]."."),0,1,'J');
-					 		$pdf->Ln(1);
-					 	}
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
-					 	/*while ($fila3 = mysqli_fetch_array($result4)) {
-					 		$pdf->Ln(1);
-					 		$pdf->MultiCell(190,5,utf8_decode($fila3[0]),0,'J');
-					 		$pdf->Ln(2);
-					 	}
-					 	$pdf->MultiCell(100,5,"Por tanto",0,0);
-					 	$pdf->Ln(1);
-					 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[1]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
-					 	$pdf->Ln(1);
-					 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
-					 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
-					 	$pdf->Ln(2);
-					 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
-					 	$pdf->Ln(3)	;
-					 	$pdf->MultiCell(60,5,"__________________________",0,1);
-					 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
-					 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
-					 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
-
-					 }
-					 $pdf->Output();
-				} catch(Exception $e){
-					$pdf->Cell(30, 10, "Sin datos".$e, 0, 0, 'C');
-					$pdf->Output();
-				}
-			}
-		}*/
-		$this->RESO = new  classreporte();
-		$this->ACTDES = new classreporte();
-		$this->DESCEG = new classreporte();
-		$this->leyes = new classreporte();
-		$this->leyes1 = new classreporte();
-		$this->leyes2 = new classreporte();
-		$this->leyes3 = new classreporte();
-		$this->leyes4 = new classreporte();
-		$this->leyes5 = new classreporte();
-
-		$this->RESO->setAtributo('PU04IDTRA', $_REQUEST['id']);
-		$result1 = $this->RESO->listarRESO();
-		$this->DESCEG->setAtributo('PU04IDTRA', $_REQUEST['id']);
-		$result2 = $this->DESCEG->listarDESCEG();
-		$this->ACTDES->setAtributo('PU04IDTRA', $_REQUEST['id']);
-		$result3 = $this->ACTDES->listarACTDES();
-		$this->leyes->setAtributo('PU04IDTRA', $_REQUEST['id']);
-		$result4 = $this->leyes->listarLey();
-		$this->leyes1->setAtributo('PU04IDTRA', $_REQUEST['id']);
-		$result5 = $this->leyes1->listarLey1();
-		$this->leyes2->setAtributo('PU04IDTRA', $_REQUEST['id']);
-		$result6 = $this->leyes2->listarLey2();
-		$this->leyes3->setAtributo('PU04IDTRA', $_REQUEST['id']);
-		$result7 = $this->leyes3->listarLey3();
-		$this->leyes4->setAtributo('PU04IDTRA', $_REQUEST['id']);
-		$result8 = $this->leyes4->listarLey4();
-		$this->leyes5->setAtributo('PU04IDTRA', $_REQUEST['id']);
-		$result9 = $this->leyes5->listarLey5();
-
-		$pdf = new PDF();
+		$pdf 				= new PDF();
 		$pdf->AliasNbPages();
 		$pdf->AddPage();
 		$pdf->SetFillColor(255,255,255);
 		$pdf->SetFont('Arial','B',11);
 		try
 		{
-
-			while ($row = mysqli_fetch_array($result1)) {
+			//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, etc
+			while ($row = mysqli_fetch_array($rLista)) {
 				$pdf->MultiCell(50,5,$row[0],0,1);
 			 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
 			 	$pdf->Ln(2);
@@ -327,61 +170,100 @@ class classreporteController
 			 	$pdf->MultiCell(40,5,utf8_decode("Cédula: ".$row[5]),0,1,'J');
 			 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
 			 	$pdf->SetFont('Arial','B',10);
-			 	$pdf->MultiCell(180,5,utf8_decode("Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula Jurídica ".$row[11].", Ubicada ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:"),0,1,'J');
+			 	$pdf->MultiCell(180,5,utf8_decode(
+			 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula Jurídica ".$row[11].", Ubicada ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:" ),0,1,'J' );
 			 	$pdf->MultiCell(190,5,$row[1],0,1,'J');
 			 	$pdf->Ln(2);
 			 	$pdf->MultiCell(55,5,'> Uso Actual del Suelo',0,1,'J');
-
-			 	while ($fila1 = mysqli_fetch_array($result2)) {
+			 	//Muestra los usos del suelo actual
+			 	while ($as = mysqli_fetch_array($rDesceg)) {
 			 		$pdf->Ln(1);
-			 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila1[0]."."),0,1,'J');
+			 		$pdf->MultiCell(100,5,utf8_decode("* ".$as[0]."."),0,1,'J');
 			 		$pdf->Ln(1);
 			 	}
 			 	$pdf->Ln(2);
 			 	$pdf->MultiCell(55,5,"> Actividad a Desarrollar",0,1,'J');
 			 	$pdf->Ln(2);
-			 	while ($fila2 = mysqli_fetch_array($result3)) {
+			 	//Muestra las actividades a desarrollar
+			 	while ($adr = mysqli_fetch_array($rActdesRes)) {
 			 		$pdf->Ln(1);
-			 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila2[0]."."),0,1,'J');
+			 		$pdf->MultiCell(100,5,utf8_decode("* ".$adr[0]."."),0,1,'J');
+			 		$pdf->Ln(1);
+			 	}
+			 	while ($ades = mysqli_fetch_array($rActdesEs)) {
+			 		$pdf->Ln(1);
+			 		$pdf->MultiCell(100,5,utf8_decode("* ".$ades[0]."."),0,1,'J');
+			 		$pdf->Ln(1);
+			 	}
+			 	while ($adci = mysqli_fetch_array($rActdesComIn)) {
+			 		$pdf->Ln(1);
+			 		$pdf->MultiCell(100,5,utf8_decode("* ".$adci[0]."."),0,1,'J');
+			 		$pdf->Ln(1);
+			 	}
+			 	while ($add = mysqli_fetch_array($rActdesDesa)) {
+			 		$pdf->Ln(1);
+			 		$pdf->MultiCell(100,5,utf8_decode("* ".$add[0]."."),0,1,'J');
+			 		$pdf->Ln(1);
+			 	}
+			 	while ($adc = mysqli_fetch_array($rActdesCom)) {
+			 		$pdf->Ln(1);
+			 		$pdf->MultiCell(100,5,utf8_decode("* ".$adc[0]."."),0,1,'J');
 			 		$pdf->Ln(1);
 			 	}
 			 	$pdf->Ln(2);
 			 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
-			 	while ($fila3 = mysqli_fetch_array($result4)) {
+			 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
 			 		$pdf->Ln(1);
-			 		$pdf->MultiCell(190,5,utf8_decode($fila3[0]),0,'J');
+			 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
 			 		$pdf->Ln(2);
 			 	}
-			 	while ($fila4 = mysqli_fetch_array($result5)) {
+			 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
 			 		$pdf->Ln(1);
-			 		$pdf->MultiCell(190,5,utf8_decode($fila4[0]),0,'J');
+			 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
 			 		$pdf->Ln(2);
 			 	}
-			 	while ($fila5 = mysqli_fetch_array($result6)) {
+			 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
 			 		$pdf->Ln(1);
-			 		$pdf->MultiCell(190,5,utf8_decode($fila5[0]),0,'J');
+			 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
 			 		$pdf->Ln(2);
 			 	}
-			 	while ($fila6 = mysqli_fetch_array($result7)) {
+			 	while ($leyAD = mysqli_fetch_array($rLeyesActividades)) {
 			 		$pdf->Ln(1);
-			 		$pdf->MultiCell(190,5,utf8_decode($fila6[0]),0,'J');
+			 		$pdf->MultiCell(190,5,utf8_decode($leyAD[0]),0,'J');
 			 		$pdf->Ln(2);
 			 	}
-			 	while ($fila7 = mysqli_fetch_array($result8)) {
+			 	while ($leyAP = mysqli_fetch_array($rLeyesAreasPro)) {
 			 		$pdf->Ln(1);
-			 		$pdf->MultiCell(190,5,utf8_decode($fila7[0]),0,'J');
+			 		$pdf->MultiCell(190,5,utf8_decode($leyAP[0]),0,'J');
 			 		$pdf->Ln(2);
 			 	}
-			 	while ($fila8 = mysqli_fetch_array($result9)) {
+			 	while ($leyRV = mysqli_fetch_array($rLeyesRedVial)) {
 			 		$pdf->Ln(1);
-			 		$pdf->MultiCell(190,5,utf8_decode($fila8[0]),0,'J');
+			 		$pdf->MultiCell(190,5,utf8_decode($leyRV[0]),0,'J');
+			 		$pdf->Ln(2);
+			 	}
+			 	while ($leyAB = mysqli_fetch_array($rLeyesAspectoBio)) {
+			 		$pdf->Ln(1);
+			 		$pdf->MultiCell(190,5,utf8_decode($leyAB[0]),0,'J');
+			 		$pdf->Ln(2);
+			 	}
+			 	while ($leyDS = mysqli_fetch_array($rLeyesDesarroSect)) {
+			 		$pdf->Ln(1);
+			 		$pdf->MultiCell(190,5,utf8_decode($leyDS[0]),0,'J');
+			 		$pdf->Ln(2);
+			 	}
+			 	while ($leyEG = mysqli_fetch_array($rLeyesEspacioGeo)) {
+			 		$pdf->Ln(1);
+			 		$pdf->MultiCell(190,5,utf8_decode($leyEG[0]),0,'J');
 			 		$pdf->Ln(2);
 			 	}
 			 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 			 	$pdf->Ln(1);
-			 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[1]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+			 	$pdf->MultiCell(190,5,utf8_decode(
+			 		"Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 			 	$pdf->Ln(1);
-			 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
+			 	$pdf->MultiCell(190,5,utf8_decode(
+			 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
 			 	$pdf->Ln(2);
 			 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
 			 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
@@ -1231,5 +1113,6 @@ class classreporteController
 					$pdf->Output();
 				}
 	}//listo
+
 }
 ?>
