@@ -9,7 +9,9 @@
                 <li href="#" onclick="vistaInspeccion();">Tramites en Inspección</li>
                 <li href="#" onclick="vistaOficina();">Tramites en Oficina</li>
                 <li href="#" onclick="vistaAceptados();">Tramites Aceptados</li>
-                <li href="#" onclick="vistaDenegados();">Tramites Denegados</li>
+                <li href="#" onclick="vistaDenegados();">Tramites Denegados</li>  
+
+               
             </ul>
 
             <div class="resp-tabs-container hor_1">
@@ -31,6 +33,8 @@
                   <div class="container-fluid" id="tabcontenido6">
                     <!-- contenido de tab 6 -->
                 </div>
+
+                 
             </div>
         </div>
 

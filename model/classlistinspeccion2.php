@@ -1,9 +1,10 @@
 <?php 
 require_once 'conexion.php';
 
-class classlistaceptados extends Conexion
+class classlistinspeccion2 extends Conexion
 {
 	private $PU04IDTRA;
+	private $PU04FEPLATAFOR;
 
 	private $conexion;
 
@@ -14,11 +15,11 @@ class classlistaceptados extends Conexion
 	
 	public function listar()
 	{
-		$sql = "CALL SP00_LISTAR_TRAMITE_ACEPTADO();";
+		$sql = "CALL SP00_LISTAR_TRAMITE_D567();";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
-
+	
 
 }
  ?>

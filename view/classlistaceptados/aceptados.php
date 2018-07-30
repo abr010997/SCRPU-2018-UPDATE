@@ -4,14 +4,14 @@
         <thead>
           <tr>
             <th>Código de Trámite</th>
-            <th>Fecha</th>
+           
           </tr>
         </thead>
         <tbody>
           <?php while ($row = mysqli_fetch_array($result)):?>
             <tr>
               <td><?php echo $row[0]; ?></td>
-              <td><?php echo $row[1]; ?></td>
+            
             <?php endwhile; ?>
           <?php else: ?>
             <div style="background-color:#b2ff59" class="alert alert-info">

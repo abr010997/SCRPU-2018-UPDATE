@@ -95,6 +95,18 @@
                       <li><a href="?c=classprincipal&m=index">Dashboard</a></li>
                     </ul>
                   </li>
+
+
+    <li><a><i class="fa fa-edit"></i> Ingreso Trámite <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li>
+                      <a href="?c=class04ingresotramite">Ingreso de Trámite</a>
+                      </li>
+                       
+                    </ul>
+                  </li>
+
+
                   <li><a><i class="fa fa-edit"></i> Modulo Inspección <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li>
@@ -105,25 +117,30 @@
                       </li>
                     </ul>
                   </li>
+
                   <li><a><i class="fa fa-desktop"></i> Módulo Oficina <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                     <li>
-                      <a href="?c=class04oficina&m=index3">Revisión General</a>
+                        <li>
+                      <a href="?c=class04oficina">Realizar Oficina a Trámites</a>
                       </li>
                       <li>
                       <a href="?c=class04oficina&m=index4">Aplicar actividades a Trámites</a>
                       </li>
+                    
+                     <li>
+                      <a href="?c=class04oficina&m=index3">Revisión General</a>
+                      </li>
+                      
                       <li>
                       <a href="?c=class04oficina&m=index2">Oficina</a>
                       </li>
+                    
+                   
                       <li>
-                      <a href="?c=class04oficina">Realizar Oficina a Trámites</a>
+                      <a href="?c=class04tramite&m=index">Estados</a>
                       </li>
-                      <li>
-                      <a href="?c=class04ingresotramite">Ingreso de Trámite</a>
-                      </li>
-                      <li>
-                      <a href="?c=class04tramite">Estados</a>
+                         <li>
+                      <a href="?c=class04tramite&m=index2">Tramites Distritos</a>
                       </li>
                     </ul>
                   </li>
@@ -210,7 +227,7 @@
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
-            <!-- /menu footer buttons -->
+            <!-- /menu footer buttons-->
           </div>
         </div>
 

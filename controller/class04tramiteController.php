@@ -12,6 +12,17 @@ class class04tramiteController
 	{
 		require_once 'view/header.php';
 		require_once 'view/class04tramite/index.php';
+
+	
+		require_once 'view/footer.php';
+	}
+
+	public function index2()
+	{
+		require_once 'view/header.php';
+		require_once 'view/class04tramite/index2.php';
+		
+	
 		require_once 'view/footer.php';
 	}
 

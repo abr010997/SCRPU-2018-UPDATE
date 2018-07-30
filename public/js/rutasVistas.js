@@ -18,10 +18,6 @@ function vistaEditactdes(){
 
 
 
-
-
-
-
 // coloca el  contenido especifico en un div especifico de mi pagina principal
 function vistaRetrasados(){
 		$("#tabcontenido1").load("?c=classlistretrasados&m=listarRetrasado");	
@@ -40,6 +36,15 @@ function vistaAceptados(){
 	}
 function vistaDenegados(){
 		$("#tabcontenido6").load("?c=classlistdenegados&m=listarDenegados");
+    }
+
+    //Distritos del 1,2,3,4
+ function vistaInspeccion1(){
+		$("#tabcontenido7").load("?c=classlistinspeccion1&m=listarInspeccion1");
+    }
+    //Distritos del 5,6,7
+    function vistaInspeccion2(){
+		$("#tabcontenido8").load("?c=classlistinspeccion2&m=listarInspeccion2");
     }
 
 

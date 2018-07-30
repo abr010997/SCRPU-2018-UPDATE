@@ -1,6 +1,6 @@
 <?php $iddesarrollos00 = $this->class04oficina->getTododasEstados(); ?>
 
-  <center><h2>Aplicando actividades al Trámite:</h2></center> 
+  <center><h2>Estado del trámite:</h2></center> 
 
        <div class="col-xs-2">
   <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>"  readonly> 
@@ -13,7 +13,7 @@
  
 <div id="parentVerticalTab">
   <ul class="resp-tabs-list hor_1">
-     <li href="#tabconten00">Prueba</li>
+     <li href="#tabconten00">Estado del Trámite </li>
     <!-- <li href="#tabconten20">LEY :v</li> -->
     
     
