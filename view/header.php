@@ -102,6 +102,11 @@
                         <li>
                       <a href="?c=class04ingresotramite">Ingreso de Trámite</a>
                       </li>
+                       <li>
+                      <a href="?c=class04tramite&m=index2">Tramites Distritos</a>
+                      </li>
+                      
+
                        
                     </ul>
                   </li>
@@ -139,9 +144,13 @@
                       <li>
                       <a href="?c=class04tramite&m=index">Estados</a>
                       </li>
-                         <li>
-                      <a href="?c=class04tramite&m=index2">Tramites Distritos</a>
+                      <li>
+                      <a href="?c=class04tramite&m=index1">Tramites Aceptados</a>
                       </li>
+                       <li>
+                      <a href="?c=class04tramite&m=index3">Tramites Denegados</a>
+                      </li>
+                        
                     </ul>
                   </li>
                  

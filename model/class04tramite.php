@@ -111,6 +111,27 @@ class class04tramite extends Conexion
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
+
+	public function listarAceptados1()
+	{
+		//funcion de listar tramites aceptados 
+		$sql = "CALL SP00_LISTAR_TRAMITE_ACEPTADO();";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarDenegados1()
+	{
+		//funcion de listar tramites denegados 
+		$sql = "CALL SP00_LISTAR_TRAMITE_DENEGADOS();";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+
+
+
+	
 	// public function listarAAP()
 	// {
 	// 	$sql = "CALL SP13_AAREP_MOSTRAR();";

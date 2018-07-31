@@ -15,7 +15,7 @@ class classlistinspeccion2 extends Conexion
 	
 	public function listar()
 	{
-		$sql = "CALL SP00_LISTAR_TRAMITE_D567();";
+		$sql = "CALL SP00_LISTAR_INGRESO_TRAMITE_D567();";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
