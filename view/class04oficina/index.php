@@ -20,6 +20,7 @@
         <tbody>
           <?php while ($row = mysqli_fetch_array($result)):?>
             <tr>
+              
               <td><?php echo $row[0]; ?></td>
               <td><?php echo $row[1]; ?></td>
               <td><?php echo $row[2]; ?></td>

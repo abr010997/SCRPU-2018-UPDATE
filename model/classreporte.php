@@ -266,6 +266,13 @@ class classreporte  extends Conexion
 		return $result;
 	}
 
+	public function listarR_OBSERV_TRAMITE()
+	{
+		$sql = "CALL R_OBSERV_TRAMITE('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
 	public function convertToclassreporte($result)
 	{
 		$classreporte = new classreporte();

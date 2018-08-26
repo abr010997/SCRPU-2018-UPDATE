@@ -45,6 +45,8 @@ class class07terrftController
 		}
 	}
 
+	
+
 	public function eliminar()
 	{
 		$this->class07terrft->setAtributo('PU07IDTFR',$_REQUEST['id']);

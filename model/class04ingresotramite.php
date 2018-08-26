@@ -43,9 +43,6 @@ class class04ingresotramite  extends Conexion
 
 
 
-
-
-
 	public function guardar($pu38servidumbre,$pu26planregId,$actnicosama,$pu13aap)
 	{
 		$sql = "CALL SP04_REGTRAMITEINFO_GUARDAR ('$this->PU04IDTRA','$this->PU04FETRA','$this->PU04IDDISTRITO');";
@@ -102,6 +99,7 @@ class class04ingresotramite  extends Conexion
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////
+
 	public function eliminarServidumbres($idtramite)
 	{
 		$sql30 = "DELETE FROM pu38traservidumbres WHERE PU04IDTRA = '".$idtramite."';";	
@@ -141,3 +139,6 @@ class class04ingresotramite  extends Conexion
 	}
 }
  ?>
+
+
+

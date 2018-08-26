@@ -36,6 +36,7 @@ class classreporteController
 	private $leyesRedVial;
 	private $leyesAreasPro;
 	private $apro_dene;
+	private $observacion;
 
 	function __construct()
 	{
@@ -110,6 +111,7 @@ class classreporteController
 		$this->leyesRedVial 		= new classreporte();
 		$this->leyesAreasPro 		= new classreporte();
 		$this->apro_dene 			= new classreporte();
+		$this->observacion          = new classreporte();
 
 		$this->resolusion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 		$rLista 			= $this->resolusion->listarResi();
@@ -150,6 +152,10 @@ class classreporteController
 		$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
 		$rApro_Dene 	= $this->apro_dene->listarR_APRO_DENE();
 
+
+		$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+		$robservacion 	= $this->observacion->listarR_OBSERV_TRAMITE();
+
 		$pdf 				= new PDF();
 		$pdf->AliasNbPages();
 		$pdf->AddPage();
@@ -172,7 +178,10 @@ class classreporteController
 			 	$pdf->SetFont('Arial','B',10);
 			 	$pdf->MultiCell(180,5,utf8_decode(
 			 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula Jurídica ".$row[11].", Ubicada ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:" ),0,1,'J' );
-			 	$pdf->MultiCell(190,5,$row[1],0,1,'J');
+			 	
+			 	$pdf->Ln(2);
+			 	$pdf->Ln(2);
+			 	$pdf->Ln(2);
 			 	$pdf->Ln(2);
 			 	$pdf->MultiCell(55,5,'> Uso Actual del Suelo',0,1,'J');
 			 	//Muestra los usos del suelo actual
@@ -257,6 +266,14 @@ class classreporteController
 			 		$pdf->MultiCell(190,5,utf8_decode($leyEG[0]),0,'J');
 			 		$pdf->Ln(2);
 			 	}
+
+			 	while ($obser = mysqli_fetch_array($robservacion)) {
+			 		$pdf->Ln(1);
+			 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
+			 		$pdf->Ln(2);
+			 	}
+
+
 			 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 			 	$pdf->Ln(1);
 			 	$pdf->MultiCell(190,5,utf8_decode(
@@ -267,6 +284,8 @@ class classreporteController
 			 	$pdf->Ln(2);
 			 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
 			 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
+			 	$pdf->Ln(2);
+			 	$pdf->Ln(2);
 			 	$pdf->Ln(2);
 			 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 			 	$pdf->Ln(3)	;

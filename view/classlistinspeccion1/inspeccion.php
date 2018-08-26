@@ -6,8 +6,8 @@
         <thead>
           <tr>
             <th>Código de Trámite</th>
-            <th>Fecha Ingreso al Sistema</th>
-             <th>Fecha Ingreso a Plataforma</th>
+            <th>Fecha Ingreso al Sistema (aa/mm/dd)</th>
+             <th>Fecha Ingreso a Plataforma (aa/mm/dd)</th>
             <th>Distrito</th>
             
           </tr>
