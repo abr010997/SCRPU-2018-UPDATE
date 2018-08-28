@@ -163,7 +163,7 @@ class classreporteController
 		$pdf->SetFont('Arial','B',11);
 		try
 		{
-			//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, etc
+			//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 			while ($row = mysqli_fetch_array($rLista)) {
 				$pdf->MultiCell(50,5,$row[0],0,1);
 			 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
@@ -177,7 +177,7 @@ class classreporteController
 			 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
 			 	$pdf->SetFont('Arial','B',10);
 			 	$pdf->MultiCell(180,5,utf8_decode(
-			 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula Jurídica ".$row[11].", Ubicada ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:" ),0,1,'J' );
+			 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:" ),0,1,'J' );
 			 	
 			 	$pdf->Ln(2);
 			 	$pdf->Ln(2);
@@ -282,17 +282,20 @@ class classreporteController
 			 	$pdf->MultiCell(190,5,utf8_decode(
 			 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
 			 	$pdf->Ln(2);
-			 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
-			 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
-			 	$pdf->Ln(2);
-			 	$pdf->Ln(2);
-			 	$pdf->Ln(2);
-			 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
-			 	$pdf->Ln(3)	;
-			 	$pdf->MultiCell(60,5,"__________________________",0,1);
-			 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
-			 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
-			 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
+					 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
+					 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
+					 	$pdf->Ln(2);
+					 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
+					 	$pdf->Ln(5);
+					 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+					 	$pdf->Ln(3);
+					 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
+					 	$pdf->Ln(3);
+					 	$pdf->MultiCell(60,5,"__________________________",0,1);
+					 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
+					 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
+					 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
+
 
 			 }
 			 $pdf->Output();

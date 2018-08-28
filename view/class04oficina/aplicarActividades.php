@@ -8,7 +8,7 @@
 
 <?php $iddesarrollos00 = $this->class04oficina->getTododasEstados(); ?>
 
-  <center><h2>Aplicando actividades al Trámite:</h2></center> 
+  <center><h2>Aplicar actividades al Trámite:</h2></center> 
 
        <div class="col-xs-2">
   <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>"  readonly> 
@@ -124,8 +124,6 @@
            </form>
 
     </div>
-
-
 
 <div class="container-fluid" id="tabconten5-Comercial">
       <!-- contenido de tab 6 -->
