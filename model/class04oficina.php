@@ -1104,7 +1104,7 @@ public function eliminarLeyes($idtramite)
 		$result = $this->conexion->consultaRetorno($sql107);
 		return $result;
 	}	
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public function eliminarLeyDesarrollosec($idtramite)
 	{
@@ -1226,6 +1226,46 @@ public function eliminarLeyes($idtramite)
 		$result = $this->conexion->consultaRetorno($sql222);
 		return $result;
 	}	
+
+
+
+///////////////////////////////////////////////////////////////////
+
+public function eliminarareas($idtramite)
+	{
+		$sql5 = "DELETE FROM pu14trarep WHERE PU04IDTRA = '".$idtramite."';";	
+		$this->conexion->consultaSimple($sql5);		
+	}
+
+	public function asignarareas($idtramite, $idactdes)
+	{
+		$sql6 = "INSERT INTO pu14trarep VALUES ('".$idtramite."','".$idactdes."');";
+		$this->conexion->consultaSimple($sql6);	
+	}
+
+	public function tieneareas($idtramite, $idactdes)
+	{
+		
+		$sql7 = "SELECT COUNT(*) AS total1919 FROM pu14trarep WHERE PU04IDTRA='".$idtramite."' AND PU13IDAAP='".$idactdes."';";
+		$result = $this->conexion->consultaRetorno($sql7);
+		$row = mysqli_fetch_array($result);		
+		return $row;
+
+	
+	}
+
+	public function getTodasareas()
+	{
+		//$sql = "CALL SP06_ACTIVIDAD_DESARROLLOS_MOSTRAR();";
+		$sql = "SELECT * FROM pu13aarep;";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 }
 
  ?>

@@ -789,5 +789,33 @@ public function guardarObservacionComercialIndustrial()
 		}
 	}
 
+
+//////////////////////////////////////////////////////////////
+
+	/////////////////////////////////////////////////////////////////// AREAS DE PROTECCION ////
+	public function editarareas()
+	{
+		if($_POST){
+			   $actividades5 = $this->class04oficina->getTodasareas();
+			    $this->class04oficina->eliminarareas($_REQUEST['id']);
+			    foreach ($actividades5 as $idactdes5):
+    				if( isset($_REQUEST['idactdes5'.$idactdes5['PU13IDAAP']] ) )
+      				$this->class04oficina->asignarareas($_REQUEST['id'], $idactdes5['PU13IDAAP']);
+  				endforeach;
+				header('location:?c=class04oficina&m=editarActividades5&id='.$_REQUEST['id']);
+		}
+		else{
+			$this->class04oficina = $this->class04oficina->buscarTraIng($_REQUEST['id']);
+
+			require_once 'view/header.php';
+			require_once 'view/class04oficina/aplicarActividades.php';
+			require_once 'view/footer.php';
+		}
+	}
+	///////////////////////////////////
+
+
+
+
 }
 ?>

@@ -8,6 +8,10 @@
 
 <?php $iddesarrollos00 = $this->class04oficina->getTododasEstados(); ?>
 
+<?php $idareas = $this->class04oficina->getTodasareas(); ?>
+
+
+
   <center><h2>Aplicar actividades al Trámite:</h2></center> 
 
        <div class="col-xs-2">
@@ -27,6 +31,7 @@
     <li href="#tabconten5-Comercial-Industrial">Comercial-Industrial</li>
     <li href="#tabconten5-Estacióndeservicios">Actividades Estación de servicios</li>
     <li href="#tabconten2">Patentes</li>
+     <li href="#tabconten3">Areas de Proteción</li>
   
     
     
@@ -311,6 +316,45 @@
       
            </form>
     </div>
+
+
+
+
+
+
+<div class="container-fluid" id="tabconten3">
+      <!-- contenido de tab 4 -->
+      
+
+          <form method="POST" action="?c=class04oficina&m=editarareas">
+          <div class="form-group">
+            <label for="id">Código Trámite</label>
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
+          </div>
+          <?php foreach( $idareas as $idactividad5 ): ?>
+          <?php $isCheck = $this->class04oficina->tieneareas($idtramite, $idactividad5['PU13IDAAP']);?>
+          <div class="checkbox">
+            <label>
+            <input type="checkbox" name="idactdes5<?php echo $idactividad5['PU13IDAAP']; ?>"
+             <?php if($isCheck['total1919']) {echo "checked";} ?>
+            /> <?php echo $idactividad5['PU13DESCAAP'] ;?>
+            </label>
+          </div>
+          <?php endforeach; ?>
+          <button type="submit" class="btn btn-success">Guardar</button>
+          <br>
+        </form>
+      
+    </div>
+
+
+
+
+
+
+
+
 
 
 <!-- 
