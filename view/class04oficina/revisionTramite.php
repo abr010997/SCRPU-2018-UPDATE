@@ -273,8 +273,29 @@
 
 
 
+<form >
+    <div class="container-fluid  well   "> 
+      <div class="form-group">
+        <p><b>Servidumbres :</b></p>
+          <?php foreach ($actservidumbre as $actservidumbres):?>
+            <label class="checkbox-inline">
+            <input type="checkbox" value="<?php echo $actservidumbres->getAtributo('PU42IDSERVIDUMBRE');?>" name="class04oficina1[]" checked disabled><?php echo $actservidumbres->getAtributo('PU42DESCRIPCION');?>
+        </label>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  <!--   <a href="?c=class04oficina&m=editarLeyActividades&id=<?php echo $idtramite;?>" class="btn btn-danger" role="button">Editar Ley</a>  -->
+  <br>  
+</form>
+
+
+
     <a href="?c=class04inspeccion&m=editar&id=<?php echo $idtramite; ?>" class="btn btn-danger" role="button">Editar Inspección</a> 
          </form>
+
+
+
+
 
     </div>
 

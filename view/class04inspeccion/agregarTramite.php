@@ -71,6 +71,8 @@
     <li href="#tabconten8">Patentes</li>
      <li href="#tabconten10">Acceso Servidumbre de Paso</li>
     <li href="#tabconten11">Acceso Servidumbre Agrícola</li>
+
+    <li href="#tabconten00">Areas</li>
   
     <li href="#tabconten9">Observaciones</li>
   </ul> 
@@ -354,6 +356,16 @@
 
     </div>
 
+
+
+
+
+
+
+
+
+
+
 <div class="container-fluid" id="tabconten11">
       <!-- contenido de tab 3 -->
       <form method="POST" action="?c=class04inspeccion&m=editarAccesos2">
@@ -392,6 +404,42 @@
         <button type="submit" class="btn btn-success">Guardar descripción</button>
            </form>
 </div>
+
+
+
+
+
+<div class="container-fluid" id="tabconten00">
+      
+<form method="POST" action="?c=class04inspeccion&m=editarAreasPro">
+          <div class="form-group">
+            <label for="id">Código Trámite</label>
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->pu04inspeccion->getAtributo('PU04IDTRA');?>" readonly> 
+            <?php  $idtramite = $this->pu04inspeccion->getAtributo('PU04IDTRA'); ?>
+          </div>
+          
+          <?php foreach( $idareas as $areasp ): ?>
+          <?php $isCheck = $this->pu04inspeccion->tieneAreasPro($idtramite, $areasp['PU13IDAAP']);?>
+          <div class="checkbox">
+            <label>
+            <input type="checkbox" name="idareasp<?php echo $areasp['PU13IDAAP']; ?>"
+             <?php if($isCheck['total7']) {echo "checked";} ?>
+            /> <?php echo $areasp['PU13DESCAAP'] ;?>
+            </label>
+          </div>
+          <?php endforeach; ?>
+
+          
+          <button type="submit" class="btn btn-success">Guardar</button>
+          
+      
+      
+        </form>
+
+ </div>
+
+
+
 
 
 
