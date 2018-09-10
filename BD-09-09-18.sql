@@ -45,7 +45,7 @@ CREATE TABLE `pu00adtra` (
 
 /*Data for the table `pu00adtra` */
 
-insert  into `pu00adtra`(`PU04IDTRA`,`PU00IDAD`) values (60871,1),(62135,2),(123445,1),(22530,2),(30072018,1),(1153,2),(4,1),(1,1),(8585,1),(555,1),(62843,1),(2258,2),(2666,1),(182018,1),(2230,2),(27082018,1);
+insert  into `pu00adtra`(`PU04IDTRA`,`PU00IDAD`) values (60871,1),(62135,2),(123445,1),(22530,2),(30072018,1),(1153,2),(4,1),(1,1),(8585,1),(555,1),(62843,1),(2258,2),(2666,1),(182018,1),(2230,2),(27082018,1),(67521,1);
 
 /*Table structure for table `pu00estados` */
 
@@ -170,7 +170,7 @@ CREATE TABLE `pu04regtra` (
 
 /*Data for the table `pu04regtra` */
 
-insert  into `pu04regtra`(`PU04IDTRA`,`PU04FETRA`,`PU04NORTE`,`PU04ESTE`,`PU04ALTITUD`) values (1,'2018-05-27 20:57:34',123,123,432),(4,'2018-06-01 09:22:25',1234,4321,44423),(555,'2018-07-31 09:33:49',22,963,852),(1153,'2018-07-30 11:54:07',255,852,789),(2230,'2018-07-24 08:19:08',2563,963,78520),(2256,'2018-07-24 14:31:15',74,887,767),(2258,'2018-07-24 09:28:56',22,30,40),(2666,'2018-08-13 09:15:42',8520,7863,52),(5454,'2018-07-24 10:02:20',22,22,22),(8585,'2018-07-31 07:59:08',22,4520,89520),(8960,'2018-08-01 11:54:14',22,852,74125),(22530,'2018-07-22 21:52:19',22,33,20),(60871,'2018-06-01 10:12:24',109207,330645,36),(62135,'2018-07-06 09:41:17',1121619,341590,117),(62843,'2018-08-06 11:37:28',852,963,52),(63172,'2018-08-28 11:43:45',852006,8963,7410),(63299,'2018-07-31 15:07:56',455,22,22),(123445,'2018-06-14 08:07:13',4452,3342,1121),(182018,'2018-08-21 08:02:20',741,852,963),(27082018,'2018-08-27 20:42:05',410,852,963),(28082018,'2018-08-28 10:37:21',8520,9630,752),(30072018,'2018-07-30 08:00:00',22,77,3097);
+insert  into `pu04regtra`(`PU04IDTRA`,`PU04FETRA`,`PU04NORTE`,`PU04ESTE`,`PU04ALTITUD`) values (1,'2018-05-27 20:57:34',123,123,432),(4,'2018-06-01 09:22:25',1234,4321,44423),(555,'2018-07-31 09:33:49',22,963,852),(1153,'2018-07-30 11:54:07',255,852,789),(2230,'2018-07-24 08:19:08',2563,963,78520),(2256,'2018-07-24 14:31:15',74,887,767),(2258,'2018-07-24 09:28:56',22,30,40),(2666,'2018-08-13 09:15:42',8520,7863,52),(5454,'2018-07-24 10:02:20',22,22,22),(8585,'2018-07-31 07:59:08',22,4520,89520),(8960,'2018-08-01 11:54:14',22,852,74125),(22530,'2018-07-22 21:52:19',22,33,20),(60871,'2018-06-01 10:12:24',109207,330645,36),(62135,'2018-07-06 09:41:17',1121619,341590,117),(62843,'2018-08-06 11:37:28',852,963,52),(63172,'2018-08-28 11:43:45',852006,8963,7410),(63299,'2018-07-31 15:07:56',455,22,22),(67521,'2018-08-28 15:06:30',741852,520,6208),(123445,'2018-06-14 08:07:13',4452,3342,1121),(182018,'2018-08-21 08:02:20',741,852,963),(27082018,'2018-08-27 20:42:05',410,852,963),(28082018,'2018-08-28 10:37:21',8520,9630,752),(30072018,'2018-07-30 08:00:00',22,77,3097);
 
 /*Table structure for table `pu04tramite1` */
 
@@ -189,7 +189,7 @@ CREATE TABLE `pu04tramite1` (
 
 /*Data for the table `pu04tramite1` */
 
-insert  into `pu04tramite1`(`PU04IDTRA`,`PU0INDICETRA`,`PU04FEINICIO`,`PUIDESTADO`) values (1,152,'2018-05-27 20:57:20',7),(2,153,'2018-05-31 22:01:39',1),(3,154,'2018-05-31 22:04:27',1),(4,155,'2018-06-01 09:22:02',7),(60871,156,'2018-06-01 10:00:33',7),(123445,157,'2018-06-14 08:06:41',7),(62135,158,'2018-07-06 09:40:30',7),(22530,159,'2018-07-22 21:51:17',7),(2230,160,'2018-07-24 08:18:32',7),(2258,161,'2018-07-24 09:28:36',7),(5454,162,'2018-07-24 09:39:27',2),(8585,163,'2018-07-24 10:08:03',7),(2256,164,'2018-07-24 14:31:06',2),(30072018,165,'2018-07-30 07:59:44',7),(2377,166,'2018-07-30 09:27:56',1),(1153,167,'2018-07-30 11:53:46',7),(999,168,'2018-07-31 08:47:45',1),(555,169,'2018-07-31 08:49:05',7),(8960,170,'2018-07-31 09:13:21',2),(2666,171,'2018-07-31 09:23:03',7),(31072018,172,'2018-07-31 09:33:13',1),(63299,173,'2018-07-31 15:05:44',2),(182018,174,'2018-08-01 08:48:24',7),(62843,175,'2018-08-06 07:57:53',7),(61438,176,'2018-08-06 07:58:45',1),(63212,177,'2018-08-06 07:59:47',1),(63172,178,'2018-08-06 11:27:37',7),(67521,179,'2018-08-06 14:27:17',1),(27082018,180,'2018-08-27 20:41:38',7),(28082018,181,'2018-08-28 10:37:06',7);
+insert  into `pu04tramite1`(`PU04IDTRA`,`PU0INDICETRA`,`PU04FEINICIO`,`PUIDESTADO`) values (1,152,'2018-05-27 20:57:20',7),(2,153,'2018-05-31 22:01:39',1),(3,154,'2018-05-31 22:04:27',1),(4,155,'2018-06-01 09:22:02',7),(60871,156,'2018-06-01 10:00:33',7),(123445,157,'2018-06-14 08:06:41',7),(62135,158,'2018-07-06 09:40:30',7),(22530,159,'2018-07-22 21:51:17',7),(2230,160,'2018-07-24 08:18:32',7),(2258,161,'2018-07-24 09:28:36',7),(5454,162,'2018-07-24 09:39:27',2),(8585,163,'2018-07-24 10:08:03',7),(2256,164,'2018-07-24 14:31:06',2),(30072018,165,'2018-07-30 07:59:44',7),(2377,166,'2018-07-30 09:27:56',1),(1153,167,'2018-07-30 11:53:46',7),(999,168,'2018-07-31 08:47:45',1),(555,169,'2018-07-31 08:49:05',7),(8960,170,'2018-07-31 09:13:21',2),(2666,171,'2018-07-31 09:23:03',7),(31072018,172,'2018-07-31 09:33:13',1),(63299,173,'2018-07-31 15:05:44',2),(182018,174,'2018-08-01 08:48:24',7),(62843,175,'2018-08-06 07:57:53',7),(61438,176,'2018-08-06 07:58:45',1),(63212,177,'2018-08-06 07:59:47',1),(63172,178,'2018-08-06 11:27:37',7),(67521,179,'2018-08-06 14:27:17',7),(27082018,180,'2018-08-27 20:41:38',7),(28082018,181,'2018-08-28 10:37:06',7);
 
 /*Table structure for table `pu04tramite1observaciones` */
 
@@ -395,7 +395,7 @@ CREATE TABLE `pu06tradesarrollos` (
 
 /*Data for the table `pu06tradesarrollos` */
 
-insert  into `pu06tradesarrollos`(`PU04IDTRA`,`PU06IDACTDES`) values (1,5),(1,6),(1,7),(4,5),(4,6),(123445,5),(123445,7),(22530,6),(22530,7),(30072018,8),(1153,8),(8585,9),(555,6),(62843,5),(2666,5),(182018,26),(27082018,6),(27082018,8),(27082018,9),(28082018,7),(63172,6),(63172,7),(63172,8);
+insert  into `pu06tradesarrollos`(`PU04IDTRA`,`PU06IDACTDES`) values (1,5),(1,6),(1,7),(4,5),(4,6),(123445,5),(123445,7),(22530,6),(22530,7),(30072018,8),(1153,8),(8585,9),(555,6),(62843,5),(2666,5),(182018,26),(27082018,6),(27082018,8),(27082018,9),(28082018,7),(63172,6),(63172,7),(63172,8),(67521,6);
 
 /*Table structure for table `pu06traestacionservicios` */
 
@@ -429,7 +429,7 @@ CREATE TABLE `pu06traresidencial` (
 
 /*Data for the table `pu06traresidencial` */
 
-insert  into `pu06traresidencial`(`PU04IDTRA`,`PU06IDACTDES`) values (1,1),(1,2),(1,3),(4,1),(4,2),(60871,2),(123445,1),(123445,2),(2230,2),(2230,3),(22530,1),(22530,2),(30072018,1),(1153,2),(8585,1),(555,1),(62843,1),(2666,2),(182018,2),(27082018,2),(27082018,4),(28082018,1),(63172,2);
+insert  into `pu06traresidencial`(`PU04IDTRA`,`PU06IDACTDES`) values (1,1),(1,2),(1,3),(4,1),(4,2),(60871,2),(123445,1),(123445,2),(2230,2),(2230,3),(22530,1),(22530,2),(30072018,1),(1153,2),(8585,1),(555,1),(62843,1),(2666,2),(182018,2),(27082018,2),(27082018,4),(28082018,1),(63172,2),(67521,1);
 
 /*Table structure for table `pu07terrft` */
 
@@ -502,7 +502,7 @@ CREATE TABLE `pu09tradeg` (
 
 /*Data for the table `pu09tradeg` */
 
-insert  into `pu09tradeg`(`PU04IDTRA`,`PU09IDDEG`) values (1,1),(1,2),(1,3),(1,4),(1,6),(4,1),(4,6),(60871,1),(123445,2),(123445,4),(123445,6),(62135,1),(22530,1),(22530,2),(2230,1),(2258,1),(5454,1),(5454,3),(30072018,1),(1153,1),(8585,1),(555,1),(8960,1),(62843,1),(2666,1),(182018,1),(182018,5),(2256,1),(2256,2),(2256,5),(27082018,1),(27082018,5),(28082018,1),(63172,1),(63172,2);
+insert  into `pu09tradeg`(`PU04IDTRA`,`PU09IDDEG`) values (1,1),(1,2),(1,3),(1,4),(1,6),(4,1),(4,6),(60871,1),(123445,2),(123445,4),(123445,6),(62135,1),(22530,1),(22530,2),(2230,1),(2258,1),(5454,1),(5454,3),(30072018,1),(1153,1),(8585,1),(555,1),(8960,1),(62843,1),(2666,1),(182018,1),(182018,5),(2256,1),(2256,2),(2256,5),(27082018,1),(27082018,5),(28082018,1),(63172,1),(63172,2),(67521,4),(67521,5);
 
 /*Table structure for table `pu10aspbio` */
 
@@ -544,7 +544,7 @@ CREATE TABLE `pu11uniabio` (
 
 /*Data for the table `pu11uniabio` */
 
-insert  into `pu11uniabio`(`PU04IDTRA`,`PU10IDASBIO`) values (1,1),(4,1),(4,3),(60871,3),(123445,2),(123445,6),(62135,1),(22530,3),(2230,3),(2258,2),(30072018,3),(1153,4),(8585,2),(555,3),(8960,3),(62843,4),(2666,7),(182018,7),(27082018,1),(27082018,3),(28082018,2),(63172,2),(63172,3);
+insert  into `pu11uniabio`(`PU04IDTRA`,`PU10IDASBIO`) values (1,1),(4,1),(4,3),(60871,3),(123445,2),(123445,6),(62135,1),(22530,3),(2230,3),(2258,2),(30072018,3),(1153,4),(8585,2),(555,3),(8960,3),(62843,4),(2666,7),(182018,7),(27082018,1),(27082018,3),(28082018,2),(63172,2),(63172,3),(67521,1);
 
 /*Table structure for table `pu11uniabiootros` */
 
@@ -599,7 +599,7 @@ CREATE TABLE `pu12tratipdesec` (
 
 /*Data for the table `pu12tratipdesec` */
 
-insert  into `pu12tratipdesec`(`PU04IDTRA`,`PU12IDTDESEC`) values (1,1),(4,1),(60871,1),(123445,1),(123445,2),(62135,1),(22530,4),(2256,1),(2256,2),(5454,2),(30072018,2),(1153,4),(8585,4),(555,4),(8960,3),(62843,4),(2666,4),(182018,4),(27082018,1),(27082018,2),(28082018,1),(63172,1);
+insert  into `pu12tratipdesec`(`PU04IDTRA`,`PU12IDTDESEC`) values (1,1),(4,1),(60871,1),(123445,1),(123445,2),(62135,1),(22530,4),(2256,1),(2256,2),(5454,2),(30072018,2),(1153,4),(8585,4),(555,4),(8960,3),(62843,4),(2666,4),(182018,4),(27082018,1),(27082018,2),(28082018,1),(63172,1),(67521,4);
 
 /*Table structure for table `pu13aarep` */
 
@@ -630,7 +630,7 @@ CREATE TABLE `pu14trarep` (
 
 /*Data for the table `pu14trarep` */
 
-insert  into `pu14trarep`(`PU04IDTRA`,`PU13IDAAP`) values (1,2),(1,8),(2,1),(2,2),(3,2),(4,1),(60871,12),(123445,2),(123445,7),(62135,12),(2258,1),(5454,1),(8585,1),(2256,1),(1153,2),(62843,12),(61438,12),(63212,12),(67521,7),(27082018,1),(2230,1),(2230,2),(2230,8),(28082018,2),(28082018,7),(63172,4),(63172,8);
+insert  into `pu14trarep`(`PU04IDTRA`,`PU13IDAAP`) values (1,2),(1,8),(2,1),(2,2),(3,2),(4,1),(60871,12),(123445,2),(123445,7),(62135,12),(2258,1),(5454,1),(8585,1),(2256,1),(1153,2),(62843,12),(61438,12),(63212,12),(27082018,1),(2230,1),(2230,2),(2230,8),(28082018,2),(28082018,7),(63172,4),(63172,8),(67521,2),(67521,4),(67521,7);
 
 /*Table structure for table `pu15serv` */
 
@@ -837,7 +837,7 @@ CREATE TABLE `pu25patent` (
 
 /*Data for the table `pu25patent` */
 
-insert  into `pu25patent`(`PU04IDTRA`,`PU24IDINFR`) values (1,3),(4,3),(60871,3),(123445,3),(62135,3),(2258,3),(1153,3),(8585,3),(555,3),(62843,3),(2666,3),(182018,3),(27082018,3),(28082018,3),(63172,1);
+insert  into `pu25patent`(`PU04IDTRA`,`PU24IDINFR`) values (1,3),(4,3),(60871,3),(123445,3),(62135,3),(2258,3),(1153,3),(8585,3),(555,3),(62843,3),(2666,3),(182018,3),(27082018,3),(28082018,3),(63172,1),(67521,3);
 
 /*Table structure for table `pu26planactinicosama` */
 
@@ -1119,7 +1119,7 @@ CREATE TABLE `pu39reginfosolicitante` (
 
 /*Data for the table `pu39reginfosolicitante` */
 
-insert  into `pu39reginfosolicitante`(`PU39CEDSOLICI`,`PU04IDDISTRITO`,`PU39BARRIO`,`PU39DIRECCION`) values (9797,4,'Tgh','Gthj'),(456789,7,'Santos','250mtrs'),(52014785,6,'San vito','2 km al este'),(109340746,5,'Cartagena','Del hotel cartagena 600 mestros norte'),(111030333,1,'Guadalpe','Al costado oeste super 26 de octubre'),(502130452,4,'San juan ','De la iglesia catÃ³lica  2 kilÃ³metros al este camino a copal de nicoya'),(503130452,4,'San juan','200 metros sur de la iglesia catÃ³lica '),(503430577,4,'Quebrada honda','De la iglesia 1km al este'),(504170844,2,'Costado sur','De la iglesia catÃ³lica'),(504170855,7,'San isidro ','De la iglesia catÃ³lica 200 metros al este  '),(504650654,1,'La virginia','125 metros sur del antiguo radio la pampa'),(504940434,1,'La virginia','Por ahÃ­'),(505240524,4,'San juan','1km al este de la iglesia'),(506540546,1,'La virginia','Por ahi'),(508210821,5,'Tibe','200 metros de la escuela'),(508520650,3,'Estrella','1 km al sur de la pulperÃ­a la colonial'),(704520852,5,'Torito','200 metros al sur de la esc.leonidas'),(2147483647,7,'San jose','1km al este del play');
+insert  into `pu39reginfosolicitante`(`PU39CEDSOLICI`,`PU04IDDISTRITO`,`PU39BARRIO`,`PU39DIRECCION`) values (9797,4,'Tgh','Gthj'),(456789,7,'Santos','250mtrs'),(52014785,6,'San vito','2 km al este'),(85858585,5,'Guines','2km al sur '),(109340746,5,'Cartagena','Del hotel cartagena 600 mestros norte'),(111030333,1,'Guadalpe','Al costado oeste super 26 de octubre'),(502130452,4,'San juan ','De la iglesia catÃ³lica  2 kilÃ³metros al este camino a copal de nicoya'),(503130452,4,'San juan','200 metros sur de la iglesia catÃ³lica '),(503430577,4,'Quebrada honda','De la iglesia 1km al este'),(504170844,2,'Costado sur','De la iglesia catÃ³lica'),(504170855,7,'San isidro ','De la iglesia catÃ³lica 200 metros al este  '),(504650654,1,'La virginia','125 metros sur del antiguo radio la pampa'),(504940434,1,'La virginia','Por ahÃ­'),(505240524,4,'San juan','1km al este de la iglesia'),(506540546,1,'La virginia','Por ahi'),(508210821,5,'Tibe','200 metros de la escuela'),(508520650,3,'Estrella','1 km al sur de la pulperÃ­a la colonial'),(704520852,5,'Torito','200 metros al sur de la esc.leonidas'),(2147483647,7,'San jose','1km al este del play');
 
 /*Table structure for table `pu39regsolicitante` */
 
@@ -1138,7 +1138,7 @@ CREATE TABLE `pu39regsolicitante` (
 
 /*Data for the table `pu39regsolicitante` */
 
-insert  into `pu39regsolicitante`(`PU04IDTRA`,`PU39CEDSOLICI`,`PU39NOMSOLICI`,`PU39APE1SOLICI`,`PU39APE2SOLICI`) values (28082018,9797,'Rfghn','Gh','Gh'),(22530,456789,'Carmen','Diaz','Quintana'),(2230,52014785,'Alberto','Juth','Raph'),(60871,109340746,'Fabricio','Jimenez','Alfaro'),(62135,111030333,'Gilberto','GutiÃ©rrez','Dominguez'),(62843,502130452,'Romel','Diaz','Diaz'),(8585,503130452,'Rafael','Medina','Castillo'),(30072018,503430577,'Andres','Villafuerte','Ramirez'),(2258,504170844,'Abraham','Obando','Villegas'),(1153,504170855,'Ronaldo ','Cortez','CedeÃ±o '),(123445,504650654,'Alberto','JimÃ¨nez','Obando'),(1,504940434,'Carlos','Espinoza','Chavarria'),(27082018,505240524,'Rigo','Soto','Soto'),(4,506540546,'Maria','Jimenez','Ortiz'),(63172,508210821,'Almos','Garro','Garoo'),(182018,508520650,'Federico','Gomez ','Gomez '),(2666,704520852,'Roberto','Juarez','Jimenez'),(555,2147483647,'Carlos ','Arias ','Arias');
+insert  into `pu39regsolicitante`(`PU04IDTRA`,`PU39CEDSOLICI`,`PU39NOMSOLICI`,`PU39APE1SOLICI`,`PU39APE2SOLICI`) values (28082018,9797,'Rfghn','Gh','Gh'),(22530,456789,'Carmen','Diaz','Quintana'),(2230,52014785,'Alberto','Juth','Raph'),(67521,85858585,'Rafael','Quintana','Quintana'),(60871,109340746,'Fabricio','Jimenez','Alfaro'),(62135,111030333,'Gilberto','GutiÃ©rrez','Dominguez'),(62843,502130452,'Romel','Diaz','Diaz'),(8585,503130452,'Rafael','Medina','Castillo'),(30072018,503430577,'Andres','Villafuerte','Ramirez'),(2258,504170844,'Abraham','Obando','Villegas'),(1153,504170855,'Ronaldo ','Cortez','CedeÃ±o '),(123445,504650654,'Alberto','JimÃ¨nez','Obando'),(1,504940434,'Carlos','Espinoza','Chavarria'),(27082018,505240524,'Rigo','Soto','Soto'),(4,506540546,'Maria','Jimenez','Ortiz'),(63172,508210821,'Almos','Garro','Garoo'),(182018,508520650,'Federico','Gomez ','Gomez '),(2666,704520852,'Roberto','Juarez','Jimenez'),(555,2147483647,'Carlos ','Arias ','Arias');
 
 /*Table structure for table `pu40reginfopropietario` */
 
@@ -1154,7 +1154,7 @@ CREATE TABLE `pu40reginfopropietario` (
 
 /*Data for the table `pu40reginfopropietario` */
 
-insert  into `pu40reginfopropietario`(`PU40CEDPROPIE`,`PU40NFINCA`,`PU40NCATASTRO`) values (8523,'73205','5200285'),(9797,'74520','7852'),(750000,'504215800','693520'),(5021632,'569320','458201'),(45200120,'450130 ','225577 '),(74185230,'86000000','52051220'),(109340746,'500098716','1189578-2007'),(111030333,'116911','1537802-2011'),(504178255,'852012','6528002018'),(504520852,'78520','10369'),(505240524,'741852963','7410000'),(506320520,'8520','789630'),(506960454,'564345-000','8436234-2018'),(508210821,'7410','85200'),(508520650,'2536000','787475000'),(604340543,'234543-000','5321223-2018'),(605450434,'234223-000','1232234-2018'),(705820963,'852000','452000');
+insert  into `pu40reginfopropietario`(`PU40CEDPROPIE`,`PU40NFINCA`,`PU40NCATASTRO`) values (8523,'73205','5200285'),(9797,'74520','7852'),(750000,'504215800','693520'),(858585,'785200','78510'),(5021632,'569320','458201'),(45200120,'450130 ','225577 '),(74185230,'86000000','52051220'),(109340746,'500098716','1189578-2007'),(111030333,'116911','1537802-2011'),(504178255,'852012','6528002018'),(504520852,'78520','10369'),(505240524,'741852963','7410000'),(506320520,'8520','789630'),(506960454,'564345-000','8436234-2018'),(508210821,'7410','85200'),(508520650,'2536000','787475000'),(604340543,'234543-000','5321223-2018'),(605450434,'234223-000','1232234-2018'),(705820963,'852000','452000');
 
 /*Table structure for table `pu40regpropietario` */
 
@@ -1173,7 +1173,7 @@ CREATE TABLE `pu40regpropietario` (
 
 /*Data for the table `pu40regpropietario` */
 
-insert  into `pu40regpropietario`(`PU04IDTRA`,`PU40CEDPROPIE`,`PU40NOMPROPIE`,`PU40APE1PROPIE`,`PU40APE2PROPIE`) values (22530,8523,'Rebeca','Juarez','Juarez'),(28082018,9797,'Yui','Ghn','Gb'),(2230,750000,'Josue','Rios','Pereira'),(2258,5021632,'Jose','Diaz','Quintana'),(1153,45200120,'Isabel  ','Trejos ','Hugalde '),(555,74185230,'Dniel','Cespedez','Sequeira'),(60871,109340746,'Fabricio','Jimenez','Alfaro'),(62135,111030333,'Gilberto','Gilberto','Dominguez'),(30072018,504178255,'Luis','Sequiera','Torres'),(8585,504520852,'Ruben','Rivera','Medrano'),(27082018,505240524,'Rigo','Soto','Soto'),(62843,506320520,'Catia','Romero','Aguero'),(4,506960454,'Jose','Espinoza','Ortiz'),(63172,508210821,'Amos','Ramirez','Ramirez'),(182018,508520650,'Federico','Gomez ','Gomez '),(123445,604340543,'MarÃ­a','Espinoza','Espinoza'),(1,605450434,'MarÃ­a','Cruz','Zamora'),(2666,705820963,'Carlos','Espinoza','Ardoã±es');
+insert  into `pu40regpropietario`(`PU04IDTRA`,`PU40CEDPROPIE`,`PU40NOMPROPIE`,`PU40APE1PROPIE`,`PU40APE2PROPIE`) values (22530,8523,'Rebeca','Juarez','Juarez'),(28082018,9797,'Yui','Ghn','Gb'),(2230,750000,'Josue','Rios','Pereira'),(67521,858585,'Rafael','Quintana','Quintana'),(2258,5021632,'Jose','Diaz','Quintana'),(1153,45200120,'Isabel  ','Trejos ','Hugalde '),(555,74185230,'Dniel','Cespedez','Sequeira'),(60871,109340746,'Fabricio','Jimenez','Alfaro'),(62135,111030333,'Gilberto','Gilberto','Dominguez'),(30072018,504178255,'Luis','Sequiera','Torres'),(8585,504520852,'Ruben','Rivera','Medrano'),(27082018,505240524,'Rigo','Soto','Soto'),(62843,506320520,'Catia','Romero','Aguero'),(4,506960454,'Jose','Espinoza','Ortiz'),(63172,508210821,'Amos','Ramirez','Ramirez'),(182018,508520650,'Federico','Gomez ','Gomez '),(123445,604340543,'MarÃ­a','Espinoza','Espinoza'),(1,605450434,'MarÃ­a','Cruz','Zamora'),(2666,705820963,'Carlos','Espinoza','Ardoã±es');
 
 /*Table structure for table `pu41espaciosgeo` */
 
@@ -1219,7 +1219,7 @@ CREATE TABLE `pu43traacceso` (
 
 /*Data for the table `pu43traacceso` */
 
-insert  into `pu43traacceso`(`PU04IDTRA`,`PU42IDSERVID`) values (1,16),(4,16),(60871,1),(60871,13),(123445,16),(22530,11),(2258,7),(2256,16),(30072018,1),(30072018,7),(30072018,13),(1153,11),(8585,7),(8585,11),(8960,11),(62843,1),(62843,11),(2666,1),(2666,11),(182018,1),(27082018,5),(27082018,9),(27082018,15),(28082018,11),(63172,1),(63172,3),(63172,5),(63172,7),(63172,9);
+insert  into `pu43traacceso`(`PU04IDTRA`,`PU42IDSERVID`) values (1,16),(4,16),(60871,1),(60871,13),(123445,16),(22530,11),(2258,7),(2256,16),(30072018,1),(30072018,7),(30072018,13),(1153,11),(8585,7),(8585,11),(8960,11),(62843,1),(62843,11),(2666,1),(2666,11),(182018,1),(27082018,5),(27082018,9),(27082018,15),(28082018,11),(63172,1),(63172,3),(63172,5),(63172,7),(63172,9),(67521,1),(67521,7),(67521,13);
 
 /*Table structure for table `pu44traleyaccesos` */
 
@@ -1351,6 +1351,8 @@ CREATE TABLE `pu46traleypatente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `pu46traleypatente` */
+
+insert  into `pu46traleypatente`(`pu04idtra`,`pu45idley`) values (67521,4);
 
 /*Table structure for table `pu46traleyplan` */
 
@@ -2471,6 +2473,24 @@ WHERE pu04tramite1.PU04IDTRA = IDTRA;
 END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `SP04_INGRESOTRAMITE_LISTAR_SERVIDUMBRES` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP04_INGRESOTRAMITE_LISTAR_SERVIDUMBRES` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_INGRESOTRAMITE_LISTAR_SERVIDUMBRES`(IN IDTRA INT (11))
+BEGIN
+SELECT  `pu42servidumbre`.`PU42IDSERVID`,`pu42servidumbre`.`PU42DESCRIPCION`
+FROM pu04tramite1
+	INNER JOIN `pu43traacceso`
+ON pu04tramite1.PU04IDTRA = `pu43traacceso`.`PU04IDTRA`
+INNER JOIN `pu42servidumbre`
+ON `pu43traacceso`.`PU42IDSERVID` = `pu42servidumbre`.`PU42IDSERVID`
+WHERE pu04tramite1.PU04IDTRA = IDTRA;
+END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `SP04_INGRESOTRAMITE_LISTAR_TIPOREDVIAL` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP04_INGRESOTRAMITE_LISTAR_TIPOREDVIAL` */;
@@ -2608,26 +2628,6 @@ BEGIN
    INNER JOIN pu07terrft ON pu04regtra.`PU07IDTFR` = pu07terrft.PU07IDTFR)
    
   WHERE pu04regtra.PU04IDTRA = 1 AND pu04regtra.PU07IDTFR>0;
-   
-		
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR_ACT_D` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR_ACT_D` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR_INFOR_ACT_D`(IN IDTRA INT(11))
-BEGIN
- SELECT 
- DISTINCT pu06actdes.PU06DESAD AS 'Actividad Desarrollar'
-   
-   FROM ((pu04regtra INNER JOIN pu05unitra ON pu04regtra.PU04IDTRA = pu05unitra.PU04IDTRA)
-	INNER JOIN pu06actdes ON pu05unitra.PU06IDACTDES = pu06actdes.`PU06IDACTDES`)
-	
-	WHERE pu04regtra.PU04IDTRA = IDTRA  AND pu05unitra.PU04IDTRA = IDTRA  AND pu05unitra.PU06IDACTDES>0;
    
 		
 END */$$
@@ -2777,6 +2777,26 @@ SET PU06IDACTDES = PU06IDACTDES_06
 END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR_ACT_D` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR_ACT_D` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR_INFOR_ACT_D`(IN IDTRA INT(11))
+BEGIN
+ SELECT 
+ DISTINCT pu06actdes.PU06DESAD AS 'Actividad Desarrollar'
+   
+   FROM ((pu04regtra INNER JOIN pu05unitra ON pu04regtra.PU04IDTRA = pu05unitra.PU04IDTRA)
+	INNER JOIN pu06actdes ON pu05unitra.PU06IDACTDES = pu06actdes.`PU06IDACTDES`)
+	
+	WHERE pu04regtra.PU04IDTRA = IDTRA  AND pu05unitra.PU04IDTRA = IDTRA  AND pu05unitra.PU06IDACTDES>0;
+   
+		
+END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR_A_A_P` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR_A_A_P` */;
@@ -2906,29 +2926,6 @@ VALUES (IDTRA,PU04FEPLATAFOR,PU04IDDISTRITO);
 END */$$
 DELIMITER ;
 
-/* Procedure structure for procedure `SP04_REGTRAMITEINFO_MOSTRAR` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGTRAMITEINFO_MOSTRAR` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGTRAMITEINFO_MOSTRAR`()
-BEGIN
-SELECT `pu04tramite1`.PU04IDTRA,`pu04tramite1`.PU04FEINICIO,`pu04tramite2`.`PU04FEPLATAFOR`,
-CASE `pu04tramite2`.`PU04IDDISTRITO` WHEN "1" THEN "Nicoya"
-				WHEN "2" THEN "Mansion"
-				WHEN "3" THEN "San Antonio"
-				WHEN "4" THEN "Quebrada Honda"
-				WHEN "5" THEN "Samara"
-				WHEN "6" THEN "Nosara"
-				WHEN "7" THEN "Belen" END
- FROM pu04tramite1
- INNER JOIN `pu04tramite2`
- ON `pu04tramite1`.`PU04IDTRA` = `pu04tramite2`.`PU04IDTRA`
- ORDER BY `pu04tramite1`.`PU04FEINICIO` DESC;
-END */$$
-DELIMITER ;
-
 /* Procedure structure for procedure `SP04_REGISTROTRA_GUARDAR` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_GUARDAR` */;
@@ -3037,6 +3034,29 @@ INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
 VALUES (IDTRA,PU06IDACTDES_06);
 -- FIN DE INSERSIÓN DE DATOS EN TABLA UNIÓN DE TRÁMITE Y ACTIVIDAD A DESARROLLAR
 -- ----------------------------------------------------------------------------------------
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP04_REGTRAMITEINFO_MOSTRAR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGTRAMITEINFO_MOSTRAR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGTRAMITEINFO_MOSTRAR`()
+BEGIN
+SELECT `pu04tramite1`.PU04IDTRA,`pu04tramite1`.PU04FEINICIO,`pu04tramite2`.`PU04FEPLATAFOR`,
+CASE `pu04tramite2`.`PU04IDDISTRITO` WHEN "1" THEN "Nicoya"
+				WHEN "2" THEN "Mansion"
+				WHEN "3" THEN "San Antonio"
+				WHEN "4" THEN "Quebrada Honda"
+				WHEN "5" THEN "Samara"
+				WHEN "6" THEN "Nosara"
+				WHEN "7" THEN "Belen" END
+ FROM pu04tramite1
+ INNER JOIN `pu04tramite2`
+ ON `pu04tramite1`.`PU04IDTRA` = `pu04tramite2`.`PU04IDTRA`
+ ORDER BY `pu04tramite1`.`PU04FEINICIO` DESC;
 END */$$
 DELIMITER ;
 
