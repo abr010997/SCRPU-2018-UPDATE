@@ -1199,31 +1199,31 @@ public function eliminarLeyes($idtramite)
 	}	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public function eliminarLeyActividades($idtramite)
+	public function eliminarLeyServidumbres($idtramite)
 	{
-		$sql222 = "DELETE FROM pu46traleyactividades WHERE pu04idtra = '".$idtramite."';";	
+		$sql222 = "DELETE FROM pu46traleyservidumbres WHERE pu04idtra = '".$idtramite."';";	
 		$this->conexion->consultaSimple($sql222);		
 	}
 
-	public function asignarLeyActividades($idtramite, $pu45idley)
+	public function asignarLeyServidumbres($idtramite, $pu45idley)
 	{
-		$sql222 = "INSERT INTO pu46traleyactividades VALUES ('".$idtramite."','".$pu45idley."');";
+		$sql222 = "INSERT INTO pu46traleyservidumbres VALUES ('".$idtramite."','".$pu45idley."');";
 		$this->conexion->consultaSimple($sql222);	
 	}
 
-	public function tieneLeyActividades($idtramite, $pu45idley)
+	public function tieneLeyServidumbres($idtramite, $pu45idley)
 	{
 		
-		$sql222 = "SELECT COUNT(*) AS total28 FROM pu46traleyactividades WHERE pu04idtra='".$idtramite."' AND pu45idley='".$pu45idley."';";
+		$sql222 = "SELECT COUNT(*) AS total28 FROM pu46traleyservidumbres WHERE pu04idtra='".$idtramite."' AND pu45idley='".$pu45idley."';";
 		$result = $this->conexion->consultaRetorno($sql222);
 		$row = mysqli_fetch_array($result);		
 		return $row;	
 	}
 
-	public function getTodasLeyActividades()
+	public function getTodasLeyServidumbres()
 	{
 		$sql222 = "SELECT `pu45idley`,`pu45objetivo`,`pu45descripcion`FROM`pu45leyes`
-		WHERE `pu45idtipo`=2;";
+		WHERE `pu45idtipo`=7;";
 		$result = $this->conexion->consultaRetorno($sql222);
 		return $result;
 	}	

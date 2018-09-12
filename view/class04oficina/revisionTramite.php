@@ -272,7 +272,7 @@
  </form>
 
 
-
+<!--Apartado de Servidumbres -->
 <form >
     <div class="container-fluid  well   "> 
       <div class="form-group">
@@ -284,7 +284,7 @@
         <?php endforeach; ?>
       </div>
     </div>
-  <!--   <a href="?c=class04oficina&m=editarLeyActividades&id=<?php echo $idtramite;?>" class="btn btn-danger" role="button">Editar Ley</a>  -->
+   <a href="?c=class04oficina&m=editarLeyServidumbres&id=<?php echo $idtramite;?>" class="btn btn-danger" role="button">Editar Ley Servidumbres</a> 
   <br>  
 </form>
 

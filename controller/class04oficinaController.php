@@ -771,14 +771,14 @@ public function guardarObservacionComercialIndustrial()
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////editarLeyEspaciosgeo
-	public function editarLeyActividades()
+	public function editarLeyServidumbres()
 	{
 		if($_POST){
-			   $tipoleyactividades  = $this->class04oficina->getTodasLeyActividades();
-			    $this->class04oficina->eliminarLeyActividades($_REQUEST['id']);
-			    foreach ($tipoleyactividades as $idtipoleyactividades):
-    			if( isset($_REQUEST['idtipoleyactividades'.$idtipoleyactividades['pu45idley']] ) )
-      			$this->class04oficina->asignarLeyActividades($_REQUEST['id'], $idtipoleyactividades['pu45idley']);
+			   $tipoleyServidumbres  = $this->class04oficina->getTodasLeyServidumbres();
+			    $this->class04oficina->eliminarLeyServidumbres($_REQUEST['id']);
+			    foreach ($tipoleyServidumbres as $idtipoleyServidumbres):
+    			if( isset($_REQUEST['idtipoleyServidumbres'.$idtipoleyServidumbres['pu45idley']] ) )
+      			$this->class04oficina->asignarLeyServidumbres($_REQUEST['id'], $idtipoleyServidumbres['pu45idley']);
   				endforeach;
 				header('location:?c=class04oficina&m=revisarTra&id='.$_REQUEST['id']);
 		}
@@ -788,7 +788,7 @@ public function guardarObservacionComercialIndustrial()
 			$this->class04oficina = $this->class04oficina->buscar($_REQUEST['id']);
 
 			require_once 'view/header.php';
-			require_once 'view/class04oficina/editarLeyActividades.php';
+			require_once 'view/class04oficina/editarLeyServidumbres.php';
 			require_once 'view/footer.php';
 		}
 	}
