@@ -379,20 +379,20 @@ class class04oficina  extends Conexion
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public function eliminarActividades($idtramite)
 	{
-		$sql5 = "DELETE FROM PU06TRARESIDENCIAL WHERE PU04IDTRA = '".$idtramite."';";	
+		$sql5 = "DELETE FROM pu06traresidencial WHERE PU04IDTRA = '".$idtramite."';";	
 		$this->conexion->consultaSimple($sql5);		
 	}
 
 	public function asignarActividades($idtramite, $idactdes)
 	{
-		$sql6 = "INSERT INTO PU06TRARESIDENCIAL VALUES ('".$idtramite."','".$idactdes."');";
+		$sql6 = "INSERT INTO pu06traresidencial VALUES ('".$idtramite."','".$idactdes."');";
 		$this->conexion->consultaSimple($sql6);	
 	}
 
 	public function tieneActividades($idtramite, $idactdes)
 	{
 		
-		$sql7 = "SELECT COUNT(*) AS total FROM PU06TRARESIDENCIAL WHERE PU04IDTRA='".$idtramite."' AND PU06IDACTDES='".$idactdes."';";
+		$sql7 = "SELECT COUNT(*) AS total FROM pu06traresidencial WHERE PU04IDTRA='".$idtramite."' AND PU06IDACTDES='".$idactdes."';";
 		$result = $this->conexion->consultaRetorno($sql7);
 		$row = mysqli_fetch_array($result);		
 		return $row;
@@ -409,20 +409,20 @@ class class04oficina  extends Conexion
 
 public function eliminarActividades2($idtramite)
 	{
-		$sql5 = "DELETE FROM PU06TRADESARROLLOS WHERE PU04IDTRA = '".$idtramite."';";	
+		$sql5 = "DELETE FROM pu06tradesarrollos WHERE PU04IDTRA = '".$idtramite."';";	
 		$this->conexion->consultaSimple($sql5);		
 	}
 
 	public function asignarActividades2($idtramite, $idactdes)
 	{
-		$sql6 = "INSERT INTO PU06TRADESARROLLOS VALUES ('".$idtramite."','".$idactdes."');";
+		$sql6 = "INSERT INTO pu06tradesarrollos VALUES ('".$idtramite."','".$idactdes."');";
 		$this->conexion->consultaSimple($sql6);	
 	}
 
 	public function tieneActividades2($idtramite, $idactdes)
 	{
 		
-		$sql7 = "SELECT COUNT(*) AS total15 FROM PU06TRADESARROLLOS WHERE PU04IDTRA='".$idtramite."' AND PU06IDACTDES='".$idactdes."';";
+		$sql7 = "SELECT COUNT(*) AS total15 FROM pu06tradesarrollos WHERE PU04IDTRA='".$idtramite."' AND PU06IDACTDES='".$idactdes."';";
 		$result = $this->conexion->consultaRetorno($sql7);
 		$row = mysqli_fetch_array($result);		
 		return $row;
@@ -442,20 +442,20 @@ public function eliminarActividades2($idtramite)
 
 public function eliminarActividades3($idtramite)
 	{
-		$sql5 = "DELETE FROM PU06TRACOMERCIAL WHERE PU04IDTRA = '".$idtramite."';";	
+		$sql5 = "DELETE FROM pu06tracomercial WHERE PU04IDTRA = '".$idtramite."';";	
 		$this->conexion->consultaSimple($sql5);		
 	}
 
 	public function asignarActividades3($idtramite, $idactdes)
 	{
-		$sql6 = "INSERT INTO PU06TRACOMERCIAL VALUES ('".$idtramite."','".$idactdes."');";
+		$sql6 = "INSERT INTO pu06tracomercial VALUES ('".$idtramite."','".$idactdes."');";
 		$this->conexion->consultaSimple($sql6);	
 	}
 
 	public function tieneActividades3($idtramite, $idactdes)
 	{
 		
-		$sql7 = "SELECT COUNT(*) AS total16 FROM PU06TRACOMERCIAL WHERE PU04IDTRA='".$idtramite."' AND PU06IDACTDES='".$idactdes."';";
+		$sql7 = "SELECT COUNT(*) AS total16 FROM pu06tracomercial WHERE PU04IDTRA='".$idtramite."' AND PU06IDACTDES='".$idactdes."';";
 		$result = $this->conexion->consultaRetorno($sql7);
 		$row = mysqli_fetch_array($result);		
 		return $row;
@@ -475,20 +475,20 @@ public function eliminarActividades3($idtramite)
 
 public function eliminarActividades4($idtramite)
 	{
-		$sql5 = "DELETE FROM PU06TRACOMERCIAL_INDUSTRIAL WHERE PU04IDTRA = '".$idtramite."';";	
+		$sql5 = "DELETE FROM pu06tracomercial_industrial WHERE PU04IDTRA = '".$idtramite."';";	
 		$this->conexion->consultaSimple($sql5);		
 	}
 
 	public function asignarActividades4($idtramite, $idactdes)
 	{
-		$sql6 = "INSERT INTO PU06TRACOMERCIAL_INDUSTRIAL VALUES ('".$idtramite."','".$idactdes."');";
+		$sql6 = "INSERT INTO pu06tracomercial_industrial VALUES ('".$idtramite."','".$idactdes."');";
 		$this->conexion->consultaSimple($sql6);	
 	}
 
 	public function tieneActividades4($idtramite, $idactdes)
 	{
 		
-		$sql7 = "SELECT COUNT(*) AS total17 FROM PU06TRACOMERCIAL_INDUSTRIAL WHERE PU04IDTRA='".$idtramite."' AND PU06IDACTDES='".$idactdes."';";
+		$sql7 = "SELECT COUNT(*) AS total17 FROM pu06tracomercial_industrial WHERE PU04IDTRA='".$idtramite."' AND PU06IDACTDES='".$idactdes."';";
 		$result = $this->conexion->consultaRetorno($sql7);
 		$row = mysqli_fetch_array($result);		
 		return $row;
@@ -508,20 +508,20 @@ public function eliminarActividades4($idtramite)
 
 public function eliminarActividades5($idtramite)
 	{
-		$sql5 = "DELETE FROM PU06TRAESTACIONSERVICIOS WHERE PU04IDTRA = '".$idtramite."';";	
+		$sql5 = "DELETE FROM pu06traestacionservicios WHERE PU04IDTRA = '".$idtramite."';";	
 		$this->conexion->consultaSimple($sql5);		
 	}
 
 	public function asignarActividades5($idtramite, $idactdes)
 	{
-		$sql6 = "INSERT INTO PU06TRAESTACIONSERVICIOS VALUES ('".$idtramite."','".$idactdes."');";
+		$sql6 = "INSERT INTO pu06traestacionservicios VALUES ('".$idtramite."','".$idactdes."');";
 		$this->conexion->consultaSimple($sql6);	
 	}
 
 	public function tieneActividades5($idtramite, $idactdes)
 	{
 		
-		$sql7 = "SELECT COUNT(*) AS total19 FROM PU06TRAESTACIONSERVICIOS WHERE PU04IDTRA='".$idtramite."' AND PU06IDACTDES='".$idactdes."';";
+		$sql7 = "SELECT COUNT(*) AS total19 FROM pu06traestacionservicios WHERE PU04IDTRA='".$idtramite."' AND PU06IDACTDES='".$idactdes."';";
 		$result = $this->conexion->consultaRetorno($sql7);
 		$row = mysqli_fetch_array($result);		
 		return $row;
@@ -542,20 +542,20 @@ public function eliminarActividades5($idtramite)
 
 public function eliminarActividades00($idtramite)
 	{
-		$sql5 = "DELETE FROM PU00ADTRA WHERE PU04IDTRA = '".$idtramite."';";	
+		$sql5 = "DELETE FROM pu00adtra WHERE PU04IDTRA = '".$idtramite."';";	
 		$this->conexion->consultaSimple($sql5);		
 	}
 
 	public function asignarActividades00($idtramite, $idactdes)
 	{
-		$sql6 = "INSERT INTO PU00ADTRA VALUES ('".$idtramite."','".$idactdes."');";
+		$sql6 = "INSERT INTO pu00adtra VALUES ('".$idtramite."','".$idactdes."');";
 		$this->conexion->consultaSimple($sql6);	
 	}
 
 	public function tieneActividades00($idtramite, $idactdes)
 	{
 		
-		$sql7 = "SELECT COUNT(*) AS total50 FROM PU00ADTRA WHERE PU04IDTRA='".$idtramite."' AND PU00IDAD='".$idactdes."';";
+		$sql7 = "SELECT COUNT(*) AS total50 FROM pu00adtra WHERE PU04IDTRA='".$idtramite."' AND PU00IDAD='".$idactdes."';";
 		$result = $this->conexion->consultaRetorno($sql7);
 		$row = mysqli_fetch_array($result);		
 		return $row;
@@ -566,7 +566,7 @@ public function eliminarActividades00($idtramite)
 	public function getTododasEstados()
 	{
 		//$sql = "CALL SP06_ACTIVIDAD_DESARROLLOS_MOSTRAR();";
-		$sql = "SELECT * FROM PU00AD";
+		$sql = "SELECT * FROM pu00ad";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}

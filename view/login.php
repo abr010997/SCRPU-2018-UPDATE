@@ -3,56 +3,39 @@
 <head>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>SCRPU</title>
+	
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="assets/login.css">
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1">
-				<form action="?c=classlogin&m=sesion" method="post">
-					<div class="panel " style=" max-width: 500px; margin-left: auto; margin-right: auto; margin-bottom: auto; padding-bottom: 25px; padding-top: 250px">
-						<div class="panel-heading">
-							<div class="panel-title">
-								<center>
-									<h3><strong>Iniciar Sesión</strong></h3> 
-								</center>
-							</div>
-						</div>
-						<div class="panel-body">
-							<div class="form-group">
-								<div class="input-group">
-									<!--<div class="col-lg-5">
-										
-									</div>-->
-									<label for="usuario" class="control-label input-group-addon">Usuario</label>
-									<input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario">
-									<!--<label for="usuario" class="control-label input-group-addon">Usuario</label>
-									<input type="text" style="max-width:500px;margin-left:auto;margin-right:auto;" name="usuario" id="usuario" class="form-control" placeholder="Usuario">-->
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="input-group">
-									<!--<div class="col-lg-5">
-										
-									</div>-->
-									<label for="clave" class="control-label input-group-addon">Contraseña</label>
-									<input type="password" name="clave" id="clave" class="form-control" placeholder="Contraseña">
-									<!--<label for="clave" class="control-label input-group-addon">Contraseña</label>
-									<input type="password" name="clave" id="clave" class="form-control" placeholder="Contraseña">-->
-								</div>
-							</div>
-						</div>
-						<div class="panel-footer">
-							<input type="submit" name="submit" id="submit" class="btn btn-success btn-block" value="Iniciar">
-
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	<footer>
+    <div class="container">
+        <div class="row vertical-offset-100">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">                            
+                        <div class="row-fluid user-row">
+                            <img src="assets/imagenes/planificacion.jpg" class="img-thumbnail img-responsive" alt="Conxole Admin"/>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-signin" action="?c=classlogin&m=sesion" method="post" accept-charset="UTF-8" role="form">
+                            <fieldset>
+                                <label class="panel-login">
+                                    <div class="login_result"></div>
+                                </label>
+                                <input class="form-control" placeholder="Usuario" id="usuario" name="usuario" type="text">
+                                <input class="form-control" placeholder="Contraseña" id="clave" name="clave" type="password">
+                                <br></br>
+                                <input class="btn btn-lg btn-success btn-block" type="submit" id="submit" name="submit" value="Iniciar »">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
 	    <div class="container-fluid">
 	        <div class="text-center">
 	          <small>Derechos Reservados Planificación Urbana 2018</small>

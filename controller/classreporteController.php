@@ -714,7 +714,7 @@ public function rInstitucional(){
 		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[1]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(2);
