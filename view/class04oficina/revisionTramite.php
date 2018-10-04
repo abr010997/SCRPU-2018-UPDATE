@@ -75,7 +75,7 @@
         <?php endforeach; ?>
       </div>
     </div>
-       <a href="?c=class04oficina&m=editarLeyAccesos&id=<?php echo $idtramite;?>" class="btn btn-danger" role="button">Editar Ley</a>   
+       <a href="?c=class04oficina&m=editarLeyAccesos&id=<?php echo $idtramite;?>" class="btn btn-danger" role="button">Editar Ley Acceso</a>   
   <br>
 </form> 
 
@@ -131,7 +131,7 @@
         <?php endforeach; ?>
       </div>
     </div>
-     <a href="?c=class04oficina&m=editarLeyAreaspro&id=<?php echo $idtramite;?>" class="btn btn-danger" role="button">Editar Ley</a> 
+     <a href="?c=class04oficina&m=editarLeyAreaspro&id=<?php echo $idtramite;?>" class="btn btn-danger" role="button">Editar Ley Áreas</a> 
   <br>  
 </form>
 

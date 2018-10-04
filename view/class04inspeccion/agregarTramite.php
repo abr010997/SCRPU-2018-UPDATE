@@ -72,7 +72,7 @@
      <li href="#tabconten10">Acceso Servidumbre de Paso</li>
     <li href="#tabconten11">Acceso Servidumbre Agrícola</li>
 
-    <li href="#tabconten00">Areas</li>
+    <li href="#tabconten00">Áreas</li>
   
     <li href="#tabconten9">Observaciones</li>
   </ul> 

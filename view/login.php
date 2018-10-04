@@ -13,7 +13,7 @@
         <div class="row vertical-offset-100">
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
-                    <div class="panel-heading">                            
+                    <div class="panel-heading">                     
                         <div class="row-fluid user-row">
                             <img src="assets/imagenes/planificacion.jpg" class="img-thumbnail img-responsive" alt="Conxole Admin"/>
                         </div>

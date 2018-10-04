@@ -228,11 +228,7 @@ public function reporte(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
-		 		$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
-		 		$pdf->Ln(2);
-		 	}
+		 	
 		 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
@@ -274,8 +270,20 @@ public function reporte(){
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-
-
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 			'Condicionado a contar con a disponibilidad de agua para el proyecto a realizar por parte de la entidad competente (Asada o AyA), basado en el decreto de sequía Nª MP-38642-MAG' ),0,'J');
+			$pdf->Ln(2);
+			$pdf->MultiCell(190,5,utf8_decode(
+		 		'Debiendo coordinar el permiso de corta de árboles existente en la propiedad ante el MINAE. La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, Ley de Uso, Manejo y Conservación de Suelo N° 7779, Ley forestal N°7575 y demás Legislación Vigente. Si se realiza movimientos de Tierra se debe solicitar el permiso Respectivo ante el departamento de Control Constructivo.' ),0,'J');
+			$pdf->Ln(2);
+			$pdf->MultiCell(190,5,utf8_decode(
+		 		'De requerirse remodelar, ampliar, renovar o reparar el local comercial, se requiere del trámite de la licencia municipal de construcción, para lo cual deberá sujetarse a las regulaciones estipuladas en el reglamento de construcciones, publicado en el diario oficial La Gaceta N°56, alcance N.º 17 del 11 de marzo de 1983 y sus reformas, así como lo indicado en la ley N°833 de noviembre de 1949 Ley de construcciones , así mismo,  cumplir con la normativa ambiental, sanitaria, urbanística y otras vigentes que regulen los procesos constructivos.' ),0,'J');
+			$pdf->Ln(2);
+			while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode(
