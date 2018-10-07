@@ -817,6 +817,42 @@ public function guardarObservacionComercialIndustrial()
 		}
 	}
 	///////////////////////////////////
+	
+public function guardarTipoTramite()
+{
+	if($_POST){
+$this->class04oficina->setAtributo('PU04IDTRA',$_POST['id']);
+
+if (isset($_POST['PU47IDTIPOTRAMITE'])) {
+				
+				if ($_POST['PU47IDTIPOTRAMITE'] == 'RMU') {
+					$id = 0;
+				}
+				if ($_POST['PU47IDTIPOTRAMITE'] == 'DAR') {
+					$id = 1;
+				}
+				if ($_POST['PU47IDTIPOTRAMITE'] == 'OFICIO') {
+					$id = 2;
+				}
+}
+$this->class04oficina->setAtributo('PU47IDTIPOTRAMITE',$id);
+
+$this->class04oficina->setAtributo('CONSECUTIVOTRAMITE',$_POST['CONSECUTIVOTRAMITE']);
+$this->class04oficina->guardarTipoTramite();
+
+header('location:?c=class04oficina&m=revisarTra&id='.$_REQUEST['id']);
+}
+	else{
+
+	$this->class04oficina = $this->class04oficina->buscarTraIng($_REQUEST['id']);
+
+		
+		require_once 'view/header.php';
+		require_once 'view/class04oficina/revisionTramite.php';
+		require_once 'view/footer.php';
+	}
+}
+	///////////////////////////////////
 
 
 

@@ -11,6 +11,7 @@
     <li href="#tabconten1">Ingreso Trámite</li>
     <li href="#tabconten2">Inspección</li>
     <li  href="#tabconten3">Oficina</li>
+    <li  href="#tabconten5">Tipo de Trámite</li>
     <li  href="#tabconten4">Observaciones generales</li>
   </ul> 
   <div class="resp-tabs-container hor_1">
@@ -482,10 +483,65 @@
 
            <a href="?c=class04oficina&m=editar&id=<?php echo $idtramite; ?>" class="btn btn-danger" role="button">Editar Oficina</a> 
       </form><br>
-
-
          
+
     </div>
+
+
+
+
+
+
+
+
+
+
+<!-- Tab nuevo del Tipo de trámite-->
+   <div class="container-fluid" id="tabconten5">
+        <form method="POST" action="?c=class04oficina&m=guardarTipoTramite">
+              <div class="container-fluid">
+                        <div class="form-group">
+     <label for="id">Código Trámite</label>
+      <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            
+                        </div>
+                        <br>
+
+<div class="form-group">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <label for="PU47IDTIPOTRAMITE">Seleccione el Tipo de Trámite: </label>
+          <select class="form-control selectpicker" name="PU47IDTIPOTRAMITE" id="PU47IDTIPOTRAMITE">
+            <option value="Seleccione">Seleccione...</option>
+            <option value="RMU">RMU</option>
+            <option value="DAR">DAR</option>
+            <option value="OFICIO">OFICIO</option>
+          </select>
+        </div>
+      </div>
+      <br><br><br><br>
+<br>
+
+<label for="CONSECUTIVOTRAMITE">Digite el consecutivo del Trámite:
+        </label>
+
+        <input type="text" class="form-control" id="CONSECUTIVOTRAMITE" name="CONSECUTIVOTRAMITE"><br> 
+
+
+      </div>
+         <br>
+          <button type="submit" class="btn btn-success ">   Guardar Tipo
+           de Trámite</button>
+          <br>
+        </form>
+
+  </div>
+
+    <!-- ____________________________________________________________ -->
+
+
+
+
+
 
       <!-- contenido de tab 3 -->
       <div class="container-fluid" id="tabconten4">
