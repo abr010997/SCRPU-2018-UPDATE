@@ -853,6 +853,23 @@ header('location:?c=class04oficina&m=revisarTra&id='.$_REQUEST['id']);
 	}
 }
 	///////////////////////////////////
+	
+
+	public function editarObservacionesgenerales()
+	{
+		if ($_POST) {
+			$this->class04oficina->setAtributo('PU04IDTRA',$_POST['id']);
+			$this->class04oficina->setAtributo('PU04OBSERVACIONESREVISIONTRA',$_POST['PU04OBSERVACIONESREVISIONTRA']);
+			$this->class04oficina->editarObservacionesgenerales();
+			header('location:?c=class04oficina&m=index3');
+		}
+		else{
+			$this->class04oficina = $this->class04oficina->buscarObservacionGeneral($_REQUEST['id']);
+			require_once 'view/header.php';
+			require_once 'view/class04oficina/editarObservacionesgenerales.php';
+			require_once 'view/footer.php';
+		}
+	}
 
 
 

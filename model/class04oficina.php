@@ -1313,9 +1313,31 @@ $sql = "call SP47_TRATIPOTRAMITE_GUARDAR('$this->PU04IDTRA','$this->PU47IDTIPOTR
 
 }
 
+	public function editarObservacionesgenerales()
+	{
+$sql = "CALL SP04_OBSERVACIONESREVISIONTRAMITE_ACTUALIZAR ('$this->PU04IDTRA','$this->PU04OBSERVACIONESREVISIONTRA');";
+		$this->conexion->consultaSimple($sql);
+	
+	}
 
 
+public function buscarObservacionGeneral($PU04IDTRA)
+	{
+		$sql = "CALL SP04_OBSERVACIONESREVISIONTRAMITE_BUSCAR('".$PU04IDTRA."')";
+		$result = $this->conexion->consultaRetorno($sql);
+		$class04oficina = $this->convertToclas04observacionesGenerales($result);
+		return $class04oficina;
+	}
 
+	public function convertToclas04observacionesGenerales($result)
+	{
+		$class04oficina = new class04oficina();
+		while ($row = mysqli_fetch_array($result)) {
+			$class04oficina->setAtributo('PU04IDTRA',$row[0]);
+			$class04oficina->setAtributo('PU04OBSERVACIONESREVISIONTRA',$row[1]);
+		}
+		return $class04oficina;
+	}
 
 
 

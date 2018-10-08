@@ -532,7 +532,9 @@
           <button type="submit" class="btn btn-success ">   Guardar Tipo
            de Trámite</button>
           <br>
+
         </form>
+
 
   </div>
 
@@ -559,6 +561,8 @@
           <button type="submit" class="btn btn-success ">   Guardar observación</button>
           <br>
         </form>
+        
+        <a href="?c=class04oficina&m=editarObservacionesgenerales&id=<?php echo $idtramite; ?>" class="btn btn-danger" role="button">Editar Observaciones</a> 
 
         </div>
 
