@@ -88,7 +88,10 @@ class class04oficina  extends Conexion
 	/////////////////////////////////
 	private $PU47IDTIPOTRAMITE;
 	private $CONSECUTIVOTRAMITE;
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////
+	private $PU04IDTIPOTRA;
+	private $PU47IDCONSECUTIVO;
+//////////////////////////////////////////////////////////////////////////////
 
 	
 	function __construct()
@@ -1340,9 +1343,32 @@ public function buscarObservacionGeneral($PU04IDTRA)
 	}
 
 
+public function editartipotra()
+	{
+		$sql = "CALL SP47_TIPOTRAMITE_ACTUALIZAR ('$this->PU04IDTRA','$this->PU04IDTIPOTRA',
+		'$this->PU47IDCONSECUTIVO');";
+		$this->conexion->consultaSimple($sql);
+	
+	}
 
+	public function buscarTipotramite($PU04IDTRA)
+	{
+		$sql = "CALL SP47_TIPOTRAMITE_BUSCAR ('".$PU04IDTRA."');";
+		$result = $this->conexion->consultaRetorno($sql);
+		$cliente = $this->convertToclass04oficinaTipotramite($result);
+		return $cliente;
+	}
 
-
+public function convertToclass04oficinaTipotramite($result)
+	{
+		$class04oficina = new class04oficina();
+		while ($row = mysqli_fetch_array($result)) {
+			$class04oficina->setAtributo('PU04IDTRA',$row[0]);
+			$class04oficina->setAtributo('PU04IDTIPOTRA',$row[1]);		
+			$class04oficina->setAtributo('PU47IDCONSECUTIVO',$row[2]);
+		}
+		return $class04oficina;
+	}
 
 }
  ?>

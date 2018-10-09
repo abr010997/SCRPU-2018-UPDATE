@@ -532,6 +532,10 @@
           <button type="submit" class="btn btn-success ">   Guardar Tipo
            de Trámite</button>
           <br>
+          </form>
+
+           <a href="?c=class04oficina&m=editartipotra&id=<?php echo $idtramite; ?>" class="btn btn-danger" role="button">Editar </a> 
+      </form>
 
         </form>
 

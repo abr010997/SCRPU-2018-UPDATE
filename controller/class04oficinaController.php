@@ -861,7 +861,7 @@ header('location:?c=class04oficina&m=revisarTra&id='.$_REQUEST['id']);
 			$this->class04oficina->setAtributo('PU04IDTRA',$_POST['id']);
 			$this->class04oficina->setAtributo('PU04OBSERVACIONESREVISIONTRA',$_POST['PU04OBSERVACIONESREVISIONTRA']);
 			$this->class04oficina->editarObservacionesgenerales();
-			header('location:?c=class04oficina&m=index3');
+			header('location:?c=class04oficina&m=revisarTra&id='.$_REQUEST['id']);
 		}
 		else{
 			$this->class04oficina = $this->class04oficina->buscarObservacionGeneral($_REQUEST['id']);
@@ -871,7 +871,25 @@ header('location:?c=class04oficina&m=revisarTra&id='.$_REQUEST['id']);
 		}
 	}
 
+public function editartipotra()
+	{
+		
+		if ($_POST) {
+			$this->class04oficina->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
+			$this->class04oficina->setAtributo('PU04IDTIPOTRA',$_POST['PU04IDTIPOTRA']);
+			$this->class04oficina->setAtributo('PU47IDCONSECUTIVO',$_POST['PU47IDCONSECUTIVO']);
+			$this->class04oficina->editartipotra();
+			header('location:?c=class04oficina&m=index3');
 
+		}
+		else{
+
+			$this->class04oficina = $this->class04oficina->buscarTipotramite($_REQUEST['id']);
+			require_once 'view/header.php';
+			require_once 'view/class04oficina/editartipotra.php';
+			require_once 'view/footer.php';
+		}
+	}
 
 
 }
