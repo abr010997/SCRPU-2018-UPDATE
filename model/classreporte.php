@@ -130,8 +130,13 @@ class classreporte  extends Conexion
 		$result = $this->conexion->ConsultaRetorno($sql);
 		return $result;
 	}
-//
-
+//R_CONS_TRA
+	public function listarCons()
+	{
+		$sql = "CALL R_CONS_TRA('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
 //
 	public function listarTuristicoComercial()
 	{
@@ -255,6 +260,13 @@ class classreporte  extends Conexion
 	public function listarLeyRedVial()
 	{
 		$sql = "CALL R_LEYES_REDVIAL('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarLeyServi()
+	{
+		$sql = "CALL R_LEYES_SERVIDUMBRES('$this->PU04IDTRA');";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}

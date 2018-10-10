@@ -19,6 +19,7 @@ class classreporteController
 	private $turisticocomercial;
 	private $datosturistico;
 	private $resolusion;
+	private $constra;
 	private $actdes_res;
 	private $actdes_com;
 	private $actdes_com_in;
@@ -34,6 +35,7 @@ class classreporteController
 	private $leyesPlan;
 	private $leyesRedVial;
 	private $leyesAreasPro;
+	private $leyesServi;
 	private $apro_dene;
 	private $observacion;
 
@@ -97,7 +99,8 @@ public function ver()
 	
 public function reporte(){
 	$this->classreporte->setAtributo('PU04IDTRA', $_REQUEST['id']);
-	$this->resolusion 	 		= new  classreporte();
+	$this->resolusion 	 		= new classreporte();
+	$this->constra 				= new classreporte();
 	$this->actdes_res 	 		= new classreporte();
 	$this->actdes_com 	 		= new classreporte();
 	$this->actdes_com_in 		= new classreporte();
@@ -113,6 +116,7 @@ public function reporte(){
 	$this->leyesPlan 		 	= new classreporte();
 	$this->leyesRedVial 		= new classreporte();
 	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 
@@ -120,6 +124,8 @@ public function reporte(){
 	$rLista 			= $this->resolusion->listarResi();
 	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rDesceg 			= $this->desceg->listarDESCEG();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
 
 	$this->actdes_res->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rActdesRes 		= $this->actdes_res->listarACTDESRES();
@@ -150,6 +156,9 @@ public function reporte(){
 	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
 	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 		= $this->leyesServi->listarLeyServi();
+
 
 	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rApro_Dene 		= $this->apro_dene->listarR_APRO_DENE();
@@ -168,6 +177,8 @@ public function reporte(){
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,"DPU-".$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
 		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
@@ -264,6 +275,11 @@ public function reporte(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leyEG[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
+		 	while ($leySD = mysqli_fetch_array($rleyesServi)){
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leySD[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
 
 		 	while ($obser = mysqli_fetch_array($robservacion)) {
 		 		$pdf->Ln(1);
@@ -286,8 +302,11 @@ public function reporte(){
 		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		"Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-"),0,'J');
+
+		 		$pdf->MultiCell(190,5,$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
+		 	}
+		 	$pdf->MultiCell(190,5,utf8_decode(", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
@@ -330,6 +349,7 @@ public function rZonaVerde(){
 	$this->leyesPlan 		 	= new classreporte();
 	$this->leyesRedVial 		= new classreporte();
 	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datoszonaverde 		= new classreporte();
@@ -371,6 +391,8 @@ public function rZonaVerde(){
 	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
 	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 	= $this->leyesServi->listarLeyServi();
 
 	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rApro_Dene 	= $this->apro_dene->listarR_APRO_DENE();
@@ -543,6 +565,7 @@ public function rInstitucional(){
 	$this->leyesPlan 		 	= new classreporte();
 	$this->leyesRedVial 		= new classreporte();
 	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datosintitu 			= new classreporte();
@@ -584,6 +607,8 @@ public function rInstitucional(){
 	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
 	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 	= $this->leyesServi->listarLeyServi();
 
 	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rApro_Dene 	= $this->apro_dene->listarR_APRO_DENE();
@@ -765,6 +790,7 @@ public function rComercialCentral(){
 	$this->leyesPlan 		 	= new classreporte();
 	$this->leyesRedVial 		= new classreporte();
 	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datoscomercentral 	= new classreporte();
@@ -806,6 +832,8 @@ public function rComercialCentral(){
 	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
 	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 	= $this->leyesServi->listarLeyServi();
 
 	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rApro_Dene 	= $this->apro_dene->listarR_APRO_DENE();
@@ -1004,6 +1032,7 @@ public function rIndustrial(){
 	$this->leyesPlan 		 	= new classreporte();
 	$this->leyesRedVial 		= new classreporte();
 	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datosindustrial 		= new classreporte();
@@ -1045,6 +1074,8 @@ public function rIndustrial(){
 	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
 	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 	= $this->leyesServi->listarLeyServi();
 
 	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rApro_Dene 	= $this->apro_dene->listarR_APRO_DENE();
@@ -1258,6 +1289,7 @@ public function rResidencialComercial(){
 	$this->leyesPlan 		 	= new classreporte();
 	$this->leyesRedVial 		= new classreporte();
 	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datosresicomercial 	= new classreporte();
@@ -1299,6 +1331,8 @@ public function rResidencialComercial(){
 	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
 	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 	= $this->leyesServi->listarLeyServi();
 
 	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rApro_Dene 	= $this->apro_dene->listarR_APRO_DENE();
@@ -1488,6 +1522,7 @@ public function rResidencial(){
 	$this->leyesPlan 		 	= new classreporte();
 	$this->leyesRedVial 		= new classreporte();
 	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datosresidencial = new classreporte();
@@ -1529,6 +1564,8 @@ public function rResidencial(){
 	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
 	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 	= $this->leyesServi->listarLeyServi();
 
 	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rApro_Dene 	= $this->apro_dene->listarR_APRO_DENE();
@@ -1714,6 +1751,7 @@ public function rTuristicoComercial(){
 	$this->leyesPlan 		 	= new classreporte();
 	$this->leyesRedVial 		= new classreporte();
 	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datosturistico 		= new classreporte();
@@ -1755,6 +1793,8 @@ public function rTuristicoComercial(){
 	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
 	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 	= $this->leyesServi->listarLeyServi();
 
 	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rApro_Dene 	= $this->apro_dene->listarR_APRO_DENE();
