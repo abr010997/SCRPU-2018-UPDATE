@@ -49,6 +49,7 @@
                   <li>
                       <a href="?c=classreporte&m=reporte&id=<?php echo $row[0]; ?>" target="_blank"> Reporte</a>
                   </li>
+                  <li class="division">Nicoya</li>
                   <li>
                       <a href="?c=classreporte&m=rZonaVerde&id=<?php echo $row[0]; ?>" target="_blank"> ZonaVerde</a>
                   </li>

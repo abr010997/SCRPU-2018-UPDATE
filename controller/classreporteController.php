@@ -4,28 +4,52 @@ require_once 'public/reporte/plantilla.php';
 class classreporteController
 {
 	private $classreporte;
+	//Nicoya
 	private $zonaverde;
 	private $datoszonaverde;
+
 	private $institucional;
 	private $datosintitu;
+
 	private $comercialcentral;
 	private $datoscomercentral;
+
 	private $industrial;
 	private $datosindustrial;
+
 	private $residencialcomercial;
 	private $datosresicomercial;
+
 	private $residecial;
 	private $datosresidencial;
+
 	private $turisticocomercial;
 	private $datosturistico;
+	//Fin Nicoya
+	//Samara
+	private $zonacomerturistica;
+	private $datoscomerturistica;
+
+	private $zonaresiprivada;
+	private $datosresiprivada;
+
+	private $zonainstitucional;
+	private $datoszonainstitucional;
+
+
+
+	//Fin Samara
 	private $resolusion;
 	private $constra;
+
 	private $actdes_res;
 	private $actdes_com;
 	private $actdes_com_in;
 	private $actdes_es;
 	private $actdes_desa;
+
 	private $desceg;
+
 	private $leyesAccesos;
 	private $leyesDesarroSect;
 	private $leyesEspacioGeo;
@@ -36,6 +60,7 @@ class classreporteController
 	private $leyesRedVial;
 	private $leyesAreasPro;
 	private $leyesServi;
+
 	private $apro_dene;
 	private $observacion;
 
@@ -96,17 +121,23 @@ public function ver()
 	require_once 'view/classreporte/ver.php';
 	require_once 'view/footer.php';
 }
-	
+
+// Reporte
+
 public function reporte(){
 	$this->classreporte->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$this->resolusion 	 		= new classreporte();
+
 	$this->constra 				= new classreporte();
+	
 	$this->actdes_res 	 		= new classreporte();
 	$this->actdes_com 	 		= new classreporte();
 	$this->actdes_com_in 		= new classreporte();
 	$this->actdes_desa 	 		= new classreporte();
 	$this->actdes_es 	 		= new classreporte();
+	
 	$this->desceg 		 		= new classreporte();
+	
 	$this->leyesAccesos 		= new classreporte();
 	$this->leyesDesarroSect 	= new classreporte();
 	$this->leyesEspacioGeo 		= new classreporte();
@@ -117,6 +148,7 @@ public function reporte(){
 	$this->leyesRedVial 		= new classreporte();
 	$this->leyesAreasPro 		= new classreporte();
 	$this->leyesServi			= new classreporte();
+	
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 
@@ -159,10 +191,8 @@ public function reporte(){
 	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rleyesServi 		= $this->leyesServi->listarLeyServi();
 
-
 	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rApro_Dene 		= $this->apro_dene->listarR_APRO_DENE();
-
 
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
@@ -191,7 +221,6 @@ public function reporte(){
 		 	$pdf->SetFont('Arial','B',10);
 		 	$pdf->MultiCell(180,5,utf8_decode(
 		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:" ),0,1,'J' );
-		 	
 		 	$pdf->Ln(2);
 		 	$pdf->Ln(2);
 		 	$pdf->Ln(2);
@@ -203,6 +232,7 @@ public function reporte(){
 		 		$pdf->MultiCell(100,5,utf8_decode("* ".$as[0]."."),0,1,'J');
 		 		$pdf->Ln(1);
 		 	}
+		 	// Fin suelo actual
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(55,5,"> Actividad a Desarrollar",0,1,'J');
 		 	$pdf->Ln(2);
@@ -232,14 +262,15 @@ public function reporte(){
 		 		$pdf->MultiCell(100,5,utf8_decode("* ".$adc[0]."."),0,1,'J');
 		 		$pdf->Ln(1);
 		 	}
+		 	//Fin Actividades
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
+		 	// Inicio Leyes
 		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	
 		 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
@@ -280,7 +311,7 @@ public function reporte(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leySD[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-
+			// Fin leyes
 		 	while ($obser = mysqli_fetch_array($robservacion)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
@@ -302,11 +333,8 @@ public function reporte(){
 		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-"),0,'J');
-
-		 		$pdf->MultiCell(190,5,$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
+		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 		 	}
-		 	$pdf->MultiCell(190,5,utf8_decode(", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
@@ -332,8 +360,11 @@ public function reporte(){
 	}
 }
 
+// Nicoya {
+
 public function rZonaVerde(){
 	$this->zonaverde 			= new classreporte();
+	$this->constra 				= new classreporte();
 	$this->actdes_res 	 		= new classreporte();
 	$this->actdes_com 	 		= new classreporte();
 	$this->actdes_com_in 		= new classreporte();
@@ -358,6 +389,8 @@ public function rZonaVerde(){
 	$result1 = $this->zonaverde->listarZonaVerde();
 	$this->datoszonaverde->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$datos = $this->datoszonaverde->listardatosZonaVerde();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
 
 	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rDesceg 			= $this->desceg->listarDESCEG();
@@ -409,6 +442,8 @@ public function rZonaVerde(){
 	{
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,"DPU-".$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
 		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
@@ -522,7 +557,8 @@ public function rZonaVerde(){
 		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	}
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(2);
@@ -550,6 +586,7 @@ public function rZonaVerde(){
 
 public function rInstitucional(){
 	$this->institucional 		= new classreporte();
+	$this->constra 				= new classreporte();
 	$this->actdes_res 	 		= new classreporte();
 	$this->actdes_com 	 		= new classreporte();
 	$this->actdes_com_in 		= new classreporte();
@@ -574,6 +611,8 @@ public function rInstitucional(){
 	$result1 = $this->institucional->listarInstitucional();
 	$this->datosintitu->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$datos = $this->datosintitu->listardatosInstitu();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
 
 	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rDesceg 			= $this->desceg->listarDESCEG();
@@ -626,6 +665,8 @@ public function rInstitucional(){
 
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,"DPU-".$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
 		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
@@ -747,7 +788,8 @@ public function rInstitucional(){
 		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	}
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(2);
@@ -775,6 +817,7 @@ public function rInstitucional(){
 
 public function rComercialCentral(){
 	$this->comercialcentral 	= new classreporte();
+	$this->constra 				= new classreporte();
 	$this->actdes_res 	 		= new classreporte();
 	$this->actdes_com 	 		= new classreporte();
 	$this->actdes_com_in 		= new classreporte();
@@ -799,6 +842,8 @@ public function rComercialCentral(){
 	$result1 = $this->comercialcentral->listarComercialCentral();
 	$this->datoscomercentral->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$datos = $this->datoscomercentral->listardatosComerCentral();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
 
 	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rDesceg 			= $this->desceg->listarDESCEG();
@@ -851,6 +896,8 @@ public function rComercialCentral(){
 
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,"DPU-".$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
 		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
@@ -989,7 +1036,8 @@ public function rComercialCentral(){
 		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	}
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(2);
@@ -1017,6 +1065,7 @@ public function rComercialCentral(){
 
 public function rIndustrial(){
 	$this->industrial 			= new classreporte();
+	$this->constra 				= new classreporte();
 	$this->actdes_res 	 		= new classreporte();
 	$this->actdes_com 	 		= new classreporte();
 	$this->actdes_com_in 		= new classreporte();
@@ -1041,6 +1090,8 @@ public function rIndustrial(){
 	$result1 = $this->industrial->listarIndustrial();
 	$this->datosindustrial->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$datos = $this->datosindustrial->listardatosIndustrial();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
 
 	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rDesceg 			= $this->desceg->listarDESCEG();
@@ -1093,6 +1144,8 @@ public function rIndustrial(){
 
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,"DPU-".$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
 		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
@@ -1246,7 +1299,8 @@ public function rIndustrial(){
 		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	}
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(2);
@@ -1274,6 +1328,7 @@ public function rIndustrial(){
 
 public function rResidencialComercial(){
 	$this->residencialcomercial = new classreporte();
+	$this->constra 				= new classreporte();
 	$this->actdes_res 	 		= new classreporte();
 	$this->actdes_com 	 		= new classreporte();
 	$this->actdes_com_in 		= new classreporte();
@@ -1298,6 +1353,8 @@ public function rResidencialComercial(){
 	$result1 = $this->residencialcomercial->listarResidencialComercial();
 	$this->datosresicomercial->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$datos = $this->datosresicomercial->listardatosResiComercial();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
 
 	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rDesceg 			= $this->desceg->listarDESCEG();
@@ -1350,6 +1407,8 @@ public function rResidencialComercial(){
 
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,"DPU-".$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
 		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
@@ -1479,7 +1538,8 @@ public function rResidencialComercial(){
 		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	}
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(2);
@@ -1506,7 +1566,8 @@ public function rResidencialComercial(){
 }
 
 public function rResidencial(){
-	$this->residecial = new classreporte();
+	$this->residecial 			= new classreporte();
+	$this->constra 				= new classreporte();
 	$this->actdes_res 	 		= new classreporte();
 	$this->actdes_com 	 		= new classreporte();
 	$this->actdes_com_in 		= new classreporte();
@@ -1531,6 +1592,8 @@ public function rResidencial(){
 	$result1 = $this->residecial->listarRESI();
 	$this->datosresidencial->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$datos = $this->datosresidencial->listarDatosResi();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
 
 	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rDesceg 			= $this->desceg->listarDESCEG();
@@ -1583,6 +1646,8 @@ public function rResidencial(){
 
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,"DPU-".$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
 		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
@@ -1708,7 +1773,8 @@ public function rResidencial(){
 		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	}
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(2);
@@ -1736,6 +1802,7 @@ public function rResidencial(){
 
 public function rTuristicoComercial(){
 	$this->turisticocomercial 	= new classreporte();
+	$this->constra 				= new classreporte();
 	$this->actdes_res 	 		= new classreporte();
 	$this->actdes_com 	 		= new classreporte();
 	$this->actdes_com_in 		= new classreporte();
@@ -1760,6 +1827,8 @@ public function rTuristicoComercial(){
 	$result1 = $this->turisticocomercial->listarTuristicoComercial();
 	$this->datosturistico->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$datos = $this->datosturistico->listarTuristicoComercial();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
 
 	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rDesceg 			= $this->desceg->listarDESCEG();
@@ -1812,6 +1881,8 @@ public function rTuristicoComercial(){
 
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,"DPU-".$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
 		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
@@ -1948,7 +2019,8 @@ public function rTuristicoComercial(){
 		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-RMU-".$row[1].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	}
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(2);
@@ -1973,5 +2045,36 @@ public function rTuristicoComercial(){
 		$pdf->Output();
 	}
 }
+
+// }
+
+// Samara {
+
+public function rZonaComercialTuristica(){
+	
+}
+
+public function rZonaResidencialPrivada(){
+	
+}
+
+public function rZonaInstitucional(){
+	
+}
+
+public function rZonaPrivada(){
+	
+}
+
+public function rZonaArriendo(){
+	
+}
+
+public function rZonaHotelera(){
+	
+}
+
+// }
+
 }
 ?>
