@@ -159,6 +159,54 @@ class classreporte  extends Conexion
 		return $result;
 	}
 
+	///SAMARA
+
+public function listarZonaPrivada()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listardatosZonaPrivada()
+	{
+		$sql = "CALL R_RESI1('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarzonadearriendo()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listardatoszonadearriendo()
+	{
+		$sql = "CALL R_RESI1('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarzonahotelera()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listardatoszonahotelera()
+	{
+		$sql = "CALL R_RESI1('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+
+
+	///
+
 	public function listarDESCEG()
 	{
 		$sql = "CALL R_DESCEG('$this->PU04IDTRA');";
