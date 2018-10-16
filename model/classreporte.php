@@ -203,6 +203,57 @@ public function listarZonaPrivada()
 		return $result;
 	}
 
+	public function listarZonaComercialTuristica()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listardatosZonaComercialTuristica()
+	{
+		$sql = "CALL R_RESI1('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarZonaResidencialPrivada()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listardatosZonaResidencialPrivada()
+	{
+		$sql = "CALL R_RESI1('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarZonaInstitucional()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listardatosZonaInstitucional()
+	{
+		$sql = "CALL R_RESI1('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+
+	//
+
+	public function listarFueraPLan()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
 
 
 	///
