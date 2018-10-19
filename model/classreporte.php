@@ -130,8 +130,13 @@ class classreporte  extends Conexion
 		$result = $this->conexion->ConsultaRetorno($sql);
 		return $result;
 	}
-//
-
+//R_CONS_TRA
+	public function listarCons()
+	{
+		$sql = "CALL R_CONS_TRA('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
 //
 	public function listarTuristicoComercial()
 	{
@@ -153,6 +158,129 @@ class classreporte  extends Conexion
 		$result = $this->conexion->ConsultaRetorno($sql);
 		return $result;
 	}
+
+	///SAMARA
+
+public function listarZonaPrivada()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listardatosZonaPrivada()
+	{
+		$sql = "CALL R_RESI1('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarzonadearriendo()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listardatoszonadearriendo()
+	{
+		$sql = "CALL R_RESI1('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarzonahotelera()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listardatoszonahotelera()
+	{
+		$sql = "CALL R_RESI1('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarZonaComercialTuristica()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listardatosZonaComercialTuristica()
+	{
+		$sql = "CALL R_RESI1('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarZonaResidencialPrivada()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listardatosZonaResidencialPrivada()
+	{
+		$sql = "CALL R_RESI1('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarZonaInstitucional()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listardatosZonaInstitucional()
+	{
+		$sql = "CALL R_RESI1('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+///FIN  SAMARA
+
+	//FUERA DEL PLAN REGULADOR
+
+	public function listarFueraPLan()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+//FIN FUERA DE PLAN REGULADOR
+
+
+	///DAR
+public function listarDarInta()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarMINAEClaseVIII()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+
+	public function listarDireccionAgua()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+	/// FIN DAR
 
 	public function listarDESCEG()
 	{
@@ -255,6 +383,13 @@ class classreporte  extends Conexion
 	public function listarLeyRedVial()
 	{
 		$sql = "CALL R_LEYES_REDVIAL('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarLeyServi()
+	{
+		$sql = "CALL R_LEYES_SERVIDUMBRES('$this->PU04IDTRA');";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}

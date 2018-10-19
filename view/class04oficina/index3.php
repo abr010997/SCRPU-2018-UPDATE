@@ -49,6 +49,7 @@
                   <li>
                       <a href="?c=classreporte&m=reporte&id=<?php echo $row[0]; ?>" target="_blank"> Reporte</a>
                   </li>
+                  <li class="divider">Nicoya</li>
                   <li>
                       <a href="?c=classreporte&m=rZonaVerde&id=<?php echo $row[0]; ?>" target="_blank"> ZonaVerde</a>
                   </li>
@@ -69,6 +70,39 @@
                   </li>
                   <li>
                       <a href="?c=classreporte&m=rTuristicoComercial&id=<?php echo $row[0]; ?>" target="_blank"> TuristicoComercial</a>
+                  </li>
+                  <li class="divider">Samara</li>
+                  <li>
+                      <a href="?c=classreporte&m=rZonaComercialTuristica&id=<?php echo $row[0]; ?>" target="_blank"> rZonaComercialTuristica</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=rZonaResidencialPrivada&id=<?php echo $row[0]; ?>" target="_blank"> rZonaResidencialPrivada</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=rZonaInstitucional&id=<?php echo $row[0]; ?>" target="_blank"> rZonaInstitucional</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=rZonaPrivada&id=<?php echo $row[0]; ?>" target="_blank"> rZonaPrivada</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=rZonaArriendo&id=<?php echo $row[0]; ?>" target="_blank"> rZonaArriendo</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=rZonaHotelera&id=<?php echo $row[0]; ?>" target="_blank"> rZonaHotelera</a>
+                  </li>
+                  <li class="divider">Fuera Plan</li>
+                  <li>
+                      <a href="?c=classreporte&m=rFueraPlanRegulador&id=<?php echo $row[0]; ?>" target="_blank"> rFueraPlanRegulador</a>
+                  </li>
+                  <li class="divider">DAR</li>
+                  <li>
+                      <a href="?c=classreporte&m=rDarInta&id=<?php echo $row[0]; ?>" target="_blank"> rDarInta</a>
+                  </li>
+                   <li>
+                      <a href="?c=classreporte&m=rMINAEClaseVIII&id=<?php echo $row[0]; ?>" target="_blank"> rMINAEClaseVIII</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=rDarDireccionAgua&id=<?php echo $row[0]; ?>" target="_blank"> rDarDireccionAgua</a>
                   </li>
                 </ul>
               </div>
