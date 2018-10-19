@@ -244,9 +244,9 @@ public function listarZonaPrivada()
 		$result = $this->conexion->ConsultaRetorno($sql);
 		return $result;
 	}
+///FIN  SAMARA
 
-
-	//
+	//FUERA DEL PLAN REGULADOR
 
 	public function listarFueraPLan()
 	{
@@ -255,8 +255,32 @@ public function listarZonaPrivada()
 		return $result;
 	}
 
+//FIN FUERA DE PLAN REGULADOR
 
-	///
+
+	///DAR
+public function listarDarInta()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarMINAEClaseVIII()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+
+	public function listarDireccionAgua()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+	/// FIN DAR
 
 	public function listarDESCEG()
 	{

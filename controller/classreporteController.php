@@ -46,7 +46,13 @@ class classreporteController
 	private $zonahotelera;
 	private $datoszonahotelera;
 	//Fin Samara
+//DAR
 
+	private $DarInta;
+	private $MINAEClaseVIII;
+	private $DireccionAgua;
+
+	//FIN DAR
 
 
 	private $resolusion;
@@ -1679,7 +1685,7 @@ public function rResidencial(){
 		 	}
 		 	$pdf->MultiCell(190,5,utf8_decode('-Usos Permitidos: Todos los urbanos que tengan relación con la vivienda, sin que la perjudiquen. El tipo de comercio que se permite es el siguiente: tiendas de abarrotes, boticas, fuentes de soda, barberías, carnicerías oficinas profesionales, usos comunales y áreas verdes. La pequeña industria (artesanal Inofensiva) supermercados.'),0,1,'J');
 		 	$pdf->Ln(2);
-		 	$pdf->MultiCell(190,5,utf8_decode('-No se permiten: bodegas, aserraderos, talleres, industrias y usos similares a estos en cuanto a molestias (ruido, transito intenso, olor, etc.) que afectan la zona. También se exceptúan el comercio que produzca las molestias antes dichas como salas de baile, cantinas, etc.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('No se permiten: bodegas, aserraderos, talleres, industrias y usos similares a estos en cuanto a molestias (ruido, transito intenso, olor, etc.) que afectan la zona. También se exceptúan el comercio que produzca las molestias antes dichas como salas de baile, cantinas, etc.'),0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode('1.	SUPERFICIE DE LOTE: 155m2'),0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode('2.	FRENTE MÍNIMO DE LOTE: 8m2'),0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode('3.	RETIROS MÍNIMOS:'),0,1,'J');
@@ -2163,38 +2169,61 @@ public function rZonaComercialTuristica(){
 		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Samara; me permito  indicarle según el Plan Regulador Vigente aprobado para la zona, esta propiedad pertenece al sector determinado por los siguientes términos: ZONA  COMERCIAL - TURISTICA." ),0,1,'J' );
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(180,5,"",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Esta es la parte de la zona restringida que se dedica a las concesiones para uso Institucional de acuerdo a la ley 6043. Incluye tanto a aquellos lotes existentes y que cumplen con la Ley  6043, como los  que resultan del nuevo ordenamiento establecido, según el Plan Regulador de Samara publicado en la Gaceta 208 el 30 de Noviembre de 1981, para la Zona Comercial - Turística del mismo se desprende lo siguiente:",0,1,'J');
-		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Propósitos:",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Ares dedicadas al comercio de bienes y servicios de consumo local y turístico.",0,1,'J');
-		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Localización:",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Mojón 23 a mojón 23 + 40 mts. (Sector Medio)",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Mojón 19 a Mojón 19 + 50 mts. (Sector Posterior)",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Mojón 1 + 240 mts a Mojón 2 + 90 mts ",0,1,'J');
-		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Los usos permitidos:",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Restaurantes, cafeterías, sodas, artículos fotográficos, agencias de viajes, artesanías y souvenirs, juego de salón, panaderías, reposterías, agencia bancarias.",0,1,'J');
-		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Usos condicionales:",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Supermercados, salón de bailes, oficinas de profesionales y bares."
-		 		,0,1,'J');
-		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Usos  conflictivos:",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Cantinas, bares o licoreras, almacenes de productos agrícolas, talleres, industrias, toda instalación que afecte mediante olores, humo o vibración.",0,1,'J');
-		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Requisitos: ",0,1,'J');
-		 	$pdf->MultiCell(180,5,"1.	Superficie Mínima: 150m2",0,1,'J');
-		 	$pdf->MultiCell(180,5,"2.	Superficie Máxima: 1000 m2",0,1,'J');
-		 	$pdf->MultiCell(180,5,"3.	Frente Mínimo: 10 m.",0,1,'J');
-		 	$pdf->MultiCell(180,5,"4.	Frente Máximo: 20 m.",0,1,'J');
-		 	$pdf->MultiCell(180,5,"5.	Retiro Frontal: 3 m.",0,1,'J');
-		 	$pdf->MultiCell(180,5,"6.	Retiro Lateral 2 m.",0,1,'J');
-		 	$pdf->MultiCell(180,5,"7.	Cobertura Máxima: 70%",0,1,'J');
-		 	$pdf->MultiCell(180,5,"8.	Altura Máxima: 5 m.",0,1,'J');
-		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Concesiones:",0,1,'J');
-		 	$pdf->MultiCell(180,5,"De acuerdo al proceso establecido por la Ley 6043 y su Reglamento.",0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Esta es la parte de la zona restringida que se dedica a las concesiones para uso Institucional de acuerdo a la ley 6043. Incluye tanto a aquellos lotes existentes y que cumplen con la Ley  6043, como los  que resultan del nuevo ordenamiento establecido, según el Plan Regulador de Samara publicado en la Gaceta 208 el 30 de Noviembre de 1981, para la Zona Comercial - Turística del mismo se desprende lo siguiente:' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Propósitos: Ares dedicadas al comercio de bienes y servicios de consumo local y turístico.' ),0,'J');
+		 		$pdf->Ln(2);
+		 		$pdf->MultiCell(190,5,utf8_decode(
+		 		'Localización:' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Mojón 23 a mojón 23 + 40 mts. (Sector Medio)' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Mojón 19 a Mojón 19 + 50 mts. (Sector Posterior)' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Mojón 1 + 240 mts a Mojón 2 + 90 mts ' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Los usos permitidos:' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Restaurantes, cafeterías, sodas, artículos fotográficos, agencias de viajes, artesanías y souvenirs, juego de salón, panaderías, reposterías, agencia bancarias.' ),0,'J');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Usos condicionales:' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Supermercados, salón de bailes, oficinas de profesionales y bares.' ),0,'J');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Usos  conflictivos:' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Cantinas, bares o licoreras, almacenes de productos agrícolas, talleres, industrias, toda instalación que afecte mediante olores, humo o vibración.' ),0,'J');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Requisitos: ' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'1.	Superficie Mínima: 150m2.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'2.	Superficie Máxima: 1000 m2.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'3.	Frente Mínimo: 10 m.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'4.	Frente Máximo: 20 m.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'5.	Retiro Frontal: 3 m.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'6.	Retiro Lateral 2 m.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'7.	Cobertura Máxima: 70%' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'8.	Altura Máxima: 5 m.' ),0,'J');
+		 		$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Concesiones:' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'De acuerdo con el proceso establecido por la Ley 6043 y su Reglamento.' ),0,'J');
+		 		$pdf->Ln(2);
+		 		
+
+
 		 	while ($fila = mysqli_fetch_array($datos)) { 		 		
 		 		$pdf->Ln(1); 		 		
 		 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila[0]."."),0,1,'J'); 		 		
@@ -2241,6 +2270,11 @@ public function rZonaComercialTuristica(){
 		 	//Fin Actividades
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Uso Conforme de Resolución Municipal de Ubicación con el proyecto a realizar.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, Ley de Uso, Manejo y Conservación de Suelo N° 7779, Ley forestal N°7575 y demás Legislación Vigente.' ),0,'J');
+		 		$pdf->Ln(2);
 		 	// Inicio Leyes
 		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
 		 		$pdf->Ln(1);
@@ -2294,13 +2328,8 @@ public function rZonaComercialTuristica(){
 		 		$pdf->Ln(2);
 		 	}
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 			'Condicionado a contar con a disponibilidad de agua para el proyecto a realizar por parte de la entidad competente (Asada o AyA), basado en el decreto de sequía Nª MP-38642-MAG' ),0,'J');
-			$pdf->Ln(2);
-			$pdf->MultiCell(190,5,utf8_decode(
-		 		'Debiendo coordinar el permiso de corta de árboles existente en la propiedad ante el MINAE. La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, Ley de Uso, Manejo y Conservación de Suelo N° 7779, Ley forestal N°7575 y demás Legislación Vigente. Si se realiza movimientos de Tierra se debe solicitar el permiso Respectivo ante el departamento de Control Constructivo.' ),0,'J');
-			$pdf->Ln(2);
-			$pdf->MultiCell(190,5,utf8_decode(
-		 		'De requerirse remodelar, ampliar, renovar o reparar el local comercial, se requiere del trámite de la licencia municipal de construcción, para lo cual deberá sujetarse a las regulaciones estipuladas en el reglamento de construcciones, publicado en el diario oficial La Gaceta N°56, alcance N.º 17 del 11 de marzo de 1983 y sus reformas, así como lo indicado en la ley N°833 de noviembre de 1949 Ley de construcciones , así mismo,  cumplir con la normativa ambiental, sanitaria, urbanística y otras vigentes que regulen los procesos constructivos.' ),0,'J');
+		 		'La validez de la presente certificación está sometida a toda la normativa correspondiente vigente y al cumplimiento de los requisitos solicitados por el Ministerio de Salud amparado a un dictamen favorable de esta institución. Sin perjuicio de lo anterior para todos estos casos las molestias deberán quedar absolutamente confinadas a los límites de la propiedad.' ),0,'J');
+		 	
 			$pdf->Ln(2);
 			while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
 		 		$pdf->Ln(1);
@@ -2312,6 +2341,7 @@ public function rZonaComercialTuristica(){
 		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 		 	}// Finaliza Consecutivo
 		 	$pdf->Ln(1);
+		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
 		 	$pdf->Ln(2);
@@ -2437,11 +2467,17 @@ public function rZonaResidencialPrivada(){
 		 	$pdf->SetFont('Arial','B',10);
 		 	$pdf->MultiCell(180,5,utf8_decode(
 		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Samara; me permito  indicarle según el Plan Regulador Vigente aprobado para la zona, esta propiedad pertenece al sector determinado por los siguientes términos: ZONA  COMERCIAL - TURISTICA." ),0,1,'J' );
-		 	$pdf->Ln(1);
+	
+
 		 	$pdf->MultiCell(180,5,"",0,1,'J');
-		 	$pdf->MultiCell(180,5,"La zona donde se encuentra este terreno se consigna como Zona Residencial Privada según el Plan Regulador publicado en la Gaceta No.208 del 30 de octubre de 1981, sin embargo, el artículo 6 de la Ley 6043 indica que las disposiciones de esta Ley no se aplicarán a las áreas situadas en los litorales, ni a las propiedades inscritas con la sujeción a la Ley a nombre de particulares, ni aquellas cuya legitimidad reconozcan las leyes.  ",0,1,'J');
-		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Por la zona en que se encuentra, esta propiedad cualquier tipo de construcción debe apegarse a lo dispuesto en la Ley Orgánica del Ambiente y su reglamento y normativa vigente y a lo dispuesto en la Ley de Construcciones y Ley de Planificación Urbana y demás Legislación vigente.",0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'La zona donde se encuentra este terreno se consigna como Zona Residencial Privada según el Plan Regulador publicado en la Gaceta No.208 del 30 de octubre de 1981, sin embargo, el artículo 6 de la Ley 6043 indica que las disposiciones de esta Ley no se aplicarán a las áreas situadas en los litorales, ni a las propiedades inscritas con la sujeción a la Ley a nombre de particulares, ni aquellas cuya legitimidad reconozcan las leyes.  ' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Por la zona en que se encuentra, esta propiedad cualquier tipo de construcción debe apegarse a lo dispuesto en la Ley Orgánica del Ambiente y su reglamento y normativa vigente y a lo dispuesto en la Ley de Construcciones y Ley de Planificación Urbana y demás Legislación vigente.' ),0,'J');
+
+
+		 	$pdf->Ln(2);
+		 
 		 	while ($fila = mysqli_fetch_array($datos)) { 		 		
 		 		$pdf->Ln(1); 		 		
 		 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila[0]."."),0,1,'J'); 		 		
@@ -2488,6 +2524,9 @@ public function rZonaResidencialPrivada(){
 		 	//Fin Actividades
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Uso Conforme de Resolución Municipal con el proyecto a desarrollar, en cumplimiento con el art. 7 Zonas Privadas del Reglamento de Zonificación del Plan Regulador de Samara., debe de cumplir: ' ),0,'J');
+		 	$pdf->Ln(2);
 		 	// Inicio Leyes
 		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
 		 		$pdf->Ln(1);
@@ -2524,6 +2563,7 @@ public function rZonaResidencialPrivada(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leyDS[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
+		 	
 		 	while ($leyEG = mysqli_fetch_array($rLeyesEspacioGeo)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyEG[0]),0,'J');
@@ -2540,14 +2580,9 @@ public function rZonaResidencialPrivada(){
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 			'Condicionado a contar con a disponibilidad de agua para el proyecto a realizar por parte de la entidad competente (Asada o AyA), basado en el decreto de sequía Nª MP-38642-MAG' ),0,'J');
-			$pdf->Ln(2);
+		 
 			$pdf->MultiCell(190,5,utf8_decode(
-		 		'Debiendo coordinar el permiso de corta de árboles existente en la propiedad ante el MINAE. La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, Ley de Uso, Manejo y Conservación de Suelo N° 7779, Ley forestal N°7575 y demás Legislación Vigente. Si se realiza movimientos de Tierra se debe solicitar el permiso Respectivo ante el departamento de Control Constructivo.' ),0,'J');
-			$pdf->Ln(2);
-			$pdf->MultiCell(190,5,utf8_decode(
-		 		'De requerirse remodelar, ampliar, renovar o reparar el local comercial, se requiere del trámite de la licencia municipal de construcción, para lo cual deberá sujetarse a las regulaciones estipuladas en el reglamento de construcciones, publicado en el diario oficial La Gaceta N°56, alcance N.º 17 del 11 de marzo de 1983 y sus reformas, así como lo indicado en la ley N°833 de noviembre de 1949 Ley de construcciones , así mismo,  cumplir con la normativa ambiental, sanitaria, urbanística y otras vigentes que regulen los procesos constructivos.' ),0,'J');
+		 		'De previo a desarrollar el proyecto debe garantizar que toda posible molestia debe quedar completamente confinada dentro del inmueble; así como realizar todos los análisis para verificar la viabilidad ambiental, económico, vial, patrimonial, de afectaciones, de infraestructura, de mecánica de suelos, de escorrentía, de riesgos naturales, de disponibilidad de servicios, de transporte público, etc., para conocer si realmente la propiedad en este caso privada es apta para la construcción de este tipo de proyecto.' ),0,'J');
 			$pdf->Ln(2);
 			while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
 		 		$pdf->Ln(1);
@@ -2683,29 +2718,43 @@ public function rZonaInstitucional(){
 		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
 		 	$pdf->SetFont('Arial','B',10);
 		 	$pdf->MultiCell(180,5,utf8_decode(
-		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Samara; ;  según oficio Nº ZMT 00449-07  del Departamento de Zona Marítima Terrestre con fecha del  28 de mayo del 2008;  me permito  indicarle según el Plan Regulador Vigente aprobado para la zona, esta propiedad pertenece al sector determinado por los siguientes términos: ZONA  INSTITUCIONAL." ),0,1,'J' );
+		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Samara; según oficio Nº ZMT 00449-07  del Departamento de Zona Marítima Terrestre con fecha del  28 de mayo del 2008;  me permito  indicarle según el Plan Regulador Vigente aprobado para la zona, esta propiedad pertenece al sector determinado por los siguientes términos: ZONA  INSTITUCIONAL." ),0,1,'J' );
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(180,5,"",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Esta es la parte de la zona restringida que se dedica a las concesiones para uso Institucional de acuerdo a la ley 6043. Incluye tanto a aquellos lotes existentes y que cumplen con la Ley  6043, como los  que resultan del nuevo ordenamiento establecido, según el Plan Regulador de Samara publicado en la Gaceta 208 el 30 de Noviembre de 1981, para la Zona Institucional del mismo se desprende lo siguiente:",0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Esta es la parte de la zona restringida que se dedica a las concesiones para uso Institucional de acuerdo a la ley 6043. Incluye tanto a aquellos lotes existentes y que cumplen con la Ley  6043, como los  que resultan del nuevo ordenamiento establecido, según el Plan Regulador de Samara publicado en la Gaceta 208 el 30 de Noviembre de 1981, para la Zona Institucional del mismo se desprende lo siguiente:' ),0,'J');
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Localización:",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Mojón 23 a mojón 23 + 40 mts. (Sector Posterior)",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Mojón 23 + 50 mts a Mojón 23 + 85 mts. (Sector Medio)",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Mojón 19 a Mojón 19 + 50 mts. (Sector Posterior)",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Mojón 18 + 100 mts. a Mojón 19 + 20 mts (Sector Medio)",0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Localización:' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Mojón 23 a mojón 23 + 40 mts. (Sector Posterior)' ),0,'J');
+		 		$pdf->MultiCell(190,5,utf8_decode(
+		 		'Mojón 23 + 50 mts a Mojón 23 + 85 mts. (Sector Medio)' ),0,'J');
+		 			$pdf->MultiCell(190,5,utf8_decode(
+		 		'Mojón 19 a Mojón 19 + 50 mts. (Sector Posterior)' ),0,'J');
+		 				$pdf->MultiCell(190,5,utf8_decode(
+		 		'Mojón 18 + 100 mts. a Mojón 19 + 20 mts (Sector Medio)' ),0,'J');
+		 		$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Los usos permitidos:' ),0,'J');
+		 		$pdf->MultiCell(190,5,utf8_decode(
+		 		'Telégrafo, Correo, Puesto de Salud, Guardia Rural, Unidad Sanitaria, Ministerios, Teléfono, Instituciones Autónomas, Iglesia, Baños, Vestidores, Servicios Sanitarios, Parqueo, Caseta de Guarda, Primeros Auxilios, Información, Pilas y Venta de Frutas.' ),0,'J');
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Los usos permitidos:",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Telégrafo, Correo, Puesto de Salud, Guardia Rural, Unidad Sanitaria, Ministerios, Teléfono, Instituciones Autónomas, Iglesia, Baños, Vestidores, Servicios Sanitarios, Parqueo, Caseta de Guarda, Primeros Auxilios, Información, Pilas y Venta de Frutas.",0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Usos condicionales:' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Cafetería, Soda, Ranchos de Almuerzo Campestre, Parrillas.' ),0,'J');
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Usos condicionales:",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Cafetería, Soda, Ranchos de Almuerzo Campestre, Parrillas."
-		 		,0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Usos  conflictivos:' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Cualquier instalación que no sea de carácter institucional.' ),0,'J');
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Usos  conflictivos:",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Cualquier instalación que no sea de carácter institucional.",0,1,'J');
-		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"Concesiones:",0,1,'J');
-		 	$pdf->MultiCell(180,5,"Las concesiones se darán a las Instalaciones interesadas, de acuerdo al proceso establecido por la Ley 6043 y su Reglamento, pero la Municipalidad no les cobrara el canon respectivo.",0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Concesiones:' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Las concesiones se darán a las Instalaciones interesadas, de acuerdo al proceso establecido por la Ley 6043 y su Reglamento, pero la Municipalidad no les cobrara el canon respectivo.' ),0,'J');
+		 	
 		 	$pdf->Ln(1);
 		 	while ($fila = mysqli_fetch_array($datos)) { 		 		
 		 		$pdf->Ln(1); 		 		
@@ -2753,6 +2802,8 @@ public function rZonaInstitucional(){
 		 	//Fin Actividades
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Uso Conforme de Resolución Municipal de Ubicación con el proyecto a realizar, debe de cumplir:' ),0,'J');
 		 	// Inicio Leyes
 		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
 		 		$pdf->Ln(1);
@@ -2805,14 +2856,7 @@ public function rZonaInstitucional(){
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 			'Condicionado a contar con a disponibilidad de agua para el proyecto a realizar por parte de la entidad competente (Asada o AyA), basado en el decreto de sequía Nª MP-38642-MAG' ),0,'J');
-			$pdf->Ln(2);
-			$pdf->MultiCell(190,5,utf8_decode(
-		 		'Debiendo coordinar el permiso de corta de árboles existente en la propiedad ante el MINAE. La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, Ley de Uso, Manejo y Conservación de Suelo N° 7779, Ley forestal N°7575 y demás Legislación Vigente. Si se realiza movimientos de Tierra se debe solicitar el permiso Respectivo ante el departamento de Control Constructivo.' ),0,'J');
-			$pdf->Ln(2);
-			$pdf->MultiCell(190,5,utf8_decode(
-		 		'De requerirse remodelar, ampliar, renovar o reparar el local comercial, se requiere del trámite de la licencia municipal de construcción, para lo cual deberá sujetarse a las regulaciones estipuladas en el reglamento de construcciones, publicado en el diario oficial La Gaceta N°56, alcance N.º 17 del 11 de marzo de 1983 y sus reformas, así como lo indicado en la ley N°833 de noviembre de 1949 Ley de construcciones , así mismo,  cumplir con la normativa ambiental, sanitaria, urbanística y otras vigentes que regulen los procesos constructivos.' ),0,'J');
+		 	
 			$pdf->Ln(2);
 			while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
 		 		$pdf->Ln(1);
@@ -3827,16 +3871,27 @@ public function rFueraPlanRegulador(){
 		 	//Fin Actividades
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
-		 	$pdf->MultiCell(190,5,"Uso de Suelo Conforme de Resolución Municipal de Ubicación con el proyecto a realizar, condicionado a contar con la disponibilidad de agua para el proyecto a realizar por parte de la entidad competente (Asada o AyA). Basado en el Decreto de Sequía N° 38642-MP-MAG.",0,1,'J');
-		 	$pdf->MultiCell(190,5,"Para la eventual construcción se debe de respetar los retiros de Ley (Rutas nacional, Cantonal o cualquier otro que corresponda según la ubicación del terreno).",0,1,'J');
-		 	$pdf->MultiCell(190,5,"Debiendo coordinar el permiso de corta de árboles existente en la propiedad ante el MINAE a lo cual, debe de cumplir: ",0,1,'J');
-		 	$pdf->MultiCell(190,5,"Si se realiza movimientos de Tierra se debe solicitar el permiso Respectivo ante el departamento de Control Constructivo. ",0,1,'J');
-		 	$pdf->MultiCell(190,5,"Se le advierte que “las edificaciones privada que impliquen concurrencia y brinden atención al publico deberán de contar con accesibilidad al espacio físico “ conforme los dispuesto en el articulo 10 de la ley N.º 7600 “ Igualdad de oportunidades a las personas con discapacidad” y deberán contar con las características establecidas en el Decreto N.º 26831,” Reglamento de igualdad de oportunidades para personas con discapacidad”.",0,1,'J');
-		 	$pdf->MultiCell(190,5,"El otorgamiento de la resolución municipal de ubicación no  implica el otorgamiento inmediato y obligatorio de permiso sanitario de funcionamiento por parte del Ministerio de Salud, ya que el administrado deberá cumplir con lo estipulado en la ley N.º 5395 del 30 de octubre de 1973 “ Ley general de salud”, y sus reformas; Decreto ejecutivo N|39472-S del lunes 8 de febrero del 2016 “ Reglamento General para autorizaciones y permisos sanitarios de funcionamiento otorgados por el Ministerio de salud”, así como demás condiciones de ordenamiento jurídico vigentes y requisitos señalados en el reglamento específico que regula el funcionamiento de la actividad a instalar.",0,1,'J');
-		 	$pdf->MultiCell(190,5,"De requerirse remodelar, ampliar,renovar o reparar la infraestructura , se requiere del trámite de la licencia municipal de construcción, para lo cual deberá sujetarse a las regulaciones estipuladas en el reglamento de construcciones, publicado en el diario oficial La Gaceta N°56, alcance N.º 17 del 11 de marzo de 1983 y sus reformas, así como lo indicado en la ley N°833 de noviembre de 1949 “Ley de construcciones “, así mismo,  cumplir con la normativa ambiental, sanitaria,urbanística y otras vigentes que regulen los procesos constructivos.",0,1,'J');
-		 	$pdf->MultiCell(190,5,"De conformidad con lo dispuesto en el articulo 162 del código municipal , puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos.",0,1,'J');
-		 	$pdf->MultiCell(190,5,"La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, Ley de Uso, Manejo y Conservación de Suelo N° 7779, Ley forestal N°7575 y demás Legislación Vigente.",0,1,'J');
-		 	$pdf->MultiCell(190,5,"De previo a desarrollar el proyecto debe garantizar que toda posible molestia debe quedar completamente confinada dentro del inmueble; así como realizar todos los análisis para verificar la viabilidad ambiental, vial, patrimonial, de afectaciones de las aguas pluviales, de infraestructura, de mecánica de suelos, de escorrentía, de riesgos naturales, de disponibilidad de servicios, de transporte publico, etc., para conocer si realmente la propiedad en este caso privada es apta para la construcción de este tipo de proyecto.",0,1,'J');
+
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Uso de Suelo Conforme de Resolución Municipal de Ubicación con el proyecto a realizar, condicionado a contar con la disponibilidad de agua para el proyecto a realizar por parte de la entidad competente (Asada o AyA). Basado en el Decreto de Sequía N° 38642-MP-MAG.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Debiendo coordinar el permiso de corta de árboles existente en la propiedad ante el MINAE a lo cual, debe de cumplir.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Si se realiza movimientos de Tierra se debe solicitar el permiso Respectivo ante el departamento de Control Constructivo.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Se le advierte que las edificaciones privada que impliquen concurrencia y brinden atención al publico deberán de contar con accesibilidad al espacio físico conforme los dispuesto en el articulo 10 de la ley N.º 7600  Igualdad de oportunidades a las personas con discapacidad y deberán contar con las características establecidas en el Decreto N.º 26831, Reglamento de igualdad de oportunidades para personas con discapacidad.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'El otorgamiento de la resolución municipal de ubicación no  implica el otorgamiento inmediato y obligatorio de permiso sanitario de funcionamiento por parte del Ministerio de Salud, ya que el administrado deberá cumplir con lo estipulado en la ley N.º 5395 del 30 de octubre de 1973  Ley general de salud, y sus reformas; Decreto ejecutivo N º 39472-S del lunes 8 de febrero del 2016 Reglamento General para autorizaciones y permisos sanitarios de funcionamiento otorgados por el Ministerio de salud, así como demás condiciones de ordenamiento jurídico vigentes y requisitos señalados en el reglamento específico que regula el funcionamiento de la actividad a instalar.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'De requerirse remodelar, ampliar, renovar o reparar la infraestructura , se requiere del trámite de la licencia municipal de construcción, para lo cual deberá sujetarse a las regulaciones estipuladas en el reglamento de construcciones, publicado en el diario oficial La Gaceta N°56, alcance N.º 17 del 11 de marzo de 1983 y sus reformas, así como lo indicado en la ley N°833 de noviembre de 1949 Ley de construcciones , así mismo,  cumplir con la normativa ambiental, sanitaria, urbanística y otras vigentes que regulen los procesos constructivos.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'De conformidad con lo dispuesto en el artículo 162 del código municipal , puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, Ley de Uso, Manejo y Conservación de Suelo N° 7779, Ley forestal N°7575 y demás Legislación Vigente.' ),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'De previo a desarrollar el proyecto debe garantizar que toda posible molestia debe quedar completamente confinada dentro del inmueble; así como realizar todos los análisis para verificar la viabilidad ambiental, vial, patrimonial, de afectaciones de las aguas pluviales, de infraestructura, de mecánica de suelos, de escorrentía, de riesgos naturales, de disponibilidad de servicios, de transporte público, etc., para conocer si realmente la propiedad en este caso privada es apta para la construcción de este tipo de proyecto.' ),0,'J');
+
+
 		 	// Inicio Leyes
 		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
 		 		$pdf->Ln(1);
@@ -3922,6 +3977,449 @@ public function rFueraPlanRegulador(){
 		$pdf->Output();
 	}
 }
+
+
+public function rDarInta(){
+	$this->DarInta   			= new classreporte();
+
+	$this->constra 				= new classreporte();
+	
+	$this->actdes_res 	 		= new classreporte();
+	$this->actdes_com 	 		= new classreporte();
+	$this->actdes_com_in 		= new classreporte();
+	$this->actdes_desa 	 		= new classreporte();
+	$this->actdes_es 	 		= new classreporte();
+	
+	$this->desceg 		 		= new classreporte();
+	
+	$this->leyesAccesos 		= new classreporte();
+	$this->leyesDesarroSect 	= new classreporte();
+	$this->leyesEspacioGeo 		= new classreporte();
+	$this->leyesActividades 	= new classreporte();
+	$this->leyesAspectoBio 		= new classreporte();
+	$this->leyesPatente 		= new classreporte();
+	$this->leyesPlan 		 	= new classreporte();
+	$this->leyesRedVial 		= new classreporte();
+	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
+	
+	$this->apro_dene 			= new classreporte();
+	$this->observacion          = new classreporte();
+	$this->datosresiprivada     = new classreporte();
+
+	$this->DarInta->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLista 			= $this->DarInta->listarDarInta();
+
+	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rDesceg 			= $this->desceg->listarDESCEG();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
+
+	$this->actdes_res->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesRes 		= $this->actdes_res->listarACTDESRES();
+	$this->actdes_com->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesCom 		= $this->actdes_com->listarACTDESCOM();
+	$this->actdes_com_in->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesComIn 		= $this->actdes_com_in->listarACTDESCOMIN();
+	$this->actdes_desa->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesDesa 		= $this->actdes_desa->listarACTDESDESA();
+	$this->actdes_es->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesEs 			= $this->actdes_es->listarACTDESES();
+
+	$this->leyesAccesos->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAccesos 		= $this->leyesAccesos->listarLeyAccesos();
+	$this->leyesDesarroSect->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesDesarroSect 	= $this->leyesDesarroSect->listarLeyDesarroSect();
+	$this->leyesEspacioGeo->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesEspacioGeo 	= $this->leyesEspacioGeo->listarLeyEspacioGeo();
+	$this->leyesActividades->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesActividades	= $this->leyesActividades->listarLeyActividades();
+	$this->leyesAspectoBio->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAspectoBio 	= $this->leyesAspectoBio->listarLeyAspectoBio();
+	$this->leyesPatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesPatente 		= $this->leyesPatente->listarLeyPatente();
+	$this->leyesPlan->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesPlan 		= $this->leyesPlan->listarLeyPlan();
+	$this->leyesRedVial->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
+	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 		= $this->leyesServi->listarLeyServi();
+
+	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rApro_Dene 		= $this->apro_dene->listarR_APRO_DENE();
+
+	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
+
+	$pdf 				= new PDF();
+	$pdf->AliasNbPages();
+	$pdf->AddPage();
+	$pdf->SetFillColor(255,255,255);
+	$pdf->SetFont('Arial','B',11);
+	try
+	{
+		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
+		while ($row = mysqli_fetch_array($rLista)) {
+			$pdf->MultiCell(50,5,$row[0],0,1);
+			// Inicio Consecutivo
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,utf8_decode("Nº OF-DPU-".$cons[0]."-".$cons[1]."-".$cons[2]),0,'L');
+		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
+		 	$pdf->MultiCell(100,5,utf8_decode("Señor(a):"));
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(100,5,utf8_decode($row[2]." ".$row[3]." ".$row[4]),0,1,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(40,5,utf8_decode("Cédula: ".$row[5]),0,1,'J');
+		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
+		 	$pdf->SetFont('Arial','B',10);
+		 	$pdf->MultiCell(180,5,utf8_decode(
+		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya; indicando lo siguiente:" ),0,1,'J' );
+		 	$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode(
+		 		'Basado en el Reglamento a la Ley de Uso, Manejo y Conservación de Suelos, en su  Artículo 58.—En toda información posesoria o que se presente ante el IDA o ante los Tribunales de Justicia, con el fin de inscribir en el Registro Público de la Propiedad, el interesado, además de los requisitos que exige la normativa común, deberá de demostrar, con un estudio adecuado de suelos, que ha ejercido la posesión cumpliendo con el uso conforme del suelo para la actividad que realiza de acuerdo con la metodología aprobada, y ejecutándolas con las mejores prácticas de su manejo, según la mejor tecnología disponible en cumplimiento con lo dispuesto en los artículos 3, 6, 12, 13, 19, 26, 27, 41, 43 y 64 de la Ley Nº 7779 y este Reglamento.' ),0,'J');
+
+		 	$pdf->Ln(2);
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(100,5,"Por lo tanto",0,0);
+		 	$pdf->Ln(1);
+		 	while ($obser = mysqli_fetch_array($robservacion)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	
+		 	}// Finaliza Consecutivo
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Nota: De conformidad con lo dispuesto en el artículo 162 del código municipal, puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos. Una vez este proceso sea subsanado se deberá tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederá a brindar la Resolución de Ubicación de Usos de Suelo para la Actividad Deseada. 
+Basado en el Artículo 6 de la ley 8220 se otorgará en plazo de 10 días avilés para presentar lo solicitado.' ),0,'J');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
+		 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
+		 	$pdf->Ln(5);
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->Ln(3);
+		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
+		 	$pdf->Ln(3);
+		 	$pdf->MultiCell(60,5,"__________________________",0,1);
+		 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
+		 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
+		 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
+		 }
+		 $pdf->Output();
+	} catch(Exception $e){
+		$pdf->Cell(30, 10, "Sin datos".$e, 0, 0, 'C');
+		$pdf->Output();
+	}
+}
+
+
+public function rMINAEClaseVIII(){
+	$this->MINAEClaseVIII   			= new classreporte();
+
+	$this->constra 				= new classreporte();
+	
+	$this->actdes_res 	 		= new classreporte();
+	$this->actdes_com 	 		= new classreporte();
+	$this->actdes_com_in 		= new classreporte();
+	$this->actdes_desa 	 		= new classreporte();
+	$this->actdes_es 	 		= new classreporte();
+	
+	$this->desceg 		 		= new classreporte();
+	
+	$this->leyesAccesos 		= new classreporte();
+	$this->leyesDesarroSect 	= new classreporte();
+	$this->leyesEspacioGeo 		= new classreporte();
+	$this->leyesActividades 	= new classreporte();
+	$this->leyesAspectoBio 		= new classreporte();
+	$this->leyesPatente 		= new classreporte();
+	$this->leyesPlan 		 	= new classreporte();
+	$this->leyesRedVial 		= new classreporte();
+	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
+	
+	$this->apro_dene 			= new classreporte();
+	$this->observacion          = new classreporte();
+	
+
+	$this->MINAEClaseVIII->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLista = $this->MINAEClaseVIII->listarMINAEClaseVIII();
+
+	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rDesceg 			= $this->desceg->listarDESCEG();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
+
+	$this->actdes_res->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesRes 		= $this->actdes_res->listarACTDESRES();
+	$this->actdes_com->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesCom 		= $this->actdes_com->listarACTDESCOM();
+	$this->actdes_com_in->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesComIn 		= $this->actdes_com_in->listarACTDESCOMIN();
+	$this->actdes_desa->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesDesa 		= $this->actdes_desa->listarACTDESDESA();
+	$this->actdes_es->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesEs 			= $this->actdes_es->listarACTDESES();
+
+	$this->leyesAccesos->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAccesos 		= $this->leyesAccesos->listarLeyAccesos();
+	$this->leyesDesarroSect->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesDesarroSect 	= $this->leyesDesarroSect->listarLeyDesarroSect();
+	$this->leyesEspacioGeo->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesEspacioGeo 	= $this->leyesEspacioGeo->listarLeyEspacioGeo();
+	$this->leyesActividades->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesActividades	= $this->leyesActividades->listarLeyActividades();
+	$this->leyesAspectoBio->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAspectoBio 	= $this->leyesAspectoBio->listarLeyAspectoBio();
+	$this->leyesPatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesPatente 		= $this->leyesPatente->listarLeyPatente();
+	$this->leyesPlan->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesPlan 		= $this->leyesPlan->listarLeyPlan();
+	$this->leyesRedVial->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
+	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 		= $this->leyesServi->listarLeyServi();
+
+	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rApro_Dene 		= $this->apro_dene->listarR_APRO_DENE();
+
+	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
+
+	$pdf 				= new PDF();
+	$pdf->AliasNbPages();
+	$pdf->AddPage();
+	$pdf->SetFillColor(255,255,255);
+	$pdf->SetFont('Arial','B',11);
+	try
+	{
+		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
+		while ($row = mysqli_fetch_array($rLista)) {
+			$pdf->MultiCell(50,5,$row[0],0,1);
+			// Inicio Consecutivo
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,utf8_decode("Nº OF-DPU-".$cons[0]."-".$cons[1]."-".$cons[2]),0,'L');
+		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
+		 	$pdf->MultiCell(100,5,utf8_decode("Señor(a):"));
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(100,5,utf8_decode($row[2]." ".$row[3]." ".$row[4]),0,1,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(40,5,utf8_decode("Cédula: ".$row[5]),0,1,'J');
+		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
+		 	$pdf->SetFont('Arial','B',10);
+		 	$pdf->MultiCell(180,5,utf8_decode(
+		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya; indicando lo siguiente:" ),0,1,'J' );
+		 	$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode(
+		 		'La propiedad aparece en  el Mapa de  Capacidad de suelo en la clase VIII con la Aptitud del suelo de Zona de Protección Forestal por lo cual para realizar un cambio de actividad debe realizar lo expuesto en Reglamento a la Ley de Uso Manejo y conservación de suelos Ley N° 29375 en el CAPÍTULO V de la Planificación de Uso del Suelo y las Zonas Catastrales. 
+Artículo 54.	Para los efectos de lo dispuesto en los artículos 7 inciso c) y 13 inciso a) de la Ley Nº 7779, en las zonas catastrales, el Catastro Nacional incluirá en sus mapas catastrales los mapas de uso del suelo y no autorizará segregaciones o inscripciones si no se cuenta con la autorización de cambio de uso del suelo emitida por el MAG y las demás instancias gubernamentales.' ),0,'J');
+		 			$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Artículo 55.	En los Planes Reguladores y Reglamentos de Zonificación que elabore el INVU y las Municipalidades, necesariamente en los distritos urbanos y rurales, se clasificarán y zonificarán los suelos agrarios, conforme lo disponen los incisos a) y b) del artículo 13 de la Ley de Planificación Urbana.' ),0,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Artículo 56.	Para autorizar el cambio de uso del suelo agrícola a otros tipos de uso, necesariamente deberá de contarse con la aprobación del MAG, quien atendiendo a los Planes Nacionales y Planes de Área, así como a las regulaciones establecidas por SETENA, y los criterios establecidos por los Comités de Uso, Manejo y Conservación de Suelos por Áreas, determinará su procedencia o no considerando su valor agronómico. Dado su valor agronómico, y su valor patrimonial como activo nacional, en el futuro, en la planificación del urbanismo, se respetarán y reservarán en lo posible los suelos agrícolas.' ),0,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Artículo 57.	En todo fraccionamiento y urbanización, deberán presentarse estudios de uso, manejo y conservación de suelos y aguas, para evitar la contaminación, degradación, erosión, sedimentación de embalses y obstrucción de alcantarillados.' ),0,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Basado en el oficio DST-213-2016 del 27 de octubre del 2016 firmado por el Ing. Agr. Renato Jiménez Zúñiga, MSC. Jefe del departamento de servicios técnicos del INTA. Donde delimita en el punto5: Finalmente, esta dependencia no tiene competencia legal ni técnica para definir si la propiedad de marras se encuentra o no en zona de bosque o con aptitud forestal, debido a que este tema es resorte exclusivo del Sistema Nacional de Áreas de Conservación ( SINAC), del Ministerio de Ambiente y Energía. ' ),0,'J');
+
+
+		 	$pdf->Ln(2);
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(100,5,"Por lo tanto",0,0);
+		 	$pdf->Ln(1);
+		 	while ($obser = mysqli_fetch_array($robservacion)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	
+		 	}// Finaliza Consecutivo
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Nota: De conformidad con lo dispuesto en el artículo 162 del código municipal, puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos. Una vez este proceso sea subsanado se deberá tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederá a brindar la Resolución de Ubicación de Usos de Suelo para la Actividad Deseada. 
+Basado en el Artículo 6 de la ley 8220 se otorgará en plazo de 10 días avilés para presentar lo solicitado.' ),0,'J');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
+		 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
+		 	$pdf->Ln(5);
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->Ln(3);
+		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
+		 	$pdf->Ln(3);
+		 	$pdf->MultiCell(60,5,"__________________________",0,1);
+		 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
+		 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
+		 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
+		 }
+		 $pdf->Output();
+	} catch(Exception $e){
+		$pdf->Cell(30, 10, "Sin datos".$e, 0, 0, 'C');
+		$pdf->Output();
+	}
+}
+
+
+public function rDarDireccionAgua(){
+	$this->DireccionAgua   			= new classreporte();
+
+	$this->constra 				= new classreporte();
+	
+	$this->actdes_res 	 		= new classreporte();
+	$this->actdes_com 	 		= new classreporte();
+	$this->actdes_com_in 		= new classreporte();
+	$this->actdes_desa 	 		= new classreporte();
+	$this->actdes_es 	 		= new classreporte();
+	
+	$this->desceg 		 		= new classreporte();
+	
+	$this->leyesAccesos 		= new classreporte();
+	$this->leyesDesarroSect 	= new classreporte();
+	$this->leyesEspacioGeo 		= new classreporte();
+	$this->leyesActividades 	= new classreporte();
+	$this->leyesAspectoBio 		= new classreporte();
+	$this->leyesPatente 		= new classreporte();
+	$this->leyesPlan 		 	= new classreporte();
+	$this->leyesRedVial 		= new classreporte();
+	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
+	
+	$this->apro_dene 			= new classreporte();
+	$this->observacion          = new classreporte();
+	
+
+	$this->DireccionAgua->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLista = $this->DireccionAgua->listarDireccionAgua();
+
+	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rDesceg 			= $this->desceg->listarDESCEG();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
+
+	$this->actdes_res->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesRes 		= $this->actdes_res->listarACTDESRES();
+	$this->actdes_com->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesCom 		= $this->actdes_com->listarACTDESCOM();
+	$this->actdes_com_in->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesComIn 		= $this->actdes_com_in->listarACTDESCOMIN();
+	$this->actdes_desa->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesDesa 		= $this->actdes_desa->listarACTDESDESA();
+	$this->actdes_es->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesEs 			= $this->actdes_es->listarACTDESES();
+
+	$this->leyesAccesos->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAccesos 		= $this->leyesAccesos->listarLeyAccesos();
+	$this->leyesDesarroSect->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesDesarroSect 	= $this->leyesDesarroSect->listarLeyDesarroSect();
+	$this->leyesEspacioGeo->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesEspacioGeo 	= $this->leyesEspacioGeo->listarLeyEspacioGeo();
+	$this->leyesActividades->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesActividades	= $this->leyesActividades->listarLeyActividades();
+	$this->leyesAspectoBio->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAspectoBio 	= $this->leyesAspectoBio->listarLeyAspectoBio();
+	$this->leyesPatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesPatente 		= $this->leyesPatente->listarLeyPatente();
+	$this->leyesPlan->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesPlan 		= $this->leyesPlan->listarLeyPlan();
+	$this->leyesRedVial->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
+	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 		= $this->leyesServi->listarLeyServi();
+
+	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rApro_Dene 		= $this->apro_dene->listarR_APRO_DENE();
+
+	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
+
+	$pdf 				= new PDF();
+	$pdf->AliasNbPages();
+	$pdf->AddPage();
+	$pdf->SetFillColor(255,255,255);
+	$pdf->SetFont('Arial','B',11);
+	try
+	{
+		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
+		while ($row = mysqli_fetch_array($rLista)) {
+			$pdf->MultiCell(50,5,$row[0],0,1);
+			// Inicio Consecutivo
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,utf8_decode("Nº OF-DPU-".$cons[0]."-".$cons[1]."-".$cons[2]),0,'L');
+		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
+		 	$pdf->MultiCell(100,5,utf8_decode("Señor(a):"));
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(100,5,utf8_decode($row[2]." ".$row[3]." ".$row[4]),0,1,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(40,5,utf8_decode("Cédula: ".$row[5]),0,1,'J');
+		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
+		 	$pdf->SetFont('Arial','B',10);
+		 	$pdf->MultiCell(180,5,utf8_decode(
+		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya; indicando lo siguiente:" ),0,1,'J' );
+		 	$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode(
+		 		'Basada en la inspección realizada el 17-05-2018, la cual genero el informe de campo oficio N°-672-2018. ' ),0,'J');
+		 			$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Según la investigación municipal se logra delimitar que la propiedad se encuentra parcialmente en zona de Inundación según el mapa de la CNE, además que está relativamente dentro del área de retiro según la base de datos del sistema municipal. ' ),0,'J');
+
+
+		 	$pdf->Ln(2);
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(100,5,"Por lo tanto de previo a resolver:",0,0);
+		 	$pdf->Ln(1);
+		 	while ($obser = mysqli_fetch_array($robservacion)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	
+		 	}// Finaliza Consecutivo
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Nota: De conformidad con lo dispuesto en el artículo 162 del código municipal, puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos. Una vez este proceso sea subsanado se deberá tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederá a brindar la Resolución de Ubicación de Usos de Suelo para la Actividad Deseada. 
+Basado en el Artículo 6 de la ley 8220 se otorgará en plazo de 10 días avilés para presentar lo solicitado.' ),0,'J');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
+		 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
+		 	$pdf->Ln(5);
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->Ln(3);
+		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
+		 	$pdf->Ln(3);
+		 	$pdf->MultiCell(60,5,"__________________________",0,1);
+		 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
+		 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
+		 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
+		 }
+		 $pdf->Output();
+	} catch(Exception $e){
+		$pdf->Cell(30, 10, "Sin datos".$e, 0, 0, 'C');
+		$pdf->Output();
+	}
+}
+
+
 
 }
 ?>
