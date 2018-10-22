@@ -228,6 +228,7 @@ public function reporte(){
 	{
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
+			$pdf->Cell(-547, 50, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			while ($cons = mysqli_fetch_array($rConstra)) {
 		 		$pdf->MultiCell(60,5,"DPU-".$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
@@ -4365,6 +4366,8 @@ public function rDarDireccionAgua(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('DAR MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
