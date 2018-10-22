@@ -25,7 +25,9 @@ class classreporteController
 
 	private $turisticocomercial;
 	private $datosturistico;
+
 	//Fin Nicoya
+
 	//Samara
 	private $zonacomerturistica;
 	private $datoscomerturistica;
@@ -45,27 +47,30 @@ class classreporteController
 
 	private $zonahotelera;
 	private $datoszonahotelera;
-	//Fin Samara
-//DAR
 
+	//Fin Samara
+
+	//DAR
 	private $DarInta;
 	private $MINAEClaseVIII;
 	private $DireccionAgua;
-
+	private $FechaRegTra;
 	//FIN DAR
-
-
+	//Datos
 	private $resolusion;
 	private $constra;
-
+	//Fin Datos
+	//Actividades
 	private $actdes_res;
 	private $actdes_com;
 	private $actdes_com_in;
 	private $actdes_es;
 	private $actdes_desa;
-
+	//Fin Actividades
+	//Uso de suelo
 	private $desceg;
-
+	//Fin usu de suelo
+	//Leyes
 	private $leyesAccesos;
 	private $leyesDesarroSect;
 	private $leyesEspacioGeo;
@@ -76,10 +81,11 @@ class classreporteController
 	private $leyesRedVial;
 	private $leyesAreasPro;
 	private $leyesServi;
-
+	//Fin leyes
+	//Extra
 	private $apro_dene;
 	private $observacion;
-
+	//Fin Extra
 function __construct()
 {
 	$this->classreporte = new classreporte();
@@ -2062,7 +2068,7 @@ public function rTuristicoComercial(){
 	}
 }
 
-// }
+// Fin Nicoya }
 
 // Samara {
 
@@ -3729,7 +3735,7 @@ public function rZonaHotelera(){
 	}
 }
 
-// }
+//Fin Samara }
 
 public function rFueraPlanRegulador(){
 	$this->fueraplan   			= new classreporte();
@@ -3978,7 +3984,6 @@ public function rFueraPlanRegulador(){
 	}
 }
 
-
 public function rDarInta(){
 	$this->DarInta   			= new classreporte();
 
@@ -4079,8 +4084,7 @@ public function rDarInta(){
 		 	$pdf->MultiCell(180,5,utf8_decode(
 		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya; indicando lo siguiente:" ),0,1,'J' );
 		 	$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode(
-		 		'Basado en el Reglamento a la Ley de Uso, Manejo y Conservación de Suelos, en su  Artículo 58.—En toda información posesoria o que se presente ante el IDA o ante los Tribunales de Justicia, con el fin de inscribir en el Registro Público de la Propiedad, el interesado, además de los requisitos que exige la normativa común, deberá de demostrar, con un estudio adecuado de suelos, que ha ejercido la posesión cumpliendo con el uso conforme del suelo para la actividad que realiza de acuerdo con la metodología aprobada, y ejecutándolas con las mejores prácticas de su manejo, según la mejor tecnología disponible en cumplimiento con lo dispuesto en los artículos 3, 6, 12, 13, 19, 26, 27, 41, 43 y 64 de la Ley Nº 7779 y este Reglamento.' ),0,'J');
+		 		$pdf->MultiCell(190,5,utf8_decode('Basado en el Reglamento a la Ley de Uso, Manejo y Conservación de Suelos, en su  Artículo 58.—En toda información posesoria o que se presente ante el IDA o ante los Tribunales de Justicia, con el fin de inscribir en el Registro Público de la Propiedad, el interesado, además de los requisitos que exige la normativa común, deberá de demostrar, con un estudio adecuado de suelos, que ha ejercido la posesión cumpliendo con el uso conforme del suelo para la actividad que realiza de acuerdo con la metodología aprobada, y ejecutándolas con las mejores prácticas de su manejo, según la mejor tecnología disponible en cumplimiento con lo dispuesto en los artículos 3, 6, 12, 13, 19, 26, 27, 41, 43 y 64 de la Ley Nº 7779 y este Reglamento.' ),0,'J');
 
 		 	$pdf->Ln(2);
 		 	$pdf->Ln(2);
@@ -4095,8 +4099,7 @@ public function rDarInta(){
 		 	}// Finaliza Consecutivo
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Nota: De conformidad con lo dispuesto en el artículo 162 del código municipal, puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos. Una vez este proceso sea subsanado se deberá tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederá a brindar la Resolución de Ubicación de Usos de Suelo para la Actividad Deseada. 
-Basado en el Artículo 6 de la ley 8220 se otorgará en plazo de 10 días avilés para presentar lo solicitado.' ),0,'J');
+		 		'Nota: De conformidad con lo dispuesto en el artículo 162 del código municipal, puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos. Una vez este proceso sea subsanado se deberá tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederá a brindar la Resolución de Ubicación de Usos de Suelo para la Actividad Deseada. Basado en el Artículo 6 de la ley 8220 se otorgará en plazo de 10 días avilés para presentar lo solicitado.' ),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
 		 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
@@ -4119,9 +4122,8 @@ Basado en el Artículo 6 de la ley 8220 se otorgará en plazo de 10 días avilé
 	}
 }
 
-
 public function rMINAEClaseVIII(){
-	$this->MINAEClaseVIII   			= new classreporte();
+	$this->MINAEClaseVIII   	= new classreporte();
 
 	$this->constra 				= new classreporte();
 	
@@ -4207,36 +4209,37 @@ public function rMINAEClaseVIII(){
 			// Inicio Consecutivo
 			while ($cons = mysqli_fetch_array($rConstra)) {
 		 		$pdf->MultiCell(60,5,utf8_decode("Nº OF-DPU-".$cons[0]."-".$cons[1]."-".$cons[2]),0,'L');
-		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
+		 	$pdf->MultiCell(0,0,
+		 		utf8_decode("Número de Trámite:"),0,0,'L');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
-		 	$pdf->MultiCell(100,5,utf8_decode("Señor(a):"));
+		 	$pdf->MultiCell(100,5,
+		 		utf8_decode("Señor(a):"));
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(100,5,utf8_decode($row[2]." ".$row[3]." ".$row[4]),0,1,'J');
+		 	$pdf->MultiCell(100,5,
+		 		utf8_decode($row[2]." ".$row[3]." ".$row[4]),0,1,'J');
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(40,5,utf8_decode("Cédula: ".$row[5]),0,1,'J');
+		 	$pdf->MultiCell(40,5,
+		 		utf8_decode("Cédula: ".$row[5]),0,1,'J');
 		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
 		 	$pdf->SetFont('Arial','B',10);
-		 	$pdf->MultiCell(180,5,utf8_decode(
-		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya; indicando lo siguiente:" ),0,1,'J' );
+		 	$pdf->MultiCell(180,5,
+		 		utf8_decode("Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya; indicando lo siguiente:" ),0,1,'J' );
 		 	$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode(
-		 		'La propiedad aparece en  el Mapa de  Capacidad de suelo en la clase VIII con la Aptitud del suelo de Zona de Protección Forestal por lo cual para realizar un cambio de actividad debe realizar lo expuesto en Reglamento a la Ley de Uso Manejo y conservación de suelos Ley N° 29375 en el CAPÍTULO V de la Planificación de Uso del Suelo y las Zonas Catastrales. 
-Artículo 54.	Para los efectos de lo dispuesto en los artículos 7 inciso c) y 13 inciso a) de la Ley Nº 7779, en las zonas catastrales, el Catastro Nacional incluirá en sus mapas catastrales los mapas de uso del suelo y no autorizará segregaciones o inscripciones si no se cuenta con la autorización de cambio de uso del suelo emitida por el MAG y las demás instancias gubernamentales.' ),0,'J');
+		 		$pdf->MultiCell(190,5,
+		 			utf8_decode('La propiedad aparece en  el Mapa de  Capacidad de suelo en la clase VIII con la Aptitud del suelo de Zona de Protección Forestal por lo cual para realizar un cambio de actividad debe realizar lo expuesto en Reglamento a la Ley de Uso Manejo y conservación de suelos Ley N° 29375 en el CAPÍTULO V de la Planificación de Uso del Suelo y las Zonas Catastrales. Artículo 54.	Para los efectos de lo dispuesto en los artículos 7 inciso c) y 13 inciso a) de la Ley Nº 7779, en las zonas catastrales, el Catastro Nacional incluirá en sus mapas catastrales los mapas de uso del suelo y no autorizará segregaciones o inscripciones si no se cuenta con la autorización de cambio de uso del suelo emitida por el MAG y las demás instancias gubernamentales.' ),0,'J');
 		 			$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Artículo 55.	En los Planes Reguladores y Reglamentos de Zonificación que elabore el INVU y las Municipalidades, necesariamente en los distritos urbanos y rurales, se clasificarán y zonificarán los suelos agrarios, conforme lo disponen los incisos a) y b) del artículo 13 de la Ley de Planificación Urbana.' ),0,'J');
+		 	$pdf->MultiCell(190,5,
+		 		utf8_decode('Artículo 55.	En los Planes Reguladores y Reglamentos de Zonificación que elabore el INVU y las Municipalidades, necesariamente en los distritos urbanos y rurales, se clasificarán y zonificarán los suelos agrarios, conforme lo disponen los incisos a) y b) del artículo 13 de la Ley de Planificación Urbana.' ),0,'J');
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Artículo 56.	Para autorizar el cambio de uso del suelo agrícola a otros tipos de uso, necesariamente deberá de contarse con la aprobación del MAG, quien atendiendo a los Planes Nacionales y Planes de Área, así como a las regulaciones establecidas por SETENA, y los criterios establecidos por los Comités de Uso, Manejo y Conservación de Suelos por Áreas, determinará su procedencia o no considerando su valor agronómico. Dado su valor agronómico, y su valor patrimonial como activo nacional, en el futuro, en la planificación del urbanismo, se respetarán y reservarán en lo posible los suelos agrícolas.' ),0,'J');
+		 	$pdf->MultiCell(190,5,
+		 		utf8_decode('Artículo 56.	Para autorizar el cambio de uso del suelo agrícola a otros tipos de uso, necesariamente deberá de contarse con la aprobación del MAG, quien atendiendo a los Planes Nacionales y Planes de Área, así como a las regulaciones establecidas por SETENA, y los criterios establecidos por los Comités de Uso, Manejo y Conservación de Suelos por Áreas, determinará su procedencia o no considerando su valor agronómico. Dado su valor agronómico, y su valor patrimonial como activo nacional, en el futuro, en la planificación del urbanismo, se respetarán y reservarán en lo posible los suelos agrícolas.' ),0,'J');
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Artículo 57.	En todo fraccionamiento y urbanización, deberán presentarse estudios de uso, manejo y conservación de suelos y aguas, para evitar la contaminación, degradación, erosión, sedimentación de embalses y obstrucción de alcantarillados.' ),0,'J');
+		 	$pdf->MultiCell(190,5,
+		 		utf8_decode('Artículo 57.	En todo fraccionamiento y urbanización, deberán presentarse estudios de uso, manejo y conservación de suelos y aguas, para evitar la contaminación, degradación, erosión, sedimentación de embalses y obstrucción de alcantarillados.' ),0,'J');
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Basado en el oficio DST-213-2016 del 27 de octubre del 2016 firmado por el Ing. Agr. Renato Jiménez Zúñiga, MSC. Jefe del departamento de servicios técnicos del INTA. Donde delimita en el punto5: Finalmente, esta dependencia no tiene competencia legal ni técnica para definir si la propiedad de marras se encuentra o no en zona de bosque o con aptitud forestal, debido a que este tema es resorte exclusivo del Sistema Nacional de Áreas de Conservación ( SINAC), del Ministerio de Ambiente y Energía. ' ),0,'J');
-
-
+		 	$pdf->MultiCell(190,5,
+		 		utf8_decode('Basado en el oficio DST-213-2016 del 27 de octubre del 2016 firmado por el Ing. Agr. Renato Jiménez Zúñiga, MSC. Jefe del departamento de servicios técnicos del INTA. Donde delimita en el punto5: Finalmente, esta dependencia no tiene competencia legal ni técnica para definir si la propiedad de marras se encuentra o no en zona de bosque o con aptitud forestal, debido a que este tema es resorte exclusivo del Sistema Nacional de Áreas de Conservación ( SINAC), del Ministerio de Ambiente y Energía. ' ),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(100,5,"Por lo tanto",0,0);
@@ -4249,23 +4252,26 @@ Artículo 54.	Para los efectos de lo dispuesto en los artículos 7 inciso c) y 1
 		 	
 		 	}// Finaliza Consecutivo
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Nota: De conformidad con lo dispuesto en el artículo 162 del código municipal, puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos. Una vez este proceso sea subsanado se deberá tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederá a brindar la Resolución de Ubicación de Usos de Suelo para la Actividad Deseada. 
-Basado en el Artículo 6 de la ley 8220 se otorgará en plazo de 10 días avilés para presentar lo solicitado.' ),0,'J');
+		 	$pdf->MultiCell(190,5,
+		 		utf8_decode('Nota: De conformidad con lo dispuesto en el artículo 162 del código municipal, puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos. Una vez este proceso sea subsanado se deberá tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederá a brindar la Resolución de Ubicación de Usos de Suelo para la Actividad Deseada. Basado en el Artículo 6 de la ley 8220 se otorgará en plazo de 10 días avilés para presentar lo solicitado.' ),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
 		 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,
+		 		utf8_decode('# Cedula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
-		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,
+		 		utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(60,5,"__________________________",0,1);
 		 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
-		 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
-		 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
+		 	$pdf->MultiCell(80,5,
+		 		utf8_decode("Coordinador de Planificación Urbana"),0,1);
+		 	$pdf->MultiCell(80,5,
+		 		utf8_decode("Municipalidad de Nicoya"),0,1);
 		 }
 		 $pdf->Output();
 	} catch(Exception $e){
@@ -4276,7 +4282,8 @@ Basado en el Artículo 6 de la ley 8220 se otorgará en plazo de 10 días avilé
 
 
 public function rDarDireccionAgua(){
-	$this->DireccionAgua   			= new classreporte();
+	$this->DireccionAgua   	 	= new classreporte();
+	$this->FechaRegTra			= new classreporte();
 
 	$this->constra 				= new classreporte();
 	
@@ -4305,6 +4312,8 @@ public function rDarDireccionAgua(){
 
 	$this->DireccionAgua->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLista = $this->DireccionAgua->listarDireccionAgua();
+	$this->FechaRegTra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rFecha = $this->FechaRegTra->listarFechaRegTra();
 
 	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rDesceg 			= $this->desceg->listarDESCEG();
@@ -4361,27 +4370,32 @@ public function rDarDireccionAgua(){
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			// Inicio Consecutivo
 			while ($cons = mysqli_fetch_array($rConstra)) {
-		 		$pdf->MultiCell(60,5,utf8_decode("Nº OF-DPU-".$cons[0]."-".$cons[1]."-".$cons[2]),0,'L');
-		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
+		 		$pdf->MultiCell(60,5,
+		 			utf8_decode("Nº OF-DPU-".$cons[0]."-".$cons[1]."-".$cons[2]),0,'L');
+		 	$pdf->MultiCell(0,0,
+		 		utf8_decode("Número de Trámite:"),0,0,'L');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
-		 	$pdf->MultiCell(100,5,utf8_decode("Señor(a):"));
+		 	$pdf->MultiCell(100,5,
+		 		utf8_decode("Señor(a):"));
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(100,5,utf8_decode($row[2]." ".$row[3]." ".$row[4]),0,1,'J');
+		 	$pdf->MultiCell(100,5,
+		 		utf8_decode($row[2]." ".$row[3]." ".$row[4]),0,1,'J');
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(40,5,utf8_decode("Cédula: ".$row[5]),0,1,'J');
+		 	$pdf->MultiCell(40,5,
+		 		utf8_decode("Cédula: ".$row[5]),0,1,'J');
 		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
 		 	$pdf->SetFont('Arial','B',10);
-		 	$pdf->MultiCell(180,5,utf8_decode(
-		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya; indicando lo siguiente:" ),0,1,'J' );
+		 	$pdf->MultiCell(180,5,
+		 		utf8_decode("Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya; indicando lo siguiente:" ),0,1,'J' );
 		 	$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode(
-		 		'Basada en la inspección realizada el 17-05-2018, la cual genero el informe de campo oficio N°-672-2018. ' ),0,'J');
-		 			$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Según la investigación municipal se logra delimitar que la propiedad se encuentra parcialmente en zona de Inundación según el mapa de la CNE, además que está relativamente dentro del área de retiro según la base de datos del sistema municipal. ' ),0,'J');
-
-
+		 	while ($fecreg = mysqli_fetch_array($rFecha)) {
+		 		$pdf->MultiCell(190,5,
+	 			utf8_decode("Basada en la inspección realizada el ".$fecreg[0].", la cual genero el informe de campo oficio N°-672-2018." ),0,'J');
+		 	}
+	 		$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,
+		 		utf8_decode('Según la investigación municipal se logra delimitar que la propiedad se encuentra parcialmente en zona de Inundación según el mapa de la CNE, además que está relativamente dentro del área de retiro según la base de datos del sistema municipal. ' ),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(100,5,"Por lo tanto de previo a resolver:",0,0);
@@ -4394,23 +4408,28 @@ public function rDarDireccionAgua(){
 		 	
 		 	}// Finaliza Consecutivo
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Nota: De conformidad con lo dispuesto en el artículo 162 del código municipal, puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos. Una vez este proceso sea subsanado se deberá tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederá a brindar la Resolución de Ubicación de Usos de Suelo para la Actividad Deseada. 
-Basado en el Artículo 6 de la ley 8220 se otorgará en plazo de 10 días avilés para presentar lo solicitado.' ),0,'J');
+		 	$pdf->MultiCell(190,5,
+		 		utf8_decode('Nota: De conformidad con lo dispuesto en el artículo 162 del código municipal, puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos. Una vez este proceso sea subsanado se deberá tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederá a brindar la Resolución de Ubicación de Usos de Suelo para la Actividad Deseada. Basado en el Artículo 6 de la ley 8220 se otorgará en plazo de 10 días avilés para presentar lo solicitado.' ),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
 		 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,
+		 		utf8_decode('# Cedula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
-		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,
+		 		utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(60,5,"__________________________",0,1);
 		 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
-		 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
-		 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
+		 	$pdf->MultiCell(80,5,
+		 		utf8_decode("Coordinador de Planificación Urbana"),0,1);
+		 	$pdf->MultiCell(80,5,
+		 		utf8_decode("Municipalidad de Nicoya")
+		 		,0,1
+		 	);
 		 }
 		 $pdf->Output();
 	} catch(Exception $e){
