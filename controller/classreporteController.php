@@ -226,9 +226,11 @@ public function reporte(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(5);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
-			$pdf->Cell(-547, 50, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+			
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			while ($cons = mysqli_fetch_array($rConstra)) {
 		 		$pdf->MultiCell(60,5,"DPU-".$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
@@ -463,6 +465,8 @@ public function rZonaVerde(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			while ($cons = mysqli_fetch_array($rConstra)) {
@@ -685,7 +689,8 @@ public function rInstitucional(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-
+$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			while ($cons = mysqli_fetch_array($rConstra)) {
@@ -916,7 +921,8 @@ public function rComercialCentral(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-
+$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			while ($cons = mysqli_fetch_array($rConstra)) {
@@ -1164,7 +1170,8 @@ public function rIndustrial(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-
+$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			while ($cons = mysqli_fetch_array($rConstra)) {
@@ -1427,7 +1434,8 @@ public function rResidencialComercial(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-
+	$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			while ($cons = mysqli_fetch_array($rConstra)) {
@@ -1666,6 +1674,8 @@ public function rResidencial(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -1901,7 +1911,8 @@ public function rTuristicoComercial(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-
+$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			while ($cons = mysqli_fetch_array($rConstra)) {
@@ -2156,6 +2167,8 @@ public function rZonaComercialTuristica(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -2456,6 +2469,8 @@ public function rZonaResidencialPrivada(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -2708,6 +2723,8 @@ public function rZonaInstitucional(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -2986,6 +3003,8 @@ public function rZonaPrivada(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -3247,6 +3266,8 @@ public function rZonaArriendo() {
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -3561,6 +3582,8 @@ public function rZonaHotelera(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(15);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -3819,6 +3842,8 @@ public function rFueraPlanRegulador(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		$pdf->Ln(5);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -3829,7 +3854,7 @@ public function rFueraPlanRegulador(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
 		 	$pdf->MultiCell(100,5,utf8_decode("Señor(a):"));
-		 	$pdf->Ln(1);
+		 	$pdf->Ln(1);  
 		 	$pdf->MultiCell(100,5,utf8_decode($row[2]." ".$row[3]." ".$row[4]),0,1,'J');
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(40,5,utf8_decode("Cédula: ".$row[5]),0,1,'J');
@@ -4066,6 +4091,8 @@ public function rDarInta(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('DEPREVIO A RESOLVER'), 0, 0, 'C');
+		$pdf->Ln(4);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -4204,6 +4231,8 @@ public function rMINAEClaseVIII(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
+		$pdf->Cell(185, 5, utf8_decode('DEPREVIO A RESOLVER'), 0, 0, 'C');
+		$pdf->Ln(2);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -4366,9 +4395,9 @@ public function rDarDireccionAgua(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-		$pdf->Cell(185, 5, utf8_decode('DAR MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
-		$pdf->Ln(15);
-		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
+		$pdf->Cell(185, 5, utf8_decode('DE PREVIO A RESOLVER'), 0, 0, 'C');
+		$pdf->Ln(2);
+		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc.
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			// Inicio Consecutivo
@@ -4394,7 +4423,7 @@ public function rDarDireccionAgua(){
 		 	$pdf->Ln(1);
 		 	while ($fecreg = mysqli_fetch_array($rFecha)) {
 		 		$pdf->MultiCell(190,5,
-	 			utf8_decode("Basada en la inspección realizada el ".$fecreg[0].", la cual genero el informe de campo oficio N°-672-2018." ),0,'J');
+	 			utf8_decode("Basada en la inspección realizada el ".$fecreg[0].", la cual genero el informe de campo." ),0,'J');
 		 	}
 	 		$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,

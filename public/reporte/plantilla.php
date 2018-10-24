@@ -15,7 +15,7 @@ class PDF extends FPDF
 		// Subtitulo
 		$this->Cell(363, 20, utf8_decode('DIRECCIÓN: PLANIFICACIÓN TERRITORIAL Y SERVICIOS AMBIENTALES'), 0, 0, 'C');
 		// Contenido
-		$this->Cell(-451, 30, utf8_decode('PLANIFICACIÓN URBANA'), 0, 0, 'C');
+		$this->Cell(-451, 30, utf8_decode('PLANIFICACIÓN URBANA '), 0, 0, 'C');
 		$this->SetFont('Arial', 'B', 5);
 		$this->Cell(547, 40, '=====================================================================================================================================================================================================', 0, 0, 'C');
 		$this->Ln(25);
