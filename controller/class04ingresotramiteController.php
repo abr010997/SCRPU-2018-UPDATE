@@ -56,11 +56,12 @@ class class04ingresotramiteController
 				}
 			}
 			$this->class04ingresotramite->setAtributo('PU04IDDISTRITO',$id);
-			
-			$this->guardarImagen();
-			
+						
 			$this->class04ingresotramite->guardar($_POST['pu38servi'],$_POST['pu26planreg'],
 				$_POST['pu26planreg1'],$_POST['pu13aap']);
+
+			$this->guardarImagen();
+
 
 			header('location:?c=class04ingresotramite&m=index');
 		}
@@ -155,20 +156,24 @@ class class04ingresotramiteController
 	{
 		if ($_POST)
 		{
+			// upload directory
+			$upload_dir = 'ImagenIngresoTra/';
+			if (!file_exists($upload_dir)) {
+				mkdir($upload_dir, 0777, true);
+			}
 
-		$imgFile = $_FILES['user_image']['name'];
-		$tmp_dir = $_FILES['user_image']['tmp_name'];
-		$imgSize = $_FILES['user_image']['size'];
+			$imgFile = $_FILES['user_image']['name'];
+			$tmp_dir = $_FILES['user_image']['tmp_name'];
+			$imgSize = $_FILES['user_image']['size'];
 
-		$upload_dir = 'ImagenIngresoTra/'; // upload directory
 
-		$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image 
+			$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image 
 
-		$valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
+			$valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
 
-		$userpic = rand(1000,1000000).".".$imgExt;
+			$userpic = rand(1000,1000000).".".$imgExt;
 
-		if(in_array($imgExt, $valid_extensions)){			
+			if(in_array($imgExt, $valid_extensions)){			
 				// Check file size '5MB'
 				if($imgSize < 5000000)				{
 					move_uploaded_file($tmp_dir,$upload_dir.$userpic);	
@@ -177,22 +182,14 @@ class class04ingresotramiteController
 					$this->class04ingresotramite->guardarImagen();
 				}
 				else{
-					$errMSG = "Sorry, your file is too large.";
+					$errMSG = "Lo siento. imagen demasiado grande";
 				}
 			}
 			else{
-				$errMSG = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";		
+				$errMSG = "Lo siento, Solo JPG, JPEG, PNG & GIF son archivos permitidos.";		
 			}
-			//$this->class04ingresotramite->guardarImagen($_REQUEST['PU04IDTRA'], $_REQUEST['userpic']);
-			//header('location:?c=class04ingresotramite&m=index');
 		}
-		/*
-		else{
-			$this->class04ingresotramite = $this->class04ingresotramite->buscar($_REQUEST['id']);
-			require_once 'view/header.php';
-			require_once 'view/class04ingresotramite/agregar.php';
-			require_once 'view/footer.php';		}*/
-		}
+	}
 
 }
 ?>
