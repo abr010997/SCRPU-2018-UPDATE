@@ -3862,7 +3862,22 @@ public function rFueraPlanRegulador(){
 		 	$pdf->SetFont('Arial','B',10);
 		 	$pdf->MultiCell(180,5,utf8_decode(
 		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya; indicando lo siguiente:" ),0,1,'J' );
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'La zona donde se encuentra esta propiedad está fuera de los limites del Plan Regulador.' ),0,'J');
+		 	$pdf->Ln(3);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Acatando la resolución de la Procuraduría General de la República bajo el dictamen C-312-2015 donde se manifiesta que el certificado de uso de suelo es de competencia municipal exista o no plan regulador.' ),0,'J');
 		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'* Cobertura máxima: Ver artículo V.I del Reglamento de Construcciones.' ),0,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'* Densidad máxima: Ver artículo VI.4 del Reglamento de Construcciones.' ),0,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'* Altura de la edificación: Ver artículo V.2 del Reglamento de Construcciones.' ),0,'J');
+		 	$pdf->Ln(4);
 		 	$pdf->MultiCell(55,5,'> Uso Actual del Suelo',0,1,'J');
 		 	//Muestra los usos del suelo actual
 		 	while ($as = mysqli_fetch_array($rDesceg)) {
@@ -3906,22 +3921,27 @@ public function rFueraPlanRegulador(){
 
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'Uso de Suelo Conforme de Resolución Municipal de Ubicación con el proyecto a realizar, condicionado a contar con la disponibilidad de agua para el proyecto a realizar por parte de la entidad competente (Asada o AyA). Basado en el Decreto de Sequía N° 38642-MP-MAG.' ),0,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Debiendo coordinar el permiso de corta de árboles existente en la propiedad ante el MINAE a lo cual, debe de cumplir.' ),0,'J');
+		 	$pdf->Ln(1);
+		 	///observaciones
+		 	while ($obser = mysqli_fetch_array($robservacion)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	/// fin de observaciones
+		 	
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'Si se realiza movimientos de Tierra se debe solicitar el permiso Respectivo ante el departamento de Control Constructivo.' ),0,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Se le advierte que las edificaciones privada que impliquen concurrencia y brinden atención al publico deberán de contar con accesibilidad al espacio físico conforme los dispuesto en el articulo 10 de la ley N.º 7600  Igualdad de oportunidades a las personas con discapacidad y deberán contar con las características establecidas en el Decreto N.º 26831, Reglamento de igualdad de oportunidades para personas con discapacidad.' ),0,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'El otorgamiento de la resolución municipal de ubicación no  implica el otorgamiento inmediato y obligatorio de permiso sanitario de funcionamiento por parte del Ministerio de Salud, ya que el administrado deberá cumplir con lo estipulado en la ley N.º 5395 del 30 de octubre de 1973  Ley general de salud, y sus reformas; Decreto ejecutivo N º 39472-S del lunes 8 de febrero del 2016 Reglamento General para autorizaciones y permisos sanitarios de funcionamiento otorgados por el Ministerio de salud, así como demás condiciones de ordenamiento jurídico vigentes y requisitos señalados en el reglamento específico que regula el funcionamiento de la actividad a instalar.' ),0,'J');
+		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'De requerirse remodelar, ampliar, renovar o reparar la infraestructura , se requiere del trámite de la licencia municipal de construcción, para lo cual deberá sujetarse a las regulaciones estipuladas en el reglamento de construcciones, publicado en el diario oficial La Gaceta N°56, alcance N.º 17 del 11 de marzo de 1983 y sus reformas, así como lo indicado en la ley N°833 de noviembre de 1949 Ley de construcciones , así mismo,  cumplir con la normativa ambiental, sanitaria, urbanística y otras vigentes que regulen los procesos constructivos.' ),0,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'De conformidad con lo dispuesto en el artículo 162 del código municipal , puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos.' ),0,'J');
+		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, Ley de Uso, Manejo y Conservación de Suelo N° 7779, Ley forestal N°7575 y demás Legislación Vigente.' ),0,'J');
+		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'De previo a desarrollar el proyecto debe garantizar que toda posible molestia debe quedar completamente confinada dentro del inmueble; así como realizar todos los análisis para verificar la viabilidad ambiental, vial, patrimonial, de afectaciones de las aguas pluviales, de infraestructura, de mecánica de suelos, de escorrentía, de riesgos naturales, de disponibilidad de servicios, de transporte público, etc., para conocer si realmente la propiedad en este caso privada es apta para la construcción de este tipo de proyecto.' ),0,'J');
+		 	$pdf->Ln(1);
 
 
 		 	// Inicio Leyes
@@ -3971,17 +3991,13 @@ public function rFueraPlanRegulador(){
 		 		$pdf->Ln(2);
 		 	}
 			// Fin leyes
-		 	while ($obser = mysqli_fetch_array($robservacion)) {
-		 		$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
-		 		$pdf->Ln(2);
-		 	}
+		 	
 			while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
+		 	$pdf->MultiCell(100,5,"POR TANTO",0,0);
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 		 	}// Finaliza Consecutivo
