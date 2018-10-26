@@ -3929,6 +3929,11 @@ public function rFueraPlanRegulador(){
 		 		$pdf->Ln(2);
 		 	}
 		 	/// fin de observaciones
+		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
 		 	
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'Si se realiza movimientos de Tierra se debe solicitar el permiso Respectivo ante el departamento de Control Constructivo.' ),0,'J');
@@ -3945,11 +3950,7 @@ public function rFueraPlanRegulador(){
 
 
 		 	// Inicio Leyes
-		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
-		 		$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
-		 		$pdf->Ln(2);
-		 	}
+		 	
 		 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
