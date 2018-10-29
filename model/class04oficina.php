@@ -91,6 +91,8 @@ class class04oficina  extends Conexion
 ///////////////////////////////////////////
 	private $PU04IDTIPOTRA;
 	private $PU47IDCONSECUTIVO;
+	/////////////////////////////////////////
+	private $PU04RUTAIMAGEN;
 //////////////////////////////////////////////////////////////////////////////
 
 	
@@ -1368,6 +1370,12 @@ public function convertToclass04oficinaTipotramite($result)
 			$class04oficina->setAtributo('PU47IDCONSECUTIVO',$row[2]);
 		}
 		return $class04oficina;
+	}
+
+	public function guardarImagen()
+	{	
+		$sql40 = "CALL SP04_RUTAIMAGEN_GUARDAR ('$this->PU04IDTRA','$this->PU04RUTAIMAGEN');";
+		$this->conexion->consultaSimple($sql40);
 	}
 
 }
