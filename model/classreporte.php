@@ -36,7 +36,14 @@ class classreporte  extends Conexion
 		return $result;
 	}
 
-//
+	public function listarFotoTramite(){
+		$sql = "CALL R_FOTO('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+
+//listarFotoTramite
 	public function listarZonaVerde()
 	{
 		$sql = "CALL R_RESI('$this->PU04IDTRA');";

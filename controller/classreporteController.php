@@ -83,6 +83,7 @@ class classreporteController
 	private $leyesServi;
 	//Fin leyes
 	//Extra
+	private $fototramite;
 	private $apro_dene;
 	private $observacion;
 	//Fin Extra
@@ -582,6 +583,7 @@ public function rZonaVerde(){
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
+
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
@@ -3787,6 +3789,7 @@ public function rFueraPlanRegulador(){
 	
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
+	$this->fototramite 			= new classreporte();
 	$this->datosresiprivada     = new classreporte();
 
 	$this->fueraplan->setAtributo('PU04IDTRA', $_REQUEST['id']);
@@ -3834,6 +3837,9 @@ public function rFueraPlanRegulador(){
 
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
+
+	$this->fototramite->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rFoto				= $this->fototramite->listarFotoTramite();
 
 	$pdf 				= new PDF();
 	$pdf->AliasNbPages();
@@ -4019,6 +4025,19 @@ public function rFueraPlanRegulador(){
 		 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
 		 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
 		 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
+		 	while ($foto = mysqli_fetch_array($rFoto)) {
+		 		$pdf->Ln();
+		 		$pdf->MultiCell(100,5,$pdf->Image('ImagenIngresoTra/'.$foto[0], $pdf->GetX()+50, $pdf->GetY(), 100),0,'J');
+		 		$pdf->Ln(10);
+		 	}
+		 	$pdf->Ln(50);
+		 	$pdf->Ln(50);$pdf->Ln(50);
+		 	while ($foto = mysqli_fetch_array($rFoto)) {
+		 		$pdf->Ln();
+		 		$pdf->MultiCell(100,5,$pdf->Image('ImagenIngresoTra/'.$foto[0], $pdf->GetX()+50, $pdf->GetY(), 100),0,'J');
+		 		$pdf->Ln(10);
+		 	}
+		 	$pdf->Ln(50);
 		 }
 		 $pdf->Output();
 	} catch(Exception $e){
