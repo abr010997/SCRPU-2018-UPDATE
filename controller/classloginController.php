@@ -9,6 +9,8 @@ class classloginController
 	}
 
 	public function index(){
+		session_start();
+		session_destroy();
 		require_once 'view/login.php';
 	}
 

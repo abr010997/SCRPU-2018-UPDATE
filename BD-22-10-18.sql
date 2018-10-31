@@ -217,7 +217,7 @@ CREATE TABLE `pu04observacionrevisiontramite` (
   `PU04IDTRA` int(11) NOT NULL,
   `pu4504descripcionobservacion` varchar(500) NOT NULL,
   PRIMARY KEY (`pu04idobservacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 /*Data for the table `pu04observacionrevisiontramite` */
 
@@ -230,7 +230,8 @@ insert  into `pu04observacionrevisiontramite`(`pu04idobservacion`,`PU04IDTRA`,`p
 (9,555,'Planificaciã“n urbana, planificaciã“n urbana,planificaciã“n urbana, planificaciã“n urbana,planificaciã“n urbana, planificaciã“n urbana,planificaciã“n urbana, planificaciã“n urbana,planificaciã“n urbana, planificaciã“n urbana,planificaciã“n urbana, planificaciã“n urbana,planificaciã“n urbana, planificaciã“n urbana,planificaciã“n urbana, planificaciã“n urbana,planificaciã“n urbana, planificaciã“n urbana,planificaciã“n urbana, planificaciã“n urbana,planificaciã“n urbana, planificaciã“n urbana'),
 (10,182018,'Estimado sr usuario, por este medio le notificamos que, a partir del mes de julio, la tarifa del mes quedara en 3000 mil colones, ya que se dejÃ³ de bombear, asÃ­ como lo habÃ­amos acordado en la asamblea anterior; que despuÃ©s que se dejara el bombeo se bajaba nuevamente la tarifa del mes a tres mil colones. por lo tanto, agradecemos su comprensiÃ³n y esperamos siempre poder contar con el apoyo de ustedes para seguir avanzando de una manera conjunta y eficiente este acueducto.  '),
 (11,22530,'Prueba123'),
-(12,60871,'Nada');
+(12,60871,'Nada'),
+(13,64483,'No procede la solicitud de resoluciÃ³n municipal de ubicaciÃ³n ya que lo que procede es un certificado de uso de suelo emitido por un profesional inscrito al inta, mag. ');
 
 /*Table structure for table `pu04regtra` */
 
@@ -267,6 +268,9 @@ insert  into `pu04regtra`(`PU04IDTRA`,`PU04FETRA`,`PU04NORTE`,`PU04ESTE`,`PU04AL
 (62843,'2018-08-06 11:37:28',852,963,52),
 (63172,'2018-08-28 11:43:45',852006,8963,7410),
 (63299,'2018-07-31 15:07:56',455,22,22),
+(64085,'2018-10-17 09:25:02',1117097,345561,234),
+(64095,'2018-10-17 08:42:53',1097295,332280,199),
+(64197,'2018-10-17 08:40:38',1097295,332280,199),
 (64483,'2018-09-25 14:13:00',318780,1103523,16),
 (64488,'2018-09-25 14:55:18',318586,1103159,24),
 (64522,'2018-09-25 11:46:55',1099842,317193,19),
@@ -280,6 +284,7 @@ insert  into `pu04regtra`(`PU04IDTRA`,`PU04FETRA`,`PU04NORTE`,`PU04ESTE`,`PU04AL
 (64731,'2018-09-25 10:51:37',1099835,317360,21),
 (64758,'2018-09-25 12:41:53',316548,1101511,10),
 (64771,'2018-09-25 12:15:47',317209,1100865,19),
+(64832,'2018-10-17 09:05:22',1119594,343717,115),
 (67521,'2018-08-28 15:06:30',741852,520,6208),
 (123445,'2018-06-14 08:07:13',4452,3342,1121),
 (182018,'2018-08-21 08:02:20',741,852,963),
@@ -301,7 +306,7 @@ CREATE TABLE `pu04tramite1` (
   KEY `PU04IDTRA` (`PU04IDTRA`),
   KEY `PUIDESTADO` (`PUIDESTADO`),
   CONSTRAINT `pu04tramite1_ibfk_1` FOREIGN KEY (`PUIDESTADO`) REFERENCES `pu00estados` (`PUIDESTADO`)
-) ENGINE=InnoDB AUTO_INCREMENT=198 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=latin1;
 
 /*Data for the table `pu04tramite1` */
 
@@ -351,7 +356,11 @@ insert  into `pu04tramite1`(`PU04IDTRA`,`PU0INDICETRA`,`PU04FEINICIO`,`PUIDESTAD
 (64483,194,'2018-09-25 14:12:19',7),
 (64722,195,'2018-09-25 14:15:02',2),
 (64652,196,'2018-09-25 14:52:16',2),
-(64488,197,'2018-09-25 14:54:56',2);
+(64488,197,'2018-09-25 14:54:56',2),
+(64197,198,'2018-10-17 08:11:27',2),
+(64095,199,'2018-10-17 08:12:46',2),
+(64832,200,'2018-10-17 08:57:07',2),
+(64085,201,'2018-10-17 09:24:18',2);
 
 /*Table structure for table `pu04tramite1observaciones` */
 
@@ -414,6 +423,9 @@ insert  into `pu04tramite2`(`PU04IDTRA`,`PU04FEPLATAFOR`,`PU04IDDISTRITO`) value
 (63172,'2018-08-01 00:00:00',6),
 (63212,'2018-08-03 00:00:00',6),
 (63299,'2018-07-27 00:00:00',3),
+(64085,'2018-09-21 00:00:00',1),
+(64095,'2018-08-23 00:00:00',1),
+(64197,'2018-10-27 00:00:00',1),
 (64483,'2018-09-21 00:00:00',6),
 (64488,'2018-09-21 00:00:00',6),
 (64522,'2018-09-21 00:00:00',0),
@@ -428,6 +440,7 @@ insert  into `pu04tramite2`(`PU04IDTRA`,`PU04FEPLATAFOR`,`PU04IDDISTRITO`) value
 (64731,'2018-09-21 00:00:00',6),
 (64758,'2018-09-21 00:00:00',6),
 (64771,'2018-09-21 00:00:00',0),
+(64832,'2018-10-11 00:00:00',1),
 (67521,'2018-08-03 00:00:00',6),
 (123445,'2018-06-14 00:00:00',1),
 (182018,'2018-08-29 00:00:00',3),
@@ -918,7 +931,11 @@ insert  into `pu09tradeg`(`PU04IDTRA`,`PU09IDDEG`) values
 (64483,1),
 (64722,1),
 (64652,1),
-(64488,1);
+(64488,1),
+(64197,1),
+(64095,1),
+(64832,1),
+(64085,4);
 
 /*Table structure for table `pu10aspbio` */
 
@@ -995,7 +1012,8 @@ insert  into `pu11uniabio`(`PU04IDTRA`,`PU10IDASBIO`) values
 (17092018,3),
 (64619,3),
 (64731,3),
-(64698,3);
+(64698,3),
+(64197,3);
 
 /*Table structure for table `pu11uniabiootros` */
 
@@ -1172,7 +1190,9 @@ insert  into `pu14trarep`(`PU04IDTRA`,`PU13IDAAP`) values
 (64483,4),
 (64722,12),
 (64652,12),
-(64488,12);
+(64488,12),
+(64832,12),
+(64085,12);
 
 /*Table structure for table `pu15serv` */
 
@@ -1538,7 +1558,11 @@ insert  into `pu26planregtramite`(`PU04IDTRA`,`PU26IDPLAN`) values
 (64483,3),
 (64722,3),
 (64652,3),
-(64488,3);
+(64488,3),
+(64197,3),
+(64095,3),
+(64832,3),
+(64085,3);
 
 /*Table structure for table `pu26traplan` */
 
@@ -1629,7 +1653,15 @@ insert  into `pu26traplan`(`PU04IDTRA`,`PU26IDDESCNICOYASAMA`) values
 (64652,14),
 (64652,15),
 (64488,14),
-(64488,15);
+(64488,15),
+(64197,14),
+(64197,15),
+(64095,14),
+(64095,15),
+(64832,14),
+(64832,15),
+(64085,14),
+(64085,15);
 
 /*Table structure for table `pu27ubicacion` */
 
@@ -1884,7 +1916,11 @@ insert  into `pu38traservidumbres`(`PU04IDTRA`,`PU38IDSERVIDUMBRE`) values
 (64483,1),
 (64722,3),
 (64652,1),
-(64488,3);
+(64488,3),
+(64197,5),
+(64095,1),
+(64832,4),
+(64085,1);
 
 /*Table structure for table `pu39reginfosolicitante` */
 
@@ -2147,7 +2183,11 @@ insert  into `pu43traacceso`(`PU04IDTRA`,`PU42IDSERVID`) values
 (64483,1),
 (64483,7),
 (64652,1),
-(64652,7);
+(64652,7),
+(64095,1),
+(64095,7),
+(64085,1),
+(64085,7);
 
 /*Table structure for table `pu44traleyaccesos` */
 
@@ -2223,11 +2263,11 @@ insert  into `pu45leyes`(`pu45idley`,`pu45objetivo`,`pu45descripcion`,`pu45idtip
 (23,'Para: Todos residencial y desarrollo, comercial-industrial, estación de servicios, construcción institucional y vivienda bono.','La altura m Ã¡xima y la cobertura deber Ã¡n estar apegadas a lo dispuesto en la Ley de Planificaci Ã³n Urbana, Ley de Uso, Manejo y Conservaci Ã³n de Suelo N° 7779, Ley forestal N°7575 y dem Ã¡s Legislaci Ã³n Vigente.',4),
 (24,'Para: Cuando indique que está fuera del plan regulador','LA VALIDEZ DE LA PRESENTE RESOLUCIÃ“N, PERMANECERÃ€  HASTA QUE ENTRE EN VIGENCIA, UN PLAN REGULADOR QUE AFECTE EL PREVIO RELACIONADO.',0),
 (25,'Para: Cuando indique que está dentro del plan regulador.','LA VALIDEZ DE LA PRESENTE RESOLUCIÃ“N, PERMANECERÃ€ MIENTRAS ESTÃ‰ EN VIGENCIA, EL PLAN REGULADOR QUE AFECTE EL PREVIO RELACIONADO.',0),
-(26,'Para: Clase VIII - Oficina','Basado en el oficio DST-213-2016 del 27 de octubre del 2016 firmado por el Ing. Agr. Renato JimÃ©nez ZÃºÃ±iga, MSC. Jefe del departamento de servicios técnicos del INTA. Donde delimita en el punto5: Finalmente, esta dependencia no tiene competencia legal ni técnica para definir si la propiedad de marras se encuentra o no en zona de bosque o con aptitud forestal, debido a que este tema es resorte exclusivo del Sistema Nacional de Ã€reas de ConservaciÃ³n (SINAC), del Ministerio de Ambiente y EnergÃ¬a. ',NULL),
+(26,'Para: Clase VIII - Oficina','Basado en el oficio DST-213-2016 del 27 de octubre del 2016 firmado por el Ing. Agr. Renato JimÃ©nez ZÃºÃ±iga, MSC. Jefe del departamento de servicios tÃ©cnicos del INTA. Donde delimita en el punto5: Finalmente, esta dependencia no tiene competencia legal ni técnica para definir si la propiedad de marras se encuentra o no en zona de bosque o con aptitud forestal, debido a que este tema es resorte exclusivo del Sistema Nacional de Ã€reas de ConservaciÃ³n (SINAC), del Ministerio de Ambiente y EnergÃ¬a. ',NULL),
 (27,'Para: Permiso de Construcción – Patentes, cuando no tiene el permiso de construcción.','Por lo tanto, se incumple con el ordenamiento jurÃ¬dico el cual es muy claro en cuanto a la Ley de ConstrucciÃ³n Nº833, la cual apunta lo siguiente:\nArtÃ¬culo 74: “…...Licencias. Toda obra relacionada con la construcciÃ³n, que se ejecute en las poblaciones de la RepÃºblica, sea de carÃ¡cter permanente o provisional, deberÃ¡ ejecutarse con licencia de la Municipalidad correspondiente…..”.\nArtÃ¬culo 89: “….Infracciones. Se considerarÃ¡n infracciones ademÃ¡s de las señaladas en los CapÃ¬tulos de este Ordenamiento, las siguientes:\na) Ejecutar sin licencia previa, obras para las cuales esta ley y su reglamento exigen la licencia.\nb) Ejecutar obras amparadas por una licencia de plazo vencido.\nc) Ejecutar una obra modificando en parte o radicalmente el proyecto respectivo aprobado.\nd) Ejecutar, sin la debida protecciÃ³n, obras que pongan en peligro la vida o las propiedades.\ne) No enviar oportunamente a la Municipalidad los informes de datos que se previenen en diferentes CapÃ¬tulos del Reglamento.\nf) No dar aviso a la Municipalidad de suspensiÃ³n o terminaciÃ³n de obras.\ng) No obedecer Ã³rdenes sobre modificaciones, suspensiÃ³n o destrucciÃ³n de obras de la Municipalidad.\nArtÃ¬culo 92: “….Las multas y otras penas se impondrÃ¡n al propietario, Ingeniero Responsable, al Contratista, o a cualquier persona que infrinja este Reglamento….”\nArtÃ¬culo 93: “Cuando un edificio o construcciÃ³n o instalaciÃ³n ha sido terminado sin licencia ni proyecto aprobado por la Municipalidad y sin que se haya dado aviso a esta de la terminaciÃ³n de la obra, se levantarÃ¡ una informaciÃ³n, fijando al propietario un plazo improrrogable de treinta (30) dÃ¬as, para que dÃ© cumplimiento a lo estatuido en esta Ley y Reglamento, presentando el proyecto, solicitud de licencia, etc.”\nArtÃ¬culo 94: “Si pasado el plazo fijado, el propietario no ha dado cumplimiento a la orden anterior, se le levantarÃ¡ una nueva informaciÃ³n la que se pondrÃ¡ de acuerdo con el artÃ¬culo sobre Renuencia y se fijarÃ¡ un últ',5),
 (28,'Para: (CFIA) Cuando se marque vivienda bono o vivienda unifamiliar y cuando se deniega el uso de suelo.','Se le indica que el trÃ¡mite de Uso de suelo es parte de los estudios preliminares segÃºn el Colegio Federado de Ingenieros y Arquitectos, el cual debe realizar su profesional o su desarrollador, ademÃ¡s este se realiza antes de cualquier de trÃ¡mite de Vivienda Bono o Vivienda Unifamiliar para delimitar si la propiedad en estudio tiene alguna limitante.  Como es en este caso, esto con el fin de no generarle una expectativa o ilusiÃ³n errÃ³nea al contribuyente.',NULL),
 (30,'Para: Oficios de la alcaldía - Oficina','En apego al ArtÃ¬culo 107, de la Ley de AdministraciÃ³n PÃºblica y en vista de lo anterior este despacho procede a dar la ResoluciÃ³n.',NULL),
-(31,'Para: Cuando se marca servidumbre agrícola.','La figura que se utilizÃ³ para el fraccionamiento es la de Servidumbre de AgrÃ¬cola por lo tanto basado en la Reforma al Reglamento para el Control Nacional de Fraccionamientos y Urbanizaciones, INSTITUTO NACIONAL DE VIVIENDA Y URBANISMO, REGLAMENTO PARA EL CONTROL NACIONAL DE FRACCIONAMIENTO Y URBANIZACIONES, donde indica: ArtÃ¬culo II.2.1.6. Para fines agrÃ¬colas, pecuarios y forestales se podrÃ¡n permitir segregaciones de parcelas con frente a servidumbres especiales, que en adelante se denominarÃ¡n agrÃ¬colas y forestales, las porciones resultantes deberÃ¡n ser iguales o mayores a los 5 000 m2, en estos casos los planos individuales deben indicar \"uso agrÃ¬cola\", \"uso pecuario\"; o \"uso forestal\", segÃºn corresponda. Las construcciones de vivienda y demÃ¡s instalaciones y estructuras quedan sujetas a un mÃ¡ximo del 15% en Ã¡rea de cobertura.',1),
+(31,'Para: Cuando se marca servidumbre agrÃ­cola.','La figura que se utilizÃ³ para el fraccionamiento es la de Servidumbre de AgrÃ¬cola por lo tanto basado en la Reforma al Reglamento para el Control Nacional de Fraccionamientos y Urbanizaciones, INSTITUTO NACIONAL DE VIVIENDA Y URBANISMO, REGLAMENTO PARA EL CONTROL NACIONAL DE FRACCIONAMIENTO Y URBANIZACIONES, donde indica: ArtÃ¬culo II.2.1.6. Para fines agrÃ¬colas, pecuarios y forestales se podrÃ¡n permitir segregaciones de parcelas con frente a servidumbres especiales, que en adelante se denominarÃ¡n agrÃ¬colas y forestales, las porciones resultantes deberÃ¡n ser iguales o mayores a los 5 000 m2, en estos casos los planos individuales deben indicar \"uso agrÃ¬cola\", \"uso pecuario\"; o \"uso forestal\", segÃºn corresponda. Las construcciones de vivienda y demÃ¡s instalaciones y estructuras quedan sujetas a un mÃ¡ximo del 15% en Ã¡rea de cobertura.',1),
 (32,'Para: Cuando se marca Área Verde o Zona Institucional, y se deniega el uso de suelo.',' De previo a resolver favor presentar el HistÃ³rico de la finca desde su nacimiento. ',0),
 (33,'Para: Cuando se marca Servidumbre de Paso o Agrícola, y se deniega el uso de suelo.','Visado Municipal:\nAcuerdo N°2  ….. donde indica que la aprobaciÃ³n del Visado no constituirÃ¡ implícitamente el otorgamiento del permiso de construcciÃ³n o del uso de suelo……  Aprobado en firme a partir de su publicaciÃ³n. Nicoya, 6 de noviembre del 2008—Marco Antonio JimÃ©nez MuÃ±oz secretario Municipal—1 vez—(105965). La gaceta N° 223 del 18 de noviembre del 2008. \nCabe destacar que en materia de Urbanismo, Derecho Ambiental y en Bienes de Dominio PÃºblico no opera el silencio positivo lo que puede consultarse en las resoluciones del Tribunal Contencioso Administrativo 2011-00126 SIII, 2015-00247 SVI y 2016-00433 SIII y en  los votos 2005-00119, 2008-0071 y 2013-01195 de la sal primera. \n',1),
 (34,'Para: Cuando se marca (previo a resolver).','Una vez este proceso sea subsanado se deberÃ¡ tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederÃ¡ a brindar la ResoluciÃ³n de UbicaciÃ³n de Usos de Suelo para la Actividad Deseada. ',NULL),
@@ -2483,7 +2523,48 @@ CREATE TABLE `pu47tratipotramite` (
 insert  into `pu47tratipotramite`(`PU04IDTRA`,`PU04IDTIPOTRA`,`PU47IDCONSECUTIVO`) values 
 (22530,0,'Dasdasdas'),
 (62135,1,'0063'),
-(67521,0,'00570   ');
+(67521,0,'00570   '),
+(60871,0,'002012'),
+(64483,1,'112');
+
+/* Function  structure for function  `FN_EXISTE_PLANREG` */
+
+/*!50003 DROP FUNCTION IF EXISTS `FN_EXISTE_PLANREG` */;
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` FUNCTION `FN_EXISTE_PLANREG`(
+  IDTRA INT 
+  ) RETURNS varchar(1) CHARSET latin1
+BEGIN
+  DECLARE vNoMore INTEGER;
+  DECLARE vPlanRegTra VARCHAR(50);
+  DECLARE vExiste VARCHAR(50);
+  DECLARE cPlan CURSOR FOR 
+  SELECT  `pu26planreg`.`PU26PLNDESC`
+  FROM `pu26planregtramite`, `pu26planreg`
+  WHERE `pu26planregtramite`.`PU04IDTRA` = IDTRA
+  AND `pu26planreg`.`PU26IDPLAN` = `pu26planregtramite`.`PU26IDPLAN`;
+  DECLARE CONTINUE HANDLER FOR NOT FOUND SET vNoMore = 1; -- En caso que no existan datos saldra del loop y devolvera NULL
+  OPEN cPlan;
+  myLoop: LOOP
+	FETCH cPlan INTO vPlanRegTra;
+	IF vNoMore THEN
+		LEAVE myLoop;
+	END IF;
+  END LOOP myLoop;  
+  CLOSE cPlan;
+  if vPlanRegTra is null then
+	select 'X' into vExiste;
+  else
+	IF vPlanRegTra = 'Fuera del Plan Regulador' THEN
+		SELECT 'N' INTO vExiste;
+	ELSE
+		SELECT 'S' INTO vExiste;
+	END IF;
+  end if;
+  RETURN vExiste;
+END */$$
+DELIMITER ;
 
 /* Procedure structure for procedure `LOGIN` */
 
@@ -2618,6 +2699,20 @@ BEGIN
   INNER JOIN `pu47tratipotramite` AS tratip ON tra.`PU04IDTRA` = tratip.`PU04IDTRA`
   INNER JOIN `pu47tipotramite` AS tiptra ON tratip.`PU04IDTIPOTRA` = tiptra.`PU04IDTIPOTRA`
   WHERE tra.`PU04IDTRA` = idtra;
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `R_DAR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `R_DAR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `R_DAR`(
+  in idtra int
+  )
+BEGIN
+  select date_format(`PU04FETRA`, '%d-%m-%Y') as PU04FETRA from `pu04regtra` where `PU04IDTRA` = idtra;
 END */$$
 DELIMITER ;
 
@@ -2917,6 +3012,58 @@ CASE `pu04tramite2`.`PU04IDDISTRITO` WHEN "1" THEN "Nicoya"
 END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `SP00_LISTAR_TRAMITE_ACEPTADO` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_TRAMITE_ACEPTADO` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_TRAMITE_ACEPTADO`()
+BEGIN
+	
+	SELECT `PU04IDTRA`
+	
+FROM 
+	`pu00adtra`	
+		
+WHERE `PU00IDAD`=1;
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP00_LISTAR_TRAMITE_ATRASADO` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_TRAMITE_ATRASADO` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_TRAMITE_ATRASADO`()
+BEGIN
+	
+	SELECT `PU04IDTRA`,`PU04FEINICIO`
+	FROM 
+	`pu04tramite1`	
+		WHERE PUIDESTADO=6;
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP00_LISTAR_TRAMITE_D1234` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_TRAMITE_D1234` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_TRAMITE_D1234`()
+BEGIN
+	
+	SELECT `PU04IDTRA`,`PU04FEPLATAFOR`
+	
+FROM 
+	`pu04tramite2`
+		
+WHERE `PU04IDDISTRITO`=1 or PU04IDDISTRITO=2 or PU04IDDISTRITO=3 or PU04IDDISTRITO=4;
+END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `R_RESOLUCION` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `R_RESOLUCION` */;
@@ -2925,9 +3072,10 @@ DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `R_RESOLUCION`(id INT)
 BEGIN
-SET lc_time_names = 'es_ES';
-SELECT DISTINCT
-	 DATE_FORMAT(NOW(),"%d %M %Y") AS 'Fecha Actual',
+  if FN_EXISTE_PLANREG(id) = 'S' then
+	SET lc_time_names = 'es_ES';
+	SELECT DISTINCT
+	DATE_FORMAT(NOW(),"%d %M %Y") AS 'Fecha Actual',
 	`pu04tramite1`.`PU04IDTRA`,
 	`pu39regsolicitante`.`PU39NOMSOLICI`,
 	`pu39regsolicitante`.`PU39APE1SOLICI`,
@@ -2942,7 +3090,7 @@ SELECT DISTINCT
 	`pu39reginfosolicitante`.`PU39BARRIO`,
 	`pu39reginfosolicitante`.`PU39DIRECCION`,
 	`pu04distrito`.`PU04IDDISTRITO`
- FROM `pu04tramite1`
+	FROM `pu04tramite1`
 	INNER JOIN `pu04regtra` ON `pu04tramite1`.`PU04IDTRA` = `pu04regtra`.`PU04IDTRA`
 	INNER JOIN `pu04tramite2` ON `pu04tramite1`.`PU04IDTRA` = `pu04tramite2`.`PU04IDTRA`
 	INNER JOIN `pu39regsolicitante` ON `pu04tramite1`.`PU04IDTRA` = `pu39regsolicitante`.`PU04IDTRA`
@@ -2951,6 +3099,9 @@ SELECT DISTINCT
 	INNER JOIN `pu40reginfopropietario` ON `pu40regpropietario`.`PU40CEDPROPIE` = `pu40reginfopropietario`.`PU40CEDPROPIE`
 	INNER JOIN `pu04distrito` ON `pu04tramite2`.`PU04IDDISTRITO` = `pu04distrito`.`PU04IDDISTRITO`
 	WHERE `pu04tramite1`.`PU04IDTRA`= id;
+	elseif FN_EXISTE_PLANREG(id) = 'N' then
+		call `R_LEYES_ACTIVIDADES`(id);
+  end if;
 END */$$
 DELIMITER ;
 
@@ -3017,58 +3168,6 @@ CASE `pu04tramite2`.`PU04IDDISTRITO`
  AND pu04tramite2.PU04IDDISTRITO=7 
  
  ORDER BY `pu04tramite1`.`PU04FEINICIO` DESC;	
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP00_LISTAR_TRAMITE_ACEPTADO` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_TRAMITE_ACEPTADO` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_TRAMITE_ACEPTADO`()
-BEGIN
-	
-	SELECT `PU04IDTRA`
-	
-FROM 
-	`pu00adtra`	
-		
-WHERE `PU00IDAD`=1;
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP00_LISTAR_TRAMITE_ATRASADO` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_TRAMITE_ATRASADO` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_TRAMITE_ATRASADO`()
-BEGIN
-	
-	SELECT `PU04IDTRA`,`PU04FEINICIO`
-	FROM 
-	`pu04tramite1`	
-		WHERE PUIDESTADO=6;
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP00_LISTAR_TRAMITE_D1234` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_TRAMITE_D1234` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_TRAMITE_D1234`()
-BEGIN
-	
-	SELECT `PU04IDTRA`,`PU04FEPLATAFOR`
-	
-FROM 
-	`pu04tramite2`
-		
-WHERE `PU04IDDISTRITO`=1 or PU04IDDISTRITO=2 or PU04IDDISTRITO=3 or PU04IDDISTRITO=4;
 END */$$
 DELIMITER ;
 
@@ -3199,6 +3298,26 @@ BEGIN
 END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `SP01_REGINFUSU_MOSTRARTODO` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP01_REGINFUSU_MOSTRARTODO` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP01_REGINFUSU_MOSTRARTODO`()
+BEGIN
+SELECT `pu01regusu`.`PU01CEDUSU` AS 'Cédula',pu01regusu.`PU01NOMUSU` AS 'Nombre',pu01regusu.`PU01APE1USU` AS 'Primer Apellido',
+pu01regusu.`PU01APE2USU` AS 'Segundo Apellido', `pu02infusu`.`PU02TELUSU` AS 'Teléfono',`pu02infusu`.`PU02CORUSU` AS 'Correo',
+ CASE`pu02infusu`.`PU03IDPUES` WHEN "1" THEN "Coordinador"
+				WHEN "2" THEN "Auxiliar"
+				WHEN "3" THEN "Asistente"
+				WHEN "4" THEN "Administrador" END AS 'Puesto'
+FROM `pu01regusu`
+        INNER JOIN `pu02infusu`
+        ON pu01regusu.`PU01CEDUSU` = `pu02infusu`.`PU01CEDUSU`;       
+        END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `SP01_REGINFUSU_BUSCAR` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP01_REGINFUSU_BUSCAR` */;
@@ -3221,26 +3340,6 @@ BEGIN
 		WHERE PU01REGUSU.`PU01CEDUSU`=CEDU;
 		
 END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP01_REGINFUSU_MOSTRARTODO` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP01_REGINFUSU_MOSTRARTODO` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP01_REGINFUSU_MOSTRARTODO`()
-BEGIN
-SELECT `pu01regusu`.`PU01CEDUSU` AS 'Cédula',pu01regusu.`PU01NOMUSU` AS 'Nombre',pu01regusu.`PU01APE1USU` AS 'Primer Apellido',
-pu01regusu.`PU01APE2USU` AS 'Segundo Apellido', `pu02infusu`.`PU02TELUSU` AS 'Teléfono',`pu02infusu`.`PU02CORUSU` AS 'Correo',
- CASE`pu02infusu`.`PU03IDPUES` WHEN "1" THEN "Coordinador"
-				WHEN "2" THEN "Auxiliar"
-				WHEN "3" THEN "Asistente"
-				WHEN "4" THEN "Administrador" END AS 'Puesto'
-FROM `pu01regusu`
-        INNER JOIN `pu02infusu`
-        ON pu01regusu.`PU01CEDUSU` = `pu02infusu`.`PU01CEDUSU`;       
-        END */$$
 DELIMITER ;
 
 /* Procedure structure for procedure `SP01_REGTRA_ACTUALIZAR` */
@@ -3757,6 +3856,21 @@ DELETE FROM pu05unitra
 END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR`()
+BEGIN
+  SELECT DISTINCT pu04regtra.PU04IDTRA AS 'Numero Trámite', pu04regtra.PU04FETRA AS 'Fecha',
+   pu04regtra.PU04NORTE AS 'Norte', pu04regtra.PU04ESTE AS 'Este', pu04regtra.PU04ALTITUD AS 'Altitud'
+   
+   FROM pu04regtra;
+       END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `SP04_REGISTROTRA_ACTUALIZAR` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_ACTUALIZAR` */;
@@ -3901,21 +4015,6 @@ SET PU06IDACTDES = PU06IDACTDES_06
 END */$$
 DELIMITER ;
 
-/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR`()
-BEGIN
-  SELECT DISTINCT pu04regtra.PU04IDTRA AS 'Numero Trámite', pu04regtra.PU04FETRA AS 'Fecha',
-   pu04regtra.PU04NORTE AS 'Norte', pu04regtra.PU04ESTE AS 'Este', pu04regtra.PU04ALTITUD AS 'Altitud'
-   
-   FROM pu04regtra;
-       END */$$
-DELIMITER ;
-
 /* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR` */;
@@ -4015,6 +4114,28 @@ BEGIN
 	WHERE pu04regtra.PU04IDTRA = IDTRA  AND pu09tradeg.`PU04IDTRA`= IDTRA  AND pu09tradeg.`PU09IDDEG`>0;
    
 		
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP04_REGISTROTR_GUARDAR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTR_GUARDAR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTR_GUARDAR`( IN IDTRA INT(11), 
+IN PU04NORTE INT(11), IN PU04ESTE INT(11), IN PU04ALTITUD INT(11))
+BEGIN
+DECLARE ESTADO INT (11);
+SET ESTADO = 2;
+-- INSERT DE LA INFORMACIÓN REQUERIDA POR LA TABLA PRINCIPAL DE TRÁMITE
+INSERT INTO pu04regtra (PU04IDTRA,PU04NORTE,PU04ESTE,PU04ALTITUD)
+ VALUES (IDTRA,PU04NORTE,PU04ESTE,PU04ALTITUD);
+ 
+ UPDATE `pu04tramite1`
+ SET PUIDESTADO = ESTADO
+ WHERE `PU04IDTRA` = IDTRA;
+ 
 END */$$
 DELIMITER ;
 
@@ -4126,28 +4247,6 @@ INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
 VALUES (IDTRA,PU06IDACTDES_06);
 -- FIN DE INSERSIÓN DE DATOS EN TABLA UNIÓN DE TRÁMITE Y ACTIVIDAD A DESARROLLAR
 -- ----------------------------------------------------------------------------------------
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP04_REGISTROTR_GUARDAR` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTR_GUARDAR` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTR_GUARDAR`( IN IDTRA INT(11), 
-IN PU04NORTE INT(11), IN PU04ESTE INT(11), IN PU04ALTITUD INT(11))
-BEGIN
-DECLARE ESTADO INT (11);
-SET ESTADO = 2;
--- INSERT DE LA INFORMACIÓN REQUERIDA POR LA TABLA PRINCIPAL DE TRÁMITE
-INSERT INTO pu04regtra (PU04IDTRA,PU04NORTE,PU04ESTE,PU04ALTITUD)
- VALUES (IDTRA,PU04NORTE,PU04ESTE,PU04ALTITUD);
- 
- UPDATE `pu04tramite1`
- SET PUIDESTADO = ESTADO
- WHERE `PU04IDTRA` = IDTRA;
- 
 END */$$
 DELIMITER ;
 

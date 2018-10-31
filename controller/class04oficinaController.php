@@ -891,6 +891,47 @@ public function editartipotra()
 		}
 	}
 
+	/////////////////
+	public function guardarImagen()
+	{
+		if ($_POST)
+		{
+			// upload directory
+			$upload_dir = 'ImagenIngresoTra/';
+			if (!file_exists($upload_dir)) {
+				mkdir($upload_dir, 0777, true);
+			}
+
+			$imgFile = $_FILES['user_image']['name'];
+			$tmp_dir = $_FILES['user_image']['tmp_name'];
+			$imgSize = $_FILES['user_image']['size'];
+
+
+			$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image 
+
+			$valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
+
+			$userpic = rand(1000,1000000).".".$imgExt;
+
+			if(in_array($imgExt, $valid_extensions)){			
+				// Check file size '5MB'
+				if($imgSize < 5000000)				{
+					move_uploaded_file($tmp_dir,$upload_dir.$userpic);	
+					$this->class04oficina->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
+					$this->class04oficina->setAtributo('PU04RUTAIMAGEN',$userpic);
+					$this->class04oficina->guardarImagen();
+			header('location:?c=class04oficina&m=index3');
+				}
+				else{
+					$errMSG = "Lo siento. imagen demasiado grande";
+				}
+			}
+			else{
+				$errMSG = "Lo siento, Solo JPG, JPEG, PNG & GIF son archivos permitidos.";		
+			}
+		}
+	}
+
 
 }
 ?>
