@@ -370,7 +370,7 @@ public function reporte(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -596,7 +596,7 @@ public function rZonaVerde(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: ____________________ Hora: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -828,7 +828,7 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: ____________________ Hora: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -940,7 +940,7 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
 		 	$pdf->SetFont('Arial','B',10);
 		 	$pdf->MultiCell(180,5,utf8_decode("Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula Jurídica ".$row[11].", Ubicada ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:"),0,1,'J');
-		 	$pdf->MultiCell(190,5,$row[1],0,1,'J');
+		 	
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode('El terreno evaluado es afectado por el Plan Regulador vigente del cantón de Nicoya. La Resolución Municipal de Ubicación corresponde zona'),0,1,'J');
 		 	while ($fila = mysqli_fetch_array($datos)) {
@@ -948,31 +948,40 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila[0]."."),0,1,'J');
 		 		$pdf->Ln(1);
 		 	}
+		 		$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode('Zona Comercial Central'),0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode('Usos permitidos: '),0,1,'J');
 		 	$pdf->Ln(2);
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Viviendas y apartamentos situados en pisos superiores al primero.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	El resto de los usos urbanos a excepción de los indicados en usos condicionales de Comercio Central y los usos industriales.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('*Viviendas y apartamentos situados en pisos superiores al primero.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('*El resto de los usos urbanos a excepción de los indicados en usos condicionales de Comercio Central y los usos industriales.'),0,1,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode(' Usos Condicionales: '),0,1,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode('Previo cumplimiento de requisitos establecidos en este reglamento para los usos condicionales (artículo 2, inciso b, párrafo 3), se permitirá el uso de terreno y edificios para los fines indicados.'),0,1,'C');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Venta por menor de materiales de construcción en locales cerrados.'),0,1,'C');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Talleres de artesanía e industrias artesanales que no emplee mas de 5 empleados , así como reparación de artículos eléctricos, equipo oficina, utensilios domésticos, bicicletas y similares, siempre que su operación y el almacenamiento de materiales y equipo se haga  en un local completamente cerrado y  un área de piso no mayor de 200 metros cuadrados.'),0,1,'C');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Cualquier otro servicio o negocio de características y efectos similares de los descritos  que además, de no ser perjudiciales a los usos vecinos, no produzcan  ruidos, vibraciones, humo, olores polvo suciedad, gases nocivos,  resplandor, calor y peligro de fuego, o explosión en mayor grado que normalmente producirán las indicadas actividades.'),0,1,'J');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,utf8_decode('*Venta por menor de materiales de construcción en locales cerrados.'),0,1,'C');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,utf8_decode('* Talleres de artesanía e industrias artesanales que no emplee mas de 5 empleados , así como reparación de artículos eléctricos, equipo oficina, utensilios domésticos, bicicletas y similares, siempre que su operación y el almacenamiento de materiales y equipo se haga  en un local completamente cerrado y  un área de piso no mayor de 200 metros cuadrados.'),0,1,'C');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,utf8_decode('* Cualquier otro servicio o negocio de características y efectos similares de los descritos  que además, de no ser perjudiciales a los usos vecinos, no produzcan  ruidos, vibraciones, humo, olores polvo suciedad, gases nocivos,  resplandor, calor y peligro de fuego, o explosión en mayor grado que normalmente producirán las indicadas actividades.'),0,1,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode('Requisitos:'),0,1,'J');
 		 	$pdf->Ln(2);
-		 	$pdf->MultiCell(190,5,utf8_decode('•	La superficie del lote no será menor de 140 m2 para construcciones de hasta 2 pisos y de 280 m2, para las que exceden de 2 pisos.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Frente de lote no será menor a 8 m.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Retiros: '),0,1,'J');
-
+		 	$pdf->MultiCell(190,5,utf8_decode('*La superficie del lote no será menor de 140 m2 para construcciones de hasta 2 pisos y de 280 m2, para las que exceden de 2 pisos.'),0,1,'J');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,utf8_decode('*Frente de lote no será menor a 8 m.'),0,1,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode('*Retiros: '),0,1,'J');
+		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode('Frontal: 2.5 m, que se usará de antejardín, con la posibilidad de ser acera peatonal.'),0,1,'C');
-		 	$pdf->MultiCell(190,5,utf8_decode('Posterior: 3 m.class0102usuariosController.php'),0,1,'C');
-
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Cobertura de las estructuras: se permitirá una cobertura del 80 % de la superficie del lote.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Área de piso no excederá del 80 % de la superficie del lote.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Altura de las estructuras: la altura de los edificios no excederá de 12 m o 4 pisos.'),0,1,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode('Posterior: 3 m.'),0,1,'C');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode('*Cobertura de las estructuras: se permitirá una cobertura del 80 % de la superficie del lote.'),0,1,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode('*Área de piso no excederá del 80 % de la superficie del lote.'),0,1,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode('*Altura de las estructuras: la altura de los edificios no excederá de 12 m o 4 pisos.'),0,1,'J');
 
 		 	$pdf->Ln(2);
 
@@ -1014,25 +1023,24 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 	}
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
-		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
-		 		$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
-		 		$pdf->Ln(2);
-		 	}
-		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
-		 		$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
-		 		$pdf->Ln(2);
-		 	}
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Uso Conforme de Resolución Municipal de Ubicación con el proyecto a realizar.' ),0,'J');
 		 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
+		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	
+		 	
 		 	while ($leyAD = mysqli_fetch_array($rLeyesActividades)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyAD[0]),0,'J');
-		 		$pdf->Ln(2);
+		 		$pdf->Ln(3);
 		 	}
 		 	while ($leyAP = mysqli_fetch_array($rLeyesAreasPro)) {
 		 		$pdf->Ln(1);
@@ -1065,8 +1073,13 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
-		 	$pdf->Ln(1);
+		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	$pdf->MultiCell(100,5,"POR TANTO",0,0);
+		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 		 	}
 		 	$pdf->Ln(1);
@@ -1077,7 +1090,7 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: ____________________ Hora: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -1341,7 +1354,7 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: ____________________ Hora: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -1462,11 +1475,11 @@ public function rResidencialComercial(){
 		 		$pdf->Ln(1);
 		 	}
 		 	$pdf->MultiCell(190,5,utf8_decode('Usos permitidos:'),0,1,'J');
-		 	$pdf->Ln(2);
+		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode('Todos los urbanos, a excepción de las industrias, talleres, bodegas, aserraderos y usos similares a estos en cuanto a las molestias (ruido, tránsito intenso, olor, etc.) que provoquen en el vecindario. También se  exceptúa el comercio que produzca las molestias antes dichas.'),0,1,'J');
 		 	$pdf->Ln(2);
-		 	$pdf->MultiCell(190,5,utf8_decode('Usos Condicionados'),0,1,'J');
-		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,utf8_decode('Usos Condicionados:'),0,1,'J');
+		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode('Pequeña industria, bodega, talleres, ambos de gasolina, depósitos de madera y materiales de construcción y otros comercios que produzcan molestias pero que con requisitos, puedan darse, amparados a un dictamen favorable al Ministerio de Salud. Sin perjuicio de lo anterior para todos  estos  casos las molestias deberán quedar absolutamente confinadas a los límites de la propiedad. Se exceptúan a todo caso los aserraderos y las industrias peligrosas, que deberán ir a las zonas industriales.'),0,1,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode('REQUISITOS'),0,1,'J');
@@ -1523,11 +1536,7 @@ public function rResidencialComercial(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
-		 		$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
-		 		$pdf->Ln(2);
-		 	}
+		 	
 		 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
@@ -1569,6 +1578,11 @@ public function rResidencialComercial(){
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
+		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
@@ -1581,7 +1595,7 @@ public function rResidencialComercial(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: ____________________ Hora: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -1694,7 +1708,7 @@ public function rResidencial(){
 		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
 		 	$pdf->SetFont('Arial','B',10);
 		 	$pdf->MultiCell(180,5,utf8_decode("Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula Jurídica ".$row[11].", Ubicada ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:"),0,1,'J');
-		 	$pdf->MultiCell(190,5,$row[1],0,1,'J');
+		
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode('El terreno evaluado es afectado por el Plan Regulador vigente del cantón de Nicoya. La Resolución Municipal de Ubicación corresponde a Zona Residencial.'),0,1,'J');
 		 	while ($fila = mysqli_fetch_array($datos)) {
@@ -1704,7 +1718,7 @@ public function rResidencial(){
 		 	}
 		 	$pdf->MultiCell(190,5,utf8_decode('-Usos Permitidos: Todos los urbanos que tengan relación con la vivienda, sin que la perjudiquen. El tipo de comercio que se permite es el siguiente: tiendas de abarrotes, boticas, fuentes de soda, barberías, carnicerías oficinas profesionales, usos comunales y áreas verdes. La pequeña industria (artesanal Inofensiva) supermercados.'),0,1,'J');
 		 	$pdf->Ln(2);
-		 	$pdf->MultiCell(190,5,utf8_decode('No se permiten: bodegas, aserraderos, talleres, industrias y usos similares a estos en cuanto a molestias (ruido, transito intenso, olor, etc.) que afectan la zona. También se exceptúan el comercio que produzca las molestias antes dichas como salas de baile, cantinas, etc.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('-No se permiten: bodegas, aserraderos, talleres, industrias y usos similares a estos en cuanto a molestias (ruido, transito intenso, olor, etc.) que afectan la zona. También se exceptúan el comercio que produzca las molestias antes dichas como salas de baile, cantinas, etc.'),0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode('1.	SUPERFICIE DE LOTE: 155m2'),0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode('2.	FRENTE MÍNIMO DE LOTE: 8m2'),0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode('3.	RETIROS MÍNIMOS:'),0,1,'J');
@@ -1724,9 +1738,9 @@ public function rResidencial(){
 		 		$pdf->MultiCell(100,5,utf8_decode("* ".$as[0]."."),0,1,'J');
 		 		$pdf->Ln(1);
 		 	}
-		 	$pdf->Ln(2);
+		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(55,5,"> Actividad a Desarrollar",0,1,'J');
-		 	$pdf->Ln(2);
+		 	$pdf->Ln(1);
 		 	//Muestra las actividades a desarrollar
 		 	while ($adr = mysqli_fetch_array($rActdesRes)) {
 		 		$pdf->Ln(1);
@@ -1755,30 +1769,28 @@ public function rResidencial(){
 		 	}
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Uso Conforme de Resolución Municipal de Ubicación con el proyecto a realizar.' ),0,'J');
 		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
-		 		$pdf->Ln(2);
-		 	}
-		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
 		 		$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
-		 		$pdf->Ln(2);
 		 	}
+		 	
 		 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
-		 		$pdf->Ln(2);
+		 		$pdf->Ln(1);
 		 	}
 		 	while ($leyAD = mysqli_fetch_array($rLeyesActividades)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyAD[0]),0,'J');
-		 		$pdf->Ln(2);
+		 		$pdf->Ln(1);
 		 	}
 		 	while ($leyAP = mysqli_fetch_array($rLeyesAreasPro)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyAP[0]),0,'J');
-		 		$pdf->Ln(2);
+		 		$pdf->Ln(1);
 		 	}
 		 	while ($leyRV = mysqli_fetch_array($rLeyesRedVial)) {
 		 		$pdf->Ln(1);
@@ -1806,7 +1818,12 @@ public function rResidencial(){
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
+		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	$pdf->MultiCell(100,5,"POR LO TANTO",0,0);
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 		 	}
@@ -1818,7 +1835,7 @@ public function rResidencial(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: ____________________ Hora: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -2065,7 +2082,7 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: ____________________ Hora: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -2372,7 +2389,7 @@ public function rZonaComercialTuristica(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -2626,7 +2643,7 @@ public function rZonaResidencialPrivada(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -2902,7 +2919,7 @@ public function rZonaInstitucional(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -3165,7 +3182,7 @@ public function rZonaPrivada(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -3480,7 +3497,7 @@ public function rZonaArriendo() {
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -3745,7 +3762,7 @@ public function rZonaHotelera(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -4017,7 +4034,7 @@ public function rFueraPlanRegulador(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -4148,7 +4165,7 @@ public function rDarInta(){
 		 	$pdf->MultiCell(180,5,utf8_decode(
 		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya; indicando lo siguiente:" ),0,1,'J' );
 		 	$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode('Basado en el Reglamento a la Ley de Uso, Manejo y Conservación de Suelos, en su  Artículo 58.—En toda información posesoria o que se presente ante el IDA o ante los Tribunales de Justicia, con el fin de inscribir en el Registro Público de la Propiedad, el interesado, además de los requisitos que exige la normativa común, deberá de demostrar, con un estudio adecuado de suelos, que ha ejercido la posesión cumpliendo con el uso conforme del suelo para la actividad que realiza de acuerdo con la metodología aprobada, y ejecutándolas con las mejores prácticas de su manejo, según la mejor tecnología disponible en cumplimiento con lo dispuesto en los artículos 3, 6, 12, 13, 19, 26, 27, 41, 43 y 64 de la Ley Nº 7779 y este Reglamento.' ),0,'J');
+		 		$pdf->MultiCell(190,5,utf8_decode('Basado en el Reglamento a la Ley de Uso, Manejo y Conservación de Suelos, en su  Artículo 58. En toda información posesoria o que se presente ante el IDA o ante los Tribunales de Justicia, con el fin de inscribir en el Registro Público de la Propiedad, el interesado, además de los requisitos que exige la normativa común, deberá de demostrar, con un estudio adecuado de suelos, que ha ejercido la posesión cumpliendo con el uso conforme del suelo para la actividad que realiza de acuerdo con la metodología aprobada, y ejecutándolas con las mejores prácticas de su manejo, según la mejor tecnología disponible en cumplimiento con lo dispuesto en los artículos 3, 6, 12, 13, 19, 26, 27, 41, 43 y 64 de la Ley Nº 7779 y este Reglamento.' ),0,'J');
 
 		 	$pdf->Ln(2);
 		 	$pdf->Ln(2);
@@ -4170,7 +4187,7 @@ public function rDarInta(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
-		 	$pdf->MultiCell(190,5,utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
 		 	$pdf->Ln(3);
@@ -4327,7 +4344,7 @@ public function rMINAEClaseVIII(){
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
 		 	$pdf->MultiCell(190,5,
-		 		utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 		utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,
 		 		utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
@@ -4466,7 +4483,7 @@ public function rDarDireccionAgua(){
 		 		utf8_decode('Según la investigación municipal se logra delimitar que la propiedad se encuentra parcialmente en zona de Inundación según el mapa de la CNE, además que está relativamente dentro del área de retiro según la base de datos del sistema municipal. ' ),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->Ln(2);
-		 	$pdf->MultiCell(100,5,"Por lo tanto de previo a resolver:",0,0);
+		 	$pdf->MultiCell(130,5,"POR LO TANTO DE PREVIO A RESOLVER:",0,0);
 		 	$pdf->Ln(1);
 		 	while ($obser = mysqli_fetch_array($robservacion)) {
 		 		$pdf->Ln(1);
@@ -4485,7 +4502,7 @@ public function rDarDireccionAgua(){
 		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 		 	$pdf->Ln(5);
 		 	$pdf->MultiCell(190,5,
-		 		utf8_decode('# Cedula: __________________________'),0,0,'R');
+		 		utf8_decode('# Cédula: __________________________'),0,0,'R');
 		 	$pdf->Ln(3);
 		 	$pdf->MultiCell(190,5,
 		 		utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
