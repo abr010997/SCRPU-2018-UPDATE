@@ -537,11 +537,7 @@ public function rZonaVerde(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
-		 		$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
-		 		$pdf->Ln(2);
-		 	}
+		 	
 		 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
@@ -581,6 +577,11 @@ public function rZonaVerde(){
 		 	while ($obser = mysqli_fetch_array($robservacion)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
 
@@ -708,9 +709,9 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
 		 	$pdf->SetFont('Arial','B',10);
 		 	$pdf->MultiCell(180,5,utf8_decode("Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula Jurídica ".$row[11].", Ubicada ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:"),0,1,'J');
-		 	$pdf->MultiCell(190,5,$row[1],0,1,'J');
+		 
 		 	$pdf->Ln(2);
-		 	$pdf->MultiCell(190,5,utf8_decode('El terreno evaluado es afectado por el Plan Regulador vigente del cantón de Nicoya. La Resolución Municipal de Ubicación corresponde a Zona Residencial.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('El terreno evaluado es afectado por el Plan Regulador vigente del cantón de Nicoya. La Resolución Municipal de Ubicación corresponde a Zona.'),0,1,'J');
 		 	while ($fila = mysqli_fetch_array($datos)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila[0]."."),0,1,'J');
@@ -770,11 +771,7 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
-		 		$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
-		 		$pdf->Ln(2);
-		 	}
+		 	
 		 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
@@ -814,6 +811,11 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 	while ($obser = mysqli_fetch_array($robservacion)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
@@ -1947,37 +1949,33 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
 		 	$pdf->SetFont('Arial','B',10);
 		 	$pdf->MultiCell(180,5,utf8_decode("Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula Jurídica ".$row[11].", Ubicada ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:"),0,1,'J');
-		 	$pdf->MultiCell(190,5,$row[1],0,1,'J');
+		 	
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode('La zona donde se encuentra esta propiedad corresponde a Comercial-Turístico, según el Plan Regulador Vigente del Cantón de Nicoya.'),0,1,'J');
-		 	while ($fila = mysqli_fetch_array($datos)) {
-		 		$pdf->Ln(1);
-		 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila[0]."."),0,1,'J');
-		 		$pdf->Ln(1);
-		 	}
+		 	
 		 	$pdf->MultiCell(190,5,utf8_decode('Usos permitidos: '),0,1,'J');
 		 	$pdf->Ln(2);
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Viviendas y apartamentos situados en pisos superiores al primero.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	El resto de los usos urbanos a excepción de los indicados en usos condicionales de Comercio Central y los usos industriales.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('-Viviendas y apartamentos situados en pisos superiores al primero.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('-El resto de los usos urbanos a excepción de los indicados en usos condicionales de Comercio Central y los usos industriales.'),0,1,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode(' Usos Condicionales: '),0,1,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode('Previo cumplimiento de requisitos establecidos en este reglamento para los usos condicionales (artículo 2, inciso b, párrafo 3), se permitirá el uso de terreno y edificios para los fines indicados.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('3.	RETIROS MÍNIMOS:'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Venta por menor de materiales de construcción en locales cerrados.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Talleres de artesanía e industrias artesanales que no emplee mas de 5 empleados , así como reparación de artículos eléctricos, equipo oficina, utensilios domésticos, bicicletas y similares, siempre que su operación y el almacenamiento de materiales y equipo se haga  en un local completamente cerrado y  un área de piso no mayor de 200 metros cuadrados.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Cualquier otro servicio o negocio de características y efectos similares de los descritos  que además, de no ser perjudiciales a los usos vecinos, no produzcan  ruidos, vibraciones, humo, olores polvo suciedad, gases nocivos,  resplandor, calor y peligro de fuego, o explosión en mayor grado que normalmente producirán las indicadas actividades.'),0,1,'J');
+		 
+		 	$pdf->MultiCell(190,5,utf8_decode('* Venta por menor de materiales de construcción en locales cerrados.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('* Talleres de artesanía e industrias artesanales que no emplee mas de 5 empleados , así como reparación de artículos eléctricos, equipo oficina, utensilios domésticos, bicicletas y similares, siempre que su operación y el almacenamiento de materiales y equipo se haga  en un local completamente cerrado y  un área de piso no mayor de 200 metros cuadrados.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('* Cualquier otro servicio o negocio de características y efectos similares de los descritos  que además, de no ser perjudiciales a los usos vecinos, no produzcan  ruidos, vibraciones, humo, olores polvo suciedad, gases nocivos,  resplandor, calor y peligro de fuego, o explosión en mayor grado que normalmente producirán las indicadas actividades.'),0,1,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode('Requisitos:'),0,1,'J');
 		 	$pdf->Ln(2);
-		 	$pdf->MultiCell(190,5,utf8_decode('•	La superficie del lote no será menor de 140 m2 para construcciones de hasta 2 pisos y de 280 m2, para las que exceden de 2 pisos.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Frente de lote no será menor a 8 m.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Retiros: '),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('* La superficie del lote no será menor de 140 m2 para construcciones de hasta 2 pisos y de 280 m2, para las que exceden de 2 pisos.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('* Frente de lote no será menor a 8 m.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('* Retiros: '),0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode('Frontal: 2.5 m, que se usará de antejardín, con la posibilidad de ser acera peatonal.'),0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode('Posterior: 3 m.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Cobertura de las estructuras: se permitirá una cobertura del 80 % de la superficie del lote.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Área de piso no excederá del 80 % de la superficie del lote.'),0,1,'J');
-		 	$pdf->MultiCell(190,5,utf8_decode('•	Altura de las estructuras: la altura de los edificios no excederá de 12 m o 4 pisos.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('* Cobertura de las estructuras: se permitirá una cobertura del 80 % de la superficie del lote.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('* Área de piso no excederá del 80 % de la superficie del lote.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('* Altura de las estructuras: la altura de los edificios no excederá de 12 m o 4 pisos.'),0,1,'J');
 
 		 	$pdf->Ln(2);
 
@@ -2024,11 +2022,7 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
-		 		$pdf->Ln(1);
-		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
-		 		$pdf->Ln(2);
-		 	}
+		 	
 		 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
@@ -2070,7 +2064,12 @@ $pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SU
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
+		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	$pdf->MultiCell(100,5,"POR LO TANTO",0,0);
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 		 	}
@@ -2507,23 +2506,18 @@ public function rZonaResidencialPrivada(){
 		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
 		 	$pdf->SetFont('Arial','B',10);
 		 	$pdf->MultiCell(180,5,utf8_decode(
-		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Samara; me permito  indicarle según el Plan Regulador Vigente aprobado para la zona, esta propiedad pertenece al sector determinado por los siguientes términos: ZONA  COMERCIAL - TURISTICA." ),0,1,'J' );
+		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14]."Indicando lo siguientes:" ),0,1,'J' );
 	
-
-		 	$pdf->MultiCell(180,5,"",0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'La zona donde se encuentra este terreno se consigna como Zona Residencial Privada según el Plan Regulador publicado en la Gaceta No.208 del 30 de octubre de 1981, sin embargo, el artículo 6 de la Ley 6043 indica que las disposiciones de esta Ley no se aplicarán a las áreas situadas en los litorales, ni a las propiedades inscritas con la sujeción a la Ley a nombre de particulares, ni aquellas cuya legitimidad reconozcan las leyes.  ' ),0,'J');
+		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'Por la zona en que se encuentra, esta propiedad cualquier tipo de construcción debe apegarse a lo dispuesto en la Ley Orgánica del Ambiente y su reglamento y normativa vigente y a lo dispuesto en la Ley de Construcciones y Ley de Planificación Urbana y demás Legislación vigente.' ),0,'J');
 
 
 		 	$pdf->Ln(2);
 		 
-		 	while ($fila = mysqli_fetch_array($datos)) { 		 		
-		 		$pdf->Ln(1); 		 		
-		 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila[0]."."),0,1,'J'); 		 		
-		 		$pdf->Ln(1); 		 	
-		 	}
+		 	
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(55,5,'> Uso Actual del Suelo',0,1,'J');
 		 	//Muestra los usos del suelo actual
@@ -2533,9 +2527,9 @@ public function rZonaResidencialPrivada(){
 		 		$pdf->Ln(1);
 		 	}
 		 	// Fin suelo actual
-		 	$pdf->Ln(2);
+		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(55,5,"> Actividad a Desarrollar",0,1,'J');
-		 	$pdf->Ln(2);
+		 	$pdf->Ln(1);
 		 	//Muestra las actividades a desarrollar
 		 	while ($adr = mysqli_fetch_array($rActdesRes)) {
 		 		$pdf->Ln(1);
@@ -2566,7 +2560,7 @@ public function rZonaResidencialPrivada(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Uso Conforme de Resolución Municipal con el proyecto a desarrollar, en cumplimiento con el art. 7 Zonas Privadas del Reglamento de Zonificación del Plan Regulador de Samara., debe de cumplir: ' ),0,'J');
+		 		'Uso Conforme de Resolución Municipal con el proyecto a desarrollar, en cumplimiento con el art.7 Zonas Privadas del Reglamento de Zonificación del Plan Regulador de Samara., debe de cumplir: ' ),0,'J');
 		 	$pdf->Ln(2);
 		 	// Inicio Leyes
 		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
@@ -2763,7 +2757,7 @@ public function rZonaInstitucional(){
 		 	$pdf->MultiCell(180,5,utf8_decode(
 		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Samara; según oficio Nº ZMT 00449-07  del Departamento de Zona Marítima Terrestre con fecha del  28 de mayo del 2008;  me permito  indicarle según el Plan Regulador Vigente aprobado para la zona, esta propiedad pertenece al sector determinado por los siguientes términos: ZONA  INSTITUCIONAL." ),0,1,'J' );
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(180,5,"",0,1,'J');
+		 	
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'Esta es la parte de la zona restringida que se dedica a las concesiones para uso Institucional de acuerdo a la ley 6043. Incluye tanto a aquellos lotes existentes y que cumplen con la Ley  6043, como los  que resultan del nuevo ordenamiento establecido, según el Plan Regulador de Samara publicado en la Gaceta 208 el 30 de Noviembre de 1981, para la Zona Institucional del mismo se desprende lo siguiente:' ),0,'J');
 		 	$pdf->Ln(1);
@@ -2798,11 +2792,7 @@ public function rZonaInstitucional(){
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'Las concesiones se darán a las Instalaciones interesadas, de acuerdo al proceso establecido por la Ley 6043 y su Reglamento, pero la Municipalidad no les cobrara el canon respectivo.' ),0,'J');
 		 	
-		 	$pdf->Ln(1);
-		 	while ($fila = mysqli_fetch_array($datos)) { 		 		
-		 		$pdf->Ln(1); 		 		
-		 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila[0]."."),0,1,'J'); 		 		
-		 		$pdf->Ln(1); 		 	
+		 			 	
 		 	}
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(55,5,'> Uso Actual del Suelo',0,1,'J');
@@ -3046,12 +3036,7 @@ public function rZonaPrivada(){
 			$pdf->Ln(2);
 			$pdf->MultiCell(190,5,utf8_decode(
 		 			'Según el Plan Regulador Vigente aprobado  para el Sector costero  de Playa Samara  en las Zona Privadas no se puede aplicar  la Ley 6043, pero se  recomienda para Uso  Residencial y Turístico.' ),0,'J');
-			while ($fila = mysqli_fetch_array($datos)) {
-				$pdf->Ln(1); 		 		
-				$pdf->MultiCell(100,5,utf8_decode("* ".$fila[0]."."),0,1,'J'); 		 		
-				$pdf->Ln(1); 		 	
-			}
-
+			
 		 	$pdf->Ln(2);
 
 		 	$pdf->Ln(2);
@@ -3101,22 +3086,22 @@ public function rZonaPrivada(){
 		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
-		 		$pdf->Ln(2);
+		 		$pdf->Ln(1);
 		 	}
 		 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
-		 		$pdf->Ln(2);
+		 		$pdf->Ln(1);
 		 	}
 		 	while ($leyAD = mysqli_fetch_array($rLeyesActividades)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyAD[0]),0,'J');
-		 		$pdf->Ln(2);
+		 		$pdf->Ln(1);
 		 	}
 		 	while ($leyAP = mysqli_fetch_array($rLeyesAreasPro)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyAP[0]),0,'J');
-		 		$pdf->Ln(2);
+		 		$pdf->Ln(1);
 		 	}
 		 	while ($leyRV = mysqli_fetch_array($rLeyesRedVial)) {
 		 		$pdf->Ln(1);
@@ -3152,24 +3137,21 @@ public function rZonaPrivada(){
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 			'La validez de la presente certificación está sometida a toda la normativa correspondiente vigente y al cumplimiento de los requisitos solicitados por el Ministerio de Salud amparado a un dictamen favorable de esta institución. Sin perjuicio de lo anterior para todos estos casos las molestias deberán quedar absolutamente confinadas a los límites de la propiedad.' ),0,'J');
 			$pdf->Ln(2);
-			$pdf->MultiCell(190,5,utf8_decode(
-		 		'Debiendo coordinar el permiso de corta de árboles existente en la propiedad ante el MINAE. La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, Ley de Uso, Manejo y Conservación de Suelo N° 7779, Ley forestal N°7575 y demás Legislación Vigente. Si se realiza movimientos de Tierra se debe solicitar el permiso Respectivo ante el departamento de Control Constructivo.' ),0,'J');
-			$pdf->Ln(2);
+			
 			$pdf->MultiCell(190,5,utf8_decode(
 		 		'La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, INVU, Ley  de Construcción y demás legislación vigente.' ),0,'J');
 			$pdf->Ln(2);
-			$pdf->MultiCell(190,5,utf8_decode(
-		 		'Si en la propiedad se va construir, toda posible molestia debe quedar completamente confinada dentro del inmueble; así como se debe realizar todos los análisis para verificar la viabilidad ambiental, económico, vial, patrimonial, de afectaciones, de infraestructura, de mecánica de Suelos, de escorrentía, de riesgos naturales, de disponibilidad de servicios, de transporte público, etc., para conocer si realmente la propiedad en este caso privada es apta para la construcción de este tipo de proyecto.' ),0,'J');
-			$pdf->Ln(2);
+			
 			$pdf->MultiCell(190,5,utf8_decode(
 		 		'Por otra parte  según Secretaria Municipal mediante  oficio SM-004-01-2007, con fecha del 03 de enero del presente año manifiesta mediante ACUERDO Nº 19 de la sesión ordinaria Nº  034 del 18 de diciembre del 2006 QUE DICE: EL  CONSEJO MUNICIPAL EN FORMA UNÁNIME APRUEBA PARA QUE, mientras se aprueba un reglamento ambiental, los permisos de construcción que involucren áreas vulnerables desde el punto de vista ecológico, de la belleza escénica  o del recurso hídrico, de previo a aprobarse, deben de tener  la anuencia de las comisiones, Ambiental y de Obras, así  como el visto bueno del Departamento Legal.' ),0,'J');
+
 			$pdf->Ln(2);
 			while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
+		 	$pdf->MultiCell(100,5,"POR LO TANTO",0,0);
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 		 	}
@@ -3309,11 +3291,7 @@ public function rZonaArriendo() {
 			$pdf->Ln(2);
 			$pdf->MultiCell(190,5,utf8_decode(
 		 			'Esta es la parte de la zona restringida que se dedica a las concesiones para uso residencial – recreativo de acuerdo a la ley 6043. Incluye tanto a aquellos lotes existentes y que cumplen con la Ley  6043, como los  que resultan del nuevo ordenamiento establecido por el Plan Regulador.' ),0,'J');
-			while ($fila = mysqli_fetch_array($datos)) {
-				$pdf->Ln(1); 		 		
-				$pdf->MultiCell(100,5,utf8_decode("* ".$fila[0]."."),0,1,'J'); 		 		
-				$pdf->Ln(1); 		 	
-			}
+			
 
 		 	$pdf->Ln(2);
 
@@ -3624,11 +3602,7 @@ public function rZonaHotelera(){
 		 			'La zona donde se encuentra esta propiedad es Zona Hotelera según el Plan Regulador Vigente del Cantón de Samara. ' ),0,'J');
 			$pdf->Ln(2);
 			
-			while ($fila = mysqli_fetch_array($datos)) {
-				$pdf->Ln(1); 		 		
-				$pdf->MultiCell(100,5,utf8_decode("* ".$fila[0]."."),0,1,'J'); 		 		
-				$pdf->Ln(1); 		 	
-			}
+			
 
 		 	$pdf->Ln(2);
 
@@ -3639,8 +3613,6 @@ public function rZonaHotelera(){
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 			'Prohibiciones: Cualquier instalación que no sea estrictamente turística.' ),0,'J');
 
-		 	$pdf->Ln(2);
-		 	$pdf->Ln(2);
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(55,5,'> Uso Actual del Suelo',0,1,'J');
 		 	//Muestra los usos del suelo actual
@@ -3736,13 +3708,7 @@ public function rZonaHotelera(){
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	$pdf->MultiCell(190,5,utf8_decode(
-		 			'La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, Ley de Uso, Manejo  y Conservación de Suelo, N° 7779 y demás Legislación Vigente.' ),0,'J');
-			$pdf->Ln(2);
-			$pdf->MultiCell(190,5,utf8_decode(
-		 		'De previo a desarrollar el proyecto debe garantizar que toda posible molestia debe quedar completamente confinada dentro del inmueble; así como realizar todos los análisis para verificar la viabilidad ambiental, vial, patrimonial, de afectaciones a aguas pluviales, de infraestructura, de mecánica de suelos, de escorrentía, de riesgos naturales, de disponibilidad de servicios, de transporte público, etc.' ),0,'J');
-			$pdf->Ln(2);
-			
+		
 			$pdf->Ln(2);
 			while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
 		 		$pdf->Ln(1);
