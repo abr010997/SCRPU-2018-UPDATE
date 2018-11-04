@@ -45,48 +45,8 @@ class class04oficinaController
 		if ($_POST) {
 			$this->class04oficina->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
 			$this->class04oficina->setAtributo('PU39CEDSOLICI',$_POST['PU39CEDSOLICI']);
-			$this->class04oficina->setAtributo('PU39NOMSOLICI',$_POST['PU39NOMSOLICI']);
-			$this->class04oficina->setAtributo('PU39APE1SOLICI',$_POST['PU39APE1SOLICI']);
-			$this->class04oficina->setAtributo('PU39APE2SOLICI',$_POST['PU39APE2SOLICI']);
-
-			if (isset($_POST['PU04IDDISTRITO'])) {
-				
-				if ($_POST['PU04IDDISTRITO'] == 'Seleccione') {
-					$id = 0;
-				}
-				if ($_POST['PU04IDDISTRITO'] == 'Nicoya') {
-					$id = 1;
-				}
-				if ($_POST['PU04IDDISTRITO'] == 'Masión') {
-					$id = 2;
-				}
-				if ($_POST['PU04IDDISTRITO'] == 'San Antonio') {
-					$id = 3;
-				}
-				if ($_POST['PU04IDDISTRITO'] == 'Quebrada Honda') {
-					$id = 4;
-				}
-				if ($_POST['PU04IDDISTRITO'] == 'Sámara') {
-					$id = 5;
-				}
-				if ($_POST['PU04IDDISTRITO'] == 'Nosara') {
-					$id = 6;
-				}
-				if ($_POST['PU04IDDISTRITO'] == 'Belén') {
-					$id = 7;
-				}
-			}
-			$this->class04oficina->setAtributo('PU04IDDISTRITO',$id);
-			$this->class04oficina->setAtributo('PU39BARRIO',$_POST['PU39BARRIO']);
-			$this->class04oficina->setAtributo('PU39DIRECCION',$_POST['PU39DIRECCION']);
-
 			$this->class04oficina->setAtributo('PU40CEDPROPIE',$_POST['PU40CEDPROPIE']);
-			$this->class04oficina->setAtributo('PU40NOMPROPIE',$_POST['PU40NOMPROPIE']);
-			$this->class04oficina->setAtributo('PU40APE1PROPIE',$_POST['PU40APE1PROPIE']);
-			$this->class04oficina->setAtributo('PU40APE2PROPIE',$_POST['PU40APE2PROPIE']);
-
 			$this->class04oficina->setAtributo('PU40NFINCA',$_POST['PU40NFINCA']);
-			$this->class04oficina->setAtributo('PU40NPLANO',$_POST['PU40NPLANO']);
 			$this->class04oficina->guardar();
 			header('location:?c=class04oficina&m=index4');
 
@@ -107,21 +67,8 @@ public function editar()
 		if ($_POST) {
 			$this->class04oficina->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
 			$this->class04oficina->setAtributo('PU39CEDSOLICI',$_POST['PU39CEDSOLICI']);
-			$this->class04oficina->setAtributo('PU39NOMSOLICI',$_POST['PU39NOMSOLICI']);
-			$this->class04oficina->setAtributo('PU39APE1SOLICI',$_POST['PU39APE1SOLICI']);
-			$this->class04oficina->setAtributo('PU39APE2SOLICI',$_POST['PU39APE2SOLICI']);
-
-			$this->class04oficina->setAtributo('PU04IDDISTRITO',$_POST['PU04IDDISTRITO']);
-			$this->class04oficina->setAtributo('PU39BARRIO',$_POST['PU39BARRIO']);
-			$this->class04oficina->setAtributo('PU39DIRECCION',$_POST['PU39DIRECCION']);
-
 			$this->class04oficina->setAtributo('PU40CEDPROPIE',$_POST['PU40CEDPROPIE']);
-			$this->class04oficina->setAtributo('PU40NOMPROPIE',$_POST['PU40NOMPROPIE']);
-			$this->class04oficina->setAtributo('PU40APE1PROPIE',$_POST['PU40APE1PROPIE']);
-			$this->class04oficina->setAtributo('PU40APE2PROPIE',$_POST['PU40APE2PROPIE']);
-
 			$this->class04oficina->setAtributo('PU40NFINCA',$_POST['PU40NFINCA']);
-			$this->class04oficina->setAtributo('PU40NPLANO',$_POST['PU40NPLANO']);
 			$this->class04oficina->editar();
 			header('location:?c=class04oficina&m=index2');
 

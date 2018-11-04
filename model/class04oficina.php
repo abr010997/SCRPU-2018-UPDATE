@@ -259,20 +259,14 @@ class class04oficina  extends Conexion
 
 	public function guardar()
 	{
-		$sql = "CALL SP39_40_REFINFOSOLIPROPIE_GUARDAR ('$this->PU04IDTRA','$this->PU39CEDSOLICI',
-		'$this->PU39NOMSOLICI','$this->PU39APE1SOLICI','$this->PU39APE2SOLICI','$this->PU04IDDISTRITO',
-		'$this->PU39BARRIO','$this->PU39DIRECCION','$this->PU40CEDPROPIE','$this->PU40NOMPROPIE',
-		'$this->PU40APE1PROPIE','$this->PU40APE2PROPIE','$this->PU40NFINCA','$this->PU40NPLANO');";
+		$sql = "CALL SP40_TRA_PROPIETARIO_GUARDAR ('$this->PU04IDTRA','$this->PU39CEDSOLICI','$this->PU40CEDPROPIE','$this->PU40NFINCA');";
 		$this->conexion->consultaSimple($sql);
 	
 	}
 
 	public function editar()
 	{
-		$sql = "CALL SP39_40_REFINFOSOLIPROPIE_ACTUALIZAR ('$this->PU04IDTRA','$this->PU39CEDSOLICI',
-		'$this->PU39NOMSOLICI','$this->PU39APE1SOLICI','$this->PU39APE2SOLICI','$this->PU04IDDISTRITO',
-		'$this->PU39BARRIO','$this->PU39DIRECCION','$this->PU40CEDPROPIE','$this->PU40NOMPROPIE',
-		'$this->PU40APE1PROPIE','$this->PU40APE2PROPIE','$this->PU40NFINCA','$this->PU40NPLANO');";
+		$sql = "CALL SP39_40_REFINFOSOLIPROPIE_ACTUALIZAR ('$this->PU04IDTRA','$this->PU39CEDSOLICI','$this->PU40CEDPROPIE','$this->PU40NFINCA');";
 		$this->conexion->consultaSimple($sql);
 	
 	}
@@ -335,19 +329,21 @@ class class04oficina  extends Conexion
 		$class04oficina = new class04oficina();
 		while ($row = mysqli_fetch_array($result)) {
 			$class04oficina->setAtributo('PU04IDTRA',$row[0]);
-			$class04oficina->setAtributo('PU39CEDSOLICI',$row[1]);
-			$class04oficina->setAtributo('PU39NOMSOLICI',$row[2]);
-			$class04oficina->setAtributo('PU39APE1SOLICI',$row[3]);
-			$class04oficina->setAtributo('PU39APE2SOLICI',$row[4]);
-			$class04oficina->setAtributo('PU04IDDISTRITO',$row[5]);
-			$class04oficina->setAtributo('PU39BARRIO',$row[6]);
-			$class04oficina->setAtributo('PU39DIRECCION',$row[7]);
-			$class04oficina->setAtributo('PU40CEDPROPIE',$row[8]);
-			$class04oficina->setAtributo('PU40NOMPROPIE',$row[9]);
-			$class04oficina->setAtributo('PU40APE1PROPIE',$row[10]);
-			$class04oficina->setAtributo('PU40APE2PROPIE',$row[11]);
-			$class04oficina->setAtributo('PU40NFINCA',$row[12]);
-			$class04oficina->setAtributo('PU40NPLANO',$row[13]);
+			$class04oficina->setAtributo('PU40CEDPROPIE',$row[1]);
+			$class04oficina->setAtributo('PU40NOMPROPIE',$row[2]);
+			$class04oficina->setAtributo('PU40APE1PROPIE',$row[3]);
+			$class04oficina->setAtributo('PU40APE2PROPIE',$row[4]);
+			$class04oficina->setAtributo('PU40NFINCA',$row[5]);
+			$class04oficina->setAtributo('PU40NPLANO',$row[6]);
+			$class04oficina->setAtributo('PU04IDDISTRITO',$row[7]);
+			$class04oficina->setAtributo('PU39BARRIO',$row[8]);
+			$class04oficina->setAtributo('PU39DIRECCION',$row[9]);
+			$class04oficina->setAtributo('PU39CEDSOLICI',$row[10]);
+			$class04oficina->setAtributo('PU39NOMSOLICI',$row[11]);
+			$class04oficina->setAtributo('PU39APE1SOLICI',$row[12]);
+			$class04oficina->setAtributo('PU39APE2SOLICI',$row[13]);
+			
+			
 		}
 		return $class04oficina;
 	}
@@ -357,19 +353,19 @@ class class04oficina  extends Conexion
 		$class04oficina = new class04oficina();
 		while ($row = mysqli_fetch_array($result)) {
 			$class04oficina->setAtributo('PU04IDTRA',$row[0]);
-			$class04oficina->setAtributo('PU39CEDSOLICI',$row[1]);
-			$class04oficina->setAtributo('PU39NOMSOLICI',$row[2]);
-			$class04oficina->setAtributo('PU39APE1SOLICI',$row[3]);
-			$class04oficina->setAtributo('PU39APE2SOLICI',$row[4]);
-			$class04oficina->setAtributo('PU04IDDISTRITO',$row[5]);
-			$class04oficina->setAtributo('PU39BARRIO',$row[6]);
-			$class04oficina->setAtributo('PU39DIRECCION',$row[7]);
-			$class04oficina->setAtributo('PU40CEDPROPIE',$row[8]);
-			$class04oficina->setAtributo('PU40NOMPROPIE',$row[9]);
-			$class04oficina->setAtributo('PU40APE1PROPIE',$row[10]);
-			$class04oficina->setAtributo('PU40APE2PROPIE',$row[11]);
-			$class04oficina->setAtributo('PU40NFINCA',$row[12]);
-			$class04oficina->setAtributo('PU40NPLANO',$row[13]);
+			$class04oficina->setAtributo('PU40CEDPROPIE',$row[1]);
+			$class04oficina->setAtributo('PU40NOMPROPIE',$row[2]);
+			$class04oficina->setAtributo('PU40APE1PROPIE',$row[3]);
+			$class04oficina->setAtributo('PU40APE2PROPIE',$row[4]);
+			$class04oficina->setAtributo('PU40NFINCA',$row[5]);
+			$class04oficina->setAtributo('PU40NPLANO',$row[6]);
+			$class04oficina->setAtributo('PU04IDDISTRITO',$row[7]);
+			$class04oficina->setAtributo('PU39BARRIO',$row[8]);
+			$class04oficina->setAtributo('PU39DIRECCION',$row[9]);
+			$class04oficina->setAtributo('PU39CEDSOLICI',$row[10]);
+			$class04oficina->setAtributo('PU39NOMSOLICI',$row[11]);
+			$class04oficina->setAtributo('PU39APE1SOLICI',$row[12]);
+			$class04oficina->setAtributo('PU39APE2SOLICI',$row[13]);
 		}
 		return $class04oficina;
 	}
