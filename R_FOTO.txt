@@ -1,0 +1,10 @@
+DELIMITER $$
+CREATE PROCEDURE `pu_ingenieria`.`R_FOTO`(
+  IN idtra INT(11)
+  )
+BEGIN
+  SELECT `pu04fototerreno`.`PU04RUTAIMAGEN` 
+  FROM `pu04fototerreno` 
+  WHERE `pu04fototerreno`.`PU04IDTRA` = idtra;
+END$$
+DELIMITER ;
