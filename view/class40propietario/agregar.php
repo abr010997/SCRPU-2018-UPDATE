@@ -1,6 +1,7 @@
     
   <center><h2>Agregar nuevo Propietario</h2></center>
     <form action="?c=class40propietario&m=agregar" method="post">
+       <div class="col-sm-offset-4 col-sm-4">
       <div class="form-group">
         <label for="PU40CEDPROPIE">Cédula:</label>
         <input type="text" class="form-control" id="PU40CEDPROPIE" name="PU40CEDPROPIE">
@@ -19,6 +20,7 @@
       </div>
      
 
-      <button type="submit" class="btn btn-success">Guardar Propietario</button> 
-      <a href="?c=class40propietario&m=index" class="btn btn-danger" role="button">Regresar</a>    
+      <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-floppy-saved"></span>Guardar Propietario</button> 
+      <a href="?c=class40propietario&m=index" class="btn btn-danger" role="button">Regresar</a> 
+        </div>     
      </form>

@@ -108,6 +108,9 @@
                   <li>
                       <a href="?c=classreporte&m=rDarDireccionAgua&id=<?php echo $row[0]; ?>" target="_blank"> rDarDireccionAgua</a>
                   </li>
+                  <li>
+                      <a href="?c=classreporte&m=rDarAntecedentesDominio&id=<?php echo $row[0]; ?>" target="_blank"> rDarAntecedentesDominio</a>
+                  </li>
                 </ul>
               </div>
             </td>

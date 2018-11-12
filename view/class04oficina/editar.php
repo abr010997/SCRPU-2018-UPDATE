@@ -1,6 +1,7 @@
       <center><h3>Editar Datos de Oficina:</h3></center>
     
       <form action="?c=class04oficina&m=editar" method="post">
+        <div class="col-sm-offset-4 col-sm-4">
       <div class="form-group">
         <label for="PU04IDTRA">Id Trámite:</label>
         <input type="text" class="form-control" id="PU04IDTRA" name="PU04IDTRA" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
@@ -69,5 +70,6 @@
 
 
       <button type="submit" class="btn btn-success">Editar Oficina</button> 
-      <a href="?c=class04oficina&m=index" class="btn btn-danger" role="button">Regresar</a>    
+      <a href="?c=class04oficina&m=index" class="btn btn-danger" role="button">Regresar</a> 
+       </div>      
     </form>

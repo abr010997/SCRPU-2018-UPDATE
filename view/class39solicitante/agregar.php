@@ -1,6 +1,7 @@
     
   <center><h2>Agregar nuevo Solicitante</h2></center>
     <form action="?c=class39solicitante&m=agregar" method="post">
+      <div class="col-sm-offset-4 col-sm-4">
       <div class="form-group">
         <label for="PU39CEDSOLICI">Cédula:</label>
         <input type="text" class="form-control" id="PU39CEDSOLICI" name="PU39CEDSOLICI">
@@ -20,5 +21,6 @@
      
 
       <button type="submit" class="btn btn-success">Guardar Solicitante</button> 
-      <a href="?c=class39solicitante&m=index" class="btn btn-danger" role="button">Regresar</a>    
+      <a href="?c=class39solicitante&m=index" class="btn btn-danger" role="button">Regresar</a>  
+         </div>  
      </form>

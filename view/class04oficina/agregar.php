@@ -9,7 +9,7 @@
      
   <center><h2>Guardar datos de Inspección Realizada</h2></center>
     <form method="POST" action="?c=class04oficina&m=agregar" >
-
+<div class="col-sm-offset-4 col-sm-8">
         <h4>Guardando información de Oficina al Trámite:</h4>
       <div class="col-xs-5">
   <input type="text" class="form-control" id="PU04IDTRA" name="PU04IDTRA" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>"  readonly> <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
@@ -74,7 +74,7 @@
 
 
       
-
+</div>
 </div>
 <br>
 <br>
