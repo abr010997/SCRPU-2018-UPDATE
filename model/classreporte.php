@@ -447,6 +447,18 @@ public function listarAntecedentesDominio()
 		return $result;
 	}
 
+	public function listarencabezadoPatente(){
+		$sql = "CALL R_ENCABEZADO_PATENTE('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarencabezadoConstruccion(){
+		$sql = "CALL R_ENCABEZADO_CONSTRUCCION('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
 	public function convertToclassreporte($result)
 	{
 		$classreporte = new classreporte();
