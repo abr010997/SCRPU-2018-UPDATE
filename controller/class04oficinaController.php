@@ -158,7 +158,7 @@ public function editar()
 	$actComercialIndustrial = $auxACTCOMERCIALINDUSTRIAL->buscarIngresoTraActComercialIndustrial($_REQUEST['id']);
 	$actEstacionServicios = $auxACTESTACIONSERVICIOS->buscarIngresoTraActEstacionServicios($_REQUEST['id']);
 	///////////////////////////////////////////////////////////////////////////////////////////////
-$patentesencabezado = $auxPATENTESENCABEZADO->buscarIngresoTraPatentes($_REQUEST['id']);
+//$patentesencabezado = $auxPATENTESENCABEZADO->buscarIngresoTraPatentes($_REQUEST['id']);
 	//////////////////////
 	$actservidumbre = $auxSERVIDUMBRES->buscarIngresoTraServidumbres($_REQUEST['id']);
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -744,12 +744,12 @@ public function guardarObservacionComercialIndustrial()
 				header('location:?c=class04oficina&m=revisarTra&id='.$_REQUEST['id']);
 		}
 		else{
-			$auxPATENTESENCABEZADO = new class04oficina();
-			$patentesencabezado = $auxPATENTESENCABEZADO->buscarIngresoTraPatentes($_REQUEST['id']);
+			//$auxPATENTESENCABEZADO = new class04oficina();
+			//$patentesencabezado = $auxPATENTESENCABEZADO->buscarIngresoTraPatentes($_REQUEST['id']);
 			$this->class04oficina = $this->class04oficina->buscar($_REQUEST['id']);
 
 			require_once 'view/header.php';
-			require_once 'view/class04oficina/editarLeyPatentes.php';
+			require_once 'view/class04oficina/editarLeyPatentesencabezado.php';
 			require_once 'view/footer.php';
 		}
 	}

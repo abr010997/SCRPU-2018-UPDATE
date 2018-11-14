@@ -1243,20 +1243,20 @@ public function eliminarLeyes($idtramite)
 	public function eliminarLeyPatenteencabezado($idtramite)
 	{
 		$sql106 = "DELETE FROM pu46patentetraley WHERE pu04idtra = '".$idtramite."';";	
-		$this->conexion->consultaSimple($sql1060);		
+		$this->conexion->consultaSimple($sql106);		
 	}
 
 	public function asignarLeyPatenteencabezado($idtramite, $pu45idley)
 	{
 		$sql111= "INSERT INTO pu46patentetraley VALUES ('".$idtramite."','".$pu45idley."');";
-		$this->conexion->consultaSimple($sql1110);	
+		$this->conexion->consultaSimple($sql111);	
 	}
 
 	public function tieneLeyPatenteencabezado($idtramite, $pu45idley)
 	{
 		
 		$sql111 = "SELECT COUNT(*) AS total270 FROM pu46patentetraley WHERE pu04idtra='".$idtramite."' AND pu45idley='".$pu45idley."';";
-		$result = $this->conexion->consultaRetorno($sql1110);
+		$result = $this->conexion->consultaRetorno($sql111);
 		$row = mysqli_fetch_array($result);		
 		return $row;	
 	}
@@ -1264,8 +1264,8 @@ public function eliminarLeyes($idtramite)
 	public function getTodasLeyPatenteencabezado()
 	{
 		$sql111 = "SELECT `pu45idley`,`pu45objetivo`,`pu45descripcion`FROM`pu45leyes`
-		WHERE `pu45idtipo`=5;";
-		$result = $this->conexion->consultaRetorno($sql1110);
+		WHERE `pu45idtipo`=8;";
+		$result = $this->conexion->consultaRetorno($sql111);
 		return $result;
 	}	
 	///FIN PATENTE ENCABEZADO
