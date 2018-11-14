@@ -125,6 +125,21 @@
 
                   <li><a><i class="fa fa-desktop"></i> Módulo Oficina <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
+              
+
+              <li>
+                      <a href="?c=class39solicitante">Guardar Solicitante</a>
+               </li>
+
+                <li>
+                      <a href="?c=class40propietario">Guardar Propietario</a>
+               </li>
+               <li>
+                      <a href="?c=class40terreno">Guardar Terreno</a>
+               </li>
+
+
+
                         <li>
                       <a href="?c=class04oficina">Realizar Oficina a Trámites</a>
                       </li>

@@ -45,11 +45,14 @@
 
   
         <form method="POST" action="?c=class04oficina&m=editarActividades">
+           <div class="col-sm-offset-0 col-sm-4">
           <div class="form-group">
             <label for="id">Código Trámite</label>
             <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
+          </div>
+          <br><br><br><br>
           <?php foreach( $idactividades as $idactividad ): ?>
           <?php $isCheck = $this->class04oficina->tieneActividades($idtramite, $idactividad['PU06IDACTDES']);?>
           <div class="checkbox">
@@ -66,11 +69,12 @@
           <br>
         </form>
         <form method="POST" action="?c=class04oficina&m=guardarObservacionResidencial">
-
+ <div class="col-sm-offset-0 col-sm-4">
           <div class="form-group">
             <label for="id">Código Trámite</label>
             <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
+          </div>
           </div>
       
 

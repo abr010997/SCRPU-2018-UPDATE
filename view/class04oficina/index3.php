@@ -16,19 +16,23 @@
         <tr>
           <th style="width: 120px;">Más</th>
           <th>Id Trámite</th>
-          <th>Cédula Solicitante</th>
-          <th>Nombre Solicitante</th>
-          <th>1° Apellido Solicitante</th>
-          <th>2° Apellido Solicitante</th>
-          <th>Distrito Solicitante</th>
-          <th>Barrio Solicitante</th>
-          <th>Dirección Solicitante</th>
           <th>Cédula Propietario</th>
           <th>Nombre Propietario</th>
           <th>1° Apellido Propietario</th>
           <th>2° Apellido Propietario</th>
-          <th>Plano Propietario</th>
           <th>Finca</th>
+          <th>Plano Propietario</th>
+          <th>Distrito Terreno</th>
+          <th>Barrio Terreno</th>
+          <th>Dirección Terreno</th>
+          <th>Cédula Solicitante</th>
+          <th>Nombre Solicitante</th>
+          <th>1° Apellido Solicitante</th>
+          <th>2° Apellido Solicitante</th>
+          
+          
+          
+          
         </tr>
       </thead>
       <tbody>
@@ -103,6 +107,9 @@
                   </li>
                   <li>
                       <a href="?c=classreporte&m=rDarDireccionAgua&id=<?php echo $row[0]; ?>" target="_blank"> rDarDireccionAgua</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=rDarAntecedentesDominio&id=<?php echo $row[0]; ?>" target="_blank"> rDarAntecedentesDominio</a>
                   </li>
                 </ul>
               </div>

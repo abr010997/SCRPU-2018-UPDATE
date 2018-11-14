@@ -288,6 +288,16 @@ public function listarDarInta()
 		return $result;
 	}
 
+public function listarAntecedentesDominio()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+
+	
+
 	public function listarFechaRegTra()
 	{
 		$sql = "CALL R_DAR('$this->PU04IDTRA');";
@@ -418,6 +428,33 @@ public function listarDarInta()
 	public function listarR_OBSERV_TRAMITE()
 	{
 		$sql = "CALL R_OBSERV_TRAMITE('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+
+	public function listar_ObserResidencial()
+	{
+		$sql = "CALL SP06_OBSERVACIONESRESIDENCIAL_BUSCAR('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listar_ObserDesarrollo()
+	{
+		$sql = "CALL SP06_OBSERVACIONESDESARROLLO_BUSCAR('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarencabezadoPatente(){
+		$sql = "CALL R_ENCABEZADO_PATENTE('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarencabezadoConstruccion(){
+		$sql = "CALL R_ENCABEZADO_CONSTRUCCION('$this->PU04IDTRA');";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
