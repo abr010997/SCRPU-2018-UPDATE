@@ -432,6 +432,21 @@ public function listarAntecedentesDominio()
 		return $result;
 	}
 
+
+	public function listar_ObserResidencial()
+	{
+		$sql = "CALL SP06_OBSERVACIONESRESIDENCIAL_BUSCAR('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
+	public function listar_ObserDesarrollo()
+	{
+		$sql = "CALL SP06_OBSERVACIONESDESARROLLO_BUSCAR('$this->PU04IDTRA');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+
 	public function convertToclassreporte($result)
 	{
 		$classreporte = new classreporte();

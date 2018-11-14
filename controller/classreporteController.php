@@ -87,6 +87,8 @@ class classreporteController
 	private $fototramite;
 	private $apro_dene;
 	private $observacion;
+	private $observaResidencial;
+	private $observaDesarrollo;
 	//Fin Extra
 function __construct()
 {
@@ -175,6 +177,7 @@ public function reporte(){
 	
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
+
 
 	$this->resolusion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLista 			= $this->resolusion->listarResi();
@@ -2765,6 +2768,7 @@ public function rZonaInstitucional(){
 		 	$pdf->SetFont('Arial','B',10);
 		 	$pdf->MultiCell(180,5,utf8_decode(
 		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Samara; según oficio Nº ZMT 00449-07  del Departamento de Zona Marítima Terrestre con fecha del  28 de mayo del 2008;  me permito  indicarle según el Plan Regulador Vigente aprobado para la zona, esta propiedad pertenece al sector determinado por los siguientes términos: ZONA  INSTITUCIONAL." ),0,1,'J' );
+
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 			'Esta es la parte de la zona restringida que se dedica a las concesiones para uso Institucional de acuerdo a la ley 6043. Incluye tanto a aquellos lotes existentes y que cumplen con la Ley  6043, como los  que resultan del nuevo ordenamiento establecido, según el Plan Regulador de Samara publicado en la Gaceta 208 el 30 de Noviembre de 1981, para la Zona Institucional del mismo se desprende lo siguiente:'),0,'J');
 			$pdf->Ln(1);
@@ -3790,6 +3794,10 @@ public function rFueraPlanRegulador(){
 	$this->observacion          = new classreporte();
 	$this->fototramite 			= new classreporte();
 	$this->datosresiprivada     = new classreporte();
+	$this->observaResidencial   =new classreporte();
+	$this->observaDesarrollo   =new classreporte();
+
+	
 
 	$this->fueraplan->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLista 			= $this->fueraplan->listarFueraPLan();
@@ -3839,6 +3847,16 @@ public function rFueraPlanRegulador(){
 
 	$this->fototramite->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rFoto				= $this->fototramite->listarFotoTramite();
+
+
+	$this->observaResidencial->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rObservaResiden				= $this->observaResidencial->listar_ObserResidencial();
+
+	$this->observaDesarrollo->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rObservaDesarrollo				= $this->observaDesarrollo->listar_ObserDesarrollo();
+
+
+
 
 	$pdf 				= new PDF();
 	$pdf->AliasNbPages();
@@ -3920,6 +3938,19 @@ public function rFueraPlanRegulador(){
 		 		$pdf->MultiCell(100,5,utf8_decode("* ".$adc[0]."."),0,1,'J');
 		 		$pdf->Ln(1);
 		 	}
+		 	while ($obserResi = mysqli_fetch_array($rObservaResiden)) {
+		 		
+		 		$pdf->MultiCell(190,5,utf8_decode($obserResi[0]),0,'J');
+		 		
+		 	}
+		 	while ($obserDesarrollo = mysqli_fetch_array($rObservaDesarrollo)) {
+		 		
+		 		$pdf->MultiCell(190,5,utf8_decode($obserDesarrollo[0]),0,'J');
+		 		
+		 	}
+
+		 	///
+		 	
 		 	//Fin Actividades
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
@@ -4432,10 +4463,11 @@ public function rDarDireccionAgua(){
 	{
 		$pdf->Cell(185, 5, utf8_decode('DE PREVIO A RESOLVER'), 0, 0, 'C');
 		$pdf->Ln(2);
-		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc.
+		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc...
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
-			// Inicio Consecutivo
+			// Inicio Consecutivo...
+			
 			while ($cons = mysqli_fetch_array($rConstra)) {
 		 		$pdf->MultiCell(60,5,
 		 			utf8_decode("Nº OF-DPU-".$cons[0]."-".$cons[1]."-".$cons[2]),0,'L');

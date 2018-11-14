@@ -133,6 +133,9 @@ public function editar()
 			$auxSERVIDUMBRES = new class04oficina();
 
 
+				$auxPATENTESENCABEZADO = new class04oficina();
+
+
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			$apartados = $auxClass04oficina->buscarIngresoTraAcceso($_REQUEST['id']);
@@ -154,7 +157,9 @@ public function editar()
 			$actComercial = $auxACTCOMERCIAL->buscarIngresoTraActComercial($_REQUEST['id']);
 	$actComercialIndustrial = $auxACTCOMERCIALINDUSTRIAL->buscarIngresoTraActComercialIndustrial($_REQUEST['id']);
 	$actEstacionServicios = $auxACTESTACIONSERVICIOS->buscarIngresoTraActEstacionServicios($_REQUEST['id']);
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////
+$patentesencabezado = $auxPATENTESENCABEZADO->buscarIngresoTraPatentes($_REQUEST['id']);
+	//////////////////////
 	$actservidumbre = $auxSERVIDUMBRES->buscarIngresoTraServidumbres($_REQUEST['id']);
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			 
@@ -718,6 +723,50 @@ public function guardarObservacionComercialIndustrial()
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////editarLeyEspaciosgeo
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ENCABEZADO
+	public function editarLeyPatentesencabezado()
+	{
+		if($_POST){
+			   $tipoleypatentesencabezado = $this->class04oficina->getTodasLeyPatenteencabezado();
+			    $this->class04oficina->eliminarLeyPatenteencabezado($_REQUEST['id']);
+			    foreach ($tipoleypatentesencabezado as $idtipoleypatentesencabezado):
+    			if( isset($_REQUEST['idtipoleypatentesencabezado'.$idtipoleypatentesencabezado['pu45idley']] ) )
+      			$this->class04oficina->asignarLeyPatenteencabezado($_REQUEST['id'], $idtipoleypatentesencabezado['pu45idley']);
+  				endforeach;
+				header('location:?c=class04oficina&m=revisarTra&id='.$_REQUEST['id']);
+		}
+		else{
+			$auxPATENTESENCABEZADO = new class04oficina();
+			$patentesencabezado = $auxPATENTESENCABEZADO->buscarIngresoTraPatentes($_REQUEST['id']);
+			$this->class04oficina = $this->class04oficina->buscar($_REQUEST['id']);
+
+			require_once 'view/header.php';
+			require_once 'view/class04oficina/editarLeyPatentes.php';
+			require_once 'view/footer.php';
+		}
+	}
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ENCABEZADO
+
+
+
+
+
+
+
+
+
+
+
+
 	public function editarLeyServidumbres()
 	{
 		if($_POST){
