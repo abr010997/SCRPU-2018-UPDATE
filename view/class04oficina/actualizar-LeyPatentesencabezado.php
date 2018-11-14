@@ -6,9 +6,9 @@
   eliminarLeyPatenteencabezado($idtramite);
   //$actividades = getTodasCategoriasactividades();
   // Reasignaremos sus permisos:
-  foreach ($idtipoleypatentesencabezado as $tipoleypatentesencabezado):
-    if( isset( $_POST['tipoleypatentesencabezado'.$tipoleypatentesencabezado[0]] ) )
-      asignarLeyPatenteencabezado($idtramite, $tipoleypatentesencabezado[0]);
+  foreach ($idtipoleypatentesencabezado as $tipoleypatente1):
+    if( isset( $_POST['tipoleypatente1'.$tipoleypatente1[0]] ) )
+      asignarLeyPatenteencabezado($idtramite, $tipoleypatente1[0]);
   endforeach;
 
   header('Location: revisionTramite.php?idtramite='.$idtramite);

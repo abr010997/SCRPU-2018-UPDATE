@@ -14,6 +14,7 @@
     <li  href="#tabconten5">Tipo de Trámite</li>
     <li  href="#tabconten4">Observaciones generales</li>
     <li  href="#tabconten6">Cargar Imágen Terreno</li>
+    <li  href="#tabconten7">Tipo de Resolución</li>
   </ul> 
   <div class="resp-tabs-container hor_1">
 
@@ -590,6 +591,27 @@
 <br>
       <button type="submit" name="btnsave" class="btn btn-success">Guardar Imágen</button> 
       <a id="regresar" class="btn btn-danger" role="button" href="?c=class04oficina&m=index">Regresar</a>  
+     </form>
+    </div>
+    
+
+
+
+
+
+
+    <div class="container-fluid" id="tabconten7">
+      <form action="?c=class04oficina&m=guardarImagen" enctype="multipart/form-data" method="post" >
+
+        <div class="form-group row">
+          <div class="col-md-5">
+            <label for="PU04IDTRA">Código Trámite:</label>
+            <input type="text" class="form-control" id="PU04IDTRA" name="PU04IDTRA" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
+        </div>
+      </div>
+<br>
+<a href="?c=class04oficina&m=editarLeyPatentesencabezado&id=<?php echo $idtramite;?>" class="btn btn-danger" role="button">Asignar Resolución</a> 
+ 
      </form>
     </div>
 
