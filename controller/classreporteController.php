@@ -90,6 +90,9 @@ class classreporteController
 	private $observaResidencial;
 	private $observaDesarrollo;
 	//Fin Extra
+
+	private $encabezadopatente;
+	private $encabezadoconstruccion;
 function __construct()
 {
 	$this->classreporte = new classreporte();
@@ -178,6 +181,8 @@ public function reporte(){
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
 
 	$this->resolusion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLista 			= $this->resolusion->listarResi();
@@ -224,6 +229,11 @@ public function reporte(){
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
 
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
+
 	$pdf 				= new PDF();
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
@@ -231,7 +241,13 @@ public function reporte(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
+		//$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
 		$pdf->Ln(5);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
@@ -362,7 +378,7 @@ public function reporte(){
 			 	}
 			 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 			 	$pdf->Ln(1);
-			 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+			 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7].", quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 		 	}
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode(
@@ -4038,7 +4054,7 @@ public function rFueraPlanRegulador(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(100,5,"POR TANTO",0,0);
 		 	$pdf->Ln(1);
-		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7].", quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
 		 	}// Finaliza Consecutivo
 		 	$pdf->Ln(1);
 		 	

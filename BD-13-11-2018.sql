@@ -1,8 +1,8 @@
 /*
-SQLyog Ultimate v9.02 
-MySQL - 5.5.5-10.1.25-MariaDB : Database - pu_ingenieria
+SQLyog Community v13.0.1 (64 bit)
+MySQL - 10.1.34-MariaDB : Database - pu_ingenieria
 *********************************************************************
-*/
+*/
 
 /*!40101 SET NAMES utf8 */;
 
@@ -28,7 +28,9 @@ CREATE TABLE `pu00ad` (
 
 /*Data for the table `pu00ad` */
 
-insert  into `pu00ad`(`PU00IDAD`,`PUDESAD`) values (1,'APRUEBA'),(2,'DENIEGA');
+insert  into `pu00ad`(`PU00IDAD`,`PUDESAD`) values 
+(1,'APRUEBA'),
+(2,'DENIEGA');
 
 /*Table structure for table `pu00adtra` */
 
@@ -45,6 +47,9 @@ CREATE TABLE `pu00adtra` (
 
 /*Data for the table `pu00adtra` */
 
+insert  into `pu00adtra`(`PU04IDTRA`,`PU00IDAD`) values 
+(6855,1);
+
 /*Table structure for table `pu00estados` */
 
 DROP TABLE IF EXISTS `pu00estados`;
@@ -57,7 +62,15 @@ CREATE TABLE `pu00estados` (
 
 /*Data for the table `pu00estados` */
 
-insert  into `pu00estados`(`PUIDESTADO`,`PUDESCESTA`) values (1,'INGRESADO'),(2,'INSPECCIONADO'),(3,'ACEPTADO'),(4,'DENEGADO'),(5,'ELIMINADO'),(6,'RETRASADO'),(7,'OFICINA '),(8,'REVISION');
+insert  into `pu00estados`(`PUIDESTADO`,`PUDESCESTA`) values 
+(1,'INGRESADO'),
+(2,'INSPECCIONADO'),
+(3,'ACEPTADO'),
+(4,'DENEGADO'),
+(5,'ELIMINADO'),
+(6,'RETRASADO'),
+(7,'OFICINA '),
+(8,'REVISION');
 
 /*Table structure for table `pu01regusu` */
 
@@ -73,7 +86,10 @@ CREATE TABLE `pu01regusu` (
 
 /*Data for the table `pu01regusu` */
 
-insert  into `pu01regusu`(`PU01CEDUSU`,`PU01NOMUSU`,`PU01APE1USU`,`PU01APE2USU`) values (123,'Alberto  ','Espinoza  ','OrtÃ­z  '),(365363,'Abraham','Obando ','Villegas'),(504180821,'Alberth','Esquivel','Alvarado');
+insert  into `pu01regusu`(`PU01CEDUSU`,`PU01NOMUSU`,`PU01APE1USU`,`PU01APE2USU`) values 
+(123,'Alberto  ','Espinoza  ','OrtÃ­z  '),
+(365363,'Abraham','Obando ','Villegas'),
+(504180821,'Alberth','Esquivel','Alvarado');
 
 /*Table structure for table `pu02infusu` */
 
@@ -94,7 +110,10 @@ CREATE TABLE `pu02infusu` (
 
 /*Data for the table `pu02infusu` */
 
-insert  into `pu02infusu`(`PU01CEDUSU`,`PU02TELUSU`,`PU02CORUSU`,`PU03IDPUES`,`PU02USUARIO`,`PU02CLAVE`) values (123,'909010','Arubato@ ',1,'Aru','123'),(365363,'34567879','Abraham@',1,'Abrahambov','Abr298393'),(504180821,'86933679','Alberth@',1,'admin','123');
+insert  into `pu02infusu`(`PU01CEDUSU`,`PU02TELUSU`,`PU02CORUSU`,`PU03IDPUES`,`PU02USUARIO`,`PU02CLAVE`) values 
+(123,'909010','Arubato@ ',1,'Aru','123'),
+(365363,'34567879','Abraham@',1,'Abrahambov','Abr298393'),
+(504180821,'86933679','Alberth@',1,'admin','123');
 
 /*Table structure for table `pu03puestos` */
 
@@ -108,7 +127,12 @@ CREATE TABLE `pu03puestos` (
 
 /*Data for the table `pu03puestos` */
 
-insert  into `pu03puestos`(`PU03IDPUES`,`PU03PUESTO`) values (1,'Administrador'),(2,'Coordinador'),(3,'Asistente'),(4,'Auxiliar'),(5,'Alcalde(sa)');
+insert  into `pu03puestos`(`PU03IDPUES`,`PU03PUESTO`) values 
+(1,'Administrador'),
+(2,'Coordinador'),
+(3,'Asistente'),
+(4,'Auxiliar'),
+(5,'Alcalde(sa)');
 
 /*Table structure for table `pu047tipotramite` */
 
@@ -134,7 +158,15 @@ CREATE TABLE `pu04distrito` (
 
 /*Data for the table `pu04distrito` */
 
-insert  into `pu04distrito`(`PU04IDDISTRITO`,`PU04DESCRIPDIS`) values (0,'Seleccione'),(1,'Nicoya'),(2,'Mansión'),(3,'San Antonio'),(4,'Quebrada Honda'),(5,'Sámara'),(6,'Nosara'),(7,'Belén');
+insert  into `pu04distrito`(`PU04IDDISTRITO`,`PU04DESCRIPDIS`) values 
+(0,'Seleccione'),
+(1,'Nicoya'),
+(2,'Mansión'),
+(3,'San Antonio'),
+(4,'Quebrada Honda'),
+(5,'Sámara'),
+(6,'Nosara'),
+(7,'Belén');
 
 /*Table structure for table `pu04fototerreno` */
 
@@ -178,7 +210,8 @@ CREATE TABLE `pu04regtra` (
 
 /*Data for the table `pu04regtra` */
 
-insert  into `pu04regtra`(`PU04IDTRA`,`PU04FETRA`,`PU04NORTE`,`PU04ESTE`,`PU04ALTITUD`) values (6855,'2018-11-13 15:45:47',7852,85651,520);
+insert  into `pu04regtra`(`PU04IDTRA`,`PU04FETRA`,`PU04NORTE`,`PU04ESTE`,`PU04ALTITUD`) values 
+(6855,'2018-11-13 15:45:47',7852,85651,520);
 
 /*Table structure for table `pu04tramite1` */
 
@@ -197,7 +230,8 @@ CREATE TABLE `pu04tramite1` (
 
 /*Data for the table `pu04tramite1` */
 
-insert  into `pu04tramite1`(`PU04IDTRA`,`PU0INDICETRA`,`PU04FEINICIO`,`PUIDESTADO`) values (6855,227,'2018-11-13 15:45:37',7);
+insert  into `pu04tramite1`(`PU04IDTRA`,`PU0INDICETRA`,`PU04FEINICIO`,`PUIDESTADO`) values 
+(6855,227,'2018-11-13 15:45:37',7);
 
 /*Table structure for table `pu04tramite1observaciones` */
 
@@ -228,7 +262,8 @@ CREATE TABLE `pu04tramite2` (
 
 /*Data for the table `pu04tramite2` */
 
-insert  into `pu04tramite2`(`PU04IDTRA`,`PU04FEPLATAFOR`,`PU04IDDISTRITO`) values (6855,'2018-11-14 00:00:00',1);
+insert  into `pu04tramite2`(`PU04IDTRA`,`PU04FEPLATAFOR`,`PU04IDDISTRITO`) values 
+(6855,'2018-11-14 00:00:00',1);
 
 /*Table structure for table `pu05unitra` */
 
@@ -260,7 +295,36 @@ CREATE TABLE `pu06actdes` (
 
 /*Data for the table `pu06actdes` */
 
-insert  into `pu06actdes`(`PU06IDACTDES`,`PU06DESAD`,`PU06IDTIPO`) values (1,'Residencial',1),(2,'ConstrucciÃ³n Vivienda Unifamiliar',1),(3,'ConstrucciÃ³n Apartamentos',1),(4,'RemodelaciÃ³n/AmpliaciÃ³n',1),(5,'Desarrollos',2),(6,'UrbanizaciÃ³n',2),(7,'Residencial',2),(8,'Proyecto de Interes Social',2),(9,'Condominios',2),(10,'UrbanizaciÃ³n con Diferentes Fincas',2),(11,'Comercial',3),(12,'Permiso Funcionamiento Sanitario',3),(13,'Patente Nueva',3),(14,'Patente RenovaciÃ³n',3),(15,'Eventos PÃºblicos',3),(16,'Comercial-Industrial',4),(17,'ConstrucciÃ³n de Comercio',4),(18,'ConstrucciÃ³n de Industria',4),(19,'EstaciÃ³n de Servicio',5),(20,'Tanque de Almacenamiento',5),(21,'Expendio de Combustible',5),(22,'Institucional',5),(23,'ConstrucciÃ³n de Vivienda de Bono',5),(24,'Constancia de aptitud de Terreno',5),(25,'Otro Uso',1),(26,'Otro Uso',2),(27,'Otro Uso',3),(28,'Otro Uso',4),(29,'Otro Uso',5);
+insert  into `pu06actdes`(`PU06IDACTDES`,`PU06DESAD`,`PU06IDTIPO`) values 
+(1,'Residencial',1),
+(2,'ConstrucciÃ³n Vivienda Unifamiliar',1),
+(3,'ConstrucciÃ³n Apartamentos',1),
+(4,'RemodelaciÃ³n/AmpliaciÃ³n',1),
+(5,'Desarrollos',2),
+(6,'UrbanizaciÃ³n',2),
+(7,'Residencial',2),
+(8,'Proyecto de Interes Social',2),
+(9,'Condominios',2),
+(10,'UrbanizaciÃ³n con Diferentes Fincas',2),
+(11,'Comercial',3),
+(12,'Permiso Funcionamiento Sanitario',3),
+(13,'Patente Nueva',3),
+(14,'Patente RenovaciÃ³n',3),
+(15,'Eventos PÃºblicos',3),
+(16,'Comercial-Industrial',4),
+(17,'ConstrucciÃ³n de Comercio',4),
+(18,'ConstrucciÃ³n de Industria',4),
+(19,'EstaciÃ³n de Servicio',5),
+(20,'Tanque de Almacenamiento',5),
+(21,'Expendio de Combustible',5),
+(22,'Institucional',5),
+(23,'ConstrucciÃ³n de Vivienda de Bono',5),
+(24,'Constancia de aptitud de Terreno',5),
+(25,'Otro Uso',1),
+(26,'Otro Uso',2),
+(27,'Otro Uso',3),
+(28,'Otro Uso',4),
+(29,'Otro Uso',5);
 
 /*Table structure for table `pu06observaciones` */
 
@@ -338,6 +402,9 @@ CREATE TABLE `pu06observacionesresidencial` (
 
 /*Data for the table `pu06observacionesresidencial` */
 
+insert  into `pu06observacionesresidencial`(`PU04IDTRA`,`PU06OBSERVACIONES`) values 
+(6855,'Vivienda unifamiliar');
+
 /*Table structure for table `pu06tipoactivi` */
 
 DROP TABLE IF EXISTS `pu06tipoactivi`;
@@ -350,7 +417,12 @@ CREATE TABLE `pu06tipoactivi` (
 
 /*Data for the table `pu06tipoactivi` */
 
-insert  into `pu06tipoactivi`(`PU06IDTIPO`,`PU06DESADTIPO`) values (1,'RESIDENCIAL'),(2,'DESARROLLOS'),(3,'COMERCIAL'),(4,'COMERCIAL-INDUSTRIAL'),(5,'ESTACION DE SERVICIOS');
+insert  into `pu06tipoactivi`(`PU06IDTIPO`,`PU06DESADTIPO`) values 
+(1,'RESIDENCIAL'),
+(2,'DESARROLLOS'),
+(3,'COMERCIAL'),
+(4,'COMERCIAL-INDUSTRIAL'),
+(5,'ESTACION DE SERVICIOS');
 
 /*Table structure for table `pu06tracomercial` */
 
@@ -427,8 +499,6 @@ CREATE TABLE `pu06traresidencial` (
 
 /*Data for the table `pu06traresidencial` */
 
-insert  into `pu06traresidencial`(`PU04IDTRA`,`PU06IDACTDES`) values (6855,2);
-
 /*Table structure for table `pu07terrft` */
 
 DROP TABLE IF EXISTS `pu07terrft`;
@@ -441,7 +511,10 @@ CREATE TABLE `pu07terrft` (
 
 /*Data for the table `pu07terrft` */
 
-insert  into `pu07terrft`(`PU07IDTFR`,`PU07NOMTFR`) values (1,'Calle Nacional'),(2,'Ruta Cantonal'),(3,'Servidumbre AgrÃ­cola');
+insert  into `pu07terrft`(`PU07IDTFR`,`PU07NOMTFR`) values 
+(1,'Calle Nacional'),
+(2,'Ruta Cantonal'),
+(3,'Servidumbre AgrÃ­cola');
 
 /*Table structure for table `pu07traterrft` */
 
@@ -470,7 +543,14 @@ CREATE TABLE `pu09desceg` (
 
 /*Data for the table `pu09desceg` */
 
-insert  into `pu09desceg`(`PU09IDDEG`,`PU09DESCREG`) values (1,'TopografÃ­a Plana'),(2,'TopografÃ­a Semiplana'),(3,'TopografÃ­a con Depresiones'),(4,'TopografÃ­a Irregular'),(5,'Existe Movimiento Tierra'),(6,'Futuro Movimiento Tierra'),(7,'Otros');
+insert  into `pu09desceg`(`PU09IDDEG`,`PU09DESCREG`) values 
+(1,'TopografÃ­a Plana'),
+(2,'TopografÃ­a Semiplana'),
+(3,'TopografÃ­a con Depresiones'),
+(4,'TopografÃ­a Irregular'),
+(5,'Existe Movimiento Tierra'),
+(6,'Futuro Movimiento Tierra'),
+(7,'Otros');
 
 /*Table structure for table `pu09observaciones` */
 
@@ -498,7 +578,8 @@ CREATE TABLE `pu09tradeg` (
 
 /*Data for the table `pu09tradeg` */
 
-insert  into `pu09tradeg`(`PU04IDTRA`,`PU09IDDEG`) values (6855,1);
+insert  into `pu09tradeg`(`PU04IDTRA`,`PU09IDDEG`) values 
+(6855,1);
 
 /*Table structure for table `pu10aspbio` */
 
@@ -512,7 +593,14 @@ CREATE TABLE `pu10aspbio` (
 
 /*Data for the table `pu10aspbio` */
 
-insert  into `pu10aspbio`(`PU10IDASBIO`,`PU10DESCABIO`) values (1,'VegetaciÃ³n JardÃ­n'),(2,'VegetaciÃ³n Tipo Pasto'),(3,'Ãrboles Dispersos'),(4,'Bosque Primario'),(5,'Bosque Secundario'),(6,'Zonas Boscosas'),(7,'Otros');
+insert  into `pu10aspbio`(`PU10IDASBIO`,`PU10DESCABIO`) values 
+(1,'VegetaciÃ³n JardÃ­n'),
+(2,'VegetaciÃ³n Tipo Pasto'),
+(3,'Ãrboles Dispersos'),
+(4,'Bosque Primario'),
+(5,'Bosque Secundario'),
+(6,'Zonas Boscosas'),
+(7,'Otros');
 
 /*Table structure for table `pu10observaciones` */
 
@@ -576,7 +664,13 @@ CREATE TABLE `pu12tipdesec` (
 
 /*Data for the table `pu12tipdesec` */
 
-insert  into `pu12tipdesec`(`PU12IDTDESEC`,`PU12TIPODES`) values (0,'Otro'),(1,'Infraestructura de tipo residencial'),(2,'Infraestructura de tipo comercial'),(3,'Infraestructura de tipo Institucional'),(4,'Infraestructura de tipo residecial y comercial'),(5,'No hay desarrollo en el sector');
+insert  into `pu12tipdesec`(`PU12IDTDESEC`,`PU12TIPODES`) values 
+(0,'Otro'),
+(1,'Infraestructura de tipo residencial'),
+(2,'Infraestructura de tipo comercial'),
+(3,'Infraestructura de tipo Institucional'),
+(4,'Infraestructura de tipo residecial y comercial'),
+(5,'No hay desarrollo en el sector');
 
 /*Table structure for table `pu12tratipdesec` */
 
@@ -605,7 +699,18 @@ CREATE TABLE `pu13aarep` (
 
 /*Data for the table `pu13aarep` */
 
-insert  into `pu13aarep`(`PU13IDAAP`,`PU13DESCAAP`) values (1,'Refugio Ostional'),(2,'Depresiones Naturales'),(3,'Naciente'),(4,'RÃ­o/Quebrada-Rural'),(5,'RÃ­o/Quebrada-Urbano'),(7,'Pozo Artesanal'),(8,'Pozo PÃºblico'),(9,'AcuÃ­fero Mala Noche'),(10,'AcuÃ­fero Potrero'),(11,'Terreno dentro de Refugio segÃºn Mapa Municipal'),(12,'No Aplica');
+insert  into `pu13aarep`(`PU13IDAAP`,`PU13DESCAAP`) values 
+(1,'Refugio Ostional'),
+(2,'Depresiones Naturales'),
+(3,'Naciente'),
+(4,'RÃ­o/Quebrada-Rural'),
+(5,'RÃ­o/Quebrada-Urbano'),
+(7,'Pozo Artesanal'),
+(8,'Pozo PÃºblico'),
+(9,'AcuÃ­fero Mala Noche'),
+(10,'AcuÃ­fero Potrero'),
+(11,'Terreno dentro de Refugio segÃºn Mapa Municipal'),
+(12,'No Aplica');
 
 /*Table structure for table `pu14trarep` */
 
@@ -654,7 +759,9 @@ CREATE TABLE `pu16servae` (
 
 /*Data for the table `pu16servae` */
 
-insert  into `pu16servae`(`PU16IDSAE`,`PU16DESCAE`) values (1,'Agua'),(2,'Electricidad');
+insert  into `pu16servae`(`PU16IDSAE`,`PU16DESCAE`) values 
+(1,'Agua'),
+(2,'Electricidad');
 
 /*Table structure for table `pu17serae` */
 
@@ -683,7 +790,10 @@ CREATE TABLE `pu18casasser` (
 
 /*Data for the table `pu18casasser` */
 
-insert  into `pu18casasser`(`PU18IDCSCLS`,`PU18DESCS`) values (1,'Existen casas frente a calle Pública'),(2,'No existen casas frente a calle Pública'),(3,'Terreno con difícil acceso a calle Pública');
+insert  into `pu18casasser`(`PU18IDCSCLS`,`PU18DESCS`) values 
+(1,'Existen casas frente a calle Pública'),
+(2,'No existen casas frente a calle Pública'),
+(3,'Terreno con difícil acceso a calle Pública');
 
 /*Table structure for table `pu19serpacsca` */
 
@@ -712,7 +822,8 @@ CREATE TABLE `pu20desas` (
 
 /*Data for the table `pu20desas` */
 
-insert  into `pu20desas`(`PU20IDDESAS`,`PU20DESCS`) values (1,'Aaa');
+insert  into `pu20desas`(`PU20IDDESAS`,`PU20DESCS`) values 
+(1,'Aaa');
 
 /*Table structure for table `pu21serviservicios` */
 
@@ -726,7 +837,11 @@ CREATE TABLE `pu21serviservicios` (
 
 /*Data for the table `pu21serviservicios` */
 
-insert  into `pu21serviservicios`(`PU21IDSERVI`,`PU21DESCSERVI`) values (1,'Servicios de Agua ya Instalado'),(2,'Servicios de Luz  ya Instalado'),(3,'Servicios en calle Pública, sin instalar'),(4,'No existe Servicio');
+insert  into `pu21serviservicios`(`PU21IDSERVI`,`PU21DESCSERVI`) values 
+(1,'Servicios de Agua ya Instalado'),
+(2,'Servicios de Luz  ya Instalado'),
+(3,'Servicios en calle Pública, sin instalar'),
+(4,'No existe Servicio');
 
 /*Table structure for table `pu22traserv` */
 
@@ -743,7 +858,8 @@ CREATE TABLE `pu22traserv` (
 
 /*Data for the table `pu22traserv` */
 
-insert  into `pu22traserv`(`PU04IDTRA`,`PU22IDTREDV`) values (6855,5);
+insert  into `pu22traserv`(`PU04IDTRA`,`PU22IDTREDV`) values 
+(6855,5);
 
 /*Table structure for table `pu22tredv` */
 
@@ -757,7 +873,12 @@ CREATE TABLE `pu22tredv` (
 
 /*Data for the table `pu22tredv` */
 
-insert  into `pu22tredv`(`PU22IDTREDV`,`PU22DESCTRV`) values (1,'Calle Fisicamente'),(2,'SÃ³lo en Plano'),(3,'Cantonal'),(4,'Nacional'),(5,'Calle pÃºblica');
+insert  into `pu22tredv`(`PU22IDTREDV`,`PU22DESCTRV`) values 
+(1,'Calle Fisicamente'),
+(2,'SÃ³lo en Plano'),
+(3,'Cantonal'),
+(4,'Nacional'),
+(5,'Calle pÃºblica');
 
 /*Table structure for table `pu23traservi` */
 
@@ -786,7 +907,10 @@ CREATE TABLE `pu24infest` (
 
 /*Data for the table `pu24infest` */
 
-insert  into `pu24infest`(`PU24IDINFR`,`PU24DESCINF`) values (1,'Infraestructura Existente'),(2,'No hay infraestructura'),(3,'No Aplica');
+insert  into `pu24infest`(`PU24IDINFR`,`PU24DESCINF`) values 
+(1,'Infraestructura Existente'),
+(2,'No hay infraestructura'),
+(3,'No Aplica');
 
 /*Table structure for table `pu24tipoconstruccion` */
 
@@ -827,7 +951,8 @@ CREATE TABLE `pu25patent` (
 
 /*Data for the table `pu25patent` */
 
-insert  into `pu25patent`(`PU04IDTRA`,`PU24IDINFR`) values (6855,1);
+insert  into `pu25patent`(`PU04IDTRA`,`PU24IDINFR`) values 
+(6855,1);
 
 /*Table structure for table `pu26planactinicosama` */
 
@@ -844,7 +969,22 @@ CREATE TABLE `pu26planactinicosama` (
 
 /*Data for the table `pu26planactinicosama` */
 
-insert  into `pu26planactinicosama`(`PU26IDDESCNICOYASAMA`,`PU26DESCACNICOYASAMA`,`PU26IDPLAN`) values (1,'Comercial',1),(2,'Comercial Central',1),(3,'Institucional',1),(4,'Residencial',1),(5,'Residencial Comercial',1),(6,'Area Verde',1),(7,'Industrial',1),(8,'Zona Comercial Turistica',2),(9,'Zona Residencial Privada',2),(10,'Institucional',2),(11,'Zona Privada',2),(12,'Zona de Arriendo',2),(13,'Zona Hotelera',2),(14,'No Aplica',1),(15,'No Aplica',2);
+insert  into `pu26planactinicosama`(`PU26IDDESCNICOYASAMA`,`PU26DESCACNICOYASAMA`,`PU26IDPLAN`) values 
+(1,'Comercial',1),
+(2,'Comercial Central',1),
+(3,'Institucional',1),
+(4,'Residencial',1),
+(5,'Residencial Comercial',1),
+(6,'Area Verde',1),
+(7,'Industrial',1),
+(8,'Zona Comercial Turistica',2),
+(9,'Zona Residencial Privada',2),
+(10,'Institucional',2),
+(11,'Zona Privada',2),
+(12,'Zona de Arriendo',2),
+(13,'Zona Hotelera',2),
+(14,'No Aplica',1),
+(15,'No Aplica',2);
 
 /*Table structure for table `pu26planreg` */
 
@@ -858,7 +998,10 @@ CREATE TABLE `pu26planreg` (
 
 /*Data for the table `pu26planreg` */
 
-insert  into `pu26planreg`(`PU26IDPLAN`,`PU26PLNDESC`) values (1,'Nicoya'),(2,'SÃ¡mara'),(3,'Fuera del Plan Regulador');
+insert  into `pu26planreg`(`PU26IDPLAN`,`PU26PLNDESC`) values 
+(1,'Nicoya'),
+(2,'SÃ¡mara'),
+(3,'Fuera del Plan Regulador');
 
 /*Table structure for table `pu26planregtramite` */
 
@@ -875,7 +1018,8 @@ CREATE TABLE `pu26planregtramite` (
 
 /*Data for the table `pu26planregtramite` */
 
-insert  into `pu26planregtramite`(`PU04IDTRA`,`PU26IDPLAN`) values (6855,3);
+insert  into `pu26planregtramite`(`PU04IDTRA`,`PU26IDPLAN`) values 
+(6855,3);
 
 /*Table structure for table `pu26traplan` */
 
@@ -904,7 +1048,9 @@ CREATE TABLE `pu27ubicacion` (
 
 /*Data for the table `pu27ubicacion` */
 
-insert  into `pu27ubicacion`(`PU27IDUBIC`,`PU27DESCRIP`) values (1,'Nicoya'),(2,'Sámara');
+insert  into `pu27ubicacion`(`PU27IDUBIC`,`PU27DESCRIP`) values 
+(1,'Nicoya'),
+(2,'Sámara');
 
 /*Table structure for table `pu28ubidescripcion` */
 
@@ -1002,7 +1148,8 @@ CREATE TABLE `pu35tipsue` (
 
 /*Data for the table `pu35tipsue` */
 
-insert  into `pu35tipsue`(`PU35IDTIPS`,`PU35DESTIP`) values (1,'Arenoso');
+insert  into `pu35tipsue`(`PU35IDTIPS`,`PU35DESTIP`) values 
+(1,'Arenoso');
 
 /*Table structure for table `pu36hisinsp` */
 
@@ -1058,7 +1205,12 @@ CREATE TABLE `pu38servidumbres` (
 
 /*Data for the table `pu38servidumbres` */
 
-insert  into `pu38servidumbres`(`PU38IDSERVIDUMBRE`,`PU38DESCRIPSERVIDUM`) values (1,'Servidumbre de Paso'),(2,'Servidumbre AgrÃ­cola'),(3,'Calle PÃºblica'),(4,'Cantonal'),(5,'Nacional');
+insert  into `pu38servidumbres`(`PU38IDSERVIDUMBRE`,`PU38DESCRIPSERVIDUM`) values 
+(1,'Servidumbre de Paso'),
+(2,'Servidumbre AgrÃ­cola'),
+(3,'Calle PÃºblica'),
+(4,'Cantonal'),
+(5,'Nacional');
 
 /*Table structure for table `pu38tramiteaccesoobservaciones` */
 
@@ -1088,7 +1240,8 @@ CREATE TABLE `pu38traservidumbres` (
 
 /*Data for the table `pu38traservidumbres` */
 
-insert  into `pu38traservidumbres`(`PU04IDTRA`,`PU38IDSERVIDUMBRE`) values (6855,5);
+insert  into `pu38traservidumbres`(`PU04IDTRA`,`PU38IDSERVIDUMBRE`) values 
+(6855,5);
 
 /*Table structure for table `pu39regsolicitante` */
 
@@ -1104,7 +1257,8 @@ CREATE TABLE `pu39regsolicitante` (
 
 /*Data for the table `pu39regsolicitante` */
 
-insert  into `pu39regsolicitante`(`PU39CEDSOLICI`,`PU39NOMSOLICI`,`PU39APE1SOLICI`,`PU39APE2SOLICI`) values ('504170844','Abraham','Obando','Villegas');
+insert  into `pu39regsolicitante`(`PU39CEDSOLICI`,`PU39NOMSOLICI`,`PU39APE1SOLICI`,`PU39APE2SOLICI`) values 
+('504170844','Abraham','Obando','Villegas');
 
 /*Table structure for table `pu40propietarioterreno` */
 
@@ -1121,7 +1275,8 @@ CREATE TABLE `pu40propietarioterreno` (
 
 /*Data for the table `pu40propietarioterreno` */
 
-insert  into `pu40propietarioterreno`(`PU40CEDPROPIE`,`PU40NFINCA`) values ('504170844','1234-000');
+insert  into `pu40propietarioterreno`(`PU40CEDPROPIE`,`PU40NFINCA`) values 
+('504170844','1234-000');
 
 /*Table structure for table `pu40regpropietario` */
 
@@ -1137,7 +1292,8 @@ CREATE TABLE `pu40regpropietario` (
 
 /*Data for the table `pu40regpropietario` */
 
-insert  into `pu40regpropietario`(`PU40CEDPROPIE`,`PU40NOMPROPIE`,`PU40APE1PROPIE`,`PU40APE2PROPIE`) values ('504170844','Abraham','Obando','Villegas');
+insert  into `pu40regpropietario`(`PU40CEDPROPIE`,`PU40NOMPROPIE`,`PU40APE1PROPIE`,`PU40APE2PROPIE`) values 
+('504170844','Abraham','Obando','Villegas');
 
 /*Table structure for table `pu40terreno` */
 
@@ -1156,7 +1312,8 @@ CREATE TABLE `pu40terreno` (
 
 /*Data for the table `pu40terreno` */
 
-insert  into `pu40terreno`(`PU40NFINCA`,`PU40NCATASTRO`,`PU04IDDISTRITO`,`PU39BARRIO`,`PU39DIRECCION`) values ('1234-000','8952-2010',1,'Casitas','1 km al sur ');
+insert  into `pu40terreno`(`PU40NFINCA`,`PU40NCATASTRO`,`PU04IDDISTRITO`,`PU39BARRIO`,`PU39DIRECCION`) values 
+('1234-000','8952-2010',1,'Casitas','1 km al sur ');
 
 /*Table structure for table `pu40tramitepropietarioterreno` */
 
@@ -1176,7 +1333,8 @@ CREATE TABLE `pu40tramitepropietarioterreno` (
 
 /*Data for the table `pu40tramitepropietarioterreno` */
 
-insert  into `pu40tramitepropietarioterreno`(`PU04IDTRA`,`PU40CEDPROPIE`,`PU40NFINCA`) values (6855,'504170844','1234-000');
+insert  into `pu40tramitepropietarioterreno`(`PU04IDTRA`,`PU40CEDPROPIE`,`PU40NFINCA`) values 
+(6855,'504170844','1234-000');
 
 /*Table structure for table `pu41espaciosgeo` */
 
@@ -1205,7 +1363,23 @@ CREATE TABLE `pu42servidumbre` (
 
 /*Data for the table `pu42servidumbre` */
 
-insert  into `pu42servidumbre`(`PU42IDSERVID`,`PU42DESCRIPCION`,`PU38IDSERVIDUMBRE`) values (1,'Existen casas frente a calle Publica',1),(2,'Existen casas frente a calle Publica',2),(3,'No existen casas frente a calle Publica',1),(4,'No existen casas frente a calle Publica',2),(5,'Terreno con difícil acceso a calle Publica',1),(6,'Terreno con difícil acceso a calle Publica',2),(7,'Existe desarrollo en la Servidumbre',1),(8,'Existe desarrollo en la Servidumbre',2),(9,'No existe desarrollo en la Servidumbre ',1),(10,'No existe desarrollo en la Servidumbre ',2),(11,'Servicios de Luz  ya Instalado en el terreno',1),(12,'Servicios de Luz  ya Instalado en el terreno',2),(13,'Servicios en calle Publica, sin instalar  ',1),(14,'Servicios en calle Publica, sin instalar  ',2),(15,'No existe Servicio',1),(16,'No existe Servicio',2);
+insert  into `pu42servidumbre`(`PU42IDSERVID`,`PU42DESCRIPCION`,`PU38IDSERVIDUMBRE`) values 
+(1,'Existen casas frente a calle Publica',1),
+(2,'Existen casas frente a calle Publica',2),
+(3,'No existen casas frente a calle Publica',1),
+(4,'No existen casas frente a calle Publica',2),
+(5,'Terreno con difícil acceso a calle Publica',1),
+(6,'Terreno con difícil acceso a calle Publica',2),
+(7,'Existe desarrollo en la Servidumbre',1),
+(8,'Existe desarrollo en la Servidumbre',2),
+(9,'No existe desarrollo en la Servidumbre ',1),
+(10,'No existe desarrollo en la Servidumbre ',2),
+(11,'Servicios de Luz  ya Instalado en el terreno',1),
+(12,'Servicios de Luz  ya Instalado en el terreno',2),
+(13,'Servicios en calle Publica, sin instalar  ',1),
+(14,'Servicios en calle Publica, sin instalar  ',2),
+(15,'No existe Servicio',1),
+(16,'No existe Servicio',2);
 
 /*Table structure for table `pu43traacceso` */
 
@@ -1237,6 +1411,9 @@ CREATE TABLE `pu44traleyaccesos` (
 
 /*Data for the table `pu44traleyaccesos` */
 
+insert  into `pu44traleyaccesos`(`pu04idtra`,`pu45idley`) values 
+(6855,13);
+
 /*Table structure for table `pu45leyes` */
 
 DROP TABLE IF EXISTS `pu45leyes`;
@@ -1247,11 +1424,53 @@ CREATE TABLE `pu45leyes` (
   `pu45descripcion` varchar(2000) CHARACTER SET latin1 NOT NULL,
   `pu45idtipo` int(11) DEFAULT NULL,
   PRIMARY KEY (`pu45idley`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `pu45leyes` */
 
-insert  into `pu45leyes`(`pu45idley`,`pu45objetivo`,`pu45descripcion`,`pu45idtipo`) values (0,'Para: Cuando indique que estÃ¡ dentro del plan regulador.','LA VALIDEZ DE LA PRESENTE RESOLUCIÃ“N, PERMANECERÃ€ MIENTRAS ESTÃ‰ EN VIGENCIA, EL PLAN REGULADOR QUE AFECTE EL PREVIO RELACIONADO.',0),(1,'Para: Residencial: vivienda unifamiliar, vivienda bono, apartamentos, remodelaciÃ³n y ampliaciÃ³n. Desarrollo. Comercial-industrial. EstaciÃ³n de servicios. ConstrucciÃ³n en institucional.','Condicionado a contar con la disponibilidad de agua para el proyecto a realizar por parte de la entidad competente (Asada o AyA). Basado en el Decreto de SequÃ­a N.Âº38642-MP-MAG.',4),(2,'Para: ConstrucciÃ³n de local comercial o industrial, remodelaciÃ³n-ampliaciÃ³n de local comercial.','Esta resoluciÃ³n NO es para una Actividad Comercial, del ministerio de Salud es solamente para cumplir con el Permiso de ConstrucciÃ³n, como lo indica la Ley de Construcciones N.Âº833.',4),(3,'Para: Cuando la propiedad aparezca en zona de inundaciÃ³n.','Condicionado a cumplir segÃºn la valoraciÃ³n del Ingeniero o Arquitecto responsable de las obras Civiles a desarrollar, definiendo los diseÃ±os estructurales aptos para este tipo de terrenos. AsÃ­ como, el cumplimiento de los estudios que indique el Ing. Municipal. Dado a que la propiedad se ubica dentro del Ã¡rea de amenaza potencial de inundaciÃ³n por crecidas de RÃ­o, segÃºn cartografÃ­a de la ComisiÃ³n Nacional de Emergencias.',6),(5,'Para: Desarrollo Comercial. (Patentes) PrescripciÃ³n del permiso de construcciÃ³n.','Basado en el Oficio DGJ-00116-2017, donde se delimita sobre el periodo de prescripciÃ³n del permiso de construcciÃ³n.',5),(6,'Para: Desarrollo Comercial. (Patentes) en el plan regulador.','Este trÃ¡mite queda sujeto a disposiciones del Departamento de Desarrollo y Control Comercial, quien es el que determinarÃ¡ si la actividad Comercial solicitada va acorde con lo estipulado por ley. \nSe le advierte que las edificaciones privada que impliquen concurrencia y brinden atenciÃ³n al pÃºblico deberÃ¡n de contar con accesibilidad al espacio fÃ­sico conforme los dispuesto en el artÃ­culo 10 de la ley N.Âº7600 Igualdad de oportunidades a las personas con discapacidad y deberÃ¡n contar con las caracterÃ­sticas establecidas en el Decreto N.Âº26831, Reglamento de igualdad de oportunidades para personas con discapacidad. \nEl otorgamiento de la resoluciÃ³n municipal de ubicaciÃ³n no  implica el otorgamiento inmediato y obligatorio de permiso sanitario de funcionamiento por parte del Ministerio de Salud, ya que el administrado deberÃ¡ cumplir con lo estipulado en la ley N.Âº5395 del 30 de octubre de 1973 Ley general de salud, y sus reformas; Decreto ejecutivo N.Âº39472-S del lunes 8 de febrero del 2016 Reglamento General para autorizaciones y permisos sanitarios de funcionamiento otorgados por el Ministerio de salud, asÃ­ como demÃ¡s condiciones de ordenamiento jurÃ­dico vigentes y requisitos seÃ±alados en el reglamento especÃ­fico que regula el funcionamiento de la actividad a instalar.\n De requerirse remodelar, ampliar, renovar o reparar el local comercial, se requiere del trÃ¡mite de la licencia municipal de construcciÃ³n, para lo cual deberÃ¡ sujetarse a las regulaciones estipuladas en el reglamento de construcciones, publicado en el diario oficial La Gaceta N.Âº56, alcance N.Âº17 del 11 de marzo de 1983 y sus reformas, asÃ­ como lo indicado en la ley N.Âº833 de noviembre de 1949 Ley de construcciones, asÃ­ mismo,  cumplir con la normativa ambiental, sanitaria, urbanÃ­stica otras vigentes que regulen los procesos constructivos.\n',5),(7,'Para: Retiro de rÃ­o y quebrada en zona urbana.','La propiedad estÃ¡ afectada por cause de Dominio pÃºblico (Quebrada o RÃ¬os) se deberÃ¡ aplicar el artÃ¬culo 33 de la Ley Forestal N. 7575 que establece un Ã¡rea de protecciÃ³n de 10 metros en zona Urbana en terreno plano medidas horizontales a ambos lados a partir de la ribera de la Quebrada, RÃ¬os.',6),(8,'Para: Retiro de rÃ­o y quebrada en zona Rural.','La propiedad estÃ¡ afectada por cause de Dominio pÃºblico (Quebrada o RÃ¬os) se deberÃ¡ aplicar el artÃ¬culo 33 de la Ley Forestal N. 7575 que establece un Ã¡rea de protecciÃ³n de 15 metros en zona Rural en terreno plano medidas horizontales a ambos lados a partir de la ribera de la Quebrada, RÃ¬os.',6),(9,'Para: TopografÃ­a con Depresiones Naturales.','En cuanto a la depresiÃ³n natural que atraviesa el terreno en estudio, se le indica que las aguas pluviales deben ser canalizadas permitiendo discurrir de forma natural sin afectar su curso. De manera Bue, el paso de aguas pluviales no puede ser rellenado sin que de previo hayan sido canalizadas, mediante un estudio en donde se contemple factores hidrolÃ³gicos e hidrÃ¡ulicos que permitan mediar los caudales de aguas pluviales y las dimensiones del diseÃ±o de la obra a realizar.   Lo anterior, de acuerdo a la Ley 276  ArtÃ¬culo 4. I.- indica que  Las aguas pluviales que caen en su predio mientras discurran por Ã©l. PodrÃ¡ el dueÃ±o, en consecuencia, construir dentro de su propiedad, estanques, pantanos, cisternas o aljibes donde conservarlas al efecto, o emplear para ello cualquier otro medio adecuado, siempre que no cause perjuicio al pÃºblico ni a tercero.',6),(10,'Para: Bosque secundario, bosque primario, Ã¡rboles primarios, zonas boscosas.','Debiendo coordinar el permiso de corta de Ã¡rboles existente en la propiedad ante el MINAE, cumpliendo con el artÃ¬culo 27 de la Ley Forestal.',3),(11,'Para: Cuando estÃ¡ dentro del plan regulador Nicoya SÃ¡mara.','El Retiro debe ir en apego al Reglamento de Construcciones ArtÃ¬culo 68. En zonas residenciales, la zona destinada al estacionamiento deberÃ¡ cumplir con cada una de las siguientes caracterÃ­sticas:a. Las dimensiones mÃ­nimas por vehÃ¬culo serÃ¡n de 5 metros x 2,5 metros.  b. En zonas donde se permita el estacionamiento perpendicular a la calle, segÃºn se establece en el Reglamento de ZonificaciÃ³n y Uso del Suelo del presente Plan Regulador, se podrÃ¡ impermeabilizar hasta un 50% del retiro frontal.ArtÃ¬culo 69. No se permite el uso de la acera o retiros frontales para el estacionamiento en ninguna zona del cantÃ³n.',0),(12,'Para: Cuando marca condominios en Oficina','Debe someter el proyecto a revisiÃ³n ante la  SETENA para la obtenciÃ³n de la viabilidad (Licencia) ambiental. AdemÃ¡s tramitar ante el INVU, en cumplimiento con Reglamento a la Ley Reguladora de la Propiedad en Condominio, N.Âº32303-MIVAH-MEIC-TUR donde indica en el  ArtÃ¬culo 6 que: Para obtener la aprobaciÃ³n de los planos de un condominio que se vaya a desarrollar en etapas, es necesario realizar el trÃ¡mite del Anteproyecto del proyecto ante el INVU, el Ministerio de Salud y la Municipalidad respectiva, segÃºn corresponda a las competencias de cada instituciÃ³n.',4),(13,'Para: Cuando marque accesos calle pÃºblica. (nacional o cantonal).','Para la eventual construcciÃ³n se debe de respetar los retiros de Ley (Rutas nacional, Cantonal o cualquier otro que corresponda segÃºn la ubicaciÃ³n del terreno).',1),(14,'Para: Cuando marque urbanizaciÃ³n residencial, proyecto de interÃ©s social en Oficina.','El proyecto estÃ¡ condicionado a las siguientes variables, basado en el expuesto en el artÃ¬culo 01 de la Ley de PlanificaciÃ³n Urbana donde indica: UrbanizaciÃ³n, es el fraccionamiento y habilitaciÃ³n de un terreno para fines urbanos, mediante apertura de calles y provisiÃ³n de servicios:\n?	Debe someter el proyecto a revisiÃ³n ante la SETENA para la obtenciÃ³n de la viabilidad (Licencia) ambiental. \n?	Condicionado a tramitar el proyecto ante el INVU, Reglamento de Fraccionamiento III.36.1.1. UrbanizaciÃ³n o fraccionamiento residencial: El criterio a utilizar es el de densidad habitacional debiendo cederse veinte (20) metros cuadrados o lote o 20 m2 unidad de vivienda. Esta cantidad en porcentaje no podrÃ¡ ser menor de un 5% ni mayor de un 20% del Ã¡rea urbanizable, salvo en vivienda de interÃ©s social en cuyo caso el mÃ¬nimo serÃ¡ el 10%. Ã€reas VerdesIII.6.2.1. La porciÃ³n del Ã¡rea que se ubique en la urbanizaciÃ³n deberÃ¡ destinarse. Prioritariamente a juegos infantiles y parque.  Lo necesario para estos usos se calcularÃ¡ asÃ¬: por lote o casa 10 m2 / para juegos infantiles. Resto del Ã¡rea, hasta completar 1/3 del Ã¡rea pÃºblica para parque o juegos deportivos, Estas dos Ã¡reas deberÃ¡n estar preferentemente juntas. III.3.6.2.2. Los terrenos en que se ubiquen las Ã¡reas pÃºblicas deberÃ¡n tener una topografÃ¬a de calidad no mayor al promedio de la que tiene todo el terreno urbanizable. Para este tipo de proyectos se debe respetar todo lo concerniente al Reglamento para el Control Nacional de Fraccionamientos y Urbanizaciones a lo cual debe de cumplir. \n',4),(15,'Para: Cuando marque Pozo PÃºblico en inspecciÃ³n u Oficina.','Si se realiza la apertura de un pozo debe hacerse bajo la legalidad pertinente ademÃ¡s apegarse a lo dispuesto por la Ley de Aguas N.Âº276, en el artÃ¬culo 31 que indica: Se declaran como reserva de dominio a favor de la NaciÃ³n: a) Las tierras que circunden los sitios de captaciÃ³n o tomas surtidoras de agua potable, en un perÃ­metro no menor de 200mts de radio.',6),(16,'Para: Cuando marque Pozo Artesanal en inspecciÃ³n u Oficina.','Si se realiza la apertura de un pozo debe hacerse bajo la legalidad pertinente ademÃ¡s apegarse a lo dispuesto por la Ley de Aguas  N.Âº276, en el artÃ¬culo 8 que indica: Las labores de que trata el artÃ¬culo anterior para alumbramiento, no podrÃ¡n ejecutarse a menor distancia de 40mts de Edificios ajenos, de un ferrocarril, o carretera, ni a menor de 100mts de otro alumbramiento o fuente, rÃ¬o, canal, acequia o abrevadero pÃºblico, sin la licencia correspondiente del Ministerio de Ambiente y EnergÃ¬a.',6),(17,'Para: Cuando se marque en advertencia administrativa en Oficina.','La propiedad cuenta con Advertencia Administrativa.  Esta resoluciÃ³n se otorga basado en el decreto 26771-J Reglamento del Registro PÃºblico ArtÃ¬culo 97. \nLa Propiedad cuenta con Advertencia Administrativa, la cual indica segÃºn el decreto ejecutivo N° 35509-J de 30 de septiembre de 2009, publicado en gaceta N° 198 del 13 de octubre de 2009….. Disponiendo su carÃ¡cter de mera publicidad noticia y su efecto de no impedir la inscripciÃ³n de documentos posteriores. AdemÃ¡s se indica La medida cautelar de nota de Advertencia Administrativa, al tener efecto de mera publicidad noticia, no impide la inscripciÃ³n de documentos presentados con posterioridad a su imposiciÃ³n y por tanto no suspende su plazo de caducidad.\nBasado en el oficio N°  DGJ-0010-2016 del Departamento De GestiÃ³n JurÃ¬dica el día 22 de Febrero, firmado por el Lic. Humberto LeÃ³n AbadÃ¬a, donde determino lo siguiente:\nComo nos indica el siguiente fundamento de derecho, el cual corresponde a doctrina que ha dado sustento a los criterios jurÃ¬dicos. En ese sentido, la jurisprudencia y doctrina dentro de la dinÃ¡mica de lo que corresponden a las advertencias administrativas han dicho por medio de tratadistas del derecho, versados en esta materia como el Dr. Ernesto Jinesta Lobo, sobre ese contexto, se apunta las consideraciones que, a continuaciÃ³n se hacen.\nLa condiciÃ³n de la advertencia administrativa sobre un terreno y sobre lo cual, debe de tenerse claro que, “la advertencia administrativa pertenece a la especie de medidas cautelares dictadas dentro de un procedimiento con el fin de garantizar la eficacia de lo que se resuelva, mientras que la inmovilizaciÃ³n corresponde a la ejecución de lo ya resuelto dentro del procedimiento administrativo.\n“ Se extrae de las doctrinas aportada, debe tenerse claro que, la administraciÃ³n tiene el deber entonces de acatar lo que por principio de legalidad y de fe pÃºblica y publicidad registrales, indica el Registro Inmobiliario en base digital de consultas, como ',NULL),(18,'Para: Agregar en patentes Servidumbre de Paso-Comercial.','Basado en el oficio DGJ-0052-2016, firmado por el Lic. Humberto LeÃºn AbadÃ­a del departamento de GestiÃ³n JurÃ­dica el cual indica que basado en el Reglamento para el control Nacional de Fraccionamiento y Urbanizaciones seÃ±ala en su capÃ­tulo II fraccionamiento, punto II.2, Accesos, apuntados ha Vivienda y no refiere a actividades comerciales.  De conformidad con los artÃ­culos 39,41 de la constituciÃ³n polÃ­tica, 163 del cÃ³digo municipal, 173 de la ley general de la administraciÃ³n pÃºblica. Por lo cual no es posible dar el uso conforme para la actividad solicitada ya que lo Ãºnico que se puede desarrollar en la propiedad es para lo que fue confinado por la servidumbre de paso Vivienda.',5),(19,'Para: Si se marca AcuÃ­fero ','Uso de Suelo No Conforme de Resoluci Ã³n Municipal de Ubicaci Ã³n con el proyecto a realizar, por encontrarse dentro del Ã¡rea de restricci Ã³n del AcuÃ­fero Mala Noche. Seg Ãºn lo dispuesto por SENARA. Basado en el mapa se encuentra en Vulnerabilidad Extrema donde indica que no se debe permitir, ning Ãºn tipo de desarrollo, de acuerdo con la matriz de Vulnerabilidad aprobada por el SENARA en el acuerdo de Junta directiva 3303, seg Ãºn el Oficio DIGH-0373-2011 de SENARA, donde se externa que no se puede  ejecutar ning Ãºn tipo de proyecto que pueda contaminar el mismo, sea este urban Ã¬stico   (Vivienda), hotelero o agropecuario.   Como muestra la imagen.',6),(20,'Para: Ã¡rea verde, zona institucional. Plan regulador Nicoya','Imagen del Plan Regulador de \nNicoya Aprobado para el distrito primero, que fue publicado en gaceta # 18 del 26-01-1983. Como se muestra en la Imagen del plan regulador. \n',0),(21,'Para: Existen movimientos de tierra.','Basado en el informe de campo de la inspecciÃ³n Municipal realizado por el funcionario Municipal. Se condicionada la presente resoluciÃ³n a tramitar el movimiento de tierra ante el Departamento de Control Constructivo. En apego al oficio IM-053-2016 del departamento de Control Constructivo, donde se indica que todo movimiento de tierra (Que no sea limpieza de capar vegetal) requiere de licencia Municipal para el desarrollo.',2),(22,'Para: Futuro movimiento de tierra.','Basado en el informe de campo de la inspecciÃ³n Municipal realizado por el funcionario Municipal. Si se realiza movimiento de tierra esta resoluciÃ³n municipal queda condicionada a tramitar el movimiento de tierra ante el Departamento de Control Constructivo. En apego al oficio IM-053-2016 del departamento de Control Constructivo, donde se indica que todo movimiento de tierra (Que no sea limpieza de capar vegetal) requiere de licencia Municipal para el desarrollo.  ',2),(23,'Para: Todos residencial y desarrollo, comercial-industrial, estaciÃ³n de servicios, construcciÃ³n institucional y vivienda bono.','La altura m Ã¡xima y la cobertura deber Ã¡n estar apegadas a lo dispuesto en la Ley de Planificaci Ã³n Urbana, Ley de Uso, Manejo y Conservaci Ã³n de Suelo N.Âº7779, Ley forestal N.Âº7575 y dem Ã¡s Legislaci Ã³n Vigente.',4),(24,'Para: Cuando indique que estÃ¡ fuera del plan regulador','LA VALIDEZ DE LA PRESENTE RESOLUCIÃ“N, PERMANECERÃ€  HASTA QUE ENTRE EN VIGENCIA, UN PLAN REGULADOR QUE AFECTE EL PREVIO RELACIONADO.',0),(25,'Para: Cuando indique que estÃ¡ dentro del plan regulador.','LA VALIDEZ DE LA PRESENTE RESOLUCIÃ“N, PERMANECERÃ€ MIENTRAS ESTÃ‰ EN VIGENCIA, EL PLAN REGULADOR QUE AFECTE EL PREVIO RELACIONADO.',0),(26,'Para: Clase VIII - Oficina','Basado en el oficio DST-213-2016 del 27 de octubre del 2016 firmado por el Ing. Agr. Renato JimÃ©nez ZÃºÃ±iga, MSC. Jefe del departamento de servicios tÃ©cnicos del INTA. Donde delimita en el punto5: Finalmente, esta dependencia no tiene competencia legal ni técnica para definir si la propiedad de marras se encuentra o no en zona de bosque o con aptitud forestal, debido a que este tema es resorte exclusivo del Sistema Nacional de Ã€reas de ConservaciÃ³n (SINAC), del Ministerio de Ambiente y EnergÃ¬a. ',NULL),(27,'Para: Permiso de ConstrucciÃ³n Patentes, cuando no tiene el permiso de construcciÃ³n.','Por lo tanto, se incumple con el ordenamiento jurÃ¬dico el cual es muy claro en cuanto a la Ley de ConstrucciÃ³n N.Âº833, la cual apunta lo siguiente:ArtÃ¬culo 74:Licencias. Toda obra relacionada con la construcciÃ³n, que se ejecute en las poblaciones de la RepÃºblica, sea de carÃ¡cter permanente o provisional, deberÃ¡ ejecutarse con licencia de la Municipalidad correspondiente. ArtÃ¬culo 89:Infracciones. Se considerarÃ¡n infracciones ademÃ¡s de las seÃ±aladas en los CapÃ¬tulos de este Ordenamiento, las siguientes:a)Ejecutar sin licencia previa, obras para las cuales esta ley y su reglamento exigen la licencia.b)Ejecutar obras amparadas por una licencia de plazo vencido.c)Ejecutar una obra modificando en parte o radicalmente el proyecto respectivo aprobado.d)Ejecutar, sin la debida protecciÃ³n, obras que pongan en peligro la vida o las propiedades. e)No enviar oportunamente a la Municipalidad los informes de datos que se previenen en diferentes CapÃ¬tulos del Reglamento.f)No dar aviso a la Municipalidad de suspensiÃ³n o terminaciÃ³n de obras. g)No obedecer Ã³rdenes sobre modificaciones, suspensiÃ³n o destrucciÃ³n de obras de la Municipalidad.ArtÃ¬culo 92:..Las multas y otras penas se impondrÃ¡n al propietario, Ingeniero Responsable, al Contratista, o a cualquier persona que infrinja este Reglamento. ArtÃ¬culo 93:Cuando un edificio o construcciÃ³n o instalaciÃ³n ha sido terminado sin licencia ni proyecto aprobado por la Municipalidad y sin que se haya dado aviso a esta de la terminaciÃ³n de la obra, se levantarÃ¡ una informaciÃ³n, fijando al propietario un plazo improrrogable de treinta (30) dÃ¬as, para que dÃ© cumplimiento a lo estatuido en esta Ley y Reglamento, presentando el proyecto, solicitud de licencia, etc.  ArtÃ¬culo 94:Si pasado el plazo fijado, el propietario no ha dado cumplimiento a la orden anterior, se le levantarÃ¡ una nueva informaciÃ³n la que se pondrÃ¡ de acuerdo con el artÃ¬culo sobre Renuencia y se fijarÃ¡ un Ãºltimo plazo, oyendo al interesado.',5),(28,'Para: (CFIA) Cuando se marque vivienda bono o vivienda unifamiliar y cuando se deniega el uso de suelo.','Se le indica que el trÃ¡mite de Uso de suelo es parte de los estudios preliminares segÃºn el Colegio Federado de Ingenieros y Arquitectos, el cual debe realizar su profesional o su desarrollador, ademÃ¡s este se realiza antes de cualquier de trÃ¡mite de Vivienda Bono o Vivienda Unifamiliar para delimitar si la propiedad en estudio tiene alguna limitante.  Como es en este caso, esto con el fin de no generarle una expectativa o ilusiÃ³n errÃ³nea al contribuyente.',NULL),(30,'Para: Oficios de la alcaldía - Oficina','En apego al ArtÃ¬culo 107, de la Ley de AdministraciÃ³n PÃºblica y en vista de lo anterior este despacho procede a dar la ResoluciÃ³n.',NULL),(31,'Para: Cuando se marca servidumbre agrÃ­cola.','La figura que se utilizÃ³ para el fraccionamiento es la de Servidumbre de AgrÃ¬cola por lo tanto basado en la Reforma al Reglamento para el Control Nacional de Fraccionamientos y Urbanizaciones, INSTITUTO NACIONAL DE VIVIENDA Y URBANISMO, REGLAMENTO PARA EL CONTROL NACIONAL DE FRACCIONAMIENTO Y URBANIZACIONES, donde indica: ArtÃ¬culo II.2.1.6. Para fines agrÃ¬colas, pecuarios y forestales se podrÃ¡n permitir segregaciones de parcelas con frente a servidumbres especiales, que en adelante se denominarÃ¡n agrÃ¬colas y forestales, las porciones resultantes deberÃ¡n ser iguales o mayores a los 5 000 m2, en estos casos los planos individuales deben indicar \"uso agrÃ¬cola\", \"uso pecuario\"; o \"uso forestal\", segÃºn corresponda. Las construcciones de vivienda y demÃ¡s instalaciones y estructuras quedan sujetas a un mÃ¡ximo del 15% en Ã¡rea de cobertura.',1),(32,'Para: Cuando se marca Ã¡rea Verde o Zona Institucional, y se deniega el uso de suelo.',' De previo a resolver favor presentar el HistÃ³rico de la finca desde su nacimiento. ',0),(33,'Para: Cuando se marca Servidumbre de Paso o AgrÃ­cola, y se deniega el uso de suelo.','Visado Municipal:Acuerdo N.Âº2.. donde indica que la aprobaciÃ³n del Visado no constituirÃ¡ implÃ­citamente el otorgamiento del permiso de construcciÃ³n o del uso de suelo... Aprobado en firme a partir de su publicaciÃ³n. Nicoya, 6 de noviembre del 2008 Marco Antonio JimÃ©nez MuÃ±oz secretario Municipal-1 vez-(105965). La gaceta  N.Âº223 del 18 de noviembre del 2008. ',1),(34,'Para: Cuando se marca (previo a resolver).','Una vez este proceso sea subsanado se deberÃ¡ tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederÃ¡ a brindar la ResoluciÃ³n de UbicaciÃ³n de Usos de Suelo para la Actividad Deseada. ',NULL),(35,'Para: Cuando se deniega un uso de suelo ','De conformidad con lo expuesto en el articulo 162 del código municipal, puede interponer los recursos de revocatoria con apelación en subsidio dentro de un plazo de los cinco días hábiles, contados a partir del día siguiente de la presente notificación, que resuelve el departamento de planificación urbana en revocatoria y el alcalde municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos.',NULL),(36,'Para: Cuando marque que existen casas frente a calle pública, terreno con difícil acceso a calle pública, existe desarrollo en la servidumbre.','La figura que se utilizÃ³ para el fraccionamiento es la de Servidumbre de paso por eso se debe aplicar lo que indica el Reglamento para el Control Nacional de Fraccionamientos y Urbanizaciones contempla claramente el tema de acceso y procedimientos sobre servidumbres de paso, basado en la inspecciÃ³n que se generÃ³ en el informe de campo. AdemÃ¡s, en el oficio DGJ-0052-2016, firmado por el Lic. Humberto LeÃ³n AbadÃ­a del departamento de GestiÃ³n JurÃ­dica el cual indica que basado en el Reglamento para el control Nacional de Fraccionamientos y Urbanizaciones seÃ±ala en su capÃ­tulo II fraccionamientos, punto II.2, Accesos, apuntados ha vivienda y no refiere a actividades comerciales.',7),(37,'Para cuando es Comercial (Patente)','El otorgamiento de la resoluciÃ³n municipal de ubicaciÃ³n no  implica el otorgamiento inmediato y obligatorio de permiso sanitario de funcionamiento por parte del Ministerio de Salud, ya que el administrado deberÃ¡ cumplir con lo estipulado en la ley N.Âº 5395 del 30 de octubre de 1973  Ley general de salud, y sus reformas; Decreto ejecutivo N.Âº 39472-S del lunes 8 de febrero del 2016 Reglamento General para autorizaciones y permisos sanitarios de funcionamiento otorgados por el Ministerio de salud, asÃ­ como demÃ¡s condiciones de ordenamiento jurÃ­dico vigentes y requisitos seÃ±alados en el reglamento especÃ­fico que regula el funcionamiento de la actividad a instalar.',5),(38,'Para Cuando es servidumbre de paso','Basado en la inspecciÃ³n que genero el informe de campo, se cumple con lo delimitado en el Reglamento para el Control Nacional de Fracciones y urbanizaciones contempla claramente el tema de acceso y procedimientos sobre servidumbres como se muestra en la imagen. ',1),(39,'Para: Construccion:','De requerirse remodelar, ampliar, renovar o reparar la infraestructura , se requiere del trÃ¡mite de la licencia municipal de construcciÃ³n, para lo cual deberÃ¡ sujetarse a las regulaciones estipuladas en el reglamento de construcciones, publicado en el diario oficial La Gaceta N.Âº56, alcance N.Âº17 del 11 de marzo de 1983 y sus reformas, as Ã­ como lo indicado en la ley N.Âº833 de noviembre de 1949  Ley de construcciones, as Ã­ mismo,  cumplir con la normativa ambiental, sanitaria, urbanÃ­stica y otras vigentes que regulen los procesos constructivos.',4),(40,'Para: Construccion, remodelacion.','De previo a desarrollar el proyecto debe garantizar que toda posible molestia debe quedar completamente confinada dentro del inmueble; asÃ­ como realizar todos los anÃ¡lisis para verificar la viabilidad ambiental, vial, patrimonial, de afectaciones de las aguas pluviales, de infraestructura, de mecÃ¡nica de suelos, de escorrentÃ­a, de riesgos naturales, de disponibilidad de servicios, de transporte pÃº blico, etc., para conocer si realmente la propiedad en este caso privada es apta para la construcciÃ³n de este tipo de proyecto.',4),(41,'Para: Desarrollo Comercial. (Patentes)  Fuera del plan regulador','Este trÃ¡mite queda sujeto a disposiciones del Departamento de Desarrollo y Control Comercial, quien es el que determinarÃ¡ si la actividad Comercial solicitada va acorde con lo estipulado por ley.  Se le advierte que Las edificaciones privadas que impliquen concurrencia y brinden atenciÃ³n al pÃºblico, deberÃ¡n de contar con accesibilidad al espacio fÃ­sico, conforme los dispuesto en el artÃ­culo 10 de la ley  N.Âº 7600  Igualdad de oportunidades a las personas con discapacidad y deberÃ¡n contar con las caracterÃ­sticas establecidas en el Decreto N.Âº26831, Reglamento de igualdad de oportunidades para personas con discapacidad.  El otorgamiento de la resoluciÃ³n municipal de ubicaciÃ³n no  implica el otorgamiento inmediato y obligatorio de permiso sanitario de funcionamiento por parte del Ministerio de Salud, ya que el administrado deberÃ¡ cumplir con lo estipulado en la ley N.Âº5395 del 30 de octubre de 1973  Ley general de salud, y sus reformas; Decreto ejecutivo N.Âº 39472-S del lunes 8 de febrero del 2016 Reglamento General para autorizaciones y permisos sanitarios de funcionamiento otorgados por el Ministerio de salud, asÃ­ como demÃ¡s condiciones de ordenamiento jurÃ­dico vigentes y requisitos seÃ±alados en el reglamento especÃ­fico que regula el funcionamiento de la actividad a instalar.',5),(42,'Para:Patente','RESOLUCION MUNICIPAL DE UBICACION',5);
+insert  into `pu45leyes`(`pu45idley`,`pu45objetivo`,`pu45descripcion`,`pu45idtipo`) values 
+(0,'Para: Cuando indique que estÃ¡ dentro del plan regulador.','LA VALIDEZ DE LA PRESENTE RESOLUCIÃ“N, PERMANECERÃ€ MIENTRAS ESTÃ‰ EN VIGENCIA, EL PLAN REGULADOR QUE AFECTE EL PREVIO RELACIONADO.',0),
+(1,'Para: Residencial: vivienda unifamiliar, vivienda bono, apartamentos, remodelaciÃ³n y ampliaciÃ³n. Desarrollo. Comercial-industrial. EstaciÃ³n de servicios. ConstrucciÃ³n en institucional.','Condicionado a contar con la disponibilidad de agua para el proyecto a realizar por parte de la entidad competente (Asada o AyA). Basado en el Decreto de SequÃ­a N.Âº38642-MP-MAG.',4),
+(2,'Para: ConstrucciÃ³n de local comercial o industrial, remodelaciÃ³n-ampliaciÃ³n de local comercial.','Esta resoluciÃ³n NO es para una Actividad Comercial, del ministerio de Salud es solamente para cumplir con el Permiso de ConstrucciÃ³n, como lo indica la Ley de Construcciones N.Âº833.',4),
+(3,'Para: Cuando la propiedad aparezca en zona de inundaciÃ³n.','Condicionado a cumplir segÃºn la valoraciÃ³n del Ingeniero o Arquitecto responsable de las obras Civiles a desarrollar, definiendo los diseÃ±os estructurales aptos para este tipo de terrenos. AsÃ­ como, el cumplimiento de los estudios que indique el Ing. Municipal. Dado a que la propiedad se ubica dentro del Ã¡rea de amenaza potencial de inundaciÃ³n por crecidas de RÃ­o, segÃºn cartografÃ­a de la ComisiÃ³n Nacional de Emergencias.',6),
+(5,'Para: Desarrollo Comercial. (Patentes) PrescripciÃ³n del permiso de construcciÃ³n.','Basado en el Oficio DGJ-00116-2017, donde se delimita sobre el periodo de prescripciÃ³n del permiso de construcciÃ³n.',5),
+(6,'Para: Desarrollo Comercial. (Patentes) en el plan regulador.','Este trÃ¡mite queda sujeto a disposiciones del Departamento de Desarrollo y Control Comercial, quien es el que determinarÃ¡ si la actividad Comercial solicitada va acorde con lo estipulado por ley. \nSe le advierte que las edificaciones privada que impliquen concurrencia y brinden atenciÃ³n al pÃºblico deberÃ¡n de contar con accesibilidad al espacio fÃ­sico conforme los dispuesto en el artÃ­culo 10 de la ley N.Âº7600 Igualdad de oportunidades a las personas con discapacidad y deberÃ¡n contar con las caracterÃ­sticas establecidas en el Decreto N.Âº26831, Reglamento de igualdad de oportunidades para personas con discapacidad. \nEl otorgamiento de la resoluciÃ³n municipal de ubicaciÃ³n no  implica el otorgamiento inmediato y obligatorio de permiso sanitario de funcionamiento por parte del Ministerio de Salud, ya que el administrado deberÃ¡ cumplir con lo estipulado en la ley N.Âº5395 del 30 de octubre de 1973 Ley general de salud, y sus reformas; Decreto ejecutivo N.Âº39472-S del lunes 8 de febrero del 2016 Reglamento General para autorizaciones y permisos sanitarios de funcionamiento otorgados por el Ministerio de salud, asÃ­ como demÃ¡s condiciones de ordenamiento jurÃ­dico vigentes y requisitos seÃ±alados en el reglamento especÃ­fico que regula el funcionamiento de la actividad a instalar.\n De requerirse remodelar, ampliar, renovar o reparar el local comercial, se requiere del trÃ¡mite de la licencia municipal de construcciÃ³n, para lo cual deberÃ¡ sujetarse a las regulaciones estipuladas en el reglamento de construcciones, publicado en el diario oficial La Gaceta N.Âº56, alcance N.Âº17 del 11 de marzo de 1983 y sus reformas, asÃ­ como lo indicado en la ley N.Âº833 de noviembre de 1949 Ley de construcciones, asÃ­ mismo,  cumplir con la normativa ambiental, sanitaria, urbanÃ­stica otras vigentes que regulen los procesos constructivos.\n',5),
+(7,'Para: Retiro de rÃ­o y quebrada en zona urbana.','La propiedad estÃ¡ afectada por cause de Dominio pÃºblico (Quebrada o RÃ¬os) se deberÃ¡ aplicar el artÃ¬culo 33 de la Ley Forestal N. 7575 que establece un Ã¡rea de protecciÃ³n de 10 metros en zona Urbana en terreno plano medidas horizontales a ambos lados a partir de la ribera de la Quebrada, RÃ¬os.',6),
+(8,'Para: Retiro de rÃ­o y quebrada en zona Rural.','La propiedad estÃ¡ afectada por cause de Dominio pÃºblico (Quebrada o RÃ¬os) se deberÃ¡ aplicar el artÃ¬culo 33 de la Ley Forestal N. 7575 que establece un Ã¡rea de protecciÃ³n de 15 metros en zona Rural en terreno plano medidas horizontales a ambos lados a partir de la ribera de la Quebrada, RÃ¬os.',6),
+(9,'Para: TopografÃ­a con Depresiones Naturales.','En cuanto a la depresiÃ³n natural que atraviesa el terreno en estudio, se le indica que las aguas pluviales deben ser canalizadas permitiendo discurrir de forma natural sin afectar su curso. De manera Bue, el paso de aguas pluviales no puede ser rellenado sin que de previo hayan sido canalizadas, mediante un estudio en donde se contemple factores hidrolÃ³gicos e hidrÃ¡ulicos que permitan mediar los caudales de aguas pluviales y las dimensiones del diseÃ±o de la obra a realizar.   Lo anterior, de acuerdo a la Ley 276  ArtÃ¬culo 4. I.- indica que  Las aguas pluviales que caen en su predio mientras discurran por Ã©l. PodrÃ¡ el dueÃ±o, en consecuencia, construir dentro de su propiedad, estanques, pantanos, cisternas o aljibes donde conservarlas al efecto, o emplear para ello cualquier otro medio adecuado, siempre que no cause perjuicio al pÃºblico ni a tercero.',6),
+(10,'Para: Bosque secundario, bosque primario, Ã¡rboles primarios, zonas boscosas.','Debiendo coordinar el permiso de corta de Ã¡rboles existente en la propiedad ante el MINAE, cumpliendo con el artÃ¬culo 27 de la Ley Forestal.',3),
+(11,'Para: Cuando estÃ¡ dentro del plan regulador Nicoya SÃ¡mara.','El Retiro debe ir en apego al Reglamento de Construcciones ArtÃ¬culo 68. En zonas residenciales, la zona destinada al estacionamiento deberÃ¡ cumplir con cada una de las siguientes caracterÃ­sticas:a. Las dimensiones mÃ­nimas por vehÃ¬culo serÃ¡n de 5 metros x 2,5 metros.  b. En zonas donde se permita el estacionamiento perpendicular a la calle, segÃºn se establece en el Reglamento de ZonificaciÃ³n y Uso del Suelo del presente Plan Regulador, se podrÃ¡ impermeabilizar hasta un 50% del retiro frontal.ArtÃ¬culo 69. No se permite el uso de la acera o retiros frontales para el estacionamiento en ninguna zona del cantÃ³n.',0),
+(12,'Para: Cuando marca condominios en Oficina','Debe someter el proyecto a revisiÃ³n ante la  SETENA para la obtenciÃ³n de la viabilidad (Licencia) ambiental. AdemÃ¡s tramitar ante el INVU, en cumplimiento con Reglamento a la Ley Reguladora de la Propiedad en Condominio, N.Âº32303-MIVAH-MEIC-TUR donde indica en el  ArtÃ¬culo 6 que: Para obtener la aprobaciÃ³n de los planos de un condominio que se vaya a desarrollar en etapas, es necesario realizar el trÃ¡mite del Anteproyecto del proyecto ante el INVU, el Ministerio de Salud y la Municipalidad respectiva, segÃºn corresponda a las competencias de cada instituciÃ³n.',4),
+(13,'Para: Cuando marque accesos calle pÃºblica. (nacional o cantonal).','Para la eventual construcciÃ³n se debe de respetar los retiros de Ley (Rutas nacional, Cantonal o cualquier otro que corresponda segÃºn la ubicaciÃ³n del terreno).',1),
+(14,'Para: Cuando marque urbanizaciÃ³n residencial, proyecto de interÃ©s social en Oficina.','El proyecto estÃ¡ condicionado a las siguientes variables, basado en el expuesto en el artÃ¬culo 01 de la Ley de PlanificaciÃ³n Urbana donde indica: UrbanizaciÃ³n, es el fraccionamiento y habilitaciÃ³n de un terreno para fines urbanos, mediante apertura de calles y provisiÃ³n de servicios:\n?	Debe someter el proyecto a revisiÃ³n ante la SETENA para la obtenciÃ³n de la viabilidad (Licencia) ambiental. \n?	Condicionado a tramitar el proyecto ante el INVU, Reglamento de Fraccionamiento III.36.1.1. UrbanizaciÃ³n o fraccionamiento residencial: El criterio a utilizar es el de densidad habitacional debiendo cederse veinte (20) metros cuadrados o lote o 20 m2 unidad de vivienda. Esta cantidad en porcentaje no podrÃ¡ ser menor de un 5% ni mayor de un 20% del Ã¡rea urbanizable, salvo en vivienda de interÃ©s social en cuyo caso el mÃ¬nimo serÃ¡ el 10%. Ã€reas VerdesIII.6.2.1. La porciÃ³n del Ã¡rea que se ubique en la urbanizaciÃ³n deberÃ¡ destinarse. Prioritariamente a juegos infantiles y parque.  Lo necesario para estos usos se calcularÃ¡ asÃ¬: por lote o casa 10 m2 / para juegos infantiles. Resto del Ã¡rea, hasta completar 1/3 del Ã¡rea pÃºblica para parque o juegos deportivos, Estas dos Ã¡reas deberÃ¡n estar preferentemente juntas. III.3.6.2.2. Los terrenos en que se ubiquen las Ã¡reas pÃºblicas deberÃ¡n tener una topografÃ¬a de calidad no mayor al promedio de la que tiene todo el terreno urbanizable. Para este tipo de proyectos se debe respetar todo lo concerniente al Reglamento para el Control Nacional de Fraccionamientos y Urbanizaciones a lo cual debe de cumplir. \n',4),
+(15,'Para: Cuando marque Pozo PÃºblico en inspecciÃ³n u Oficina.','Si se realiza la apertura de un pozo debe hacerse bajo la legalidad pertinente ademÃ¡s apegarse a lo dispuesto por la Ley de Aguas N.Âº276, en el artÃ¬culo 31 que indica: Se declaran como reserva de dominio a favor de la NaciÃ³n: a) Las tierras que circunden los sitios de captaciÃ³n o tomas surtidoras de agua potable, en un perÃ­metro no menor de 200mts de radio.',6),
+(16,'Para: Cuando marque Pozo Artesanal en inspecciÃ³n u Oficina.','Si se realiza la apertura de un pozo debe hacerse bajo la legalidad pertinente ademÃ¡s apegarse a lo dispuesto por la Ley de Aguas  N.Âº276, en el artÃ¬culo 8 que indica: Las labores de que trata el artÃ¬culo anterior para alumbramiento, no podrÃ¡n ejecutarse a menor distancia de 40mts de Edificios ajenos, de un ferrocarril, o carretera, ni a menor de 100mts de otro alumbramiento o fuente, rÃ¬o, canal, acequia o abrevadero pÃºblico, sin la licencia correspondiente del Ministerio de Ambiente y EnergÃ¬a.',6),
+(17,'Para: Cuando se marque en advertencia administrativa en Oficina.','La propiedad cuenta con Advertencia Administrativa.  Esta resoluciÃ³n se otorga basado en el decreto 26771-J Reglamento del Registro PÃºblico ArtÃ¬culo 97. \nLa Propiedad cuenta con Advertencia Administrativa, la cual indica segÃºn el decreto ejecutivo N° 35509-J de 30 de septiembre de 2009, publicado en gaceta N° 198 del 13 de octubre de 2009….. Disponiendo su carÃ¡cter de mera publicidad noticia y su efecto de no impedir la inscripciÃ³n de documentos posteriores. AdemÃ¡s se indica La medida cautelar de nota de Advertencia Administrativa, al tener efecto de mera publicidad noticia, no impide la inscripciÃ³n de documentos presentados con posterioridad a su imposiciÃ³n y por tanto no suspende su plazo de caducidad.\nBasado en el oficio N°  DGJ-0010-2016 del Departamento De GestiÃ³n JurÃ¬dica el día 22 de Febrero, firmado por el Lic. Humberto LeÃ³n AbadÃ¬a, donde determino lo siguiente:\nComo nos indica el siguiente fundamento de derecho, el cual corresponde a doctrina que ha dado sustento a los criterios jurÃ¬dicos. En ese sentido, la jurisprudencia y doctrina dentro de la dinÃ¡mica de lo que corresponden a las advertencias administrativas han dicho por medio de tratadistas del derecho, versados en esta materia como el Dr. Ernesto Jinesta Lobo, sobre ese contexto, se apunta las consideraciones que, a continuaciÃ³n se hacen.\nLa condiciÃ³n de la advertencia administrativa sobre un terreno y sobre lo cual, debe de tenerse claro que, “la advertencia administrativa pertenece a la especie de medidas cautelares dictadas dentro de un procedimiento con el fin de garantizar la eficacia de lo que se resuelva, mientras que la inmovilizaciÃ³n corresponde a la ejecución de lo ya resuelto dentro del procedimiento administrativo.\n“ Se extrae de las doctrinas aportada, debe tenerse claro que, la administraciÃ³n tiene el deber entonces de acatar lo que por principio de legalidad y de fe pÃºblica y publicidad registrales, indica el Registro Inmobiliario en base digital de consultas, como ',NULL),
+(18,'Para: Agregar en patentes Servidumbre de Paso-Comercial.','Basado en el oficio DGJ-0052-2016, firmado por el Lic. Humberto LeÃºn AbadÃ­a del departamento de GestiÃ³n JurÃ­dica el cual indica que basado en el Reglamento para el control Nacional de Fraccionamiento y Urbanizaciones seÃ±ala en su capÃ­tulo II fraccionamiento, punto II.2, Accesos, apuntados ha Vivienda y no refiere a actividades comerciales.  De conformidad con los artÃ­culos 39,41 de la constituciÃ³n polÃ­tica, 163 del cÃ³digo municipal, 173 de la ley general de la administraciÃ³n pÃºblica. Por lo cual no es posible dar el uso conforme para la actividad solicitada ya que lo Ãºnico que se puede desarrollar en la propiedad es para lo que fue confinado por la servidumbre de paso Vivienda.',5),
+(19,'Para: Si se marca AcuÃ­fero ','Uso de Suelo No Conforme de Resoluci Ã³n Municipal de Ubicaci Ã³n con el proyecto a realizar, por encontrarse dentro del Ã¡rea de restricci Ã³n del AcuÃ­fero Mala Noche. Seg Ãºn lo dispuesto por SENARA. Basado en el mapa se encuentra en Vulnerabilidad Extrema donde indica que no se debe permitir, ning Ãºn tipo de desarrollo, de acuerdo con la matriz de Vulnerabilidad aprobada por el SENARA en el acuerdo de Junta directiva 3303, seg Ãºn el Oficio DIGH-0373-2011 de SENARA, donde se externa que no se puede  ejecutar ning Ãºn tipo de proyecto que pueda contaminar el mismo, sea este urban Ã¬stico   (Vivienda), hotelero o agropecuario.   Como muestra la imagen.',6),
+(20,'Para: Ã¡rea verde, zona institucional. Plan regulador Nicoya','Imagen del Plan Regulador de \nNicoya Aprobado para el distrito primero, que fue publicado en gaceta # 18 del 26-01-1983. Como se muestra en la Imagen del plan regulador. \n',0),
+(21,'Para: Existen movimientos de tierra.','Basado en el informe de campo de la inspecciÃ³n Municipal realizado por el funcionario Municipal. Se condicionada la presente resoluciÃ³n a tramitar el movimiento de tierra ante el Departamento de Control Constructivo. En apego al oficio IM-053-2016 del departamento de Control Constructivo, donde se indica que todo movimiento de tierra (Que no sea limpieza de capar vegetal) requiere de licencia Municipal para el desarrollo.',2),
+(22,'Para: Futuro movimiento de tierra.','Basado en el informe de campo de la inspecciÃ³n Municipal realizado por el funcionario Municipal. Si se realiza movimiento de tierra esta resoluciÃ³n municipal queda condicionada a tramitar el movimiento de tierra ante el Departamento de Control Constructivo. En apego al oficio IM-053-2016 del departamento de Control Constructivo, donde se indica que todo movimiento de tierra (Que no sea limpieza de capar vegetal) requiere de licencia Municipal para el desarrollo.  ',2),
+(23,'Para: Todos residencial y desarrollo, comercial-industrial, estaciÃ³n de servicios, construcciÃ³n institucional y vivienda bono.','La altura m Ã¡xima y la cobertura deber Ã¡n estar apegadas a lo dispuesto en la Ley de Planificaci Ã³n Urbana, Ley de Uso, Manejo y Conservaci Ã³n de Suelo N.Âº7779, Ley forestal N.Âº7575 y dem Ã¡s Legislaci Ã³n Vigente.',4),
+(24,'Para: Cuando indique que estÃ¡ fuera del plan regulador','LA VALIDEZ DE LA PRESENTE RESOLUCIÃ“N, PERMANECERÃ€  HASTA QUE ENTRE EN VIGENCIA, UN PLAN REGULADOR QUE AFECTE EL PREVIO RELACIONADO.',0),
+(25,'Para: Cuando indique que estÃ¡ dentro del plan regulador.','LA VALIDEZ DE LA PRESENTE RESOLUCIÃ“N, PERMANECERÃ€ MIENTRAS ESTÃ‰ EN VIGENCIA, EL PLAN REGULADOR QUE AFECTE EL PREVIO RELACIONADO.',0),
+(26,'Para: Clase VIII - Oficina','Basado en el oficio DST-213-2016 del 27 de octubre del 2016 firmado por el Ing. Agr. Renato JimÃ©nez ZÃºÃ±iga, MSC. Jefe del departamento de servicios tÃ©cnicos del INTA. Donde delimita en el punto5: Finalmente, esta dependencia no tiene competencia legal ni técnica para definir si la propiedad de marras se encuentra o no en zona de bosque o con aptitud forestal, debido a que este tema es resorte exclusivo del Sistema Nacional de Ã€reas de ConservaciÃ³n (SINAC), del Ministerio de Ambiente y EnergÃ¬a. ',NULL),
+(27,'Para: Permiso de ConstrucciÃ³n Patentes, cuando no tiene el permiso de construcciÃ³n.','Por lo tanto, se incumple con el ordenamiento jurÃ¬dico el cual es muy claro en cuanto a la Ley de ConstrucciÃ³n N.Âº833, la cual apunta lo siguiente:ArtÃ¬culo 74:Licencias. Toda obra relacionada con la construcciÃ³n, que se ejecute en las poblaciones de la RepÃºblica, sea de carÃ¡cter permanente o provisional, deberÃ¡ ejecutarse con licencia de la Municipalidad correspondiente. ArtÃ¬culo 89:Infracciones. Se considerarÃ¡n infracciones ademÃ¡s de las seÃ±aladas en los CapÃ¬tulos de este Ordenamiento, las siguientes:a)Ejecutar sin licencia previa, obras para las cuales esta ley y su reglamento exigen la licencia.b)Ejecutar obras amparadas por una licencia de plazo vencido.c)Ejecutar una obra modificando en parte o radicalmente el proyecto respectivo aprobado.d)Ejecutar, sin la debida protecciÃ³n, obras que pongan en peligro la vida o las propiedades. e)No enviar oportunamente a la Municipalidad los informes de datos que se previenen en diferentes CapÃ¬tulos del Reglamento.f)No dar aviso a la Municipalidad de suspensiÃ³n o terminaciÃ³n de obras. g)No obedecer Ã³rdenes sobre modificaciones, suspensiÃ³n o destrucciÃ³n de obras de la Municipalidad.ArtÃ¬culo 92:..Las multas y otras penas se impondrÃ¡n al propietario, Ingeniero Responsable, al Contratista, o a cualquier persona que infrinja este Reglamento. ArtÃ¬culo 93:Cuando un edificio o construcciÃ³n o instalaciÃ³n ha sido terminado sin licencia ni proyecto aprobado por la Municipalidad y sin que se haya dado aviso a esta de la terminaciÃ³n de la obra, se levantarÃ¡ una informaciÃ³n, fijando al propietario un plazo improrrogable de treinta (30) dÃ¬as, para que dÃ© cumplimiento a lo estatuido en esta Ley y Reglamento, presentando el proyecto, solicitud de licencia, etc.  ArtÃ¬culo 94:Si pasado el plazo fijado, el propietario no ha dado cumplimiento a la orden anterior, se le levantarÃ¡ una nueva informaciÃ³n la que se pondrÃ¡ de acuerdo con el artÃ¬culo sobre Renuencia y se fijarÃ¡ un Ãºltimo plazo, oyendo al interesado.',5),
+(28,'Para: (CFIA) Cuando se marque vivienda bono o vivienda unifamiliar y cuando se deniega el uso de suelo.','Se le indica que el trÃ¡mite de Uso de suelo es parte de los estudios preliminares segÃºn el Colegio Federado de Ingenieros y Arquitectos, el cual debe realizar su profesional o su desarrollador, ademÃ¡s este se realiza antes de cualquier de trÃ¡mite de Vivienda Bono o Vivienda Unifamiliar para delimitar si la propiedad en estudio tiene alguna limitante.  Como es en este caso, esto con el fin de no generarle una expectativa o ilusiÃ³n errÃ³nea al contribuyente.',NULL),
+(30,'Para: Oficios de la alcaldía - Oficina','En apego al ArtÃ¬culo 107, de la Ley de AdministraciÃ³n PÃºblica y en vista de lo anterior este despacho procede a dar la ResoluciÃ³n.',NULL),
+(31,'Para: Cuando se marca servidumbre agrÃ­cola.','La figura que se utilizÃ³ para el fraccionamiento es la de Servidumbre de AgrÃ¬cola por lo tanto basado en la Reforma al Reglamento para el Control Nacional de Fraccionamientos y Urbanizaciones, INSTITUTO NACIONAL DE VIVIENDA Y URBANISMO, REGLAMENTO PARA EL CONTROL NACIONAL DE FRACCIONAMIENTO Y URBANIZACIONES, donde indica: ArtÃ¬culo II.2.1.6. Para fines agrÃ¬colas, pecuarios y forestales se podrÃ¡n permitir segregaciones de parcelas con frente a servidumbres especiales, que en adelante se denominarÃ¡n agrÃ¬colas y forestales, las porciones resultantes deberÃ¡n ser iguales o mayores a los 5 000 m2, en estos casos los planos individuales deben indicar \"uso agrÃ¬cola\", \"uso pecuario\"; o \"uso forestal\", segÃºn corresponda. Las construcciones de vivienda y demÃ¡s instalaciones y estructuras quedan sujetas a un mÃ¡ximo del 15% en Ã¡rea de cobertura.',1),
+(32,'Para: Cuando se marca Ã¡rea Verde o Zona Institucional, y se deniega el uso de suelo.',' De previo a resolver favor presentar el HistÃ³rico de la finca desde su nacimiento. ',0),
+(33,'Para: Cuando se marca Servidumbre de Paso o AgrÃ­cola, y se deniega el uso de suelo.','Visado Municipal:Acuerdo N.Âº2.. donde indica que la aprobaciÃ³n del Visado no constituirÃ¡ implÃ­citamente el otorgamiento del permiso de construcciÃ³n o del uso de suelo... Aprobado en firme a partir de su publicaciÃ³n. Nicoya, 6 de noviembre del 2008 Marco Antonio JimÃ©nez MuÃ±oz secretario Municipal-1 vez-(105965). La gaceta  N.Âº223 del 18 de noviembre del 2008. ',1),
+(34,'Para: Cuando se marca (previo a resolver).','Una vez este proceso sea subsanado se deberÃ¡ tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederÃ¡ a brindar la ResoluciÃ³n de UbicaciÃ³n de Usos de Suelo para la Actividad Deseada. ',NULL),
+(35,'Para: Cuando se deniega un uso de suelo ','De conformidad con lo expuesto en el articulo 162 del código municipal, puede interponer los recursos de revocatoria con apelación en subsidio dentro de un plazo de los cinco días hábiles, contados a partir del día siguiente de la presente notificación, que resuelve el departamento de planificación urbana en revocatoria y el alcalde municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos.',NULL),
+(36,'Para: Cuando marque que existen casas frente a calle pública, terreno con difícil acceso a calle pública, existe desarrollo en la servidumbre.','La figura que se utilizÃ³ para el fraccionamiento es la de Servidumbre de paso por eso se debe aplicar lo que indica el Reglamento para el Control Nacional de Fraccionamientos y Urbanizaciones contempla claramente el tema de acceso y procedimientos sobre servidumbres de paso, basado en la inspecciÃ³n que se generÃ³ en el informe de campo. AdemÃ¡s, en el oficio DGJ-0052-2016, firmado por el Lic. Humberto LeÃ³n AbadÃ­a del departamento de GestiÃ³n JurÃ­dica el cual indica que basado en el Reglamento para el control Nacional de Fraccionamientos y Urbanizaciones seÃ±ala en su capÃ­tulo II fraccionamientos, punto II.2, Accesos, apuntados ha vivienda y no refiere a actividades comerciales.',7),
+(37,'Para cuando es Comercial (Patente)','El otorgamiento de la resoluciÃ³n municipal de ubicaciÃ³n no  implica el otorgamiento inmediato y obligatorio de permiso sanitario de funcionamiento por parte del Ministerio de Salud, ya que el administrado deberÃ¡ cumplir con lo estipulado en la ley N.Âº 5395 del 30 de octubre de 1973  Ley general de salud, y sus reformas; Decreto ejecutivo N.Âº 39472-S del lunes 8 de febrero del 2016 Reglamento General para autorizaciones y permisos sanitarios de funcionamiento otorgados por el Ministerio de salud, asÃ­ como demÃ¡s condiciones de ordenamiento jurÃ­dico vigentes y requisitos seÃ±alados en el reglamento especÃ­fico que regula el funcionamiento de la actividad a instalar.',5),
+(38,'Para Cuando es servidumbre de paso','Basado en la inspecciÃ³n que genero el informe de campo, se cumple con lo delimitado en el Reglamento para el Control Nacional de Fracciones y urbanizaciones contempla claramente el tema de acceso y procedimientos sobre servidumbres como se muestra en la imagen. ',1),
+(39,'Para: Construccion:','De requerirse remodelar, ampliar, renovar o reparar la infraestructura , se requiere del trÃ¡mite de la licencia municipal de construcciÃ³n, para lo cual deberÃ¡ sujetarse a las regulaciones estipuladas en el reglamento de construcciones, publicado en el diario oficial La Gaceta N.Âº56, alcance N.Âº17 del 11 de marzo de 1983 y sus reformas, as Ã­ como lo indicado en la ley N.Âº833 de noviembre de 1949  Ley de construcciones, as Ã­ mismo,  cumplir con la normativa ambiental, sanitaria, urbanÃ­stica y otras vigentes que regulen los procesos constructivos.',4),
+(40,'Para: Construccion, remodelacion.','De previo a desarrollar el proyecto debe garantizar que toda posible molestia debe quedar completamente confinada dentro del inmueble; asÃ­ como realizar todos los anÃ¡lisis para verificar la viabilidad ambiental, vial, patrimonial, de afectaciones de las aguas pluviales, de infraestructura, de mecÃ¡nica de suelos, de escorrentÃ­a, de riesgos naturales, de disponibilidad de servicios, de transporte pÃº blico, etc., para conocer si realmente la propiedad en este caso privada es apta para la construcciÃ³n de este tipo de proyecto.',4),
+(41,'Para: Desarrollo Comercial. (Patentes)  Fuera del plan regulador','Este trÃ¡mite queda sujeto a disposiciones del Departamento de Desarrollo y Control Comercial, quien es el que determinarÃ¡ si la actividad Comercial solicitada va acorde con lo estipulado por ley.  Se le advierte que Las edificaciones privadas que impliquen concurrencia y brinden atenciÃ³n al pÃºblico, deberÃ¡n de contar con accesibilidad al espacio fÃ­sico, conforme los dispuesto en el artÃ­culo 10 de la ley  N.Âº 7600  Igualdad de oportunidades a las personas con discapacidad y deberÃ¡n contar con las caracterÃ­sticas establecidas en el Decreto N.Âº26831, Reglamento de igualdad de oportunidades para personas con discapacidad.  El otorgamiento de la resoluciÃ³n municipal de ubicaciÃ³n no  implica el otorgamiento inmediato y obligatorio de permiso sanitario de funcionamiento por parte del Ministerio de Salud, ya que el administrado deberÃ¡ cumplir con lo estipulado en la ley N.Âº5395 del 30 de octubre de 1973  Ley general de salud, y sus reformas; Decreto ejecutivo N.Âº 39472-S del lunes 8 de febrero del 2016 Reglamento General para autorizaciones y permisos sanitarios de funcionamiento otorgados por el Ministerio de salud, asÃ­ como demÃ¡s condiciones de ordenamiento jurÃ­dico vigentes y requisitos seÃ±alados en el reglamento especÃ­fico que regula el funcionamiento de la actividad a instalar.',5),
+(42,'Para:Patente','RESOLUCION MUNICIPAL DE UBICACION',5),
+(43,'Para: Construccion','RESOLUCION MUNICIPAL DE USO DE SUELO',5);
 
 /*Table structure for table `pu46construtraley` */
 
@@ -1267,6 +1486,9 @@ CREATE TABLE `pu46construtraley` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `pu46construtraley` */
+
+insert  into `pu46construtraley`(`pu04idtra`,`pu45idley`) values 
+(6855,43);
 
 /*Table structure for table `pu46patentetraley` */
 
@@ -1430,7 +1652,10 @@ CREATE TABLE `pu47tipotramite` (
 
 /*Data for the table `pu47tipotramite` */
 
-insert  into `pu47tipotramite`(`PU04IDTIPOTRA`,`PU47DESCRIPCION`) values (0,'RMU'),(1,'DAR'),(2,'OFICIO');
+insert  into `pu47tipotramite`(`PU04IDTIPOTRA`,`PU47DESCRIPCION`) values 
+(0,'RMU'),
+(1,'DAR'),
+(2,'OFICIO');
 
 /*Table structure for table `pu47tratipotramite` */
 
@@ -1448,6 +1673,9 @@ CREATE TABLE `pu47tratipotramite` (
 
 /*Data for the table `pu47tratipotramite` */
 
+insert  into `pu47tratipotramite`(`PU04IDTRA`,`PU04IDTIPOTRA`,`PU47IDCONSECUTIVO`) values 
+(6855,0,'123412321');
+
 /*Table structure for table `putramitesolicitante` */
 
 DROP TABLE IF EXISTS `putramitesolicitante`;
@@ -1463,7 +1691,8 @@ CREATE TABLE `putramitesolicitante` (
 
 /*Data for the table `putramitesolicitante` */
 
-insert  into `putramitesolicitante`(`PU04IDTRA`,`PU39CEDSOLICI`) values (6855,'504170844');
+insert  into `putramitesolicitante`(`PU04IDTRA`,`PU39CEDSOLICI`) values 
+(6855,'504170844');
 
 /* Function  structure for function  `FN_EXISTE_PLANREG` */
 
@@ -1670,6 +1899,42 @@ SELECT
 	INNER JOIN `pu09tradeg` ON `pu04regtra`.`PU04IDTRA` = `pu09tradeg`.`PU04IDTRA`
 	INNER JOIN `pu09desceg` ON `pu09tradeg`.`PU09IDDEG` = `pu09desceg`.`PU09IDDEG`
 	WHERE `pu04tramite1`.`PU04IDTRA`= id;
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `R_ENCABEZADO_CONSTRUCCION` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `R_ENCABEZADO_CONSTRUCCION` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `R_ENCABEZADO_CONSTRUCCION`(
+  IN idtra INT(11)  
+  )
+BEGIN
+  SELECT `pu45leyes`.`pu45descripcion`
+  FROM `pu45leyes`
+  INNER JOIN `pu46construtraley` ON `pu45leyes`.`pu45idley` = `pu46construtraley`.`pu45idley`
+  INNER JOIN `pu04tramite1` ON `pu46construtraley`.`pu04idtra` = `pu04tramite1`.`pu04idtra`
+  WHERE `pu04tramite1`.`pu04idtra` = idtra;
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `R_ENCABEZADO_PATENTE` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `R_ENCABEZADO_PATENTE` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `R_ENCABEZADO_PATENTE`(
+  IN idtra INT(11)  
+  )
+BEGIN
+  SELECT `pu45leyes`.`pu45descripcion`
+  FROM `pu45leyes`
+  INNER JOIN `pu46patentetraley` ON `pu45leyes`.`pu45idley` = `pu46patentetraley`.`pu45idley`
+  INNER JOIN `pu04tramite1` ON `pu46patentetraley`.`pu04idtra` = `pu04tramite1`.`pu04idtra`
+  WHERE `pu04tramite1`.`pu04idtra` = idtra;
 END */$$
 DELIMITER ;
 
@@ -1948,6 +2213,49 @@ SELECT DISTINCT
 END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `SP00_LISTAR_INGRESO_TRAMITE` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_INGRESO_TRAMITE` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_INGRESO_TRAMITE`()
+BEGIN
+	
+ SELECT `pu04tramite1`.PU04IDTRA,`pu04tramite1`.PU04FEINICIO,`pu04tramite2`.`PU04FEPLATAFOR`,
+CASE `pu04tramite2`.`PU04IDDISTRITO` WHEN "1" THEN "Nicoya"
+				WHEN "2" THEN "Mansion"
+				WHEN "3" THEN "San Antonio"
+				WHEN "4" THEN "Quebrada Honda"
+				WHEN "5" THEN "Samara"
+				WHEN "6" THEN "Nosara"
+				WHEN "7" THEN "Belen" END
+ FROM pu04tramite1
+ INNER JOIN `pu04tramite2`
+ ON `pu04tramite1`.`PU04IDTRA` = `pu04tramite2`.`PU04IDTRA`
+ WHERE pu04tramite1.PUIDESTADO=1
+ ORDER BY `pu04tramite1`.`PU04FEINICIO` DESC;	
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP00_LISTAR_TRAMITE_ACEPTADO` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_TRAMITE_ACEPTADO` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_TRAMITE_ACEPTADO`()
+BEGIN
+	
+	SELECT `PU04IDTRA`
+	
+FROM 
+	`pu00adtra`	
+		
+WHERE `PU00IDAD`=1;
+END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `R_RESOLUCION` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `R_RESOLUCION` */;
@@ -1989,17 +2297,18 @@ BEGIN
 END */$$
 DELIMITER ;
 
-/* Procedure structure for procedure `SP00_LISTAR_INGRESO_TRAMITE` */
+/* Procedure structure for procedure `SP00_LISTAR_INGRESO_TRAMITE_D1234` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_INGRESO_TRAMITE` */;
+/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_INGRESO_TRAMITE_D1234` */;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_INGRESO_TRAMITE`()
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_INGRESO_TRAMITE_D1234`()
 BEGIN
 	
  SELECT `pu04tramite1`.PU04IDTRA,`pu04tramite1`.PU04FEINICIO,`pu04tramite2`.`PU04FEPLATAFOR`,
-CASE `pu04tramite2`.`PU04IDDISTRITO` WHEN "1" THEN "Nicoya"
+CASE `pu04tramite2`.`PU04IDDISTRITO` 
+				WHEN "1" THEN "Nicoya"
 				WHEN "2" THEN "Mansion"
 				WHEN "3" THEN "San Antonio"
 				WHEN "4" THEN "Quebrada Honda"
@@ -2010,25 +2319,47 @@ CASE `pu04tramite2`.`PU04IDDISTRITO` WHEN "1" THEN "Nicoya"
  INNER JOIN `pu04tramite2`
  ON `pu04tramite1`.`PU04IDTRA` = `pu04tramite2`.`PU04IDTRA`
  WHERE pu04tramite1.PUIDESTADO=1
+ AND pu04tramite2.PU04IDDISTRITO=1
+ or pu04tramite1.PUIDESTADO=1
+ AND pu04tramite2.PU04IDDISTRITO=2 
+ OR pu04tramite1.PUIDESTADO=1
+ AND pu04tramite2.PU04IDDISTRITO=3 
+ OR pu04tramite1.PUIDESTADO=1
+ AND pu04tramite2.PU04IDDISTRITO=4
+ 
  ORDER BY `pu04tramite1`.`PU04FEINICIO` DESC;	
 END */$$
 DELIMITER ;
 
-/* Procedure structure for procedure `SP00_LISTAR_TRAMITE_ACEPTADO` */
+/* Procedure structure for procedure `SP00_LISTAR_INGRESO_TRAMITE_D567` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_TRAMITE_ACEPTADO` */;
+/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_INGRESO_TRAMITE_D567` */;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_TRAMITE_ACEPTADO`()
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_INGRESO_TRAMITE_D567`()
 BEGIN
 	
-	SELECT `PU04IDTRA`
-	
-FROM 
-	`pu00adtra`	
-		
-WHERE `PU00IDAD`=1;
+ SELECT `pu04tramite1`.PU04IDTRA,`pu04tramite1`.PU04FEINICIO,`pu04tramite2`.`PU04FEPLATAFOR`,
+CASE `pu04tramite2`.`PU04IDDISTRITO` 
+				WHEN "1" THEN "Nicoya"
+				WHEN "2" THEN "Mansion"
+				WHEN "3" THEN "San Antonio"
+				WHEN "4" THEN "Quebrada Honda"
+				WHEN "5" THEN "Samara"
+				WHEN "6" THEN "Nosara"
+				WHEN "7" THEN "Belen" END
+ FROM pu04tramite1
+ INNER JOIN `pu04tramite2`
+ ON `pu04tramite1`.`PU04IDTRA` = `pu04tramite2`.`PU04IDTRA`
+ WHERE pu04tramite1.PUIDESTADO=1
+ AND pu04tramite2.PU04IDDISTRITO=5
+ or pu04tramite1.PUIDESTADO=1
+ AND pu04tramite2.PU04IDDISTRITO=6 
+ OR pu04tramite1.PUIDESTADO=1
+ AND pu04tramite2.PU04IDDISTRITO=7 
+ 
+ ORDER BY `pu04tramite1`.`PU04FEINICIO` DESC;	
 END */$$
 DELIMITER ;
 
@@ -2102,72 +2433,6 @@ WHERE `PU00IDAD`=2;
 END */$$
 DELIMITER ;
 
-/* Procedure structure for procedure `SP00_LISTAR_INGRESO_TRAMITE_D1234` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_INGRESO_TRAMITE_D1234` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_INGRESO_TRAMITE_D1234`()
-BEGIN
-	
- SELECT `pu04tramite1`.PU04IDTRA,`pu04tramite1`.PU04FEINICIO,`pu04tramite2`.`PU04FEPLATAFOR`,
-CASE `pu04tramite2`.`PU04IDDISTRITO` 
-				WHEN "1" THEN "Nicoya"
-				WHEN "2" THEN "Mansion"
-				WHEN "3" THEN "San Antonio"
-				WHEN "4" THEN "Quebrada Honda"
-				WHEN "5" THEN "Samara"
-				WHEN "6" THEN "Nosara"
-				WHEN "7" THEN "Belen" END
- FROM pu04tramite1
- INNER JOIN `pu04tramite2`
- ON `pu04tramite1`.`PU04IDTRA` = `pu04tramite2`.`PU04IDTRA`
- WHERE pu04tramite1.PUIDESTADO=1
- AND pu04tramite2.PU04IDDISTRITO=1
- or pu04tramite1.PUIDESTADO=1
- AND pu04tramite2.PU04IDDISTRITO=2 
- OR pu04tramite1.PUIDESTADO=1
- AND pu04tramite2.PU04IDDISTRITO=3 
- OR pu04tramite1.PUIDESTADO=1
- AND pu04tramite2.PU04IDDISTRITO=4
- 
- ORDER BY `pu04tramite1`.`PU04FEINICIO` DESC;	
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP00_LISTAR_INGRESO_TRAMITE_D567` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_INGRESO_TRAMITE_D567` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP00_LISTAR_INGRESO_TRAMITE_D567`()
-BEGIN
-	
- SELECT `pu04tramite1`.PU04IDTRA,`pu04tramite1`.PU04FEINICIO,`pu04tramite2`.`PU04FEPLATAFOR`,
-CASE `pu04tramite2`.`PU04IDDISTRITO` 
-				WHEN "1" THEN "Nicoya"
-				WHEN "2" THEN "Mansion"
-				WHEN "3" THEN "San Antonio"
-				WHEN "4" THEN "Quebrada Honda"
-				WHEN "5" THEN "Samara"
-				WHEN "6" THEN "Nosara"
-				WHEN "7" THEN "Belen" END
- FROM pu04tramite1
- INNER JOIN `pu04tramite2`
- ON `pu04tramite1`.`PU04IDTRA` = `pu04tramite2`.`PU04IDTRA`
- WHERE pu04tramite1.PUIDESTADO=1
- AND pu04tramite2.PU04IDDISTRITO=5
- or pu04tramite1.PUIDESTADO=1
- AND pu04tramite2.PU04IDDISTRITO=6 
- OR pu04tramite1.PUIDESTADO=1
- AND pu04tramite2.PU04IDDISTRITO=7 
- 
- ORDER BY `pu04tramite1`.`PU04FEINICIO` DESC;	
-END */$$
-DELIMITER ;
-
 /* Procedure structure for procedure `SP00_LISTAR_TRAMITE_OFICINA` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP00_LISTAR_TRAMITE_OFICINA` */;
@@ -2227,30 +2492,6 @@ SET PU02TELUSU = TEL,
 END */$$
 DELIMITER ;
 
-/* Procedure structure for procedure `SP01_REGINFUSU_BUSCAR` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP01_REGINFUSU_BUSCAR` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP01_REGINFUSU_BUSCAR`(IN CEDU INT(11))
-BEGIN
-   SELECT PU01REGUSU.`PU01CEDUSU` AS 'Cédula', PU01REGUSU.`PU01NOMUSU` AS 'Nombre',
-    PU01REGUSU.`PU01APE1USU` AS 'Primer Apellido', PU01REGUSU.`PU01APE2USU` AS 'Segundo Apellido',
-   PU02INFUSU.`PU02TELUSU` AS 'Teléfono',PU02INFUSU.`PU02CORUSU` AS 'Correo', 
-   CASE PU02INFUSU.`PU03IDPUES`WHEN "1" THEN "Coordinador"
-			       WHEN "2" THEN "Asistente"   
-			       WHEN "3" THEN "Alcalde"
-			       WHEN "4" THEN "Administrador"
-			       END AS 'Puesto'
-   FROM PU01REGUSU
-		INNER JOIN PU02INFUSU
-		ON PU01REGUSU.`PU01CEDUSU` = PU02INFUSU.`PU01CEDUSU`
-		WHERE PU01REGUSU.`PU01CEDUSU`=CEDU;
-		
-END */$$
-DELIMITER ;
-
 /* Procedure structure for procedure `SP01_REGINFUSU_ELIMINAR` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP01_REGINFUSU_ELIMINAR` */;
@@ -2280,6 +2521,30 @@ BEGIN
 		VALUES (CEDU, NOM, APE1, APE2);
 	INSERT INTO PU02INFUSU (PU01CEDUSU, PU02TELUSU, PU02CORUSU, PU03IDPUES, PU02USUARIO, PU02CLAVE)
 		VALUES (CEDU, TEL, COR, IDPUES, USU, CLA);
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP01_REGINFUSU_BUSCAR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP01_REGINFUSU_BUSCAR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP01_REGINFUSU_BUSCAR`(IN CEDU INT(11))
+BEGIN
+   SELECT PU01REGUSU.`PU01CEDUSU` AS 'Cédula', PU01REGUSU.`PU01NOMUSU` AS 'Nombre',
+    PU01REGUSU.`PU01APE1USU` AS 'Primer Apellido', PU01REGUSU.`PU01APE2USU` AS 'Segundo Apellido',
+   PU02INFUSU.`PU02TELUSU` AS 'Teléfono',PU02INFUSU.`PU02CORUSU` AS 'Correo', 
+   CASE PU02INFUSU.`PU03IDPUES`WHEN "1" THEN "Coordinador"
+			       WHEN "2" THEN "Asistente"   
+			       WHEN "3" THEN "Alcalde"
+			       WHEN "4" THEN "Administrador"
+			       END AS 'Puesto'
+   FROM PU01REGUSU
+		INNER JOIN PU02INFUSU
+		ON PU01REGUSU.`PU01CEDUSU` = PU02INFUSU.`PU01CEDUSU`
+		WHERE PU01REGUSU.`PU01CEDUSU`=CEDU;
+		
 END */$$
 DELIMITER ;
 
@@ -2817,103 +3082,6 @@ DELETE FROM pu05unitra
 END */$$
 DELIMITER ;
 
-/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR`()
-BEGIN
-  SELECT DISTINCT pu04regtra.PU04IDTRA AS 'Numero Trámite', pu04regtra.PU04FETRA AS 'Fecha',
-   pu04regtra.PU04NORTE AS 'Norte', pu04regtra.PU04ESTE AS 'Este', pu04regtra.PU04ALTITUD AS 'Altitud'
-   
-   FROM pu04regtra;
-       END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR_INFOR`(IN IDTRA INT(11))
-BEGIN
-   SELECT DISTINCT pu04regtra.PU04IDTRA AS 'Numero Trámite', pu04regtra.PU04FETRA AS 'Fecha', pu07terrft.PU07NOMTFR AS 'T.F.R',
-   pu04regtra.PU04NORTE AS 'Norte', pu04regtra.PU04ESTE AS 'Este', pu04regtra.PU04ALTITUD AS 'Altitud',
-   pu12tipdesec.PU12TIPODES AS 'Tipo Desarrollo'
-   
-   FROM ((pu04regtra INNER JOIN pu12tipdesec
-   ON pu04regtra.PU12IDTDESEC = pu12tipdesec.PU12IDTDESEC)
-   INNER JOIN pu07terrft ON pu04regtra.`PU07IDTFR` = pu07terrft.PU07IDTFR)
-   
-  WHERE pu04regtra.PU04IDTRA = 1 AND pu04regtra.PU07IDTFR>0;
-   
-		
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR_ACT_D` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR_ACT_D` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR_INFOR_ACT_D`(IN IDTRA INT(11))
-BEGIN
- SELECT 
- DISTINCT pu06actdes.PU06DESAD AS 'Actividad Desarrollar'
-   
-   FROM ((pu04regtra INNER JOIN pu05unitra ON pu04regtra.PU04IDTRA = pu05unitra.PU04IDTRA)
-	INNER JOIN pu06actdes ON pu05unitra.PU06IDACTDES = pu06actdes.`PU06IDACTDES`)
-	
-	WHERE pu04regtra.PU04IDTRA = IDTRA  AND pu05unitra.PU04IDTRA = IDTRA  AND pu05unitra.PU06IDACTDES>0;
-   
-		
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR_A_A_P` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR_A_A_P` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR_INFOR_A_A_P`(IN IDTRA INT(11))
-BEGIN
- SELECT 
- DISTINCT pu13aarep.PU13DESCAAP AS 'Afectacion de Areas de Proteccion'
-   
-   FROM ((pu04regtra INNER JOIN pu14trarep ON pu04regtra.PU04IDTRA = pu14trarep.PU04IDTRA)
-	INNER JOIN pu13aarep ON pu14trarep.PU13IDAAP = pu13aarep.PU13IDAAP)
-	
-	WHERE pu04regtra.PU04IDTRA = IDTRA  AND pu14trarep.PU04IDTRA = IDTRA  AND pu14trarep.PU13IDAAP>0;
-   
-		
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR_A_B` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR_A_B` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR_INFOR_A_B`(IN IDTRA INT(11))
-BEGIN
- SELECT 
- DISTINCT pu10aspbio.PU10DESCABIO AS 'Aspectos Biofisicos'
-   
-   FROM ((pu04regtra INNER JOIN pu11uniabio ON pu04regtra.PU04IDTRA = pu11uniabio.PU04IDTRA)
-	INNER JOIN pu10aspbio ON pu11uniabio.PU10IDASBIO = pu10aspbio.PU10IDASBIO)
-	
-	WHERE pu04regtra.PU04IDTRA = IDTRA  AND pu11uniabio.PU04IDTRA = IDTRA  AND pu11uniabio.PU10IDASBIO>0;
-   
-		
-END */$$
-DELIMITER ;
-
 /* Procedure structure for procedure `SP04_REGISTROTRA_ACTUALIZAR` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_ACTUALIZAR` */;
@@ -3058,6 +3226,103 @@ SET PU06IDACTDES = PU06IDACTDES_06
 END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR`()
+BEGIN
+  SELECT DISTINCT pu04regtra.PU04IDTRA AS 'Numero Trámite', pu04regtra.PU04FETRA AS 'Fecha',
+   pu04regtra.PU04NORTE AS 'Norte', pu04regtra.PU04ESTE AS 'Este', pu04regtra.PU04ALTITUD AS 'Altitud'
+   
+   FROM pu04regtra;
+       END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR_INFOR`(IN IDTRA INT(11))
+BEGIN
+   SELECT DISTINCT pu04regtra.PU04IDTRA AS 'Numero Trámite', pu04regtra.PU04FETRA AS 'Fecha', pu07terrft.PU07NOMTFR AS 'T.F.R',
+   pu04regtra.PU04NORTE AS 'Norte', pu04regtra.PU04ESTE AS 'Este', pu04regtra.PU04ALTITUD AS 'Altitud',
+   pu12tipdesec.PU12TIPODES AS 'Tipo Desarrollo'
+   
+   FROM ((pu04regtra INNER JOIN pu12tipdesec
+   ON pu04regtra.PU12IDTDESEC = pu12tipdesec.PU12IDTDESEC)
+   INNER JOIN pu07terrft ON pu04regtra.`PU07IDTFR` = pu07terrft.PU07IDTFR)
+   
+  WHERE pu04regtra.PU04IDTRA = 1 AND pu04regtra.PU07IDTFR>0;
+   
+		
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR_ACT_D` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR_ACT_D` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR_INFOR_ACT_D`(IN IDTRA INT(11))
+BEGIN
+ SELECT 
+ DISTINCT pu06actdes.PU06DESAD AS 'Actividad Desarrollar'
+   
+   FROM ((pu04regtra INNER JOIN pu05unitra ON pu04regtra.PU04IDTRA = pu05unitra.PU04IDTRA)
+	INNER JOIN pu06actdes ON pu05unitra.PU06IDACTDES = pu06actdes.`PU06IDACTDES`)
+	
+	WHERE pu04regtra.PU04IDTRA = IDTRA  AND pu05unitra.PU04IDTRA = IDTRA  AND pu05unitra.PU06IDACTDES>0;
+   
+		
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR_A_A_P` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR_A_A_P` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR_INFOR_A_A_P`(IN IDTRA INT(11))
+BEGIN
+ SELECT 
+ DISTINCT pu13aarep.PU13DESCAAP AS 'Afectacion de Areas de Proteccion'
+   
+   FROM ((pu04regtra INNER JOIN pu14trarep ON pu04regtra.PU04IDTRA = pu14trarep.PU04IDTRA)
+	INNER JOIN pu13aarep ON pu14trarep.PU13IDAAP = pu13aarep.PU13IDAAP)
+	
+	WHERE pu04regtra.PU04IDTRA = IDTRA  AND pu14trarep.PU04IDTRA = IDTRA  AND pu14trarep.PU13IDAAP>0;
+   
+		
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR_A_B` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR_A_B` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_MOSTRAR_INFOR_A_B`(IN IDTRA INT(11))
+BEGIN
+ SELECT 
+ DISTINCT pu10aspbio.PU10DESCABIO AS 'Aspectos Biofisicos'
+   
+   FROM ((pu04regtra INNER JOIN pu11uniabio ON pu04regtra.PU04IDTRA = pu11uniabio.PU04IDTRA)
+	INNER JOIN pu10aspbio ON pu11uniabio.PU10IDASBIO = pu10aspbio.PU10IDASBIO)
+	
+	WHERE pu04regtra.PU04IDTRA = IDTRA  AND pu11uniabio.PU04IDTRA = IDTRA  AND pu11uniabio.PU10IDASBIO>0;
+   
+		
+END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `SP04_REGISTROTRA_MOSTRAR_INFOR_D_E_G` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_MOSTRAR_INFOR_D_E_G` */;
@@ -3075,6 +3340,117 @@ BEGIN
 	WHERE pu04regtra.PU04IDTRA = IDTRA  AND pu09tradeg.`PU04IDTRA`= IDTRA  AND pu09tradeg.`PU09IDDEG`>0;
    
 		
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP04_REGISTROTRA_GUARDAR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_GUARDAR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_GUARDAR`( IN IDTRA INT(11), IN FETRA DATE, IN ESTADO VARCHAR(20),IN IDTFR INT(11), 
+IN PU04NORTE INT(11), IN PU04ESTE INT(11), IN PU04ALTITUD INT(11), IN IDTDESEC INT(11),
+IN PU09IDDEG_01 INT (11),IN PU09IDDEG_02 INT (11),IN PU09IDDEG_03 INT (11),IN PU09IDDEG_04 INT (11),IN PU09IDDEG_05 INT (11),
+IN PU09IDDEG_06 INT (11),IN PU09IDDEG_07 INT (11),
+IN PU10IDASBIO_01 INT (11), IN PU10IDASBIO_02 INT (11),IN PU10IDASBIO_03 INT (11), IN PU10IDASBIO_04 INT (11),
+ IN PU10IDASBIO_05 INT (11), IN PU10IDASBIO_06 INT (11),
+ 
+ IN PU13IDAAP_1 INT (11),IN PU13IDAAP_2 INT (11),IN PU13IDAAP_3 INT (11),IN PU13IDAAP_4 INT (11),IN PU13IDAAP_5 INT (11),
+ IN PU13IDAAP_6 INT (11),IN PU13IDAAP_7 INT (11),
+ 
+ IN PU06IDACTDES_01 INT (11), IN PU06IDACTDES_02 INT (11),IN PU06IDACTDES_03 INT (11), IN PU06IDACTDES_04 INT (11),
+ IN PU06IDACTDES_05 INT (11), IN PU06IDACTDES_06 INT (11))
+BEGIN
+-- INSERT DE LA INFORMACIÓN REQUERIDA POR LA TABLA PRINCIPAL DE TRÁMITE
+INSERT INTO pu04regtra (PU04IDTRA, PU04FETRA,PU04ESTADO,PU07IDTFR,PU04NORTE,PU04ESTE,PU04ALTITUD,PU12IDTDESEC)
+ VALUES (IDTRA, FETRA,ESTADO,IDTFR,PU04NORTE,PU04ESTE,PU04ALTITUD,IDTDESEC);
+-- INSERT DE LA DESCRIPCIÓN DEL ESPACIO GEOGRÁFICO
+INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
+ VALUES (IDTRA,PU09IDDEG_01);
+--
+ INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
+ VALUES (IDTRA,PU09IDDEG_02);
+ --
+ INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
+ VALUES (IDTRA,PU09IDDEG_03);
+ --
+ INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
+ VALUES (IDTRA,PU09IDDEG_04);
+ --
+ INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
+ VALUES (IDTRA,PU09IDDEG_05);
+ --
+ INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
+ VALUES (IDTRA,PU09IDDEG_06);
+ --
+ INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
+ VALUES (IDTRA,PU09IDDEG_07);
+-- FIN DE INSERSIÓN DE DATOS EN TABLA UNIÓN DE TRÁMITE Y DESCRIPCIÓN DEL ESPACIO GEOGRÁFICO
+-- ----------------------------------------------------------------------------------------
+-- INSERT DE LOS ASPECTOS BIOFÍSICOS
+INSERT INTO pu11uniabio (PU04IDTRA,PU10IDASBIO)
+VALUES (IDTRA,PU10IDASBIO_01);
+--
+INSERT INTO pu11uniabio (PU04IDTRA,PU10IDASBIO)
+VALUES (IDTRA,PU10IDASBIO_02);
+--
+INSERT INTO pu11uniabio (PU04IDTRA,PU10IDASBIO)
+VALUES (IDTRA,PU10IDASBIO_03);
+--
+INSERT INTO pu11uniabio (PU04IDTRA,PU10IDASBIO)
+VALUES (IDTRA,PU10IDASBIO_04);
+--
+INSERT INTO pu11uniabio (PU04IDTRA,PU10IDASBIO)
+VALUES (IDTRA,PU10IDASBIO_05);
+--
+INSERT INTO pu11uniabio (PU04IDTRA,PU10IDASBIO)
+VALUES (IDTRA,PU10IDASBIO_06);
+-- FIN DE INSERSIÓN DE DATOS EN TABLA UNIÓN DE TRÁMITE Y ASPECTOS BIOFÍSICOS
+-- ----------------------------------------------------------------------------------------
+-- INSERT DE LA AFECTACIÓN DE ÁREAS DE PROTECCIÓN
+INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
+VALUES (IDTRA,PU13IDAAP_1);
+--
+INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
+VALUES (IDTRA,PU13IDAAP_2);
+--
+INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
+VALUES (IDTRA,PU13IDAAP_3);
+--
+INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
+VALUES (IDTRA,PU13IDAAP_4);
+--
+INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
+VALUES (IDTRA,PU13IDAAP_5);
+--
+INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
+VALUES (IDTRA,PU13IDAAP_6);
+--
+INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
+VALUES (IDTRA,PU13IDAAP_7);
+-- FIN DE INSERSIÓN DE DATOS EN TABLA UNIÓN DE TRÁMITE Y ASPECTOS BIOFÍSICOS
+-- ----------------------------------------------------------------------------------------
+-- INSERT DE LAS ACTIVIDADES A DESARROLLAR
+INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
+VALUES (IDTRA,PU06IDACTDES_01);
+--
+INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
+VALUES (IDTRA,PU06IDACTDES_02);
+--
+INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
+VALUES (IDTRA,PU06IDACTDES_03);
+--
+INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
+VALUES (IDTRA,PU06IDACTDES_04);
+--
+INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
+VALUES (IDTRA,PU06IDACTDES_05);
+--
+INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
+VALUES (IDTRA,PU06IDACTDES_06);
+-- FIN DE INSERSIÓN DE DATOS EN TABLA UNIÓN DE TRÁMITE Y ACTIVIDAD A DESARROLLAR
+-- ----------------------------------------------------------------------------------------
 END */$$
 DELIMITER ;
 
@@ -3201,117 +3577,6 @@ SELECT `pu04tramite1`.PU04IDTRA,DATE_FORMAT(`pu04tramite2`.`PU04FEPLATAFOR`,'%d/
 	on `pu04tramite1`.PU04IDTRA = `pu04tramite2`.`PU04IDTRA`
 	
 WHERE `pu04tramite1`.PU04IDTRA = IDTRA;
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP04_REGISTROTRA_GUARDAR` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP04_REGISTROTRA_GUARDAR` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP04_REGISTROTRA_GUARDAR`( IN IDTRA INT(11), IN FETRA DATE, IN ESTADO VARCHAR(20),IN IDTFR INT(11), 
-IN PU04NORTE INT(11), IN PU04ESTE INT(11), IN PU04ALTITUD INT(11), IN IDTDESEC INT(11),
-IN PU09IDDEG_01 INT (11),IN PU09IDDEG_02 INT (11),IN PU09IDDEG_03 INT (11),IN PU09IDDEG_04 INT (11),IN PU09IDDEG_05 INT (11),
-IN PU09IDDEG_06 INT (11),IN PU09IDDEG_07 INT (11),
-IN PU10IDASBIO_01 INT (11), IN PU10IDASBIO_02 INT (11),IN PU10IDASBIO_03 INT (11), IN PU10IDASBIO_04 INT (11),
- IN PU10IDASBIO_05 INT (11), IN PU10IDASBIO_06 INT (11),
- 
- IN PU13IDAAP_1 INT (11),IN PU13IDAAP_2 INT (11),IN PU13IDAAP_3 INT (11),IN PU13IDAAP_4 INT (11),IN PU13IDAAP_5 INT (11),
- IN PU13IDAAP_6 INT (11),IN PU13IDAAP_7 INT (11),
- 
- IN PU06IDACTDES_01 INT (11), IN PU06IDACTDES_02 INT (11),IN PU06IDACTDES_03 INT (11), IN PU06IDACTDES_04 INT (11),
- IN PU06IDACTDES_05 INT (11), IN PU06IDACTDES_06 INT (11))
-BEGIN
--- INSERT DE LA INFORMACIÓN REQUERIDA POR LA TABLA PRINCIPAL DE TRÁMITE
-INSERT INTO pu04regtra (PU04IDTRA, PU04FETRA,PU04ESTADO,PU07IDTFR,PU04NORTE,PU04ESTE,PU04ALTITUD,PU12IDTDESEC)
- VALUES (IDTRA, FETRA,ESTADO,IDTFR,PU04NORTE,PU04ESTE,PU04ALTITUD,IDTDESEC);
--- INSERT DE LA DESCRIPCIÓN DEL ESPACIO GEOGRÁFICO
-INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
- VALUES (IDTRA,PU09IDDEG_01);
---
- INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
- VALUES (IDTRA,PU09IDDEG_02);
- --
- INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
- VALUES (IDTRA,PU09IDDEG_03);
- --
- INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
- VALUES (IDTRA,PU09IDDEG_04);
- --
- INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
- VALUES (IDTRA,PU09IDDEG_05);
- --
- INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
- VALUES (IDTRA,PU09IDDEG_06);
- --
- INSERT INTO pu09tradeg (PU04IDTRA,PU09IDDEG)
- VALUES (IDTRA,PU09IDDEG_07);
--- FIN DE INSERSIÓN DE DATOS EN TABLA UNIÓN DE TRÁMITE Y DESCRIPCIÓN DEL ESPACIO GEOGRÁFICO
--- ----------------------------------------------------------------------------------------
--- INSERT DE LOS ASPECTOS BIOFÍSICOS
-INSERT INTO pu11uniabio (PU04IDTRA,PU10IDASBIO)
-VALUES (IDTRA,PU10IDASBIO_01);
---
-INSERT INTO pu11uniabio (PU04IDTRA,PU10IDASBIO)
-VALUES (IDTRA,PU10IDASBIO_02);
---
-INSERT INTO pu11uniabio (PU04IDTRA,PU10IDASBIO)
-VALUES (IDTRA,PU10IDASBIO_03);
---
-INSERT INTO pu11uniabio (PU04IDTRA,PU10IDASBIO)
-VALUES (IDTRA,PU10IDASBIO_04);
---
-INSERT INTO pu11uniabio (PU04IDTRA,PU10IDASBIO)
-VALUES (IDTRA,PU10IDASBIO_05);
---
-INSERT INTO pu11uniabio (PU04IDTRA,PU10IDASBIO)
-VALUES (IDTRA,PU10IDASBIO_06);
--- FIN DE INSERSIÓN DE DATOS EN TABLA UNIÓN DE TRÁMITE Y ASPECTOS BIOFÍSICOS
--- ----------------------------------------------------------------------------------------
--- INSERT DE LA AFECTACIÓN DE ÁREAS DE PROTECCIÓN
-INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
-VALUES (IDTRA,PU13IDAAP_1);
---
-INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
-VALUES (IDTRA,PU13IDAAP_2);
---
-INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
-VALUES (IDTRA,PU13IDAAP_3);
---
-INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
-VALUES (IDTRA,PU13IDAAP_4);
---
-INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
-VALUES (IDTRA,PU13IDAAP_5);
---
-INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
-VALUES (IDTRA,PU13IDAAP_6);
---
-INSERT INTO pu14trarep (PU04IDTRA,PU13IDAAP)
-VALUES (IDTRA,PU13IDAAP_7);
--- FIN DE INSERSIÓN DE DATOS EN TABLA UNIÓN DE TRÁMITE Y ASPECTOS BIOFÍSICOS
--- ----------------------------------------------------------------------------------------
--- INSERT DE LAS ACTIVIDADES A DESARROLLAR
-INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
-VALUES (IDTRA,PU06IDACTDES_01);
---
-INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
-VALUES (IDTRA,PU06IDACTDES_02);
---
-INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
-VALUES (IDTRA,PU06IDACTDES_03);
---
-INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
-VALUES (IDTRA,PU06IDACTDES_04);
---
-INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
-VALUES (IDTRA,PU06IDACTDES_05);
---
-INSERT INTO pu05unitra (PU04IDTRA,PU06IDACTDES)
-VALUES (IDTRA,PU06IDACTDES_06);
--- FIN DE INSERSIÓN DE DATOS EN TABLA UNIÓN DE TRÁMITE Y ACTIVIDAD A DESARROLLAR
--- ----------------------------------------------------------------------------------------
 END */$$
 DELIMITER ;
 
@@ -4935,6 +5200,79 @@ where PU04IDTRA = IDTRA;
 END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `SP39_REFINFOSOLICITANTE_GUARDAR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP39_REFINFOSOLICITANTE_GUARDAR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP39_REFINFOSOLICITANTE_GUARDAR`(IN IDTRA INT(11),
+IN PU39CEDSOLICI VARCHAR (50), IN PU39NOMSOLICI VARCHAR (50),IN PU39APE1SOLICI VARCHAR (50),IN PU39APE2SOLICI VARCHAR (50)
+ )
+BEGIN
+DECLARE ESTADO INT (11);
+SET ESTADO = 7;
+INSERT INTO pu39regsolicitante (PU39CEDSOLICI,PU39NOMSOLICI,PU39APE1SOLICI,PU39APE2SOLICI)
+		VALUES (PU39CEDSOLICI,PU39NOMSOLICI,PU39APE1SOLICI,PU39APE2SOLICI);
+		
+		 UPDATE `pu04tramite1`
+ SET PUIDESTADO = ESTADO
+ WHERE `PU04IDTRA` = IDTRA;
+	
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP39_SOLICITANTE_ACTUALIZAR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP39_SOLICITANTE_ACTUALIZAR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP39_SOLICITANTE_ACTUALIZAR`(
+ IN cedsoli VARCHAR (50),IN PU39NOMSOLICI VARCHAR (50),IN PU39APE1SOLICI VARCHAR (50),IN PU39APE2SOLICI VARCHAR (50)
+ )
+BEGIN
+	UPDATE pu39regsolicitante 
+	SET
+	PU39NOMSOLICI = PU39NOMSOLICI,
+	PU39APE1SOLICI = PU39APE1SOLICI,
+	PU39APE2SOLICI = PU39APE2SOLICI
+	
+		WHERE `PU39CEDSOLICI` = cedsoli;
+			
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP39_SOLICITANTE_BUSCAR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP39_SOLICITANTE_BUSCAR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP39_SOLICITANTE_BUSCAR`(IN cedsoli VARCHAR(50))
+BEGIN
+   SELECT DISTINCT `PU39CEDSOLICI`,`PU39NOMSOLICI`,`PU39APE1SOLICI`,`PU39APE2SOLICI`
+   
+   FROM `pu39regsolicitante`
+	WHERE `PU39CEDSOLICI`=cedsoli;
+		
+END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP39_SOLICITANTE_ELIMINAR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP39_SOLICITANTE_ELIMINAR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP39_SOLICITANTE_ELIMINAR`(IN cedsoli VARCHAR(50))
+BEGIN
+	DELETE FROM `pu39regsolicitante` 
+		WHERE `PU39CEDSOLICI`=cedsoli;
+	
+END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `SP39_40_REFINFOSOLIPROPIE_BUSCAR` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP39_40_REFINFOSOLIPROPIE_BUSCAR` */;
@@ -5024,101 +5362,6 @@ VALUES (IDTRA,PU40CEDPROPIE,PU40NOMPROPIE,PU40APE1PROPIE,PU40APE2PROPIE);
 END */$$
 DELIMITER ;
 
-/* Procedure structure for procedure `SP39_REFINFOSOLICITANTE_GUARDAR` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP39_REFINFOSOLICITANTE_GUARDAR` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP39_REFINFOSOLICITANTE_GUARDAR`(IN IDTRA INT(11),
-IN PU39CEDSOLICI VARCHAR (50), IN PU39NOMSOLICI VARCHAR (50),IN PU39APE1SOLICI VARCHAR (50),IN PU39APE2SOLICI VARCHAR (50)
- )
-BEGIN
-DECLARE ESTADO INT (11);
-SET ESTADO = 7;
-INSERT INTO pu39regsolicitante (PU39CEDSOLICI,PU39NOMSOLICI,PU39APE1SOLICI,PU39APE2SOLICI)
-		VALUES (PU39CEDSOLICI,PU39NOMSOLICI,PU39APE1SOLICI,PU39APE2SOLICI);
-		
-		 UPDATE `pu04tramite1`
- SET PUIDESTADO = ESTADO
- WHERE `PU04IDTRA` = IDTRA;
-	
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP39_SOLICITANTE_ACTUALIZAR` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP39_SOLICITANTE_ACTUALIZAR` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP39_SOLICITANTE_ACTUALIZAR`(
- IN cedsoli VARCHAR (50),IN PU39NOMSOLICI VARCHAR (50),IN PU39APE1SOLICI VARCHAR (50),IN PU39APE2SOLICI VARCHAR (50)
- )
-BEGIN
-	UPDATE pu39regsolicitante 
-	SET
-	PU39NOMSOLICI = PU39NOMSOLICI,
-	PU39APE1SOLICI = PU39APE1SOLICI,
-	PU39APE2SOLICI = PU39APE2SOLICI
-	
-		WHERE `PU39CEDSOLICI` = cedsoli;
-			
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP39_SOLICITANTE_BUSCAR` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP39_SOLICITANTE_BUSCAR` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP39_SOLICITANTE_BUSCAR`(IN cedsoli VARCHAR(50))
-BEGIN
-   SELECT DISTINCT `PU39CEDSOLICI`,`PU39NOMSOLICI`,`PU39APE1SOLICI`,`PU39APE2SOLICI`
-   
-   FROM `pu39regsolicitante`
-	WHERE `PU39CEDSOLICI`=cedsoli;
-		
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP39_SOLICITANTE_ELIMINAR` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP39_SOLICITANTE_ELIMINAR` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP39_SOLICITANTE_ELIMINAR`(IN cedsoli VARCHAR(50))
-BEGIN
-	DELETE FROM `pu39regsolicitante` 
-		WHERE `PU39CEDSOLICI`=cedsoli;
-	
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `SP39_SOLICITANTE_GUARDAR` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `SP39_SOLICITANTE_GUARDAR` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP39_SOLICITANTE_GUARDAR`(
- IN PU39CEDSOLICI VARCHAR (50),IN PU39NOMSOLICI VARCHAR (50),IN PU39APE1SOLICI VARCHAR (50),IN PU39APE2SOLICI VARCHAR (50)
- )
-BEGIN
--- DECLARE ESTADO INT (11);
--- SET ESTADO = 7;
-INSERT INTO `pu39regsolicitante` (PU39CEDSOLICI,PU39NOMSOLICI,PU39APE1SOLICI,PU39APE2SOLICI)
-		VALUES (PU39CEDSOLICI,PU39NOMSOLICI,PU39APE1SOLICI,PU39APE2SOLICI);
-			
- -- UPDATE `pu04tramite1`
- -- SET PUIDESTADO = ESTADO
- -- WHERE `PU04IDTRA` = IDTRA;
-	
-END */$$
-DELIMITER ;
-
 /* Procedure structure for procedure `SP39_40_REFINFOSOLIPROPIE_MOSTRAR` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP39_40_REFINFOSOLIPROPIE_MOSTRAR` */;
@@ -5171,6 +5414,28 @@ from  pu40tramitepropietarioterreno
    
    
         END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `SP39_SOLICITANTE_GUARDAR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP39_SOLICITANTE_GUARDAR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP39_SOLICITANTE_GUARDAR`(
+ IN PU39CEDSOLICI VARCHAR (50),IN PU39NOMSOLICI VARCHAR (50),IN PU39APE1SOLICI VARCHAR (50),IN PU39APE2SOLICI VARCHAR (50)
+ )
+BEGIN
+-- DECLARE ESTADO INT (11);
+-- SET ESTADO = 7;
+INSERT INTO `pu39regsolicitante` (PU39CEDSOLICI,PU39NOMSOLICI,PU39APE1SOLICI,PU39APE2SOLICI)
+		VALUES (PU39CEDSOLICI,PU39NOMSOLICI,PU39APE1SOLICI,PU39APE2SOLICI);
+			
+ -- UPDATE `pu04tramite1`
+ -- SET PUIDESTADO = ESTADO
+ -- WHERE `PU04IDTRA` = IDTRA;
+	
+END */$$
 DELIMITER ;
 
 /* Procedure structure for procedure `SP39_SOLICITANTE_MOSTRAR` */
