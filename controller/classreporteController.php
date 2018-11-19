@@ -919,6 +919,9 @@ public function rComercialCentral(){
 	$this->observacion          = new classreporte();
 	$this->datoscomercentral 	= new classreporte();
 
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
+
 	$this->comercialcentral->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$result1 = $this->comercialcentral->listarComercialCentral();
 	$this->datoscomercentral->setAtributo('PU04IDTRA', $_REQUEST['id']);
@@ -967,6 +970,11 @@ public function rComercialCentral(){
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 	= $this->observacion->listarR_OBSERV_TRAMITE();
 
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
+
 	$pdf = new PDF();
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
@@ -974,7 +982,12 @@ public function rComercialCentral(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
+		while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
 		$pdf->Ln(15);
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -1182,6 +1195,9 @@ public function rIndustrial(){
 	$this->observacion          = new classreporte();
 	$this->datosindustrial 		= new classreporte();
 
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
+
 	$this->industrial->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$result1 = $this->industrial->listarIndustrial();
 	$this->datosindustrial->setAtributo('PU04IDTRA', $_REQUEST['id']);
@@ -1230,6 +1246,11 @@ public function rIndustrial(){
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 	= $this->observacion->listarR_OBSERV_TRAMITE();
 
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
+
 	$pdf = new PDF();
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
@@ -1237,8 +1258,14 @@ public function rIndustrial(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
-		$pdf->Ln(15);
+		while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
+
+		$pdf->Ln(5);
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			while ($cons = mysqli_fetch_array($rConstra)) {
@@ -1446,6 +1473,8 @@ public function rResidencialComercial(){
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datosresicomercial 	= new classreporte();
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
 
 	$this->residencialcomercial->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$result1 = $this->residencialcomercial->listarResidencialComercial();
@@ -1495,6 +1524,12 @@ public function rResidencialComercial(){
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 	= $this->observacion->listarR_OBSERV_TRAMITE();
 
+
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
+
 	$pdf = new PDF();
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
@@ -1502,8 +1537,13 @@ public function rResidencialComercial(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-	$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
-		$pdf->Ln(15);
+	while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
+		$pdf->Ln(5);
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			while ($cons = mysqli_fetch_array($rConstra)) {
@@ -1519,7 +1559,7 @@ public function rResidencialComercial(){
 		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
 		 	$pdf->SetFont('Arial','B',10);
 		 	$pdf->MultiCell(180,5,utf8_decode("Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula Jurídica ".$row[11].", Ubicada ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:"),0,1,'J');
-		 	$pdf->MultiCell(190,5,$row[1],0,1,'J');
+		 	
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,utf8_decode('El terreno evaluado es afectado por el Plan Regulador vigente del cantón de Nicoya. La Resolución Municipal de Ubicación corresponde a Zona.'),0,1,'J');
 		 	while ($fila = mysqli_fetch_array($datos)) {
@@ -1688,6 +1728,9 @@ public function rResidencial(){
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datosresidencial = new classreporte();
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
+
 
 	$this->residecial->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$result1 = $this->residecial->listarRESI();
@@ -1736,6 +1779,10 @@ public function rResidencial(){
 
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 	= $this->observacion->listarR_OBSERV_TRAMITE();
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
 
 	$pdf = new PDF();
 	$pdf->AliasNbPages();
@@ -1744,8 +1791,13 @@ public function rResidencial(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
-		$pdf->Ln(15);
+		while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
+		$pdf->Ln(8);
 
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -1929,6 +1981,8 @@ public function rTuristicoComercial(){
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datosturistico 		= new classreporte();
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
 
 	$this->turisticocomercial->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$result1 = $this->turisticocomercial->listarTuristicoComercial();
@@ -1977,6 +2031,11 @@ public function rTuristicoComercial(){
 
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 	= $this->observacion->listarR_OBSERV_TRAMITE();
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
+
 
 	$pdf = new PDF();
 	$pdf->AliasNbPages();
@@ -1985,8 +2044,13 @@ public function rTuristicoComercial(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
-		$pdf->Ln(15);
+		while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
+		$pdf->Ln(8);
 		while ($row = mysqli_fetch_array($result1)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
 			while ($cons = mysqli_fetch_array($rConstra)) {
@@ -2183,6 +2247,8 @@ public function rZonaComercialTuristica(){
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datoscomerturistica  = new classreporte();
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
 
 	$this->zonacomerturistica->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLista 			= $this->zonacomerturistica->listarZonaComercialTuristica();
@@ -2232,6 +2298,11 @@ public function rZonaComercialTuristica(){
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
 
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
+
 	$pdf 				= new PDF();
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
@@ -2239,8 +2310,13 @@ public function rZonaComercialTuristica(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
-		$pdf->Ln(15);
+		while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
+		$pdf->Ln(8);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -2486,6 +2562,8 @@ public function rZonaResidencialPrivada(){
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datosresiprivada     = new classreporte();
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
 
 	$this->zonaresiprivada->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$rLista 			= $this->zonaresiprivada->listarZonaResidencialPrivada();
@@ -2534,6 +2612,10 @@ public function rZonaResidencialPrivada(){
 
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
 
 	$pdf 				= new PDF();
 	$pdf->AliasNbPages();
@@ -2541,8 +2623,13 @@ public function rZonaResidencialPrivada(){
 	$pdf->SetFillColor(255,255,255);
 	$pdf->SetFont('Arial','B',11);
 	try {
-		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
-		$pdf->Ln(15);
+		while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
+		$pdf->Ln(8);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -2560,7 +2647,7 @@ public function rZonaResidencialPrivada(){
 			 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
 			 	$pdf->SetFont('Arial','B',10);
 			 	$pdf->MultiCell(180,5,utf8_decode(
-			 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14]."Indicando lo siguientes:" ),0,1,'J' );
+			 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Indicando lo siguientes:" ),0,1,'J' );
 			 	$pdf->MultiCell(190,5,utf8_decode(
 			 		'La zona donde se encuentra este terreno se consigna como Zona Residencial Privada según el Plan Regulador publicado en la Gaceta No.208 del 30 de octubre de 1981, sin embargo, el artículo 6 de la Ley 6043 indica que las disposiciones de esta Ley no se aplicarán a las áreas situadas en los litorales, ni a las propiedades inscritas con la sujeción a la Ley a nombre de particulares, ni aquellas cuya legitimidad reconozcan las leyes.  ' ),0,'J');
 			 	$pdf->Ln(2);
@@ -2733,7 +2820,8 @@ public function rZonaInstitucional(){
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datoszonainstitucional     = new classreporte();
-
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
 
 	
 
@@ -2786,6 +2874,11 @@ public function rZonaInstitucional(){
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
 
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
+
 	$pdf 				= new PDF();
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
@@ -2793,8 +2886,15 @@ public function rZonaInstitucional(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
-		$pdf->Ln(15);
+		while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
+
+
+		$pdf->Ln(8);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -3013,6 +3113,8 @@ public function rZonaPrivada(){
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datoszonaprivada     = new classreporte();
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
 
 
 	
@@ -3066,6 +3168,11 @@ public function rZonaPrivada(){
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
 
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
+
 	$pdf 				= new PDF();
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
@@ -3073,8 +3180,14 @@ public function rZonaPrivada(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
-		$pdf->Ln(15);
+		while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
+
+		$pdf->Ln(8);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -3269,8 +3382,8 @@ public function rZonaArriendo() {
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datoszonadearriendo     = new classreporte();
-
-
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
 	
 
 	$this->zonadearriendo->setAtributo('PU04IDTRA', $_REQUEST['id']);
@@ -3322,6 +3435,12 @@ public function rZonaArriendo() {
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
 
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
+
+
 	$pdf 				= new PDF();
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
@@ -3329,8 +3448,13 @@ public function rZonaArriendo() {
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
-		$pdf->Ln(15);
+		while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
+		$pdf->Ln(8);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
@@ -3582,7 +3706,8 @@ public function rZonaHotelera(){
 	$this->apro_dene 			= new classreporte();
 	$this->observacion          = new classreporte();
 	$this->datoszonahotelera     = new classreporte();
-
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
 
 	
 
@@ -3635,6 +3760,11 @@ public function rZonaHotelera(){
 	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
 
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
+
 	$pdf 				= new PDF();
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
@@ -3642,8 +3772,14 @@ public function rZonaHotelera(){
 	$pdf->SetFont('Arial','B',11);
 	try
 	{
-		$pdf->Cell(185, 5, utf8_decode('RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO DE SUELO'), 0, 0, 'C');
-		$pdf->Ln(15);
+		while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
+
+		$pdf->Ln(8);
 		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
 		while ($row = mysqli_fetch_array($rLista)) {
 			$pdf->MultiCell(50,5,$row[0],0,1);
