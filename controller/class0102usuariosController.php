@@ -23,7 +23,25 @@ class class0102usuariosController
 			$this->class0102usuarios->setAtributo('PU01APE2USU',$_POST['PU01APE2USU']);
 			$this->class0102usuarios->setAtributo('PU02TELUSU',$_POST['PU02TELUSU']);
 			$this->class0102usuarios->setAtributo('PU02CORUSU',$_POST['PU02CORUSU']);
-			$this->class0102usuarios->setAtributo('PU03IDPUES',$_POST['PU03IDPUES']);
+			if (isset($_POST['PU03IDPUES'])) {
+				
+				if ($_POST['PU03IDPUES'] == 'ADMINISTRADOR') {
+					$id = 1;
+				}
+				if ($_POST['PU03IDPUES'] == 'COORDINADOR') {
+					$id = 2;
+				}
+				if ($_POST['PU03IDPUES'] == 'ASISTENTE') {
+					$id = 3;
+				}
+				if ($_POST['PU03IDPUES'] == 'AUXILIAR') {
+					$id = 4;
+				}
+				if ($_POST['PU03IDPUES'] == 'ALCALDE') {
+					$id = 5;
+				}
+}
+			$this->class0102usuarios->setAtributo('PU03IDPUES',$id);
 			$this->class0102usuarios->setAtributo('PU02USUARIO',$_POST['PU02USUARIO']);
 			$this->class0102usuarios->setAtributo('PU02CLAVE',$_POST['PU02CLAVE']);
 			$this->class0102usuarios->guardar();
@@ -45,6 +63,9 @@ class class0102usuariosController
 			$this->class0102usuarios->setAtributo('PU02TELUSU',$_POST['PU02TELUSU']);
 			$this->class0102usuarios->setAtributo('PU02CORUSU',$_POST['PU02CORUSU']);
 			$this->class0102usuarios->setAtributo('PU03IDPUES',$_POST['PU03IDPUES']);
+			$this->class0102usuarios->setAtributo('PU02USUARIO',$_POST['PU02USUARIO']);
+			$this->class0102usuarios->setAtributo('PU02CLAVE',$_POST['PU02CLAVE']);
+
 			$this->class0102usuarios->actualizar();
 			header('location:?c=class0102usuarios&m=index');
 		}
