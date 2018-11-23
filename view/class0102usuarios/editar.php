@@ -18,17 +18,29 @@
         <label for="PU01APE2USU">Segundo Apellido:</label>
         <input type="text" class="form-control" id="PU01APE2USU" name="PU01APE2USU" value="<?php echo $this->class0102usuarios->getAtributo('PU01APE2USU');?> ">
       </div>
-       <div class="form-group">
-        <label for="PU02TELUSU">Teléfono:</label>
+      <div class="form-group">
+        <label for="PU02TELUSU">Telefono:</label>
         <input type="text" class="form-control" id="PU02TELUSU" name="PU02TELUSU" value="<?php echo $this->class0102usuarios->getAtributo('PU02TELUSU');?> ">
       </div>
-       <div class="form-group">
-        <label for="PU02CORUSU">Correo: </label>
+
+      <div class="form-group">
+        <label for="PU02CORUSU">Correo:</label>
         <input type="text" class="form-control" id="PU02CORUSU" name="PU02CORUSU" value="<?php echo $this->class0102usuarios->getAtributo('PU02CORUSU');?> ">
       </div>
-         <div class="form-group">
-        <label for="PU03IDPUES">Puesto: </label>
+
+      <div class="form-group">
+        <label for="PU03IDPUES">Puesto:</label>
         <input type="text" class="form-control" id="PU03IDPUES" name="PU03IDPUES" value="<?php echo $this->class0102usuarios->getAtributo('PU03IDPUES');?> ">
+      </div>
+
+      <div class="form-group">
+        <label for="PU02USUARIO">Usuario:</label>
+        <input type="text" class="form-control" id="PU02USUARIO" name="PU02USUARIO" value="<?php echo $this->class0102usuarios->getAtributo('PU02USUARIO');?> ">
+      </div>
+
+      <div class="form-group">
+        <label for="PU02CLAVE">Contraseña:</label>
+        <input type="password" class="form-control" id="PU02CLAVE" name="PU02CLAVE" value="<?php echo $this->class0102usuarios->getAtributo('PU02CLAVE');?> ">
       </div>
 
       <button type="submit" class="btn btn-success">Editar Usuario</button> 

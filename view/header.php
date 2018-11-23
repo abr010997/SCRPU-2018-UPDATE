@@ -67,17 +67,18 @@
               </div>
               <div class="profile_info">
                 <span>Bienvenido:</span>
-               <h2>  <?php 
-        session_start();
-        if(isset($_SESSION['usuario']) && isset($_SESSION['puesto'])) {
-        $usuario = $_SESSION['usuario'];
-         echo($usuario);
-         $puesto = $_SESSION['puesto'];
-
-        } else {
-          header("Location: ?c=classlogin&m=index");
-        }
-        ?>
+               <h2>  
+                <?php 
+                  session_start();
+                  if(isset($_SESSION['usuario']) && isset($_SESSION['puesto']) && isset($_SESSION['idpuesto'])) {
+                    $usuario = $_SESSION['usuario'];
+                    $puesto = $_SESSION['puesto'];
+                    $idpuesto = $_SESSION['idpuesto'];
+                    echo($usuario);
+                  } else {
+                    header("Location: ?c=classlogin&m=index");
+                  }
+                ?>
                </h2>
               </div>
             </div>
@@ -95,144 +96,161 @@
                       <li><a href="?c=classprincipal&m=index">Dashboard</a></li>
                     </ul>
                   </li>
-
-
-    <li><a><i class="fa fa-edit"></i> Ingreso Trámite <span class="fa fa-chevron-down"></span></a>
+                  <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
+                  <li><a><i class="fa fa-edit"></i> Ingreso Trámite <span class="fa fa-chevron-down"></span></a>
+                  <?php endif; ?>
                     <ul class="nav child_menu">
                         <li>
                       <a href="?c=class04ingresotramite">Ingreso de Trámite</a>
                       </li>
                        <li>
                       <a href="?c=class04tramite&m=index2">Tramites Distritos</a>
-                      </li>
-                      
-
-                       
+                      </li>     
                     </ul>
                   </li>
-
-
+                  <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
                   <li><a><i class="fa fa-edit"></i> Modulo Inspección <span class="fa fa-chevron-down"></span></a>
+                  <?php endif; ?>
                     <ul class="nav child_menu">
                       <li>
                       <a href="?c=class04inspeccion">Inspección</a>
                       </li>
+
                       <li>
                       <a href="?c=class04inspeccion&m=index1">Trámites Inspeccionados</a>
                       </li>
                     </ul>
                   </li>
-
                   <li><a><i class="fa fa-desktop"></i> Módulo Oficina <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-              
-
-              <li>
-                      <a href="?c=class39solicitante">Guardar Solicitante</a>
-               </li>
-
-                <li>
-                      <a href="?c=class40propietario">Guardar Propietario</a>
-               </li>
-               <li>
-                      <a href="?c=class40terreno">Guardar Terreno</a>
-               </li>
-
-
-
-                        <li>
-                      <a href="?c=class04oficina">Realizar Oficina a Trámites</a>
-                      </li>
-                      <li>
-                      <a href="?c=class04oficina&m=index4">Aplicar actividades a Trámites</a>
-                      </li>
-                    
-                     <li>
-                      <a href="?c=class04oficina&m=index3">Revisión General</a>
-                      </li>
                       
+                      <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
                       <li>
-                      <a href="?c=class04oficina&m=index2">Oficina</a>
+                        <a href="?c=class39solicitante">Guardar Solicitante</a>
                       </li>
-                    
-                   
+                      <?php endif; ?>
+
+                      <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
                       <li>
-                      <a href="?c=class04tramite&m=index">Estados</a>
+                        <a href="?c=class40propietario">Guardar Propietario</a>
                       </li>
+                      <?php endif; ?>
+
+                      <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
                       <li>
-                      <a href="?c=class04tramite&m=index1">Tramites Aceptados</a>
+                        <a href="?c=class40terreno">Guardar Terreno</a>
                       </li>
-                       <li>
-                      <a href="?c=class04tramite&m=index3">Tramites Denegados</a>
+                      <?php endif; ?>
+
+                      <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
+                      <li>
+                        <a href="?c=class04oficina">Realizar Oficina a Trámites</a>
                       </li>
-                        
+                      <?php endif; ?>
+
+                      <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
+                      <li>
+                        <a href="?c=class04oficina&m=index4">Aplicar actividades a Trámites</a>
+                      </li>
+                      <?php endif; ?>
+
+                      <?php if ($idpuesto == 1 || $idpuesto == 2) : ?>
+                      <li>
+                        <a href="?c=class04oficina&m=index3">Revisión General</a>
+                      </li> 
+                      <?php endif; ?>
+
+                      <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
+                      <li>
+                        <a href="?c=class04oficina&m=index2">Oficina</a>
+                      </li>
+                      <?php endif; ?>
+
+                      <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3 || $idpuesto == 5) : ?>
+                      <li>
+                        <a href="?c=class04tramite&m=index">Estados</a>
+                      </li>
+                      <?php endif; ?>
+
+                      <li>
+                        <a href="?c=class04tramite&m=index1">Tramites Aceptados</a>
+                      </li>
+
+
+                      <li>
+                        <a href="?c=class04tramite&m=index3">Tramites Denegados</a>
+                      </li>
+
+
                     </ul>
                   </li>
-                 
                   <!--<li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="chartjs.html">Chart JS</a></li>
                     </ul>
                   </li>-->
-                
                 </ul>
               </div>
+              <?php if ($idpuesto == 1 || $idpuesto == 2) : ?>
               <div class="menu_section">
                 <h3>Live On</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-sitemap"></i> Mantenimientos Menu <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li>
-                        <a href="?c=class0102usuarios">Usuarios</a>
-                        </li>
-                        <li>
-                        <a href="?c=class03puestos">Puestos</a>
-                        </li>
-                        <li>
-                        <a href="?c=class06actdes">Actividades a Desarrollar</a>
-                        </li>
-                        <li>
-                        <a href="?c=class07terrft">Terreno Frete a Ruta</a>
-                        </li>
-                        <li>
-                        <a href="?c=class09desceg">Espacio Geográfico</a>
-                        </li>
-                        <li>
-                        <a href="?c=class10aspbio">Aspectos Biofísicos</a>
-                        </li>
-                        <li>
-                        <a href="?c=class12tipdesec">Tipo de Desarrollo en el Sector</a>
-                        </li>
-                        <li>
-                        <a href="?c=class16servae">Servicio de Electricidad y Agua</a>
-                        </li>
-                        <li>
-                        <a href="?c=class18calleser">Existencia de Calle en Servidumbre Frente a Ruta</a>
-                        </li>
-                        <li>
-                        <a href="?c=class20desas">Desarrolo de Servidumbre</a>
-                        </li>
-                        <li>
-                        <a href="?c=class22serrvi">Servicio de Red Vial</a>
-                        </li>
-                        <li>
-                        <a href="?c=class26planreg">Plan Retulador</a>
-                        </li>
-                        <li>
-                        <a href="?c=class34clases">Clases</a>
-                        </li>
-                        <li>
-                        <a href="?c=class35tipsue">Tipo Suelo</a>
-                        </li>
-                        <li>
-                        <a href="?c=class26planreg">Plan Retulador</a>
-                        </li>
+                      <?php if ($idpuesto == 1 || $idpuesto == 2) : ?>
+                      <li>
+                      <a href="?c=class0102usuarios">Usuarios</a>
+                      </li>
+                      <?php endif; ?>
+                      <?php if ($idpuesto == 1) : ?>
+                      <li>
+                      <a href="?c=class03puestos">Puestos</a>
+                      </li>
+                      <li>
+                      <a href="?c=class06actdes">Actividades a Desarrollar</a>
+                      </li>
+                      <li>
+                      <a href="?c=class07terrft">Terreno Frete a Ruta</a>
+                      </li>
+                      <li>
+                      <a href="?c=class09desceg">Espacio Geográfico</a>
+                      </li>
+                      <li>
+                      <a href="?c=class10aspbio">Aspectos Biofísicos</a>
+                      </li>
+                      <li>
+                      <a href="?c=class12tipdesec">Tipo de Desarrollo en el Sector</a>
+                      </li>
+                      <li>
+                      <a href="?c=class16servae">Servicio de Electricidad y Agua</a>
+                      </li>
+                      <li>
+                      <a href="?c=class18calleser">Existencia de Calle en Servidumbre Frente a Ruta</a>
+                      </li>
+                      <li>
+                      <a href="?c=class20desas">Desarrolo de Servidumbre</a>
+                      </li>
+                      <li>
+                      <a href="?c=class22serrvi">Servicio de Red Vial</a>
+                      </li>
+                      <li>
+                      <a href="?c=class26planreg">Plan Retulador</a>
+                      </li>
+                      <li>
+                      <a href="?c=class34clases">Clases</a>
+                      </li>
+                      <li>
+                      <a href="?c=class35tipsue">Tipo Suelo</a>
+                      </li>
+                      <li>
+                      <a href="?c=class26planreg">Plan Retulador</a>
+                      </li>
+                      <?php endif; ?>
                     </ul>
-                  </li>                  
-        
+                  </li> 
                 </ul>
               </div>
-
+              <?php endif; ?>
             </div>
             <!-- /sidebar menu -->
 

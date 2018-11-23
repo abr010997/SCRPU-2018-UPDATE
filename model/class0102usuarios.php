@@ -13,8 +13,6 @@ class class0102usuarios extends Conexion
 	private $PU02USUARIO;
 	private $PU02CLAVE;
 
-
-
 	private $conexion;
 	
 	function __construct()
@@ -38,7 +36,7 @@ class class0102usuarios extends Conexion
 		$result = $this->conexion->consultaRetorno($sql);
 		$class0102usuarios = $this->convertToclass0102usuarios($result);
 		return $class0102usuarios;
-	}
+	} 
 
 	public function listar()
 	{
@@ -58,7 +56,7 @@ class class0102usuarios extends Conexion
 	public function actualizar()
 	{
 		$sql = "call SP01_REGINFUSU_ACTUALIZAR('$this->PU01CEDUSU','$this->PU01NOMUSU','$this->PU01APE1USU','$this->PU01APE2USU',
-	'$this->PU02TELUSU','$this->PU02CORUSU','$this->PU03IDPUES')";	
+	'$this->PU02TELUSU','$this->PU02CORUSU','$this->PU03IDPUES','$this->PU02USUARIO','$this->PU02CLAVE');";	
 
 		$this->conexion->consultaSimple($sql);
 	}
@@ -80,6 +78,8 @@ class class0102usuarios extends Conexion
 			$class0102usuarios->setAtributo('PU02TELUSU',$row[4]);
 			$class0102usuarios->setAtributo('PU02CORUSU',$row[5]);
 			$class0102usuarios->setAtributo('PU03IDPUES',$row[6]);
+			$class0102usuarios->setAtributo('PU02USUARIO',$row[7]);
+			$class0102usuarios->setAtributo('PU02CLAVE',$row[8]);
 		}
 		return $class0102usuarios;
 	}

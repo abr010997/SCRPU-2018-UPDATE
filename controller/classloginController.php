@@ -26,8 +26,9 @@ class classloginController
 						//$this->classlogin->entrar($_POST['usuario'],$_POST['clave']);
 						if ($this->classlogin->entrar($_POST['usuario'],$_POST['clave']) == true) {
 							session_start();
-							if ($_SESSION['idpuesto'] == 1) {
-								header("Location: ?c=classprincipal&m=index");	
+							header("Location: ?c=classprincipal&m=index");
+							/*if ($_SESSION['idpuesto'] == 1) {
+									
 							} else if ($_SESSION['idpuesto'] == 2){
 								header("Location: ?c=classprincipal&m=index");
 							} else  if ($_SESSION['idpuesto'] == 3) {
@@ -36,7 +37,7 @@ class classloginController
 								header("Location: ?c=classprincipal&m=index");
 							} else {
 								header("Location: ?c=class03puestos&m=index");
-							}
+							}*/
 						} else {
 							?>
 							<script>
