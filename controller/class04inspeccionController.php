@@ -84,7 +84,30 @@ class class04inspeccionController
 		}
 	}
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////
+
+
+public function agregarTrausutra()
+	{
+		if($_POST){
+			$this->pu04inspeccion->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
+			$this->pu04inspeccion->setAtributo('PU01CEDUSU',$_POST['PU01CEDUSU']);
+			
+			
+			$this->pu04inspeccion->agregarTrainpe();
+			header('location:?c=class04inspeccion&m=agregarTra&id='.$_REQUEST['id']);
+		}
+		else{
+
+			$this->pu04inspeccion = $this->pu04inspeccion->buscarTraIng($_REQUEST['id']);
+
+		
+			require_once 'view/header.php';
+			require_once 'view/class04inspeccion/agregarTrausutra.php';
+			require_once 'view/footer.php';
+		}
+	}
+	/////////////////////////////////////////////////////////////////////////////
 	public function editarAcceso()
 	{
 		$this->pu04inspeccion = $this->pu04inspeccion->buscarTraIng($_REQUEST['id']);
@@ -643,5 +666,12 @@ public function agregarTra()
 			require_once 'view/footer.php';
 		}
 	}
+
+
+
+	/////////////////////////////////////////////////////////////////////////////////////////
+	///
+
+
 }
 ?>
