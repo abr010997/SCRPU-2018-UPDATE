@@ -35,6 +35,12 @@ class class04inspeccionController
 		require_once 'view/class04inspeccion/index1.php';
 		require_once 'view/footer.php';
 	}
+	public function index2()
+	{
+		require_once 'view/header.php';
+		require_once 'view/class04inspeccion/index2.php';
+		require_once 'view/footer.php';
+	}
 	public function terminarInspeccion()
 	{
 		if($_POST){
@@ -95,7 +101,7 @@ public function agregarTrausutra()
 			
 			
 			$this->pu04inspeccion->agregarTrainpe();
-			header('location:?c=class04inspeccion&m=agregarTra&id='.$_REQUEST['id']);
+			header('location:?c=class04inspeccion&m=index2');
 		}
 		else{
 

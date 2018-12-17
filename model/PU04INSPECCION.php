@@ -203,6 +203,14 @@ class PU04INSPECCION extends Conexion
 		return $result;
 	}
 	/////////////////////////////////////////////////////////////
+
+	public function listarTraInspector()
+	{
+		$sql = "CALL SP00_LISTAR_INPECTOR_TRAMITE();";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+	/////////////////////////////////////////////////////////////
 	public function buscar($idtramite)
 	{
 		$sql4 = "SELECT * FROM pu04regtra WHERE PU04IDTRA ='".$idtramite."'";

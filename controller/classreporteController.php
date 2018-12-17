@@ -245,18 +245,12 @@ public function rInspeccion(){
 
 		$pdf->Ln(5);
 	 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
-	 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
+	 	$pdf->MultiCell(180,5,"Firma Inspector",0,0);
 	 	$pdf->Ln(2);
 	 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
 	 	$pdf->Ln(5);
 	 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
-	 	$pdf->Ln(3);
-	 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
-	 	$pdf->Ln(3);
-	 	$pdf->MultiCell(60,5,"__________________________",0,1);
-	 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
-	 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
-	 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
+	 	
 
 		$pdf->Output();
 	} catch(Exception $e){
