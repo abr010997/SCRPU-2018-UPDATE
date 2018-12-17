@@ -266,7 +266,7 @@ public function listarZonaPrivada()
 
 
 	///DAR
-public function listarDarInta()
+	public function listarDarInta()
 	{
 		$sql = "CALL R_RESI('$this->PU04IDTRA');";
 		$result = $this->conexion->ConsultaRetorno($sql);
@@ -458,6 +458,64 @@ public function listarAntecedentesDominio()
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
+
+	//Reporte Inspección
+	public function listarInspeccion()
+	{
+		$sql = "CALL R_INS_INSPECTOR('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarEspacioGeo()
+	{
+		$sql = "CALL R_INS_ESPACIO_GEO('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarAspectoBio()
+	{
+		$sql = "CALL R_INS_ASPECTOS_BIOFISICOS('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarDesaSect()
+	{
+		$sql = "CALL R_INS_DESARROLLO_SECTOR('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarTipRed()
+	{
+		$sql = "CALL R_INS_TIPO_RED_VIAL('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarPaten()
+	{
+		$sql = "CALL R_INS_PATENTES('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarAcServi()
+	{
+		$sql = "CALL R_INS_SERVIDUMBRE('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarAreas()
+	{
+		$sql = "CALL R_INS_AREAS('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+	//Fin Reporte Inspección
 
 	public function convertToclassreporte($result)
 	{

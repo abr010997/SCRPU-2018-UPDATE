@@ -30,10 +30,10 @@
                         <a href="?c=class04inspeccion&m=agregarTra&id=<?php echo $row[0]; ?>">
                         <span class="glyphicon glyphicon-pencil"></span> Guardar Inspección</a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a href="?c=class04inspeccion&m=editarActividades&id=<?php echo $row[0]; ?>">
                         <span class="glyphicon glyphicon-pencil"></span> Editar</a>
-                    </li>
+                    </li>-->
                     <!-- <li>
                         <a href="?c=class04inspeccion&m=editarPermisos&id=<?php echo $row[0]; ?>">
                         <span class="glyphicon glyphicon-pencil"></span> Editar</a>
@@ -50,10 +50,10 @@
                       <a href="?c=class04inspeccion&m=agregar&id=<?php echo $row[0]; ?>">
                        <span class="glyphicon glyphicon-eye-open"></span> Trámite</a>
                     </li>-->
-                    <li>
+                   <!-- <li>
                       <a href="?c=class04inspeccion&m=editarAcceso&id=<?php echo $row[0]; ?>">
                        <span class="glyphicon glyphicon-eye-open"></span> Inspeccionar</a>
-                    </li>
+                    </li>-->
                   </ul>
                 </div></td>
               </tr>
