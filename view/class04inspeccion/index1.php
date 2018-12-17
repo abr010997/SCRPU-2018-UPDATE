@@ -51,6 +51,14 @@
                       <a href="?c=class04inspeccion&m=agregarTra&id=<?php echo $row[0]; ?>">
                        <span class="glyphicon glyphicon-eye-open"></span> Inspección</a>
                     </li>
+                    <?php 
+                    if ($idpuesto == 1) :
+                     ?>
+                    <li>
+                      <a href="?c=classreporte&m=rInspeccion&id=<?php echo $row[0]; ?>" target="_blank">
+                       <span class="glyphicon glyphicon-eye-open"></span> Reporte de Inspección</a>
+                    </li> 
+                  <?php endif; ?>
                   </ul>
                 </div></td>
               </tr>

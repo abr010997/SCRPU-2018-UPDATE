@@ -9,7 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Planificación Urbana! | </title>
+    <title>Planificación Urbana</title>
+    <!--<link rel="icon" href="images/<planificacion class="jpg"></planificacion>">-->
 
 <!-- Bootstrap core CSS-->
 <!-- Jquery Confirm v3 -->
