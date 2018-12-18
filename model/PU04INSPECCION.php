@@ -13,6 +13,7 @@ class PU04INSPECCION extends Conexion
 	private $PU12OBSERVACIONES;
 	private $PU24TIPOCONSTRUCCION;
 	private $PU38OBSERVACIONES;
+	private $PU01CEDUSU;
 	
 	private $conexion;
 	
@@ -36,6 +37,19 @@ class PU04INSPECCION extends Conexion
 		$sql = "call SP04_TRAMITEESTADO_GUARDAR('$this->PU04IDTRA');";
 		$this->conexion->consultaSimple($sql);
 	}	
+
+
+//////////////////////// DENTRO DEL MODELO 04INPECCION
+	public function agregarTrainpe()
+	{
+		$sql = "CALL SP01_TRA_USUTRA_GUARDAR('$this->PU04IDTRA','$this->PU01CEDUSU');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+    
+   
+	}
+
+	
 
 		public function guardarObservacion()
 	{
@@ -132,6 +146,17 @@ class PU04INSPECCION extends Conexion
 		$this->conexion->consultaSimple($sql);
 	}
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+
+///////////////////REPORTE DE INSTPECCIÓN//////////////////////
+	public function listarPuesto($puesto){
+		$sql = "SELECT FN_EXISTE_USUARIO('".$puesto."');";
+		$result = $this->conexion->consultaRetorno($sql);
+		$row 	= mysqli_fetch_row($result);
+		return $row;
+	}
+	////////////////////////////////////////
+
+	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -185,6 +210,14 @@ class PU04INSPECCION extends Conexion
 	public function listarTraRealizado()
 	{
 		$sql = "CALL SP00_LISTAR_TRAMITE_REALIZADO();";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+	/////////////////////////////////////////////////////////////
+
+	public function listarTraInspector()
+	{
+		$sql = "CALL SP00_LISTAR_INPECTOR_TRAMITE();";
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
@@ -733,6 +766,8 @@ public function eliminarActividades5($idtramite)
 
 
 
+  
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

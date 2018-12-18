@@ -31,7 +31,7 @@
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
                     <li>
-                        <a href="?c=class04inspeccion&m=agregarTra&id=<?php echo $row[0]; ?>">
+                        <a href="?c=class04inspeccion&m=agregarTrausutra&id=<?php echo $row[0]; ?>">
                         <span class="glyphicon glyphicon-pencil"></span> Guardar Inspección</a>
                     </li>
                     <!-- <li>

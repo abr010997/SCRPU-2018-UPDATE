@@ -1,0 +1,16 @@
+DELIMITER $$
+
+USE `pu_ingenieria`$$
+
+DROP PROCEDURE IF EXISTS `R_INS_ASPECTOS_BIOFISICOS`$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `R_INS_ASPECTOS_BIOFISICOS`(IN idtra INT(11))
+BEGIN
+  SELECT `pu10aspbio`.`PU10DESCABIO`
+  FROM `pu04tramite1`
+  INNER JOIN `pu11uniabio` ON `pu04tramite1`.`PU04IDTRA` = `pu11uniabio`.`PU04IDTRA`
+  INNER JOIN `pu10aspbio` ON `pu11uniabio`.`PU10IDASBIO` = `pu10aspbio`.`PU10IDASBIO`
+  WHERE `pu04tramite1`.`PU04IDTRA` = idtra;
+END$$
+
+DELIMITER ;

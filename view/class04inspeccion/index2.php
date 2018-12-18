@@ -1,44 +1,39 @@
-<?php $result = $this->pu04inspeccion->listarTraRealizado(); ?>
+<?php $result = $this->pu04inspeccion->listarTraInspector(); ?>
 
     <div class="container-fluid">
-        <h2> Trámites Inspeccionados</h2>   
-    <a href="?c=class04inspeccion&m=index" class="btn btn-primary" role="button">Regresar</a>
+        <h2>Listado de Trámites</h2>   
    
     <br><br>    
     <?php if ($result->num_rows): ?>
       <table class="display table table-bordered" cellpadding="0" cellspacing="0" border="0" width="100%" id="grilla-puestos">
         <thead>
           <tr>
-            <th>Trámite</th>
-            <th>Fecha Inspección</th>
-            <th>Este</th>
-            <th>Norte</th>
-            <th>Altitud</th>
+            <th>Código de Trámite</th>
+            <th>Fecha de ingreso</th>
+            <th>Fecha de Plataforma</th>
+             <th>Distrito</th>
             <th style="width: 120px;">Más</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody>       
           <?php while ($row = mysqli_fetch_array($result)):?>
             <tr>
               <td><?php echo $row[0]; ?></td>
               <td><?php echo $row[1]; ?></td>
               <td><?php echo $row[2]; ?></td>
               <td><?php echo $row[3]; ?></td>
-              <td><?php echo $row[4]; ?></td>
-              
-              <td>
-                <div class="dropdown">
+              <td><div class="dropdown">
                 <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Opciones
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
-                     <?php 
-                    if ($idpuesto == 1 || $idpuesto == 2) :
-                     ?>
                     <li>
-                        <a href="?c=class04inspeccion&m=editar&id=<?php echo $row[0]; ?>">
-                        <span class="glyphicon glyphicon-pencil"></span> Editar Trámite</a>
+                        <a href="?c=class04inspeccion&m=agregarTra&id=<?php echo $row[0]; ?>">
+                        <span class="glyphicon glyphicon-pencil"></span> Guardar Inspección</a>
                     </li>
-                     <?php endif; ?>
+                    <!--<li>
+                        <a href="?c=class04inspeccion&m=editarActividades&id=<?php echo $row[0]; ?>">
+                        <span class="glyphicon glyphicon-pencil"></span> Editar</a>
+                    </li>-->
                     <!-- <li>
                         <a href="?c=class04inspeccion&m=editarPermisos&id=<?php echo $row[0]; ?>">
                         <span class="glyphicon glyphicon-pencil"></span> Editar</a>
@@ -50,20 +45,15 @@
                      <li>
                       <a href="?c=class04inspeccion&m=ver&id=<?php echo $row[0]; ?>">
                        <span class="glyphicon glyphicon-eye-open"></span> ver</a>
-                    </li>-->
-                       <?php 
-                    if ($idpuesto == 1 || $idpuesto == 2) :
-                     ?>
+                    </li>>
                      <li>
-                      <a href="?c=class04inspeccion&m=agregarTra&id=<?php echo $row[0]; ?>">
-                       <span class="glyphicon glyphicon-eye-open"></span> Inspección</a>
-                    </li>
-                 <?php endif; ?>
-                    <li>
-                      <a href="?c=classreporte&m=rInspeccion&id=<?php echo $row[0]; ?>" target="_blank">
-                       <span class="glyphicon glyphicon-eye-open"></span> Reporte de Inspección</a>
-                    </li> 
-                  
+                      <a href="?c=class04inspeccion&m=agregar&id=<?php echo $row[0]; ?>">
+                       <span class="glyphicon glyphicon-eye-open"></span> Trámite</a>
+                    </li>-->
+                   <!-- <li>
+                      <a href="?c=class04inspeccion&m=editarAcceso&id=<?php echo $row[0]; ?>">
+                       <span class="glyphicon glyphicon-eye-open"></span> Inspeccionar</a>
+                    </li>-->
                   </ul>
                 </div></td>
               </tr>

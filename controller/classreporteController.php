@@ -93,6 +93,16 @@ class classreporteController
 
 	private $encabezadopatente;
 	private $encabezadoconstruccion;
+	//Reporte Inspección
+	private $inspeccion;
+	private $espaciogeo;
+	private $aspectosbiofisicos;
+	private $desarrollosector;
+	private $tiporedvial;
+	private $patentes;
+	private $accesoservi;
+	private $areas;
+	//Fin Reporte Inspección
 function __construct()
 {
 	$this->classreporte = new classreporte();
@@ -151,8 +161,105 @@ public function ver()
 	require_once 'view/footer.php';
 }
 
-// Reporte
+public function rInspeccion(){
+	$this->classreporte->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$this->inspeccion 		  = new classreporte();
+	$this->espaciogeo 		  = new classreporte();
+	$this->aspectosbiofisicos = new classreporte();
+	$this->desarrollosector   = new classreporte();
+	$this->tiporedvial 		  = new classreporte();
+	$this->patentes 		  = new classreporte();
+	$this->accesoservi 		  = new classreporte();
+	$this->areas 			  = new classreporte();
 
+	$this->inspeccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLista 			= $this->inspeccion->listarInspeccion();
+
+	$this->espaciogeo->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rEsGeo 			= $this->espaciogeo->listarEspacioGeo();
+	$this->aspectosbiofisicos->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rAsBio 			= $this->aspectosbiofisicos->listarAspectoBio();
+	$this->desarrollosector->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rDesSec 			= $this->desarrollosector->listarDesaSect();
+	$this->tiporedvial->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rTipRed 			= $this->tiporedvial->listarTipRed();
+	$this->patentes->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rPaten 			= $this->patentes->listarPaten();
+	$this->accesoservi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rAcServi 			= $this->accesoservi->listarAcServi();
+	$this->areas->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rAreas 			= $this->areas->listarAreas();
+
+	$pdf 				= new PDF();
+	$pdf->AliasNbPages();
+	$pdf->AddPage();
+	$pdf->SetFillColor(255,255,255);
+	$pdf->SetFont('Arial','B',11);
+	try
+	{
+		$pdf->MultiCell(125,3,utf8_decode('REPORTE DE INSPECCIÓN'),0,0,'J');
+		$pdf->MultiCell(105,10,'Datos',0,0,'J');
+		while ($ins = mysqli_fetch_array($rLista)){
+			$pdf->MultiCell(100,5,utf8_decode('Fecha: '.$ins[0]),0,1,'J');
+			$pdf->MultiCell(50,5,utf8_decode('Tramite: '.$ins[1]),0,1,'J');
+			$pdf->MultiCell(103,5,utf8_decode('GPS'),0,0,'J');
+			$pdf->MultiCell(130,5,utf8_decode('Norte: '.$ins[2].' Este: '.$ins[3].' Altitud: '.$ins[4]),0,0,'J');
+			$pdf->MultiCell(50,5,utf8_decode('Cedula: '.$ins[5]),0,1,'J');
+			$pdf->MultiCell(190,5,utf8_decode('Nombre: '.$ins[6].''.$ins[7].''.$ins[8]),0,1,'J');
+		}
+		$pdf->MultiCell(115,5,utf8_decode('Datos Inspección'),0,0,'J');
+		$pdf->MultiCell(118,5,utf8_decode('Espacio Geográfico'),0,1,'J');
+		while ($eg = mysqli_fetch_array($rEsGeo)) {
+			$pdf->MultiCell(100,5,utf8_decode('* '.$eg[0]),0,1,'J');
+		}
+		
+		$pdf->MultiCell(118,5,utf8_decode('Aspectos Biofísicos'),0,1,'J');
+		while ($ab = mysqli_fetch_array($rAsBio)) {
+			$pdf->MultiCell(100,5,utf8_decode('* '.$ab[0]),0,1,'J');
+		}
+		
+		$pdf->MultiCell(120,5,utf8_decode('Desarrollo en el Sector'),0,1,'J');
+		while ($ds = mysqli_fetch_array($rDesSec)) {
+			$pdf->MultiCell(100,5,utf8_decode('* '.$ds[0]),0,1,'J');
+		}
+		
+		$pdf->MultiCell(112,5,utf8_decode('Tipo Red Vial'),0,1,'J');
+		while ($tr = mysqli_fetch_array($rTipRed)) {
+			$pdf->MultiCell(100,5,utf8_decode('* '.$tr[0]),0,1,'J');
+		}
+
+		$pdf->MultiCell(108,5,utf8_decode('Patentes'),0,1,'J');
+		while ($p = mysqli_fetch_array($rPaten)) {
+			$pdf->MultiCell(100,5,utf8_decode('* '.$p[0]),0,1,'J');
+		}
+
+		$pdf->MultiCell(122,5,utf8_decode('Acceso de Servidumbre'),0,1,'J');
+		while ($as = mysqli_fetch_array($rAcServi)) {
+			$pdf->MultiCell(100,5,utf8_decode('* '.$as[0]),0,1,'J');
+		}
+
+		$pdf->MultiCell(105,5,utf8_decode('Áreas'),0,1,'J');
+		while ($a = mysqli_fetch_array($rAreas)) {
+			$pdf->MultiCell(100,5,utf8_decode('* '.$a[0]),0,1,'J');
+		}
+
+		$pdf->Ln(5);
+	 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
+	 	$pdf->MultiCell(180,5,"Firma Inspector",0,0);
+	 	$pdf->Ln(2);
+	 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
+	 	$pdf->Ln(5);
+	 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
+	 	
+
+		$pdf->Output();
+	} catch(Exception $e){
+		$pdf->Cell(30, 10, "Sin datos", 0, 0, 'C');
+		$pdf->Output();
+	}
+}
+
+// Reporte
 public function reporte(){
 	$this->classreporte->setAtributo('PU04IDTRA', $_REQUEST['id']);
 	$this->resolusion 	 		= new classreporte();
@@ -406,7 +513,6 @@ public function reporte(){
 }
 
 // Nicoya {
-
 public function rZonaVerde(){
 	$this->zonaverde 			= new classreporte();
 	$this->constra 				= new classreporte();
@@ -617,8 +723,8 @@ public function rZonaVerde(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
-$pdf->Ln(1);
+			$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
+			$pdf->Ln(1);
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');

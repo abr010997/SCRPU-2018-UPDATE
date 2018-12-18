@@ -7,6 +7,7 @@ class class04inspeccion extends Conexion
 	private $PU04NORTE;
 	private $PU04ESTE;
 	private $PU04ALTITUD;
+	private $PU01CEDUSU;
 	
 	private $conexion;
 	
@@ -59,5 +60,16 @@ class class04inspeccion extends Conexion
 			$this->conexion->consultaSimple($sql4);
 		}
 	}
+	//////////////////////// DENTRO DEL MODELO 04INPECCION
+	public function agregarTrausutra()
+	{
+		$sql = "CALL SP01_TRA_USUTRA_GUARDAR('$this->PU04IDTRA','$this->PU01CEDUSU');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+    
+   
+	}
+  
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 ?>
