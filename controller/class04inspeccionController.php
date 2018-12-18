@@ -93,15 +93,57 @@ class class04inspeccionController
 	///////////////////////////////////////////////
 
 
+// public function agregarTrausutra()
+// 	{
+// 		if($_POST){
+// 			$this->pu04inspeccion->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
+// 			$this->pu04inspeccion->setAtributo('PU01CEDUSU',$_POST['PU01CEDUSU']);
+			
+			
+// 			$this->pu04inspeccion->agregarTrainpe();
+// 			header('location:?c=class04inspeccion&m=index2');
+// 		}
+// 		else{
+
+// 			$this->pu04inspeccion = $this->pu04inspeccion->buscarTraIng($_REQUEST['id']);
+
+		
+// 			require_once 'view/header.php';
+// 			require_once 'view/class04inspeccion/agregarTrausutra.php';
+// 			require_once 'view/footer.php';
+// 		}
+// 	}
+
+
+
 public function agregarTrausutra()
 	{
 		if($_POST){
 			$this->pu04inspeccion->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
 			$this->pu04inspeccion->setAtributo('PU01CEDUSU',$_POST['PU01CEDUSU']);
+			$puesto = $this->pu04inspeccion->listarPuesto($_POST['PU01CEDUSU']);
+			session_start();
+			if ($_SESSION['idpuesto'] = $puesto[0]) {
+				$this->pu04inspeccion->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
+				$this->pu04inspeccion->setAtributo('PU01CEDUSU',$_POST['PU01CEDUSU']);
+				
+				
+				$this->pu04inspeccion->agregarTrainpe();
+				header('location:?c=class04inspeccion&m=index2');
+			} else {
+				?>
+				<script>
+					alert('Usuario no existe o no coresponde a la sesion!');
+					location.href = "?c=class04ingresotramite&m=index";
+				</script>
+				<?php
+			}
+			/*$this->pu04inspeccion->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
+			$this->pu04inspeccion->setAtributo('PU01CEDUSU',$_POST['PU01CEDUSU']);
 			
 			
 			$this->pu04inspeccion->agregarTrainpe();
-			header('location:?c=class04inspeccion&m=index2');
+			header('location:?c=class04inspeccion&m=agregarTra&id='.$_REQUEST['id']);*/
 		}
 		else{
 
@@ -113,6 +155,7 @@ public function agregarTrausutra()
 			require_once 'view/footer.php';
 		}
 	}
+	
 	/////////////////////////////////////////////////////////////////////////////
 	public function editarAcceso()
 	{

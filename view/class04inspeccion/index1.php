@@ -31,10 +31,14 @@
                 <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Opciones
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
+                     <?php 
+                    if ($idpuesto == 1 || $idpuesto == 2) :
+                     ?>
                     <li>
                         <a href="?c=class04inspeccion&m=editar&id=<?php echo $row[0]; ?>">
                         <span class="glyphicon glyphicon-pencil"></span> Editar Trámite</a>
                     </li>
+                     <?php endif; ?>
                     <!-- <li>
                         <a href="?c=class04inspeccion&m=editarPermisos&id=<?php echo $row[0]; ?>">
                         <span class="glyphicon glyphicon-pencil"></span> Editar</a>
@@ -47,18 +51,19 @@
                       <a href="?c=class04inspeccion&m=ver&id=<?php echo $row[0]; ?>">
                        <span class="glyphicon glyphicon-eye-open"></span> ver</a>
                     </li>-->
+                       <?php 
+                    if ($idpuesto == 1 || $idpuesto == 2) :
+                     ?>
                      <li>
                       <a href="?c=class04inspeccion&m=agregarTra&id=<?php echo $row[0]; ?>">
                        <span class="glyphicon glyphicon-eye-open"></span> Inspección</a>
                     </li>
-                    <?php 
-                    if ($idpuesto == 1) :
-                     ?>
+                 <?php endif; ?>
                     <li>
                       <a href="?c=classreporte&m=rInspeccion&id=<?php echo $row[0]; ?>" target="_blank">
                        <span class="glyphicon glyphicon-eye-open"></span> Reporte de Inspección</a>
                     </li> 
-                  <?php endif; ?>
+                  
                   </ul>
                 </div></td>
               </tr>
