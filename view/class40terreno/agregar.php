@@ -1,7 +1,7 @@
-    
+<div class="container-fluid">
   <center><h2>Agregar nuevo Terreno</h2></center>
     <form action="?c=class40terreno&m=agregar" method="post">
-       <div class="col-sm-offset-3 col-sm-5">
+       <div class="col-sm-offset-4 col-sm-4">
       <div class="form-group">
         <label for="PU40NFINCA">Finca:</label>
         <input type="text" class="form-control" id="PU40NFINCA" name="PU40NFINCA">
@@ -26,7 +26,7 @@
         </div>
       </div>
        <br> <br> <br> <br>
-      <br> 
+      <br>
       <div class="form-group">
 
         <label for="PU39BARRIO">Barrio:</label>
@@ -38,9 +38,10 @@
         <input type="text" class="form-control" id="PU39DIRECCION" name="PU39DIRECCION">
       </div>
        </div>
-     
 
-      <button type="submit" class="btn btn-success">Guardar Terreno</button> 
-      <a href="?c=class40terreno&m=index" class="btn btn-danger" role="button">Regresar</a>   
-       </div>    
+
+      <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-floppy-saved"></span> Guardar</button>
+      <a href="?c=class40terreno&m=index" class="btn btn-danger" role="button"> Regresar</a>
+       </div>
      </form>
+</div>

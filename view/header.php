@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title>Planificación Urbana</title>
     <!--<link rel="icon" href="images/<planificacion class="jpg"></planificacion>">-->
 
@@ -21,10 +21,6 @@
 <link rel="stylesheet" href="assets/datatables/DataTables-1.10.16/css/jquery.dataTables.min.css">
 <!-- ccs de date piker  -->
 <link rel="stylesheet" href="assets/jquery-ui/jquery-ui.css">
-<!-- para los container well -->
-<link rel="stylesheet" href="vendors/bootstrap/dist/ccs/bootstrap-theme.css">
-
-
 
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +28,7 @@
     <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
-    
+
     <!-- bootstrap-wysiwyg -->
     <link href="vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
     <!-- Select2 -->
@@ -68,8 +64,8 @@
               </div>
               <div class="profile_info">
                 <span>Bienvenido:</span>
-               <h2>  
-                <?php 
+               <h2>
+                <?php
                   session_start();
                   if(isset($_SESSION['usuario']) && isset($_SESSION['puesto']) && isset($_SESSION['idpuesto'])) {
                     $usuario = $_SESSION['usuario'];
@@ -106,7 +102,7 @@
                       </li>
                        <li>
                       <a href="?c=class04tramite&m=index2">Tramites Distritos</a>
-                      </li>     
+                      </li>
                     </ul>
                   </li>
                   <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
@@ -124,7 +120,7 @@
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Módulo Oficina <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      
+
                       <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
                       <li>
                         <a href="?c=class39solicitante">Guardar Solicitante</a>
@@ -158,7 +154,7 @@
                       <?php if ($idpuesto == 1 || $idpuesto == 2) : ?>
                       <li>
                         <a href="?c=class04oficina&m=index3">Revisión General</a>
-                      </li> 
+                      </li>
                       <?php endif; ?>
 
                       <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
@@ -248,7 +244,7 @@
                       </li>
                       <?php endif; ?>
                     </ul>
-                  </li> 
+                  </li>
                 </ul>
               </div>
               <?php endif; ?>
@@ -285,90 +281,18 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/planificacion.jpg" alt="">Usuario: 
-                <?php 
-      
+                    <img src="images/planificacion.jpg" alt="">Usuario:
+
+                <?php
          echo($puesto);
-         
         ?>
-               
+
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <!--<li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>-->
                     <li><a onclick="cerrarSesion()" ><i class="fa fa-sign-out pull-right"></i> Cerrar Sesión</a></li>
                   </ul>
                 </li>
-
-                <!--<li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>-->
                   </ul>
                 </li>
               </ul>
@@ -381,10 +305,3 @@
         <div class="right_col" role="main">
          <!-- <div class="container-fluid"> -->
           <div class="x_panel">
-          
-            
-
-
-
-
-  

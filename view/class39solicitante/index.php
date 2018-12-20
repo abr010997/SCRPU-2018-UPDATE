@@ -1,9 +1,9 @@
 <?php $result = $this->class39solicitante->listar(); ?>
 
-  <center><h2>Listado de Solicitantes</h2></center>   
-  <a  href="?c=class39solicitante&m=agregar" class="btn btn-primary" role="button">Registrar solicitante</a>    
+  <center><h2>Listado de solicitantes</h2></center>
+  <a  href="?c=class39solicitante&m=agregar" class="btn btn-primary" role="button">Registrar solicitante</a>
   <br>
-  <br>    
+  <br>
   <?php if ($result->num_rows): ?>
     <table class="display table table-bordered" cellpadding="0" cellspacing="0" border="0" width="100%" id="grilla-usuarios">
       <thead>
@@ -13,7 +13,7 @@
           <th>Nombre</th>
           <th>Primer Apellido</th>
           <th>Segundo Apellido</th>
-         
+
 
           <th style="width: 120px;">Más</th>
         </tr>
@@ -25,7 +25,7 @@
           <td><?php echo $row[1]; ?></td>
           <td><?php echo $row[2]; ?></td>
           <td><?php echo $row[3]; ?></td>
-          
+
           <td>
             <div class="dropdown">
               <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Opciones<span class="caret"></span></button>
@@ -38,10 +38,9 @@
           </tr>
           <?php endwhile; ?>
           <?php else: ?>
-        <div style="background-color:#b2ff59" class="alert alert-info">
+        <div class="alert alert-info">
           <center><strong>¡Información!</strong> No hay solicitantes registrados.</center>
         </div>
         <?php endif ?>
     </tbody>
   </table>
-

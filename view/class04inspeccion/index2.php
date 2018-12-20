@@ -1,9 +1,14 @@
 <?php $result = $this->pu04inspeccion->listarTraInspector(); ?>
 
+
     <div class="container-fluid">
-        <h2>Listado de Trámites</h2>   
-   
-    <br><br>    
+      <div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>¡ Si estas conectado desde un celular o tablet, preferiblemente utilícelo en forma horizontal !</strong>
+      </div>
+        <h2>Listado de Trámites</h2>
+
+    <br><br>
     <?php if ($result->num_rows): ?>
       <table class="display table table-bordered" cellpadding="0" cellspacing="0" border="0" width="100%" id="grilla-puestos">
         <thead>
@@ -15,7 +20,7 @@
             <th style="width: 120px;">Más</th>
           </tr>
         </thead>
-        <tbody>       
+        <tbody>
           <?php while ($row = mysqli_fetch_array($result)):?>
             <tr>
               <td><?php echo $row[0]; ?></td>
@@ -37,7 +42,7 @@
                     <!-- <li>
                         <a href="?c=class04inspeccion&m=editarPermisos&id=<?php echo $row[0]; ?>">
                         <span class="glyphicon glyphicon-pencil"></span> Editar</a>
-                    </li> 
+                    </li>
                     <li>
                       <a href="?c=class04inspeccion&m=eliminar&id=<?php echo $row[0]; ?>">
                        <span  class="glyphicon glyphicon-trash"></span> Eliminar</a>
@@ -59,7 +64,7 @@
               </tr>
             <?php endwhile; ?>
           <?php else: ?>
-            <div style="background-color:#b2ff59" class="alert alert-info">
+            <div class="alert alert-info">
               <center>
                 <strong>¡Información!</strong> No hay información sobre trámites.
               </center>

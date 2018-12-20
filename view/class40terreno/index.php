@@ -1,9 +1,9 @@
 <?php $result = $this->class40terreno->listar(); ?>
-
-  <center><h2>Listado de Terrenos</h2></center>   
-  <a  href="?c=class40terreno&m=agregar" class="btn btn-primary" role="button">Registrar Terreno</a>    
+<div class="container-fluid">
+  <center><h2>Listado de Terrenos</h2></center>
+  <a  href="?c=class40terreno&m=agregar" class="btn btn-primary" role="button">Registrar Terreno</a>
   <br>
-  <br>    
+  <br>
   <?php if ($result->num_rows): ?>
     <table class="display table table-bordered" cellpadding="0" cellspacing="0" border="0" width="100%" id="grilla-usuarios">
       <thead>
@@ -14,7 +14,7 @@
           <th>Distrito</th>
           <th>Barrio</th>
           <th>Dirreción</th>
-         
+
 
           <th style="width: 120px;">Más</th>
         </tr>
@@ -27,7 +27,7 @@
           <td><?php echo $row[2]; ?></td>
           <td><?php echo $row[3]; ?></td>
            <td><?php echo $row[4]; ?></td>
-          
+
           <td>
             <div class="dropdown">
               <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Opciones<span class="caret"></span></button>
@@ -40,10 +40,10 @@
           </tr>
           <?php endwhile; ?>
           <?php else: ?>
-        <div style="background-color:#b2ff59" class="alert alert-info">
-          <center><strong>¡Información!</strong> No hay Terreno registrado.</center>
+        <div class="alert alert-info">
+          <center><strong>¡Información!</strong> No hay terrenos registrados.</center>
         </div>
         <?php endif ?>
     </tbody>
   </table>
-
+</div>

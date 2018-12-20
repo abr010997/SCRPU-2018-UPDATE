@@ -7,7 +7,11 @@
 
 
    <div class="container-fluid">
-     
+     <div class="row">
+     <div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>¡ Si estas conectado desde un celular o tablet, preferiblemente utilícelo en forma horizontal !</strong>
+    </div>
   <center><h2>Agregar Nuevo Trámite</h2></center>
     <form action="?c=class04ingresotramite&m=agregar" enctype="multipart/form-data" method="post" >
       <div class="form-group row">
@@ -50,8 +54,9 @@
         </div>
       </div>
       <br> <br> <br>
+       <br> <br> <br>
 
- <div class="container-fluid  well   "> 
+ <div class="container-fluid  well   ">
       <div class="form-group">
         <p><b>Accesos :</b></p>
       <?php while ($row = mysqli_fetch_array($result1)):?>
@@ -60,10 +65,10 @@
         </label>
       <?php endwhile; ?>
       </div>
-      </div><br>
+      </div><br><br>
 
 
-       <div class="container-fluid  well   "> 
+       <div class="container-fluid  well   ">
       <div class="form-group">
         <p><b>Plan Regulador :</b></p>
       <?php while ($row = mysqli_fetch_array($result2)):?>
@@ -72,9 +77,9 @@
         </label>
       <?php endwhile; ?>
       </div>
-      </div><br>
+      </div><br><br>
 
-       <div class="container-fluid  well   "> 
+       <div class="container-fluid  well   ">
       <div class="form-group">
         <p><b>Nicoya :</b></p>
       <?php while ($row = mysqli_fetch_array($result3)):?>
@@ -83,9 +88,9 @@
         </label>
       <?php endwhile; ?>
       </div>
-      </div><br>
+      </div><br><br>
 
-      <div class="container-fluid  well   "> 
+      <div class="container-fluid  well   ">
       <div class="form-group">
         <p><b>Sámara :</b></p>
       <?php while ($row = mysqli_fetch_array($result4)):?>
@@ -94,9 +99,9 @@
         </label>
       <?php endwhile; ?>
       </div>
-      </div><br>
+      </div><br><br>
 
-      <div class="container-fluid  well   "> 
+      <div class="container-fluid  well   ">
       <div class="form-group">
         <p><b>Afectación de Áreas de Protección :</b></p>
       <?php while ($row = mysqli_fetch_array($result5)):?>
@@ -105,8 +110,8 @@
         </label>
       <?php endwhile; ?>
       </div>
-      </div><br>
-      
+      </div><br><br>
+
 
        <tr>
       <td><label class="control-label">Imagen Terreno</label></td>
@@ -114,8 +119,8 @@
     </tr>
 
 <br><br>
-      <button type="submit" name="btnsave" class="btn btn-success">Guardar Trámite</button> 
-      <a id="regresar" class="btn btn-danger" role="button" href="?c=class04ingresotramite&m=index">Regresar</a>  
+      <button type="submit" name="btnsave" class="btn btn-success">Guardar Trámite</button>
+      <a id="regresar" class="btn btn-danger" role="button" href="?c=class04ingresotramite&m=index">Regresar</a>
      </form>
 
 <br><br><br>
@@ -124,6 +129,6 @@
 
 
 
-      
 
+</div>
 </div>

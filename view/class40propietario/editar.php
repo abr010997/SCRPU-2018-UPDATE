@@ -1,7 +1,8 @@
 
-    <center><h2>Editar propietario: <?php echo $this->class40propietario->getAtributo('PU40NOMPROPIE');?> </h2></center>
-    
+    <center><h2>Editar Propietario: <?php echo $this->class40propietario->getAtributo('PU40NOMPROPIE');?> </h2></center>
+
       <form action="?c=class40propietario&m=editar" method="post">
+      <div class="col-sm-offset-3 col-sm-6">
       <div class="form-group">
         <label for="PU40CEDPROPIE">Cédula:</label>
         <input type="text" class="form-control" id="PU40CEDPROPIE" name="PU40CEDPROPIE" value="<?php echo $this->class40propietario->getAtributo('PU40CEDPROPIE');?>" readonly>
@@ -18,8 +19,9 @@
         <label for="PU40APE2PROPIE">Segundo Apellido:</label>
         <input type="text" class="form-control" id="PU40APE2PROPIE" name="PU40APE2PROPIE" value="<?php echo $this->class40propietario->getAtributo('PU40APE2PROPIE');?> ">
       </div>
-       
 
-      <button type="submit" class="btn btn-success">Editar Propietario</button> 
-      <a href="?c=class40propietario&m=index" class="btn btn-danger" role="button">Regresar</a>    
+
+      <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-floppy-saved"></span> Editar </button>
+      <a href="?c=class40propietario&m=index" class="btn btn-danger" role="button"> Regresar</a>
+    </div>
     </form>
