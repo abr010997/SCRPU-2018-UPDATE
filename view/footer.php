@@ -1,5 +1,5 @@
-  
-        
+
+
         </div>
         <!-- /page content -->
         </div>
@@ -37,8 +37,6 @@
     <script src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
     <!-- Switchery -->
     <script src="vendors/switchery/dist/switchery.min.js"></script>
-    <!-- Select2 -->
-    <script src="vendors/select2/dist/js/select2.full.min.js"></script>
     <!-- Parsley -->
     <script src="vendors/parsleyjs/dist/parsley.min.js"></script>
     <!-- Autosize -->
@@ -49,7 +47,7 @@
     <script src="vendors/starrr/dist/starrr.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="build/js/custom.min.js"></script>
-  
+
 
 
 
