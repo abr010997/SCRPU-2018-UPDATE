@@ -41,6 +41,12 @@ class class04inspeccionController
 		require_once 'view/class04inspeccion/index2.php';
 		require_once 'view/footer.php';
 	}
+	public function index3()
+	{
+		require_once 'view/header.php';
+		require_once 'view/class04inspeccion/index3.php';
+		require_once 'view/footer.php';
+	}
 	public function terminarInspeccion()
 	{
 		if($_POST){
