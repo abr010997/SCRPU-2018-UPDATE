@@ -1,4 +1,4 @@
-
+<div class="container-fluid">
     <center><h2>Editar Propietario: <?php echo $this->class40propietario->getAtributo('PU40NOMPROPIE');?> </h2></center>
 
       <form action="?c=class40propietario&m=editar" method="post">
@@ -25,3 +25,4 @@
       <a href="?c=class40propietario&m=index" class="btn btn-danger" role="button"> Regresar</a>
     </div>
     </form>
+</div>
