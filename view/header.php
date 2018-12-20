@@ -92,7 +92,7 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-home"></i> Inicio <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="?c=classprincipal&m=index">Dashboard</a></li>
                     </ul>
@@ -194,7 +194,7 @@
               </div>
               <?php if ($idpuesto == 1 || $idpuesto == 2) : ?>
               <div class="menu_section">
-                <h3>Live On</h3>
+                <h3>Mantenimientos</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-sitemap"></i> Mantenimientos Menu <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
@@ -379,7 +379,7 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="container-fluid">
+         <!-- <div class="container-fluid"> -->
           <div class="x_panel">
           
             

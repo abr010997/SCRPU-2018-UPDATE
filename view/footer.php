@@ -1,8 +1,8 @@
-   </div>
-        </div>
+  
+        
         </div>
         <!-- /page content -->
-
+        </div>
         <!-- footer content -->
         <footer>
           <div class="text-center">
