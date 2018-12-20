@@ -110,11 +110,17 @@
                   <?php endif; ?>
                     <ul class="nav child_menu">
                       <li>
+                      <a href="?c=class04inspeccion&m=index2">Trámites sin Inspección</a>
+                      </li>
+                      <li>
                       <a href="?c=class04inspeccion">Inspección</a>
                       </li>
 
                       <li>
                       <a href="?c=class04inspeccion&m=index1">Trámites Inspeccionados</a>
+                      </li>
+                       <li>
+                      <a href="?c=class04inspeccion&m=index3">Reportes de Inspección</a>
                       </li>
                     </ul>
                   </li>
