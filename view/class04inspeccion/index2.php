@@ -1,11 +1,10 @@
 <?php $result = $this->pu04inspeccion->listarTraInspector(); ?>
 
-
     <div class="container-fluid">
-      <div class="alert alert-success alert-dismissable">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>¡ Si estas conectado desde un celular o tablet, preferiblemente utilícelo en forma horizontal !</strong>
-      </div>
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>¡Alerta!</strong> Si estas conectado desde un celular o tablet, preferiblemente utilícelo en forma horizontal.
+        </div>
         <h2>Listado de Trámites</h2>
 
     <br><br>

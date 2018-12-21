@@ -1,10 +1,10 @@
 <?php $result = $this->pu04inspeccion->listar(); ?>
 
-    <div class="container-fluid">
-      <div class="alert alert-success alert-dismissable">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>¡ Si estas conectado desde un celular o tablet, preferiblemente utilícelo en forma horizontal !</strong>
-      </div>
+<div class="container-fluid">
+  <div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>¡Alerta!</strong> Si estas conectado desde un celular o tablet, preferiblemente utilícelo en forma horizontal.
+  </div>
 
         <h2>Listado de Trámites</h2>
     <a href="?c=class04inspeccion&m=index1" class="btn btn-primary" role="button">Ver Trámites Inspecionados</a>
@@ -73,5 +73,4 @@
         </tbody>
 
       </table>
-
-    </div>
+        </div>

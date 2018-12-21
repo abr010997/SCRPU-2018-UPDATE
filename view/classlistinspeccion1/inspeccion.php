@@ -1,15 +1,15 @@
-<?php $result = $this->classlistinspeccion1->listar(); ?> 
+<?php $result = $this->classlistinspeccion1->listar(); ?>
 
 <!-- LISTA LOS TRAMITES CON DISTRITOS 1234  -->
     <?php if ($result->num_rows): ?>
-      <table class="display table table-bordered" cellpadding="0" cellspacing="0" border="0" width="100%" id="grilla-puestos">
+        <table class="display table table-bordered" cellpadding="0" cellspacing="0" border="0" width="100%">
         <thead>
           <tr>
             <th>Código de Trámite</th>
             <th>Fecha Ingreso al Sistema (aa/mm/dd)</th>
              <th>Fecha Ingreso a Plataforma (aa/mm/dd)</th>
             <th>Distrito</th>
-            
+
           </tr>
         </thead>
         <tbody>
@@ -19,11 +19,11 @@
               <td><?php echo $row[1]; ?></td>
               <td><?php echo $row[2]; ?></td>
               <td><?php echo $row[3]; ?></td>
-             
+
               </tr>
             <?php endwhile; ?>
           <?php else: ?>
-            <div style="background-color:#b2ff59" class="alert alert-info">
+            <div class="alert alert-info">
               <center>
                 <strong>¡Información!</strong> No hay información.
               </center>
@@ -31,4 +31,3 @@
           <?php endif ?>
         </tbody>
       </table>
-      <script src="public/js/indicetablas.js"></script>
