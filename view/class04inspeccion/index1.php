@@ -1,10 +1,10 @@
 <?php $result = $this->pu04inspeccion->listarTraRealizado(); ?>
 
-    <div class="container-fluid">
-      <div class="alert alert-success alert-dismissable">
+<div class="container-fluid">
+    <div class="alert alert-success alert-dismissable">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>¡ Si estas conectado desde un celular o tablet, preferiblemente utilícelo en forma horizontal !</strong>
-      </div>
+      <strong>¡Alerta!</strong> Si estas conectado desde un celular o tablet, preferiblemente utilícelo en forma horizontal.
+    </div>
 
         <h2> Trámites Inspeccionados</h2>
     <a href="?c=class04inspeccion&m=index" class="btn btn-primary" role="button">Regresar</a>
