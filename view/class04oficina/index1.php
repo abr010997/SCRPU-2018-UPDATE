@@ -1,7 +1,9 @@
 <?php $result = $this->class04oficina->listarTraRealizado(); ?>
-
-    <div class="container-fluid">
+ 
+<div class="container-fluid">
+  
         <h2> Trámites Inspeccionados</h2>   
+     
     <a href="?c=class04oficina&m=index" class="btn btn-primary" role="button">Regresar</a>
    
     <br><br>    
@@ -65,5 +67,8 @@
         </tbody>
 
       </table>
+      </div>
+</div>
 
-    </div>
+
+

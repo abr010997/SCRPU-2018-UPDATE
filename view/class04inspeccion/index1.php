@@ -1,10 +1,15 @@
 <?php $result = $this->pu04inspeccion->listarTraRealizado(); ?>
 
     <div class="container-fluid">
-        <h2> Trámites Inspeccionados</h2>   
+      <div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>¡ Si estas conectado desde un celular o tablet, preferiblemente utilícelo en forma horizontal !</strong>
+      </div>
+
+        <h2> Trámites Inspeccionados</h2>
     <a href="?c=class04inspeccion&m=index" class="btn btn-primary" role="button">Regresar</a>
-   
-    <br><br>    
+
+    <br><br>
     <?php if ($result->num_rows): ?>
       <table class="display table table-bordered" cellpadding="0" cellspacing="0" border="0" width="100%" id="grilla-puestos">
         <thead>
@@ -25,13 +30,13 @@
               <td><?php echo $row[2]; ?></td>
               <td><?php echo $row[3]; ?></td>
               <td><?php echo $row[4]; ?></td>
-              
+
               <td>
                 <div class="dropdown">
                 <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Opciones
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
-                     <?php 
+                     <?php
                     if ($idpuesto == 1 || $idpuesto == 2) :
                      ?>
                     <li>
@@ -42,7 +47,7 @@
                     <!-- <li>
                         <a href="?c=class04inspeccion&m=editarPermisos&id=<?php echo $row[0]; ?>">
                         <span class="glyphicon glyphicon-pencil"></span> Editar</a>
-                    </li> 
+                    </li>
                     <li>
                       <a href="?c=class04inspeccion&m=eliminar&id=<?php echo $row[0]; ?>">
                        <span  class="glyphicon glyphicon-trash"></span> Eliminar</a>
@@ -51,7 +56,7 @@
                       <a href="?c=class04inspeccion&m=ver&id=<?php echo $row[0]; ?>">
                        <span class="glyphicon glyphicon-eye-open"></span> ver</a>
                     </li>-->
-                       <?php 
+                       <?php
                     if ($idpuesto == 1 || $idpuesto == 2) :
                      ?>
                      <li>
@@ -62,14 +67,14 @@
                     <li>
                       <a href="?c=classreporte&m=rInspeccion&id=<?php echo $row[0]; ?>" target="_blank">
                        <span class="glyphicon glyphicon-eye-open"></span> Reporte de Inspección</a>
-                    </li> 
-                  
+                    </li>
+
                   </ul>
                 </div></td>
               </tr>
             <?php endwhile; ?>
           <?php else: ?>
-            <div style="background-color:#b2ff59" class="alert alert-info">
+            <div class="alert alert-info">
               <center>
                 <strong>¡Información!</strong> No hay información sobre trámites.
               </center>
