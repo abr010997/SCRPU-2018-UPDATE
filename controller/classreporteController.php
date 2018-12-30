@@ -1194,7 +1194,7 @@ public function rComercialCentral(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Uso Conforme de Resolución Municipal de Ubicación con el proyecto a realizar.' ),0,'J');
+		 		'Uso de Resolución Municipal de Ubicación con el proyecto a realizar.' ),0,'J');
 		 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
@@ -1982,7 +1982,7 @@ public function rResidencial(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Uso Conforme de Resolución Municipal de Ubicación con el proyecto a realizar.' ),0,'J');
+		 		'Uso de Suelo de Resolución Municipal de Ubicación con el proyecto a realizar.' ),0,'J');
 		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
 		 		$pdf->Ln(1);
 		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
@@ -2545,7 +2545,7 @@ public function rZonaComercialTuristica(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Uso Conforme de Resolución Municipal de Ubicación con el proyecto a realizar.' ),0,'J');
+		 		'Uso de Suelo de Resolución Municipal de Ubicación con el proyecto a realizar.' ),0,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode(
 		 		'La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, Ley de Uso, Manejo y Conservación de Suelo N° 7779, Ley forestal N°7575 y demás Legislación Vigente.' ),0,'J');
 		 		$pdf->Ln(2);
@@ -2802,7 +2802,7 @@ public function rZonaResidencialPrivada(){
 			 	$pdf->Ln(2);
 			 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
 			 	$pdf->MultiCell(190,5,utf8_decode(
-			 		'Uso Conforme de Resolución Municipal con el proyecto a desarrollar, en cumplimiento con el art.7 Zonas Privadas del Reglamento de Zonificación del Plan Regulador de Samara., debe de cumplir: ' ),0,'J');
+			 		'Uso de Suelo de Resolución Municipal con el proyecto a desarrollar, en cumplimiento con el art.7 Zonas Privadas del Reglamento de Zonificación del Plan Regulador de Samara., debe de cumplir: ' ),0,'J');
 			 	$pdf->Ln(2);
 			 	// Inicio Leyes
 			 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
@@ -3960,7 +3960,7 @@ public function rZonaHotelera(){
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 			'Uso Conforme de Resolución Municipal de Ubicación con el proyecto a realizar, debe de cumplir' ),0,'J');
+		 			'Uso de Suelo de Resolución Municipal de Ubicación con el proyecto a realizar, debe de cumplir' ),0,'J');
 		 	// Inicio Leyes
 		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
 		 		$pdf->Ln(1);
@@ -4254,7 +4254,7 @@ public function rFueraPlanRegulador(){
 		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
 
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Uso de Suelo Conforme de Resolución Municipal de Ubicación con el proyecto a realizar, condicionado a contar con la disponibilidad de agua para el proyecto a realizar por parte de la entidad competente (Asada o AyA). Basado en el Decreto de Sequía N° 38642-MP-MAG.' ),0,'J');
+		 		'Uso de Suelo de Resolución Municipal de Ubicación con el proyecto a realizar, condicionado a contar con la disponibilidad de agua para el proyecto a realizar por parte de la entidad competente (Asada o AyA). Basado en el Decreto de Sequía N° 38642-MP-MAG.' ),0,'J');
 		 	$pdf->Ln(1);
 		 	///observaciones
 		 	while ($obser = mysqli_fetch_array($robservacion)) {
