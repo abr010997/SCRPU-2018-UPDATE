@@ -51,6 +51,7 @@ class classreporteController
 	//Fin Samara
 
 	//DAR
+	private $DarNew;
 	private $DarInta;
 	private $MINAEClaseVIII;
 	private $DireccionAgua;
@@ -4981,6 +4982,148 @@ public function rDarAntecedentesDominio(){
 		 		utf8_decode("Municipalidad de Nicoya")
 		 		,0,1
 		 	);
+		 }
+		 $pdf->Output();
+	} catch(Exception $e){
+		$pdf->Cell(30, 10, "Sin datos".$e, 0, 0, 'C');
+		$pdf->Output();
+	}
+}
+
+
+
+public function rDarNew(){
+	$this->DarNew   			= new classreporte();
+
+	$this->constra 				= new classreporte();
+	
+	$this->actdes_res 	 		= new classreporte();
+	$this->actdes_com 	 		= new classreporte();
+	$this->actdes_com_in 		= new classreporte();
+	$this->actdes_desa 	 		= new classreporte();
+	$this->actdes_es 	 		= new classreporte();
+	
+	$this->desceg 		 		= new classreporte();
+	
+	$this->leyesAccesos 		= new classreporte();
+	$this->leyesDesarroSect 	= new classreporte();
+	$this->leyesEspacioGeo 		= new classreporte();
+	$this->leyesActividades 	= new classreporte();
+	$this->leyesAspectoBio 		= new classreporte();
+	$this->leyesPatente 		= new classreporte();
+	$this->leyesPlan 		 	= new classreporte();
+	$this->leyesRedVial 		= new classreporte();
+	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
+	
+	$this->apro_dene 			= new classreporte();
+	$this->observacion          = new classreporte();
+	$this->datosresiprivada     = new classreporte();
+
+	$this->DarNew->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLista 			= $this->DarNew->listarDarNew();
+
+	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rDesceg 			= $this->desceg->listarDESCEG();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
+
+	$this->actdes_res->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesRes 		= $this->actdes_res->listarACTDESRES();
+	$this->actdes_com->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesCom 		= $this->actdes_com->listarACTDESCOM();
+	$this->actdes_com_in->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesComIn 		= $this->actdes_com_in->listarACTDESCOMIN();
+	$this->actdes_desa->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesDesa 		= $this->actdes_desa->listarACTDESDESA();
+	$this->actdes_es->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesEs 			= $this->actdes_es->listarACTDESES();
+
+	$this->leyesAccesos->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAccesos 		= $this->leyesAccesos->listarLeyAccesos();
+	$this->leyesDesarroSect->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesDesarroSect 	= $this->leyesDesarroSect->listarLeyDesarroSect();
+	$this->leyesEspacioGeo->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesEspacioGeo 	= $this->leyesEspacioGeo->listarLeyEspacioGeo();
+	$this->leyesActividades->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesActividades	= $this->leyesActividades->listarLeyActividades();
+	$this->leyesAspectoBio->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAspectoBio 	= $this->leyesAspectoBio->listarLeyAspectoBio();
+	$this->leyesPatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesPatente 		= $this->leyesPatente->listarLeyPatente();
+	$this->leyesPlan->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesPlan 		= $this->leyesPlan->listarLeyPlan();
+	$this->leyesRedVial->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
+	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 		= $this->leyesServi->listarLeyServi();
+
+	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rApro_Dene 		= $this->apro_dene->listarR_APRO_DENE();
+
+	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$robservacion 		= $this->observacion->listarR_OBSERV_TRAMITE();
+
+	$pdf 				= new PDF();
+	$pdf->AliasNbPages();
+	$pdf->AddPage();
+	$pdf->SetFillColor(255,255,255);
+	$pdf->SetFont('Arial','B',11);
+	try
+	{
+		$pdf->Cell(185, 5, utf8_decode('DEPREVIO A RESOLVER'), 0, 0, 'C');
+		$pdf->Ln(4);
+		//Muestras los primeros datos que dan referencia a los nombres, planos, terrenos, numero de finca... etc
+		while ($row = mysqli_fetch_array($rLista)) {
+			$pdf->MultiCell(50,5,$row[0],0,1);
+			// Inicio Consecutivo
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,utf8_decode("Nº OF-DPU-".$cons[0]."-".$cons[1]."-".$cons[2]),0,'L');
+		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
+		 	$pdf->MultiCell(100,5,utf8_decode("Señor(a):"));
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(100,5,utf8_decode($row[2]." ".$row[3]." ".$row[4]),0,1,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(40,5,utf8_decode("Cédula: ".$row[5]),0,1,'J');
+		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
+		 	$pdf->SetFont('Arial','B',10);
+		 	$pdf->MultiCell(180,5,utf8_decode(
+		 		"Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula/Jurídica ".$row[11].", Ubicada en ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya; indicando lo siguiente:" ),0,1,'J' );
+		 	$pdf->Ln(1);
+		 		
+
+		 	$pdf->Ln(2);
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(100,5,"Por lo tanto",0,0);
+		 	$pdf->Ln(1);
+		 	while ($obser = mysqli_fetch_array($robservacion)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	
+		 	}// Finaliza Consecutivo
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Nota: De conformidad con lo dispuesto en el artículo 162 del código municipal, puede interponer los recursos de revocatoria con apelación en subsidio dentro del plazo de los cinco días hábiles contados a partir del día siguiente de la presente notificación, que resuelven el Departamento de Planificación Urbana en revocatoria y el Alcalde Municipal en apelación subsidiaria, ello en caso de que se decida interponer uno o ambos recursos. Una vez este proceso sea subsanado se deberá tramitar por medio de correspondencia adjuntando copia de este oficio y si todo se encuentra conforme, se procederá a brindar la Resolución de Ubicación de Usos de Suelo para la Actividad Deseada. Basado en el Artículo 6 de la ley 8220 se otorgará en plazo de 10 días avilés para presentar lo solicitado.' ),0,'J');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
+		 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
+		 	$pdf->Ln(5);
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
+		 	$pdf->Ln(3);
+		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: __________________ Hora: __________________'),0,0,'R');
+		 	$pdf->Ln(3);
+		 	$pdf->MultiCell(60,5,"__________________________",0,1);
+		 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
+		 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
+		 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
 		 }
 		 $pdf->Output();
 	} catch(Exception $e){

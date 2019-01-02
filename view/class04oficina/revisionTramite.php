@@ -30,23 +30,10 @@
             <input type="text" class="form-control" id="PU04IDTRA" name="PU04IDTRA" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
         </div>
       </div>
-          <?php  $fecha = $this->class04oficina->getAtributo('PU04FETRA'); ?>
-       <div class="container-fluid">
-          <div class="form-group row">
-            <div class="col-xs-5">
-             <label for="PU04FETRA">Fecha de Revisión de Expediente:</label>
-             <input type="date" class="form-control" name="PU04FETRA" value="<?php echo $this->class04oficina->getAtributo('PU04FETRA');?>" readonly>
-             </div>
-          </div>
-      </div>
+         
 
 
-      <div class="form-group row">
-           <div class="col-md-5">
-          <label for="PU04IDDISTRITOTRA">Distrito:</label>
-          <input type="text" class="form-control" id="PU04IDDISTRITOTRA" name="PU04IDDISTRITOTRA" value="<?php echo $this->class04oficina->getAtributo('PU04IDDISTRITOTRA');?>" readonly>
-          </div>
-      </div>
+      
   
 
          </form>

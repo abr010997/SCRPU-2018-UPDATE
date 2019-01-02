@@ -99,6 +99,9 @@
                       <a href="?c=classreporte&m=rFueraPlanRegulador&id=<?php echo $row[0]; ?>" target="_blank"> rFueraPlanRegulador</a>
                   </li>
                   <li class="divider">DAR</li>
+                   <li>
+                      <a href="?c=classreporte&m=rDarNew&id=<?php echo $row[0]; ?>" target="_blank"> rDar</a>
+                  </li>
                   <li>
                       <a href="?c=classreporte&m=rDarInta&id=<?php echo $row[0]; ?>" target="_blank"> rDarInta</a>
                   </li>
