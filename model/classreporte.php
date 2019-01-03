@@ -266,6 +266,14 @@ public function listarZonaPrivada()
 
 
 	///DAR
+
+public function listarDarNew()
+	{
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
 	public function listarDarInta()
 	{
 		$sql = "CALL R_RESI('$this->PU04IDTRA');";

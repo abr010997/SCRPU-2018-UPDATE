@@ -85,7 +85,7 @@
     <div class="resp-tabs-container hor_1">
 
       <div class="container-fluid" id="tabconten1">
-        <div class="container-fluid"
+        <div class="container-fluid">
         <form method="POST" action="?c=class04inspeccion&m=editarEspaciosGeo">
           <div class="alert alert-info alert-dismissable">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
