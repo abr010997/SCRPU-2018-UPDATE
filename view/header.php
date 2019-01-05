@@ -96,7 +96,7 @@
                   <?php endif; ?>
                     <ul class="nav child_menu">
                         <li>
-                      <a href="?c=class04ingresotramite">Ingreso de Trámite</a>
+                      <a href="?c=class04ingresotramite&m=index">Ingreso de Trámite</a>
                       </li>
                        <li>
                       <a href="?c=class04tramite&m=index2">Tramites Distritos</a>
@@ -111,7 +111,7 @@
                       <a href="?c=class04inspeccion&m=index2">Trámites sin Inspección</a>
                       </li>
                       <li>
-                      <a href="?c=class04inspeccion">Inspección</a>
+                      <a href="?c=class04ingresotramite&m=index2">Inspección</a>
                       </li>
 
                       <li>

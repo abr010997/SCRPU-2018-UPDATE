@@ -47,17 +47,17 @@
     <div class="form-group row ">
       <div class=" col-xs-2 text-left">
         <label for="PU04NORTE">Norte:</label>
-        <input type="text" class="form-control" id="PU04NORTE" name="PU04NORTE">
+        <input type="text" class="form-control" id="PU04NORTE" name="PU04NORTE"  placeholder="Norte" maxlength="11" required>
       </div>
 
       <div class="col-xs-2 text-left">
         <label for="PU04ESTE">Este:</label>
-        <input type="text" class="form-control" id="PU04ESTE" name="PU04ESTE">
+        <input type="number" class="form-control" id="PU04ESTE" name="PU04ESTE" placeholder="Este"  max="99999999999" required>
       </div>
 
       <div class="col-xs-2 text-left">
         <label for="PU04ALTITUD">Altitud:</label>
-        <input type="text" class="form-control" id="PU04ALTITUD" name="PU04ALTITUD"><br>
+        <input type="number" class="form-control" id="PU04ALTITUD" name="PU04ALTITUD" placeholder="Altitud" maxlength="11" required><br>
       </div>
     </div>
     <button type="submit" class="btn btn-success ">Guardar</button>

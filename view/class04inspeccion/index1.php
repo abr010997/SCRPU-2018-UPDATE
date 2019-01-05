@@ -5,9 +5,9 @@
       <button type="button" class="close" data-dismiss="alert">&times;</button>
       <strong>¡Alerta!</strong> Si estas conectado desde un celular o tablet, preferiblemente utilícelo en forma horizontal.
     </div>
-
-        <h2> Trámites Inspeccionados</h2>
-    <a href="?c=class04inspeccion&m=index" class="btn btn-primary" role="button">Regresar</a>
+<div class="container-fluid well">
+        <center><h2>Trámites Inspeccionados</h2></center>
+  </div>
 
     <br><br>
     <?php if ($result->num_rows): ?>

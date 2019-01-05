@@ -24,7 +24,7 @@
         </div>
 
       <button type="submit" class="btn btn-success">Guardar Registro Oficina</button>
-      <a id="regresar" class="btn btn-danger" role="button" href="?c=pu04inspeccion&m=index">Regresar</a>
+      <a id="regresar" class="btn btn-danger" role="button" href="?c=class04ingresotramite&m=index2">Regresar</a>
       </div>
     </form>
 

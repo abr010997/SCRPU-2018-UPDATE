@@ -28,22 +28,22 @@
     <div class="container-fluid">
       <div class="col-sm-offset-4 col-sm-4">
         <div class="form-group row">
-          <label for="PU04IDTRA">Código del Trámite:</label>
-          <input type="text" class="form-control" id="PU04IDTRA" name="PU04IDTRA">
+          <label for="PU04IDTRA">* Código del Trámite:</label>
+          <input type="number" class="form-control" id="PU04IDTRA" name="PU04IDTRA" placeholder="Código" maxlength="11" required>
         </div>
 
 
         <div class="form-group row">
-          <label for="PU04FETRA">Fecha de Revisión de Expediente:</label>
-          <input type="date" class="form-control" name="PU04FETRA" id="">
+          <label for="PU04FETRA">* Fecha de Revisión de Expediente:</label>
+          <input type="date" class="form-control" name="PU04FETRA" id="" required>
         </div>
 
 
         <div class="form-group row">
 
-          <label for="PU04IDDISTRITO">Distrito al que pertenece: </label>
-          <select class="form-control selectpicker" name="PU04IDDISTRITO" id="PU04IDDISTRITO">
-            <option value="Seleccione">Seleccione...</option>
+          <label for="PU04IDDISTRITO">* Distrito al que pertenece: </label>
+          <select class="form-control selectpicker" name="PU04IDDISTRITO" id="PU04IDDISTRITO"  required>
+            <option value="">Seleccione...</option>
             <option value="Nicoya">Nicoya</option>
             <option value="Masión">Masión</option>
             <option value="San Antonio">San Antonio</option>
@@ -68,10 +68,10 @@
         </ul>
       </div>
       <div class="form-group">
-        <p><b>Accesos :</b></p>
+        <p><b>* Accesos :</b></p>
         <?php while ($row = mysqli_fetch_array($result1)):?>
           <label class="checkbox-inline">
-            <input type="checkbox" value="<?php echo $row['PU38IDSERVIDUMBRE'];?>" name="pu38servi[]"><?php echo $row['PU38DESCRIPSERVIDUM']; ?>
+            <input type="checkbox" value="<?php echo $row['PU38IDSERVIDUMBRE'];?>" name="pu38servi[]"  ><?php echo $row['PU38DESCRIPSERVIDUM']; ?>
           </label>
         <?php endwhile; ?>
       </div>
@@ -88,10 +88,10 @@
         </ul>
       </div>
       <div class="form-group">
-        <p><b>Plan Regulador :</b></p>
+        <p><b>* Plan Regulador :</b></p>
         <?php while ($row = mysqli_fetch_array($result2)):?>
           <label class="checkbox-inline">
-            <input type="checkbox" value="<?php echo $row['PU26IDPLAN'];?>" name="pu26planreg[]"><?php echo $row['PU26PLNDESC']; ?>
+            <input type="checkbox" value="<?php echo $row['PU26IDPLAN'];?>" name="pu26planreg[]" ><?php echo $row['PU26PLNDESC']; ?>
           </label>
         <?php endwhile; ?>
       </div>
@@ -108,7 +108,7 @@
         </ul>
       </div>
       <div class="form-group">
-        <p><b>Nicoya :</b></p>
+        <p><b>* Nicoya :</b></p>
         <?php while ($row = mysqli_fetch_array($result3)):?>
           <label class="checkbox-inline">
             <input type="checkbox" value="<?php echo $row['PU26IDDESCNICOYASAMA'];?>" name="pu26planreg1[]"><?php echo $row['PU26DESCACNICOYASAMA']; ?>
@@ -128,7 +128,7 @@
         </ul>
       </div>
       <div class="form-group">
-        <p><b>Sámara :</b></p>
+        <p><b>* Sámara :</b></p>
         <?php while ($row = mysqli_fetch_array($result4)):?>
           <label class="checkbox-inline">
             <input type="checkbox" value="<?php echo $row['PU26IDDESCNICOYASAMA'];?>" name="pu26planreg1[]"><?php echo $row['PU26DESCACNICOYASAMA']; ?>
@@ -148,7 +148,7 @@
         </ul>
       </div>
       <div class="form-group">
-        <p><b>Afectación de Áreas de Protección :</b></p>
+        <p><b>* Afectación de Áreas de Protección :</b></p>
         <?php while ($row = mysqli_fetch_array($result5)):?>
           <label class="checkbox-inline">
             <input type="checkbox" value="<?php echo $row['PU13IDAAP'];?>" name="pu13aap[]"><?php echo $row['PU13DESCAAP']; ?>
