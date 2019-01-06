@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>SCRPU</title>
-	
+
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="assets/login.css">
@@ -13,7 +13,7 @@
         <div class="row vertical-offset-100">
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
-                    <div class="panel-heading">                     
+                    <div class="panel-heading">
                         <div class="row-fluid user-row">
                             <img src="assets/imagenes/planificacion.jpg" class="img-thumbnail img-responsive" alt="Conxole Admin"/>
                         </div>
@@ -24,8 +24,8 @@
                                 <label class="panel-login">
                                     <div class="login_result"></div>
                                 </label>
-                                <input class="form-control" placeholder="Usuario" id="usuario" name="usuario" type="text">
-                                <input class="form-control" placeholder="Contraseña" id="clave" name="clave" type="password">
+                                <input class="form-control" id="usuario" name="usuario" type="text" placeholder="Usuario" maxlength="30" required>
+                                <input class="form-control" placeholder="Contraseña" id="clave" name="clave" type="password" maxlength="30"  required>
                                 <br></br>
                                 <input class="btn btn-lg btn-success btn-block" type="submit" id="submit" name="submit" value="Iniciar »">
                             </fieldset>

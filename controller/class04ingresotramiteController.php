@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'model/class38servidumbres.php';
 require_once 'model/class26planreg.php';
 require_once 'model/class04ingresotramite.php';
@@ -17,19 +17,35 @@ class class04ingresotramiteController
 	{
 		$this->class04ingresotramite = new class04ingresotramite();
 	}
+	// index de ingreso tramite
 	public function index()
 	{
 		require_once 'view/header.php';
 		require_once 'view/class04ingresotramite/index.php';
 		require_once 'view/footer.php';
 	}
+// index de Inspeccion D 1-2-3-4-
+	public function index2()
+	{
+		require_once 'view/header.php';
+		require_once 'view/class04ingresotramite/index2.php';
+		require_once 'view/footer.php';
+	}
+	// index de Inspeccion D 5-6-7
+		public function index3()
+		{
+			require_once 'view/header.php';
+			require_once 'view/class04ingresotramite/index3.php';
+			require_once 'view/footer.php';
+		}
+
 	public function agregar()
 	{
 		if ($_POST) {
 			$this->class04ingresotramite->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
 			$this->class04ingresotramite->setAtributo('PU04FETRA',$_POST['PU04FETRA']);
 			if (isset($_POST['PU04IDDISTRITO'])) {
-				
+
 				if ($_POST['PU04IDDISTRITO'] == 'Seleccione') {
 					$id = 0;
 				}
@@ -56,7 +72,7 @@ class class04ingresotramiteController
 				}
 			}
 			$this->class04ingresotramite->setAtributo('PU04IDDISTRITO',$id);
-						
+
 			$this->class04ingresotramite->guardar($_POST['pu38servi'],$_POST['pu26planreg'],
 				$_POST['pu26planreg1'],$_POST['pu13aap']);
 
@@ -82,7 +98,7 @@ class class04ingresotramiteController
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////
-	
+
 			public function editarServidumbres()
 	{
 		if($_POST){
@@ -167,16 +183,16 @@ class class04ingresotramiteController
 			$imgSize = $_FILES['user_image']['size'];
 
 
-			$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image 
+			$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image
 
 			$valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
 
 			$userpic = rand(1000,1000000).".".$imgExt;
 
-			if(in_array($imgExt, $valid_extensions)){			
+			if(in_array($imgExt, $valid_extensions)){
 				// Check file size '5MB'
 				if($imgSize < 5000000)				{
-					move_uploaded_file($tmp_dir,$upload_dir.$userpic);	
+					move_uploaded_file($tmp_dir,$upload_dir.$userpic);
 					$this->class04ingresotramite->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
 					$this->class04ingresotramite->setAtributo('PU04RUTAIMAGEN',$userpic);
 					$this->class04ingresotramite->guardarImagen();
@@ -186,7 +202,7 @@ class class04ingresotramiteController
 				}
 			}
 			else{
-				$errMSG = "Lo siento, Solo JPG, JPEG, PNG & GIF son archivos permitidos.";		
+				$errMSG = "Lo siento, Solo JPG, JPEG, PNG & GIF son archivos permitidos.";
 			}
 		}
 	}

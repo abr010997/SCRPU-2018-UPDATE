@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'model/classlistinspeccion2.php';
 class classlistinspeccion2Controller
 {
@@ -9,7 +9,9 @@ class classlistinspeccion2Controller
 	}
 
 	public function listarInspeccion2(){
+		require_once 'view/header.php';
 		require_once 'view/classlistinspeccion2/inspeccion.php';
+		require_once 'view/footer.php';
 	}
 
 	// public function index()
