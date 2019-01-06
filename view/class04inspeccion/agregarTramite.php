@@ -47,7 +47,7 @@
     <div class="form-group row ">
       <div class=" col-xs-2 text-left">
         <label for="PU04NORTE">Norte:</label>
-        <input type="text" class="form-control" id="PU04NORTE" name="PU04NORTE"  placeholder="Norte" maxlength="11" required>
+        <input type="number" class="form-control" id="PU04NORTE" name="PU04NORTE"  placeholder="Norte" max="99999999999"  required>
       </div>
 
       <div class="col-xs-2 text-left">
@@ -57,11 +57,12 @@
 
       <div class="col-xs-2 text-left">
         <label for="PU04ALTITUD">Altitud:</label>
-        <input type="number" class="form-control" id="PU04ALTITUD" name="PU04ALTITUD" placeholder="Altitud" maxlength="11" required><br>
+        <input type="number" class="form-control" id="PU04ALTITUD" name="PU04ALTITUD" placeholder="Altitud" max="99999999999"  required>
+        <br>
       </div>
     </div>
     <button type="submit" class="btn btn-success ">Guardar</button>
-    <a href="?c=class04inspeccion&m=index" class="btn btn-danger" role="button">Regresar</a>
+    <a href="?c=class04inspeccion&m=index2" class="btn btn-danger" role="button">Regresar</a>
     <br>
   </div>
 

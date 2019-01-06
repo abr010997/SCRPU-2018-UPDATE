@@ -24,13 +24,20 @@ class class04ingresotramiteController
 		require_once 'view/class04ingresotramite/index.php';
 		require_once 'view/footer.php';
 	}
-// index de Inspeccion
+// index de Inspeccion D 1-2-3-4-
 	public function index2()
 	{
 		require_once 'view/header.php';
 		require_once 'view/class04ingresotramite/index2.php';
 		require_once 'view/footer.php';
 	}
+	// index de Inspeccion D 5-6-7
+		public function index3()
+		{
+			require_once 'view/header.php';
+			require_once 'view/class04ingresotramite/index3.php';
+			require_once 'view/footer.php';
+		}
 
 	public function agregar()
 	{

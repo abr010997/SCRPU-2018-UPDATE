@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'conexion.php';
 
 class class04ingresotramite  extends Conexion
@@ -10,15 +10,15 @@ class class04ingresotramite  extends Conexion
 	private $PU04RUTAIMAGEN;
 
 	private $conexion;
-	
+
 	function __construct()
 	{
 		$this->conexion = new Conexion();
 	}
-	
+
 	public function setAtributo($PU04DESCRIPCIONLUGAR, $valor)
 	{
-		$this->$PU04DESCRIPCIONLUGAR = ucfirst(strtolower($valor)); 
+		$this->$PU04DESCRIPCIONLUGAR = ucfirst(strtolower($valor));
 	}
 
 	public function getAtributo($PU04DESCRIPCIONLUGAR)
@@ -40,7 +40,18 @@ class class04ingresotramite  extends Conexion
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
-
+	public function listarD1234()
+	{
+		$sql = "CALL SP00_LISTAR_INGRESO_TRAMITE_1234();";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+	public function listarD567()
+	{
+		$sql = "CALL SP00_LISTAR_INGRESO_TRAMITE_567();";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
 
 
 	public function guardar($pu38servidumbre,$pu26planregId,$actnicosama,$pu13aap)
@@ -48,19 +59,19 @@ class class04ingresotramite  extends Conexion
 		$sql = "CALL SP04_REGTRAMITEINFO_GUARDAR ('$this->PU04IDTRA','$this->PU04FETRA','$this->PU04IDDISTRITO');";
 		$this->conexion->consultaSimple($sql);
 
-		foreach ($pu38servidumbre as $traservi) {			
+		foreach ($pu38servidumbre as $traservi) {
 			$sql2 = "call SP38_SERVIDUMBRES_TRA_GUARDAR('$this->PU04IDTRA','$traservi');";
 			$this->conexion->consultaSimple($sql2);
 		}
-		foreach ($pu26planregId as $planregId) {			
+		foreach ($pu26planregId as $planregId) {
 			$sql3 = "call SP26_PLANREGULADOR_TRA_GUARDAR('$this->PU04IDTRA','$planregId');";
 			$this->conexion->consultaSimple($sql3);
 		}
-		foreach ($actnicosama as $activId) {			
+		foreach ($actnicosama as $activId) {
 			$sql3 = "call SP26_TRAPLAN_TRA_GUARDAR('$this->PU04IDTRA','$activId');";
 			$this->conexion->consultaSimple($sql3);
 		}
-			foreach ($pu13aap as $pu13aapId) {			
+			foreach ($pu13aap as $pu13aapId) {
 			$sql4 = "CALL SP13_AAREP_TRA_GUARDAR('$this->PU04IDTRA','$pu13aapId');";
 			$this->conexion->consultaSimple($sql4);
 		}
@@ -102,25 +113,25 @@ class class04ingresotramite  extends Conexion
 
 	public function eliminarServidumbres($idtramite)
 	{
-		$sql30 = "DELETE FROM pu38traservidumbres WHERE PU04IDTRA = '".$idtramite."';";	
-		$this->conexion->consultaSimple($sql30);		
+		$sql30 = "DELETE FROM pu38traservidumbres WHERE PU04IDTRA = '".$idtramite."';";
+		$this->conexion->consultaSimple($sql30);
 	}
 
 	public function asignarServidumbres($idtramite, $idservi)
 	{
 		$sql31 = "INSERT INTO pu38traservidumbres VALUES ('".$idtramite."','".$idservi."');";
-		$this->conexion->consultaSimple($sql31);	
+		$this->conexion->consultaSimple($sql31);
 	}
 
 	public function tieneServidumbres($idtramite, $idservi)
 	{
-		
+
 		$sql32 = "SELECT COUNT(*) AS tota130 FROM pu38traservidumbres WHERE PU04IDTRA='".$idtramite."' AND PU38IDSERVIDUMBRE='".$idservi."';";
 		$result24 = $this->conexion->consultaRetorno($sql32);
-		$row = mysqli_fetch_array($result24);		
+		$row = mysqli_fetch_array($result24);
 		return $row;
 
-	
+
 	}
 	public function getTodasServidumbres()
 	{
@@ -133,12 +144,9 @@ class class04ingresotramite  extends Conexion
 	public function guardarImagen()
 	{
 		//$sql40 = "INSERT INTO pu04fototerreno VALUES ('".$idtramite."','".$rutaimagen."');";
-		//$this->conexion->consultaSimple($sql40);	
+		//$this->conexion->consultaSimple($sql40);
 		$sql40 = "CALL SP04_RUTAIMAGEN_GUARDAR ('$this->PU04IDTRA','$this->PU04RUTAIMAGEN');";
 		$this->conexion->consultaSimple($sql40);
 	}
 }
  ?>
-
-
-

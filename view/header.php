@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 
@@ -99,8 +99,11 @@
                       <a href="?c=class04ingresotramite&m=index">Ingreso de Trámite</a>
                       </li>
                        <li>
-                      <a href="?c=class04tramite&m=index2">Tramites Distritos</a>
+                      <a href="?c=classlistinspeccion1&m=listarInspeccion1">Tramites Distritos 1-2-3-4</a>
                       </li>
+                      <li>
+                     <a href="?c=classlistinspeccion2&m=listarInspeccion2">Tramites Distritos 5-6-7</a>
+                     </li>
                     </ul>
                   </li>
                   <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
@@ -108,15 +111,17 @@
                   <?php endif; ?>
                     <ul class="nav child_menu">
                       <li>
-                      <a href="?c=class04inspeccion&m=index2">Trámites sin Inspección</a>
+                      <a href="?c=class04inspeccion&m=index2">Pendientes de Inspección</a>
                       </li>
                       <li>
-                      <a href="?c=class04ingresotramite&m=index2">Inspección</a>
+                      <a href="?c=class04ingresotramite&m=index2">Inspección Distritos 1-2-3-4</a>
                       </li>
-
                       <li>
+                      <a href="?c=class04ingresotramite&m=index3">Inspección Distritos 5-6-7</a>
+                      </li>
+                      <!-- <li>
                       <a href="?c=class04inspeccion&m=index1">Trámites Inspeccionados</a>
-                      </li>
+                      </li> -->
                        <li>
                       <a href="?c=class04inspeccion&m=index3">Reportes de Inspección</a>
                       </li>

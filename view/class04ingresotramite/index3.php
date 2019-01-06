@@ -1,4 +1,4 @@
-<?php $result = $this->class04ingresotramite->listarD1234(); ?>
+<?php $result = $this->class04ingresotramite->listarD567(); ?>
 
 <div class="container-fluid">
   <div class="alert alert-success alert-dismissable">
@@ -12,7 +12,7 @@
     <center><h1>Inspección</h1></center>
     <div class="alert alert-info alert-dismissable">
       <h2>Trámites listos para inspeccionar</h2>
-      <h2>Distritos: Nicoya, Mansión, San Antonio, Quebrada Honda.</h2>
+      <h2>Distritos: Samara, Nosara, Belen.</h2>
     </div>
   </div>
   <br>
