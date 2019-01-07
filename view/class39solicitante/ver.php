@@ -1,4 +1,5 @@
-<div class="row">
+<div class="container-fluid">
+<div class="col-sm-offset-3 col-sm-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">Listado de Solicitante:</div>
 				<div class="panel-body">
@@ -14,3 +15,4 @@
 				</div>
 			</div>
 		</div>
+	</div>

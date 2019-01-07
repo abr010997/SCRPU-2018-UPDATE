@@ -6,7 +6,7 @@
         <!-- footer content -->
         <footer>
           <div class="text-center">
-          <small>Derechos Reservados Planificación Urbana 2018</small>
+          <small>Derechos Reservados Planificación Urbana 2019</small>
         </div>
           <div class="clearfix"></div>
         </footer>
