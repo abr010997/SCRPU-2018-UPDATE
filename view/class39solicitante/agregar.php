@@ -1,7 +1,8 @@
 
+<div class="container fluid well">
   <center><h2>Agregar nuevo Solicitante</h2></center>
-    <form action="?c=class39solicitante&m=agregar" method="post">
-      <div class="col-sm-offset-4 col-sm-4">
+  <form action="?c=class39solicitante&m=agregar" method="post">
+    <div class="col-sm-offset-4 col-sm-4">
       <div class="form-group">
         <label for="PU39CEDSOLICI">Cédula:</label>
         <input type="number" class="form-control" id="PU39CEDSOLICI" name="PU39CEDSOLICI" placeholder="Cédula" max="99999999999999999999" required>
@@ -22,5 +23,6 @@
 
       <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-floppy-saved"></span> Guardar</button>
       <a href="?c=class39solicitante&m=index" class="btn btn-danger" role="button"> Regresar</a>
-         </div>
-     </form>
+    </div>
+  </form>
+</div>
