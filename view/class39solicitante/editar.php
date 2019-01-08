@@ -8,15 +8,15 @@
       </div>
       <div class="form-group">
         <label for="PU39NOMSOLICI">Nombre:</label>
-        <input type="text" class="form-control" id="PU39NOMSOLICI" name="PU39NOMSOLICI" value="<?php echo $this->class39solicitante->getAtributo('PU39NOMSOLICI');?> " placeholder="Nombre" maxlength="30" required>
+        <input type="text" class="form-control" id="PU39NOMSOLICI" name="PU39NOMSOLICI" value="<?php echo $this->class39solicitante->getAtributo('PU39NOMSOLICI');?> " placeholder="Nombre" maxlength="50" required>
       </div>
       <div class="form-group">
         <label for="PU39APE1SOLICI">Primer Apellido:</label>
-        <input type="text" class="form-control" id="PU39APE1SOLICI" name="PU39APE1SOLICI" value="<?php echo $this->class39solicitante->getAtributo('PU39APE1SOLICI');?> " placeholder="Primer Apellido" maxlength="30" required>
+        <input type="text" class="form-control" id="PU39APE1SOLICI" name="PU39APE1SOLICI" value="<?php echo $this->class39solicitante->getAtributo('PU39APE1SOLICI');?> " placeholder="Primer Apellido" maxlength="50" required>
       </div>
       <div class="form-group">
         <label for="PU39APE2SOLICI">Segundo Apellido:</label>
-        <input type="text" class="form-control" id="PU39APE2SOLICI" name="PU39APE2SOLICI" value="<?php echo $this->class39solicitante->getAtributo('PU39APE2SOLICI');?> " placeholder="Segundo Apellido" maxlength="30" required>
+        <input type="text" class="form-control" id="PU39APE2SOLICI" name="PU39APE2SOLICI" value="<?php echo $this->class39solicitante->getAtributo('PU39APE2SOLICI');?> " placeholder="Segundo Apellido" maxlength="50" required>
       </div>
 
 

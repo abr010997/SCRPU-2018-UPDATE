@@ -12,17 +12,17 @@
 
 
 
-  <center><h2>Aplicar actividades al Trámite:</h2></center> 
-
+  <center><h2>Aplicar actividades al Trámite:</h2></center>
+<center><h1><?php echo $this->class04oficina->getAtributo('PU04IDTRA');?> </h1></center>
        <div class="col-xs-2">
-  <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>"  readonly> 
+  <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>"  readonly>
   <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
 </div><br><br>
 
 
 
 <div class="container-fluid">
- 
+
 <div id="parentVerticalTab">
   <ul class="resp-tabs-list hor_1">
     <li href="#tabconten5">Actividades Residencial</li>
@@ -32,10 +32,10 @@
     <li href="#tabconten5-Estacióndeservicios">Actividades Estación de servicios</li>
     <li href="#tabconten2">Patentes</li>
      <li href="#tabconten3">Areas de Proteción</li>
-  
-    
-    
-  </ul> 
+
+
+
+  </ul>
   <div class="resp-tabs-container hor_1">
 
 
@@ -43,12 +43,12 @@
     <div class="container-fluid" id="tabconten5">
       <!-- contenido de tab 6 -->
 
-  
+
         <form method="POST" action="?c=class04oficina&m=editarActividades">
            <div class="col-sm-offset-0 col-sm-4">
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
           </div>
@@ -72,11 +72,11 @@
  <div class="col-sm-offset-0 col-sm-4">
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
           </div>
-      
+
 
             <div class="container-fluid">
         <div class="col-xs-9">
@@ -85,18 +85,18 @@
       </div>
 </div>
         <button type="submit" class="btn btn-success">Guardar descripción</button>
-      
+
            </form>
     </div>
 
     <div class="container-fluid" id="tabconten5-Desarrollo">
       <!-- contenido de tab 4 -->
-      
+
 
           <form method="POST" action="?c=class04oficina&m=editarActividades2">
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
           <?php foreach( $iddesarrollos as $idactdes2 ): ?>
@@ -117,10 +117,10 @@
 
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
-      
+
 
             <div class="container-fluid">
         <div class="col-xs-9">
@@ -129,7 +129,7 @@
       </div>
 </div>
         <button type="submit" class="btn btn-success">Guardar descripción</button>
-      
+
            </form>
 
     </div>
@@ -137,11 +137,11 @@
 <div class="container-fluid" id="tabconten5-Comercial">
       <!-- contenido de tab 6 -->
 
-  
+
         <form method="POST" action="?c=class04oficina&m=editarActividades3">
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
           <?php foreach( $iddesarrollos3 as $idactividad3 ): ?>
@@ -163,10 +163,10 @@
 
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
-      
+
 
             <div class="container-fluid">
         <div class="col-xs-9">
@@ -175,22 +175,22 @@
       </div>
 </div>
         <button type="submit" class="btn btn-success">Guardar descripción</button>
-      
+
            </form>
     </div>
 
 
 <!--o de tab  -->
- 
+
 
 <div class="container-fluid" id="tabconten5-Comercial-Industrial">
       <!-- contenido de tab 4 -->
-      
+
 
           <form method="POST" action="?c=class04oficina&m=editarActividades4">
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
           <?php foreach( $iddesarrollos4 as $idactividad4 ): ?>
@@ -211,10 +211,10 @@
 
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
-      
+
 
             <div class="container-fluid">
         <div class="col-xs-9">
@@ -223,7 +223,7 @@
       </div>
 </div>
         <button type="submit" class="btn btn-success">Guardar descripción</button>
-      
+
            </form>
 
     </div>
@@ -231,16 +231,16 @@
 
  <!--o de tab  -->
 <!--o de tab  -->
- 
+
 
 <div class="container-fluid" id="tabconten5-Estacióndeservicios">
       <!-- contenido de tab 4 -->
-      
+
 
           <form method="POST" action="?c=class04oficina&m=editarActividades5">
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
           <?php foreach( $iddesarrollos5 as $idactividad5 ): ?>
@@ -260,10 +260,10 @@
 
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
-      
+
 
             <div class="container-fluid">
         <div class="col-xs-9">
@@ -272,7 +272,7 @@
       </div>
 </div>
         <button type="submit" class="btn btn-success">Guardar descripción</button>
-      
+
            </form>
     </div>
 
@@ -284,7 +284,7 @@
         <form method="POST" action="?c=class04oficina&m=editarPatenteOf">
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
           <?php foreach( $idtipopatentes as $idtipopatent ): ?>
@@ -300,15 +300,15 @@
           <button type="submit" class="btn btn-success ">Guardar</button>
           <br>
         </form>
-      
+
 <form method="POST" action="?c=class04oficina&m=guardarObservacionPatentes">
 
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
-      
+
 
             <div class="container-fluid">
         <div class="col-xs-9">
@@ -317,7 +317,7 @@
       </div>
 </div>
         <button type="submit" class="btn btn-success">Guardar descripción</button>
-      
+
            </form>
     </div>
 
@@ -328,12 +328,12 @@
 
 <div class="container-fluid" id="tabconten3">
       <!-- contenido de tab 4 -->
-      
+
 
           <form method="POST" action="?c=class04oficina&m=editarareas">
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
           <?php foreach( $idareas as $idactividad5 ): ?>
@@ -349,15 +349,15 @@
           <button type="submit" class="btn btn-success">Guardar</button>
           <br>
         </form>
-      
+
     </div>
-<!-- 
+<!--
     <div class="container-fluid" id="tabconten20">
-  
+
         <form method="POST" action="?c=class04oficina&m=editarLeyes">
           <div class="form-group">
             <label for="id">Código Trámite</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly> 
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $this->class04oficina->getAtributo('PU04IDTRA');?>" readonly>
             <?php  $idtramite = $this->class04oficina->getAtributo('PU04IDTRA'); ?>
           </div>
           <?php foreach( $idtipoleyes as $idtipoleye): ?>
