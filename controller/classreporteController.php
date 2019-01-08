@@ -490,7 +490,7 @@ public function reporte(){
 		 	}
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
+		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberán ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
 		 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
@@ -724,7 +724,7 @@ public function rZonaVerde(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-			$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
+			$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 			$pdf->Ln(1);
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
@@ -973,7 +973,7 @@ public function rInstitucional(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
 		 		$pdf->Ln(2);
 		 	}
-		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
@@ -1249,7 +1249,7 @@ public function rComercialCentral(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
 		 		$pdf->Ln(1);
 		 	}
-		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(100,5,"POR TANTO",0,0);
 		 	$pdf->Ln(2);
@@ -1528,7 +1528,7 @@ public function rIndustrial(){
 		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
 		 		$pdf->Ln(1);
 		 	}
-		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
@@ -1783,7 +1783,7 @@ public function rResidencialComercial(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
 		 		$pdf->Ln(1);
 		 	}
-		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
@@ -2036,7 +2036,7 @@ public function rResidencial(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
 		 		$pdf->Ln(1);
 		 	}
-		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(100,5,"POR LO TANTO",0,0);
 		 	$pdf->Ln(1);
@@ -2293,7 +2293,7 @@ public function rTuristicoComercial(){
 		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
 		 		$pdf->Ln(1);
 		 	}
-		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(100,5,"POR LO TANTO",0,0);
 		 	$pdf->Ln(1);
@@ -2612,7 +2612,7 @@ public function rZonaComercialTuristica(){
 		 		$pdf->Ln(2);
 		 	}
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
+		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
@@ -2868,7 +2868,7 @@ public function rZonaResidencialPrivada(){
 			 		$pdf->Ln(2);
 			 	}
 			 	$pdf->MultiCell(190,5,utf8_decode(
-			 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
+			 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
 			 	$pdf->Ln(2);
 			 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 			 	$pdf->Ln(1);
@@ -3160,7 +3160,7 @@ public function rZonaInstitucional(){
 		 		$pdf->Ln(2);
 		 	}
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
+		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
 		 	$pdf->Ln(1);
 		 	$pdf->MultiCell(100,5,"POR LO TANTO",0,0);
 		 	$pdf->Ln(1);
@@ -3433,7 +3433,7 @@ public function rZonaPrivada(){
 		 		$pdf->Ln(2);
 		 	}
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
+		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(100,5,"POR LO TANTO",0,0);
 		 	$pdf->Ln(1);
@@ -3756,7 +3756,7 @@ public function rZonaArriendo() {
 		 		$pdf->Ln(2);
 		 	}
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
+		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
@@ -4022,7 +4022,7 @@ public function rZonaHotelera(){
 		 		$pdf->Ln(2);
 		 	}
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
+		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(100,5,"Por tanto",0,0);
 		 	$pdf->Ln(1);
@@ -4333,7 +4333,7 @@ public function rFueraPlanRegulador(){
 		 		$pdf->Ln(2);
 		 	}
 		 	$pdf->MultiCell(190,5,utf8_decode(
-		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
+		 		'Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.' ),0,'J');
 		 	$pdf->Ln(2);
 		 	$pdf->MultiCell(100,5,"POR TANTO",0,0);
 		 	$pdf->Ln(1);

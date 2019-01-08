@@ -4,11 +4,11 @@
     <div class="col-sm-offset-4 col-sm-4">
       <div class="form-group">
         <label for="PU40NFINCA">Finca:</label>
-        <input type="number" class="form-control" id="PU40NFINCA" name="PU40NFINCA" required>
+        <input type="text" class="form-control" id="PU40NFINCA" name="PU40NFINCA" required>
       </div>
       <div class="form-group">
         <label for="PU40NCATASTRO">Catastro:</label>
-        <input type="number" class="form-control" id="PU40NCATASTRO" name="PU40NCATASTRO" required>
+        <input type="text" class="form-control" id="PU40NCATASTRO" name="PU40NCATASTRO" required>
       </div>
       <div class="form-group">
 

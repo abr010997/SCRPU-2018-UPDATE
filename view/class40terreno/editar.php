@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
     <center><h2>Editar Terreno: <?php echo $this->class40terreno->getAtributo('PU40NFINCA');?> </h2></center>
 
@@ -10,7 +9,7 @@
       </div>
       <div class="form-group">
         <label for="PU40NCATASTRO">Catastro:</label>
-        <input type="number" class="form-control" id="PU40NCATASTRO" name="PU40NCATASTRO" value="<?php echo $this->class40terreno->getAtributo('PU40NCATASTRO');?> " required>
+        <input type="text" class="form-control" id="PU40NCATASTRO" name="PU40NCATASTRO" value="<?php echo $this->class40terreno->getAtributo('PU40NCATASTRO');?> " required>
       </div>
       <div class="form-group">
         <label for="PU04IDDISTRITO">Distrito:</label>
