@@ -24,7 +24,7 @@
 </div>
 
 <center><h4>Realizando Inspección</h4></center>
-
+<center><h2>Trámite:</h2><h1><?php echo $this->pu04inspeccion->getAtributo('PU04IDTRA');?></h1></center>
 <form method="POST" action="?c=class04inspeccion&m=agregarTra">
   <div class="container-fluid well">
     <div class="alert alert-info alert-dismissable">

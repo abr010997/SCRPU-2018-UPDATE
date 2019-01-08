@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
     <center><h2>Editar Terreno: <?php echo $this->class40terreno->getAtributo('PU40NFINCA');?> </h2></center>
 
@@ -10,19 +9,19 @@
       </div>
       <div class="form-group">
         <label for="PU40NCATASTRO">Catastro:</label>
-        <input type="number" class="form-control" id="PU40NCATASTRO" name="PU40NCATASTRO" value="<?php echo $this->class40terreno->getAtributo('PU40NCATASTRO');?> " required>
+        <input type="text" class="form-control" id="PU40NCATASTRO" name="PU40NCATASTRO" value="<?php echo $this->class40terreno->getAtributo('PU40NCATASTRO');?> " maxlength="50" required>
       </div>
       <div class="form-group">
         <label for="PU04IDDISTRITO">Distrito:</label>
-        <input type="text" class="form-control" id="PU04IDDISTRITO" name="PU04IDDISTRITO" value="<?php echo $this->class40terreno->getAtributo('PU04IDDISTRITO');?> " required>
+        <input type="text" class="form-control" id="PU04IDDISTRITO" name="PU04IDDISTRITO" value="<?php echo $this->class40terreno->getAtributo('PU04IDDISTRITO');?> " pattern="[1-7]{1}" required>
       </div>
       <div class="form-group">
         <label for="PU39BARRIO">Barrio:</label>
-        <input type="text" class="form-control" id="PU39BARRIO" name="PU39BARRIO" value="<?php echo $this->class40terreno->getAtributo('PU39BARRIO');?> " required>
+        <input type="text" class="form-control" id="PU39BARRIO" name="PU39BARRIO" value="<?php echo $this->class40terreno->getAtributo('PU39BARRIO');?> " maxlength="150" required>
       </div>
        <div class="form-group">
         <label for="PU39DIRECCION">Dirección:</label>
-        <input type="text" class="form-control" id="PU39DIRECCION" name="PU39DIRECCION" value="<?php echo $this->class40terreno->getAtributo('PU39DIRECCION');?> " required>
+        <input type="text" class="form-control" id="PU39DIRECCION" name="PU39DIRECCION" value="<?php echo $this->class40terreno->getAtributo('PU39DIRECCION');?> " maxlength="300" required>
       </div>
 
 

@@ -4,11 +4,11 @@
     <div class="col-sm-offset-4 col-sm-4">
       <div class="form-group">
         <label for="PU40NFINCA">Finca:</label>
-        <input type="number" class="form-control" id="PU40NFINCA" name="PU40NFINCA" required>
+        <input type="text" class="form-control" id="PU40NFINCA" name="PU40NFINCA" maxlength="15" required>
       </div>
       <div class="form-group">
         <label for="PU40NCATASTRO">Catastro:</label>
-        <input type="number" class="form-control" id="PU40NCATASTRO" name="PU40NCATASTRO" required>
+        <input type="text" class="form-control" id="PU40NCATASTRO" name="PU40NCATASTRO" maxlength="50" required>
       </div>
       <div class="form-group">
 
@@ -30,11 +30,11 @@
       <div class="form-group">
 
         <label for="PU39BARRIO">Barrio:</label>
-        <input type="text" class="form-control" id="PU39BARRIO" name="PU39BARRIO" required>
+        <input type="text" class="form-control" id="PU39BARRIO" name="PU39BARRIO" maxlength="150" required>
       </div>
       <div class="form-group">
         <label for="PU39DIRECCION">Dirección:</label>
-        <input type="text" class="form-control" id="PU39DIRECCION" name="PU39DIRECCION" required>
+        <input type="text" class="form-control" id="PU39DIRECCION" name="PU39DIRECCION" maxlength="300" required>
       </div>
 
       <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-floppy-saved"></span> Guardar</button>

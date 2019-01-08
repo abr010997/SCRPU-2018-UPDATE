@@ -6,7 +6,7 @@
 <?php $idtipopatentes = $this->class04oficina->getTodasPatenteOf(); ?>
 <?php $idtipoleyes = $this->class04oficina->getTodasLeyes(); ?>
    <div class="container-fluid">
-     
+
   <center><h2>Guardar datos de Inspección Realizada</h2></center>
     <form method="POST" action="?c=class04oficina&m=agregar" >
 <div class="col-sm-offset-4 col-sm-8">
@@ -21,17 +21,17 @@
           <div class="form-group row">
             <div class="col-xs-5">
                  <label for="PU39CEDSOLICI">Cédula del Solicitante:</label>
-                  <input type="text" class="form-control" name="PU39CEDSOLICI" id="PU39CEDSOLICI">
+                  <input type="text" class="form-control" name="PU39CEDSOLICI" id="PU39CEDSOLICI"  maxlength="50" required>
             </div>
           </div>
       </div>
 
-      
+
       <!-- <div class="container-fluid">
           <div class="form-group row">
             <div class="col-xs-5">
                  <label for="PU39DIRECCION">Dirección exacta de la propiedad:</label>
-                  <input type="text" class="form-control" name="PU39DIRECCION" id="PU39DIRECCION">
+                  <input type="text" class="form-control" name="PU39DIRECCION" id="PU39DIRECCION" >
             </div>
           </div>
       </div> -->
@@ -42,12 +42,12 @@
           <div class="form-group row">
             <div class="col-xs-5">
                  <label for="PU40CEDPROPIE">Cédula del Propietario:</label>
-                  <input type="text" class="form-control" name="PU40CEDPROPIE" id="PU40CEDPROPIE">
+                  <input type="text" class="form-control" name="PU40CEDPROPIE" id="PU40CEDPROPIE" maxlength="50" required>
             </div>
           </div>
       </div>
 
-      
+
 
 
      <h3>Datos de la propiedad:</h3>
@@ -56,24 +56,24 @@
           <div class="form-group row">
             <div class="col-xs-5">
                  <label for="PU40NFINCA">Finca 5-:</label>
-                  <input type="text" class="form-control" name="PU40NFINCA" id="PU40NFINCA">
+                  <input type="text" class="form-control" name="PU40NFINCA" id="PU40NFINCA" maxlength="15" required>
             </div>
           </div>
       </div>
 
-      
-
-
-     
 
 
 
-      <button type="submit" class="btn btn-success">Guardar Registro Oficina</button> 
-      <a id="regresar" class="btn btn-danger" role="button" href="?c=class04oficina&m=index">Regresar</a>  
+
+
+
+
+      <button type="submit" class="btn btn-success">Guardar Registro Oficina</button>
+      <a id="regresar" class="btn btn-danger" role="button" href="?c=class04oficina&m=index">Regresar</a>
      </form>
 
 
-      
+
 </div>
 </div>
 <br>
