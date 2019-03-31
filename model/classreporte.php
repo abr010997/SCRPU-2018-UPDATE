@@ -584,6 +584,67 @@ public function listarAntecedentesDominio()
 		$result = $this->conexion->ConsultaRetorno($sql);
 		return $result;
 	}
+
+	// Sin Inspeccion
+	public function  listarConstrucciónViviendaBonoUnifamiliarQuebradaRiosUrbanoDentrodelPlanRegulador2(){
+		$sql = "CALL R_RESI2('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarConstrucciónViviendaBonoUnifamiliarDentrodelPlanRegulador2(){
+		$sql = "CALL R_RESI2('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarConstrucciónViviendaBonoUnifamiliarFueradelPlanRegulador2(){
+		$sql = "CALL R_RESI2('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarConstrucciónViviendaBonoUnifamiliarQuebradasRiosRuralFuerdelPlanRegulador2(){
+		$sql = "CALL R_RESI2('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarConstrucciónViviendaBonoUnifamiliarVulnerabilidadPotreroBajaFueradelPlanRegulador2(){
+		$sql = "CALL R_RESI2('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarViviendaBonoUnifamiliarVulnerabilidaPotreroMediaFueradelPlanRegulador2(){
+		$sql = "CALL R_RESI2('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarConstrucciónViviendaBonoUnifamiliarServidumbreAgricolaFueradelPlanRegulador2(){
+		$sql = "CALL R_RESI2('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarConstrucciónViviendaBonoUnifamiliarServidumbredePasoAprobadaFueradelPlanRegulador2(){
+		$sql = "CALL R_RESI2('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarPatenteComercialFueradelPlanRegulador2(){
+		$sql = "CALL R_RESI2('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarPatenteComercialDentrodelPlanRegulador2(){
+		$sql = "CALL R_RESI2('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
 	//Fin Nuevos Reportes
 	public function convertToclassreporte($result)
 	{
