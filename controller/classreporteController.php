@@ -5132,5 +5132,272 @@ public function rDarNew(){
 	}
 }
 
+
+/// NUEVOS REPORTES.......................
+/// NUEVOS REPORTES.......................
+/// NUEVOS REPORTES.......................
+/// NUEVOS REPORTES.......................
+public function ConstrucciónViviendaBonoUnifamiliarQuebradaRiosUrbanoDentrodelPlanRegulador(){
+	$this->ConstrucciónViviendaBonoUnifamiliarQuebradaRiosUrbanoDentrodelPlanRegulador 			= new classreporte();
+	$this->constra 				= new classreporte();
+	$this->actdes_res 	 		= new classreporte();
+	$this->actdes_com 	 		= new classreporte();
+	$this->actdes_com_in 		= new classreporte();
+	$this->actdes_desa 	 		= new classreporte();
+	$this->actdes_es 	 		= new classreporte();
+	$this->desceg 		 		= new classreporte();
+	$this->leyesAccesos 		= new classreporte();
+	$this->leyesDesarroSect 	= new classreporte();
+	$this->leyesEspacioGeo 		= new classreporte();
+	$this->leyesActividades 	= new classreporte();
+	$this->leyesAspectoBio 		= new classreporte();
+	$this->leyesPatente 		= new classreporte();
+	$this->leyesPlan 		 	= new classreporte();
+	$this->leyesRedVial 		= new classreporte();
+	$this->leyesAreasPro 		= new classreporte();
+	$this->leyesServi			= new classreporte();
+	$this->apro_dene 			= new classreporte();
+	$this->observacion          = new classreporte();
+	$this->datosresidencial = new classreporte();
+	$this->encabezadopatente	= new classreporte();
+	$this->encabezadoconstruccion = new classreporte();
+
+
+	$this->ConstrucciónViviendaBonoUnifamiliarQuebradaRiosUrbanoDentrodelPlanRegulador->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$result1 = $this->ConstrucciónViviendaBonoUnifamiliarQuebradaRiosUrbanoDentrodelPlanRegulador->listarRESI();
+	$this->datosresidencial->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$datos = $this->datosresidencial->listarDatosResi();
+	$this->constra->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rConstra			= $this->constra->listarCons();
+
+	$this->desceg->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rDesceg 			= $this->desceg->listarDESCEG();
+
+	$this->actdes_res->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesRes 		= $this->actdes_res->listarACTDESRES();
+	$this->actdes_com->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesCom 		= $this->actdes_com->listarACTDESCOM();
+	$this->actdes_com_in->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesComIn 		= $this->actdes_com_in->listarACTDESCOMIN();
+	$this->actdes_desa->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesDesa 		= $this->actdes_desa->listarACTDESDESA();
+	$this->actdes_es->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rActdesEs 			= $this->actdes_es->listarACTDESES();
+
+	$this->leyesAccesos->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAccesos 		= $this->leyesAccesos->listarLeyAccesos();
+	$this->leyesDesarroSect->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesDesarroSect 	= $this->leyesDesarroSect->listarLeyDesarroSect();
+	$this->leyesEspacioGeo->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesEspacioGeo 	= $this->leyesEspacioGeo->listarLeyEspacioGeo();
+	$this->leyesActividades->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesActividades	= $this->leyesActividades->listarLeyActividades();
+	$this->leyesAspectoBio->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAspectoBio 	= $this->leyesAspectoBio->listarLeyAspectoBio();
+	$this->leyesPatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesPatente 		= $this->leyesPatente->listarLeyPatente();
+	$this->leyesPlan->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesPlan 		= $this->leyesPlan->listarLeyPlan();
+	$this->leyesRedVial->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesRedVial 		= $this->leyesRedVial->listarLeyRedVial();
+	$this->leyesAreasPro->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rLeyesAreasPro 	= $this->leyesAreasPro->listarLeyAreasPro();
+	$this->leyesServi->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rleyesServi 	= $this->leyesServi->listarLeyServi();
+
+	$this->apro_dene->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rApro_Dene 	= $this->apro_dene->listarR_APRO_DENE();
+
+	$this->observacion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$robservacion 	= $this->observacion->listarR_OBSERV_TRAMITE();
+	$this->encabezadopatente->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadopatente = $this->encabezadopatente->listarencabezadoPatente();
+	$this->encabezadoconstruccion->setAtributo('PU04IDTRA', $_REQUEST['id']);
+	$rencabezadoconstruccion = $this->encabezadoconstruccion->listarencabezadoConstruccion();
+
+	$pdf = new PDF();
+	$pdf->AliasNbPages();
+	$pdf->AddPage();
+	$pdf->SetFillColor(255,255,255);
+	$pdf->SetFont('Arial','B',11);
+	try
+	{
+		while ($rpantente = mysqli_fetch_array($rencabezadopatente) ) {
+			$pdf->Cell(185, 5, utf8_decode($rpantente[0]), 0, 0, 'C');
+		}
+		while ($rconstruccion = mysqli_fetch_array($rencabezadoconstruccion) ) {
+			$pdf->Cell(185, 5, utf8_decode($rconstruccion[0]), 0, 0, 'C');
+		}
+		$pdf->Ln(8);
+
+		while ($row = mysqli_fetch_array($result1)) {
+			$pdf->MultiCell(50,5,$row[0],0,1);
+			while ($cons = mysqli_fetch_array($rConstra)) {
+		 		$pdf->MultiCell(60,5,"DPU-".$cons[0]."-".$cons[1]."-".$cons[2],0,'L');
+		 	$pdf->MultiCell(0,0,utf8_decode("Número de Trámite:"),0,0,'L');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(175,20,$row[1],0,0,'L');
+		 	$pdf->MultiCell(100,5,utf8_decode("Señor(a):"));
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(100,5,utf8_decode($row[2]." ".$row[3]." ".$row[4]),0,1,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(40,5,utf8_decode("Cédula: ".$row[5]),0,1,'J');
+		 	$pdf->MultiCell(23,10,"Presente",0,1,'J');
+		 	$pdf->SetFont('Arial','B',10);
+		 	$pdf->MultiCell(180,5,utf8_decode("Se extiende RESOLUCIÓN MUNICIPAL DE UBICACIÓN DE USO para la Propiedad Plano G-".$row[6]." de la Finca 5-".$row[7].", Propiedad de ".$row[8]." ".$row[9]." ".$row[10].", Cédula Jurídica ".$row[11].", Ubicada ".$row[12].", ".$row[13].", Distrito ".$row[14].", Nicoya, indicando lo siguiente:"),0,1,'J');
+		
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,utf8_decode('El terreno evaluado es afectado por el Plan Regulador vigente del cantón de Nicoya. La Resolución Municipal de Ubicación corresponde a Zona Residencial.'),0,1,'J');
+		 	while ($fila = mysqli_fetch_array($datos)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(100,5,utf8_decode("* ".$fila[0]."."),0,1,'J');
+		 		$pdf->Ln(1);
+		 	}
+		 	$pdf->MultiCell(190,5,utf8_decode('-Usos Permitidos: Todos los urbanos que tengan relación con la vivienda, sin que la perjudiquen. El tipo de comercio que se permite es el siguiente: tiendas de abarrotes, boticas, fuentes de soda, barberías, carnicerías oficinas profesionales, usos comunales y áreas verdes. La pequeña industria (artesanal Inofensiva) supermercados.'),0,1,'J');
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,utf8_decode('-No se permiten: bodegas, aserraderos, talleres, industrias y usos similares a estos en cuanto a molestias (ruido, transito intenso, olor, etc.) que afectan la zona. También se exceptúan el comercio que produzca las molestias antes dichas como salas de baile, cantinas, etc.'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('1.	SUPERFICIE DE LOTE: 155m2'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('2.	FRENTE MÍNIMO DE LOTE: 8m2'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('3.	RETIROS MÍNIMOS:'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('-FRONTAL: 2,5m'),0,1,'C');
+		 	$pdf->MultiCell(190,5,utf8_decode('-LATERAL: NO HAY'),0,1,'C');
+		 	$pdf->MultiCell(190,5,utf8_decode('-POSTERIOR: 3m'),0,1,'C');
+		 	$pdf->MultiCell(190,5,utf8_decode('4.   COBERTURA DE EDIFICACIÓN MÁXIMA 60% DEL ÁREA DEL LOTE'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('5.   ÁREA DE PISO MÁXIMA, TRES VECES LA COBERTURA MÁXIMA'),0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode('6.   ALTURA DE EDIFICACIÓN MÁXIMA 10m'),0,1,'J');
+
+		 	$pdf->Ln(2);
+
+		 	$pdf->MultiCell(55,5,'> Uso Actual del Suelo',0,1,'J');
+		 	//Muestra los usos del suelo actual
+		 	while ($as = mysqli_fetch_array($rDesceg)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(100,5,utf8_decode("* ".$as[0]."."),0,1,'J');
+		 		$pdf->Ln(1);
+		 	}
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(55,5,"> Actividad a Desarrollar",0,1,'J');
+		 	$pdf->Ln(1);
+		 	//Muestra las actividades a desarrollar
+		 	while ($adr = mysqli_fetch_array($rActdesRes)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(100,5,utf8_decode("* ".$adr[0]."."),0,1,'J');
+		 		$pdf->Ln(1);
+		 	}
+		 	while ($ades = mysqli_fetch_array($rActdesEs)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(100,5,utf8_decode("* ".$ades[0]."."),0,1,'J');
+		 		$pdf->Ln(1);
+		 	}
+		 	while ($adci = mysqli_fetch_array($rActdesComIn)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(100,5,utf8_decode("* ".$adci[0]."."),0,1,'J');
+		 		$pdf->Ln(1);
+		 	}
+		 	while ($add = mysqli_fetch_array($rActdesDesa)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(100,5,utf8_decode("* ".$add[0]."."),0,1,'J');
+		 		$pdf->Ln(1);
+		 	}
+		 	while ($adc = mysqli_fetch_array($rActdesCom)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(100,5,utf8_decode("* ".$adc[0]."."),0,1,'J');
+		 		$pdf->Ln(1);
+		 	}
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,"Se concluye: ",0,1,'J');
+		 	$pdf->MultiCell(190,5,utf8_decode(
+		 		'Uso de Suelo de Resolución Municipal de Ubicación con el proyecto a realizar.' ),0,'J');
+		 	while ($leyA = mysqli_fetch_array($rLeyesAccesos)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyA[0]),0,'J');
+		 		$pdf->Ln(1);
+		 	}
+		 	
+		 	while ($leyPT = mysqli_fetch_array($rLeyesPatente)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyPT[0]),0,'J');
+		 		$pdf->Ln(1);
+		 	}
+		 	while ($leyAD = mysqli_fetch_array($rLeyesActividades)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyAD[0]),0,'J');
+		 		$pdf->Ln(1);
+		 	}
+		 	while ($leyAP = mysqli_fetch_array($rLeyesAreasPro)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyAP[0]),0,'J');
+		 		$pdf->Ln(1);
+		 	}
+		 	while ($leyRV = mysqli_fetch_array($rLeyesRedVial)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyRV[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	while ($leyAB = mysqli_fetch_array($rLeyesAspectoBio)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyAB[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	while ($leyDS = mysqli_fetch_array($rLeyesDesarroSect)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyDS[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	while ($leyEG = mysqli_fetch_array($rLeyesEspacioGeo)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyEG[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+
+		 	while ($obser = mysqli_fetch_array($robservacion)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($obser[0]),0,'J');
+		 		$pdf->Ln(2);
+		 	}
+		 	while ($leyP = mysqli_fetch_array($rLeyesPlan)) {
+		 		$pdf->Ln(1);
+		 		$pdf->MultiCell(190,5,utf8_decode($leyP[0]),0,'J');
+		 		$pdf->Ln(1);
+		 	}
+
+$pdf->MultiCell(190,5,utf8_decode('condicionado a contar con la disponibilidad de agua para el proyecto a realizar por parte de la entidad competente (Asada o AyA). Basado en el Decreto de Sequía N° 38642-MP-MAG. La propiedad está afectada por cause de Dominio público (Quebrada o Ríos) se deberá aplicar el artículo 33 de la Ley Forestal N. 7575 que establece un área de protección de 10 mts en zona Urbana en terreno plano medidas horizontales a ambos lados a partir de la ribera de la Quebrada, Ríos.  Se debe respetar lo dispuesto por el invu en el oficio du-uctot-057-2019, referente a los retiros de la quebradas / ríos. Para la eventual construcción se debe de respetar los retiros de Ley (Rutas nacional, Cantonal o cualquier otro que corresponda según la ubicación del terreno). Debiendo coordinar el permiso de corta de árboles existente en la propiedad ante el MINAE a lo cual, debe de cumplir.  Si se realiza movimientos de Tierra se debe solicitar el permiso Respectivo ante el departamento de Control Constructivo.  De requerirse remodelar, ampliar, renovar o reparar la infraestructura , se requiere del trámite de la licencia municipal de construcción, para lo cual deberá sujetarse a las regulaciones estipuladas en el reglamento de construcciones, publicado en el diario oficial La Gaceta N°56, alcance N.º 17 del 11 de marzo de 1983 y sus reformas, así como lo indicado en la ley N°833 de noviembre de 1949 “Ley de construcciones “, así mismo,  cumplir con la normativa ambiental, sanitaria, urbanística y otras vigentes que regulen los procesos constructivos. La altura máxima y la cobertura deberán estar apegadas a lo dispuesto en la Ley de Planificación Urbana, Ley de Uso, Manejo y Conservación de Suelo N° 7779, Ley forestal N°7575 y demás Legislación Vigente. De previo a desarrollar el proyecto debe garantizar que toda posible molestia debe quedar completamente confinada dentro del inmueble; así como realizar todos los análisis para verificar la viabilidad ambiental, vial, patrimonial, de afectaciones de las aguas pluviales, de infraestructura, de mecánica de suelos, de escorrentía, de riesgos naturales, de disponibilidad de servicios, de transporte público, etc., para conocer si realmente la propiedad en este caso privada es apta para la construcción de este tipo de proyecto.
+'),0,'J');
+		 	$pdf->Ln(1);
+
+
+$pdf->MultiCell(190,5,utf8_decode('LA VALIDEZ DE LA PRESENTE RESOLUCIÓN PERMANECERÁ HASTA QUE ENTRE  EN VIGENCIA UN  PLAN REGULADOR QUE AFECTE EL PREDIO RELACIONADO.'),0,'J');
+$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode('Nota: Al haber aprobado la Resolución de Ubicación Municipal eso no implica que se está dado el permiso para movimiento de tierra, cortes, rellenos, construcción construcción, desfogue fluvial, todo lo relacionado con obras civiles por lo que deberan ser tramitado en el momento que se requiera dicho permiso y también si la Resolución Municipal (Uso de Suelo) es positivo, no obliga a la municipalidad a otorgar la respectiva pantente, esta debe ser solicitado de conformidad con la normativa establecido por esta institución para estos efectos.'),0,'J');
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(100,5,"POR LO TANTO",0,0);
+		 	$pdf->Ln(1);
+		 	$pdf->MultiCell(190,5,utf8_decode("Se ".$row[15]." la RESOLUCIÓN DE UBICACIÓN MUNICIPAL, mediante oficio DPU-".$cons[0]."-".$cons[1]."-".$cons[2].", para la Finca 5-".$row[7]." quedando sujeto a las disposiciones de la legislación vigente y en observaciones de nuestro ordenamiento jurídico, cualquier transgresión a las normas, producirá anulación del acto administrativo."),0,'J');
+		 	}
+		 	$pdf->Ln(1);
+		 	
+		 	$pdf->MultiCell(190,5,"Atentamente, ",0,1);
+		 	$pdf->MultiCell(180,5,"Firma de Recibido",0,0);
+		 	$pdf->Ln(2);
+		 	$pdf->MultiCell(190,5,"__________________________",0,0)	;
+		 	$pdf->Ln(5);
+		 	$pdf->MultiCell(190,5,utf8_decode('# Cédula: __________________________'),0,0,'R');
+		 	$pdf->Ln(3);
+		 	$pdf->MultiCell(190,5,utf8_decode('Fecha: ____________________ Hora: __________________________'),0,0,'R');
+		 	$pdf->Ln(3);
+		 	$pdf->MultiCell(60,5,"__________________________",0,1);
+		 	$pdf->MultiCell(50,5,"Arq. Jonathan Soto Segura",0,1);
+		 	$pdf->MultiCell(80,5,utf8_decode("Coordinador de Planificación Urbana"),0,1);
+		 	$pdf->MultiCell(80,5,utf8_decode("Municipalidad de Nicoya"),0,1);
+
+		 }
+		 $pdf->Output();
+	} catch(Exception $e) {
+		$pdf->Cell(30, 10, "Sin datos".$e, 0, 0, 'C');
+		$pdf->Output();
+	}
+}
+
+
 }
 ?>
