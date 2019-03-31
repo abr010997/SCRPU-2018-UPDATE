@@ -28,6 +28,10 @@ class classreporteController
 
 	//Fin Nicoya
 
+	//NUEVOS REPORTES:
+	private $ConstrucciónViviendaBonoUnifamiliarQuebradaRiosUrbanoDentrodelPlanRegulador;
+	private $datosConstrucciónViviendaBonoUnifamiliarQuebradaRiosUrbanoDentrodelPlanRegulador;
+	//FIN NUEVOS REPORTES:
 	//Samara
 	private $zonacomerturistica;
 	private $datoscomerturistica;
@@ -104,6 +108,7 @@ class classreporteController
 	private $accesoservi;
 	private $areas;
 	//Fin Reporte Inspección
+
 function __construct()
 {
 	$this->classreporte = new classreporte();
