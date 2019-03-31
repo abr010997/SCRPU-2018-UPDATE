@@ -524,7 +524,67 @@ public function listarAntecedentesDominio()
 		return $result;
 	}
 	//Fin Reporte Inspección
+	//Nuevos Reportes
+	public function  listarConstrucciónViviendaBonoUnifamiliarQuebradaRiosUrbanoDentrodelPlanRegulador(){
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
 
+	public function listarConstrucciónViviendaBonoUnifamiliarDentrodelPlanRegulador(){
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarConstrucciónViviendaBonoUnifamiliarFueradelPlanRegulador(){
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarConstrucciónViviendaBonoUnifamiliarQuebradasRiosRuralFuerdelPlanRegulador(){
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarConstrucciónViviendaBonoUnifamiliarVulnerabilidadPotreroBajaFueradelPlanRegulador(){
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarViviendaBonoUnifamiliarVulnerabilidaPotreroMediaFueradelPlanRegulador(){
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarConstrucciónViviendaBonoUnifamiliarServidumbreAgricolaFueradelPlanRegulador(){
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarConstrucciónViviendaBonoUnifamiliarServidumbredePasoAprobadaFueradelPlanRegulador(){
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarPatenteComercialFueradelPlanRegulador(){
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+
+	public function listarPatenteComercialDentrodelPlanRegulador(){
+		$sql = "CALL R_RESI('$this->PU04IDTRA');";
+		$result = $this->conexion->ConsultaRetorno($sql);
+		return $result;
+	}
+	//Fin Nuevos Reportes
 	public function convertToclassreporte($result)
 	{
 		$classreporte = new classreporte();

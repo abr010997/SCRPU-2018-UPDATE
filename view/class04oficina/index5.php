@@ -1,17 +1,14 @@
-<?php $result = $this->class04ingresotramite->listar(); ?>
+<?php $result = $this->class04oficina->listarIgnTra(); ?>
 
 <div class="container-fluid">
+  <h2> Trámites Rápidos Pendientes</h2>
   <div class="alert alert-success alert-dismissable">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>¡Alerta!</strong> Si estas conectado desde un celular o tablet, preferiblemente utilícelo en forma horizontal.
   </div>
 
 
-  <div class="container-fluid well">
 
-    <h2>Trámites Ingresados</h2>
-    <a href="?c=class04ingresotramite&m=agregar"  class="btn btn-primary" role="button">Registrar Trámite</a>
-  </div>
   <br>
   <br>
   <div class="container-fluid">
@@ -23,7 +20,7 @@
             <th>Fecha de ingreso</th>
             <th>Fecha de Plataforma</th>
             <th>Distrito</th>
-            <!-- <th>Opción</th> -->
+            <th>Opción</th>
             
           </tr>
         </thead>
@@ -41,7 +38,7 @@
 
 
 
-             <!--  <td><div class="dropdown">
+              <td><div class="dropdown">
                 <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Opciones
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
@@ -51,7 +48,7 @@
                       </li>
                     </ul>
                   </div></td> 
- -->
+
 
 
 

@@ -114,6 +114,37 @@
                   <li>
                       <a href="?c=classreporte&m=rDarAntecedentesDominio&id=<?php echo $row[0]; ?>" target="_blank"> rDarAntecedentesDominio</a>
                   </li>
+                  <li class="divider">Patente-Comercia-Fuera del Plan Regulador</li>
+                  <li>
+                      <a href="?c=classreporte&m=ConstrucciónViviendaBonoUnifamiliarQuebradaRiosUrbanoDentrodelPlanRegulador&id=<?php echo $row[0]; ?>" target="_blank"> Quebrada-Rios-Urbano-Dentro del Plan Regulador</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=ConstrucciónViviendaBonoUnifamiliarDentrodelPlanRegulador&id=<?php echo $row[0]; ?>" target="_blank"> Bono-Unifamiliar-Dentro del Plan Regulador</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=ConstrucciónViviendaBonoUnifamiliarFueradelPlanRegulador&id=<?php echo $row[0]; ?>" target="_blank"> Bono-Unifamiliar-Fuera del Plan Regulador</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=ConstrucciónViviendaBonoUnifamiliarQuebradasRiosRuralFuerdelPlanRegulador&id=<?php echo $row[0]; ?>" target="_blank"> Unifamiliar-Vunerabilidad Potrero-Alta-Fuera del Plan Regulador</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=ConstrucciónViviendaBonoUnifamiliarVulnerabilidadPotreroBajaFueradelPlanRegulador&id=<?php echo $row[0]; ?>" target="_blank"> Unifamiliar-Vunerabilidad Potrero-Baja-Fuera del Plan Regulador</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=ViviendaBonoUnifamiliarVulnerabilidaPotreroMediaFueradelPlanRegulador&id=<?php echo $row[0]; ?>" target="_blank"> Unifamiliar-Vunerabilidad Potrero-Media-Fuera del Plan Regulador</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=ConstrucciónViviendaBonoUnifamiliarServidumbreAgricolaFueradelPlanRegulador&id=<?php echo $row[0]; ?>" target="_blank"> ViviendaBono - Unifamiliar- Servidumbre Agricola-  Fuera del Plan Regulador</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=ConstrucciónViviendaBonoUnifamiliarServidumbredePasoAprobadaFueradelPlanRegulador&id=<?php echo $row[0]; ?>" target="_blank"> ViviendaBono - Unifamiliar- Servidumbre Paso-  Fuera del Plan Regulador</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=PatenteComercialFueradelPlanRegulador&id=<?php echo $row[0]; ?>" target="_blank"> Patente- Comercial-  Fuera del Plan Regulador</a>
+                  </li>
+                  <li>
+                      <a href="?c=classreporte&m=PatenteComercialDentrodelPlanRegulador&id=<?php echo $row[0]; ?>" target="_blank"> Patente- Comercial-  Dentro del Plan Regulador</a>
+                  </li>
                 </ul>
               </div>
             </td>
