@@ -39,6 +39,18 @@ class class04oficinaController
 		require_once 'view/class04oficina/index4.php';
 		require_once 'view/footer.php';
 	}
+	public function index5()
+	{
+		require_once 'view/header.php';
+		require_once 'view/class04oficina/index5.php';
+		require_once 'view/footer.php';
+	}
+	public function index6()
+	{
+		require_once 'view/header.php';
+		require_once 'view/class04oficina/index6.php';
+		require_once 'view/footer.php';
+	}
 	public function agregar()
 	{
 		
@@ -927,6 +939,49 @@ public function editartipotra()
 			}
 		}
 	}
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	public function agregarTrausutra()
+	{
+		if($_POST){
+			$this->class04oficina->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
+			$this->class04oficina->setAtributo('PU01CEDUSU',$_POST['PU01CEDUSU']);
+			$puesto = $this->class04oficina->listarPuesto($_POST['PU01CEDUSU']);
+			//session_start();
+			if ($_SESSION['idpuesto'] = $puesto[0]) {
+				$this->class04oficina->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
+				$this->class04oficina->setAtributo('PU01CEDUSU',$_POST['PU01CEDUSU']);
+				
+				
+				$this->class04oficina->agregarTrainpe();
+				header('location:?c=class04oficina&m=index6');
+			} else {
+				?>
+				<script>
+					alert('Usuario no existe o no coresponde a la sesion!');
+					location.href = "?c=class04ingresotramite&m=index2";
+				</script>
+				<?php
+			}
+			/*$this->pu04inspeccion->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
+			$this->pu04inspeccion->setAtributo('PU01CEDUSU',$_POST['PU01CEDUSU']);
+			
+			
+			$this->pu04inspeccion->agregarTrainpe();
+			header('location:?c=class04inspeccion&m=agregarTra&id='.$_REQUEST['id']);*/
+		}
+		else{
+
+			$this->class04oficina = $this->class04oficina->buscarTraIng($_REQUEST['id']);
+
+		
+			require_once 'view/header.php';
+			require_once 'view/class04oficina/agregarTrausutra.php';
+			require_once 'view/footer.php';
+		}
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////
 
 
 }

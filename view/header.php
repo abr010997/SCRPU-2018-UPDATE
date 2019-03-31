@@ -150,6 +150,18 @@
 
                       <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
                       <li>
+                        <a href="?c=class04oficina&m=index5">Trámite Rápido</a>
+                      </li>
+                      <?php endif; ?>
+
+                      <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
+                      <li>
+                        <a href="?c=class04oficina&m=index6">Trámite Rápido-Oficina</a>
+                      </li>
+                      <?php endif; ?>
+
+                      <?php if ($idpuesto == 1 || $idpuesto == 2 || $idpuesto == 3) : ?>
+                      <li>
                         <a href="?c=class04oficina">Realizar Oficina a Trámites</a>
                       </li>
                       <?php endif; ?>

@@ -125,6 +125,12 @@ class class04oficina  extends Conexion
 		$result = $this->conexion->consultaRetorno($sql);
 		return $result;
 	}
+	public function listarIgnTra()
+	{
+		$sql = "CALL SP00_LISTAR_INGRESO_TRAMITE();";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1408,6 +1414,40 @@ public function convertToclass04oficinaTipotramite($result)
 	{	
 		$sql40 = "CALL SP04_RUTAIMAGEN_GUARDAR ('$this->PU04IDTRA','$this->PU04RUTAIMAGEN');";
 		$this->conexion->consultaSimple($sql40);
+	}
+	//////////////////////////////////////////////////////
+	public function agregarTrausutra()
+	{
+		$sql = "CALL SP01_TRA_USUTRA_GUARDAR('$this->PU04IDTRA','$this->PU01CEDUSU');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+    
+   
+	}
+	/////////////////////////////////////////////////////////////
+	public function agregarTrainpe()
+	{
+		$sql = "CALL SP01_TRA_USUTRA_GUARDAR('$this->PU04IDTRA','$this->PU01CEDUSU');";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+    
+   
+	}
+
+	/////////////////////////////////////////////////////////////
+
+	public function listarTraInspector()
+	{
+		$sql = "CALL SP00_LISTAR_INPECTOR_TRAMITE();";
+		$result = $this->conexion->consultaRetorno($sql);
+		return $result;
+	}
+	/////////////////////////////////////////////////////////////
+	public function listarPuesto($puesto){
+		$sql = "SELECT FN_EXISTE_USUARIO('".$puesto."');";
+		$result = $this->conexion->consultaRetorno($sql);
+		$row 	= mysqli_fetch_row($result);
+		return $row;
 	}
 
 }

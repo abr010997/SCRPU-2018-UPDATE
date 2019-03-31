@@ -75,7 +75,13 @@ class class04inspeccionController
 			
 			
 			$this->pu04inspeccion->guardar($_POST['pu09tradeg'],$_POST['pu10aspbio'],$_POST['pu13aap'],$_POST['pu06idactdes'],$_POST['pu07terrfr'],$_POST['pu12tipdesec'],$_POST['pu21servicios'],$_POST['pu22tredv']);
-			header('location:?c=class04inspeccion&m=index1');
+			?>
+			<script>
+				alert("¡Guardado con exito!");
+				location.href = "?c=class04inspeccion&m=index1";
+			</script>
+			<?php
+			//header('location:?c=class04inspeccion&m=index1');
 		}
 		else{
 
@@ -128,7 +134,7 @@ public function agregarTrausutra()
 			$this->pu04inspeccion->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
 			$this->pu04inspeccion->setAtributo('PU01CEDUSU',$_POST['PU01CEDUSU']);
 			$puesto = $this->pu04inspeccion->listarPuesto($_POST['PU01CEDUSU']);
-			session_start();
+			//session_start();
 			if ($_SESSION['idpuesto'] = $puesto[0]) {
 				$this->pu04inspeccion->setAtributo('PU04IDTRA',$_POST['PU04IDTRA']);
 				$this->pu04inspeccion->setAtributo('PU01CEDUSU',$_POST['PU01CEDUSU']);
@@ -140,7 +146,7 @@ public function agregarTrausutra()
 				?>
 				<script>
 					alert('Usuario no existe o no coresponde a la sesion!');
-					location.href = "?c=class04ingresotramite&m=index";
+					location.href = "?c=class04ingresotramite&m=index2";
 				</script>
 				<?php
 			}
